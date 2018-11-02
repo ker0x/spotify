@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<phpunit processIsolation="false"
+         stopOnFailure="false"
+         bootstrap="./tests/bootstrap.php">
+    <testsuites>
+        <testsuite name="Spotify Test Suite">
+            <directory>./tests/TestCase</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src</directory>
+        </whitelist>
+    </filter>
+
+    <logging>
+        <log type="coverage-clover" target="build/logs/clover.xml"/>
+    </logging>
+</phpunit>

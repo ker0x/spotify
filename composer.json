@@ -1,0 +1,54 @@
+{
+  "name": "kerox/spotify",
+  "type": "library",
+  "description": "PHP Library to easily use Spotify API",
+  "keywords": [
+    "spotify",
+    "api",
+    "psr-7"
+  ],
+  "homepage": "https://github.com/ker0x/spotify",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Romain Monteil",
+      "homepage": "https://kerox.fr",
+      "email": "monteil.romain@gmail.com",
+      "role": "Author"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.0",
+    "ext-json": "*",
+    "fig/http-message-util": "^1.1",
+    "psr/http-client": "^0.3.0",
+    "zendframework/zend-diactoros": "^2.0"
+  },
+  "require-dev": {
+    "codacy/coverage": "^1.4",
+    "friendsofphp/php-cs-fixer": "^2.5",
+    "phpunit/phpunit": "^7.4"
+  },
+  "suggest": {
+    "league/oauth2-client": "To generate OAuth token",
+    "php-http/httplug": "To send PSR-7 request with PSR-18 compatible HTTP client"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kerox\\Spotify\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Kerox\\Spotify\\Test\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "phpunit",
+    "csfix": "php-cs-fixer fix --diff --verbose --config=.php_cs"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  }
+}
