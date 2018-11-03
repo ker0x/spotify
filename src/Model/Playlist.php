@@ -6,6 +6,8 @@ namespace Kerox\Spotify\Model;
 
 class Playlist
 {
+    public const TYPE = 'playlist';
+
     /**
      * @var bool
      */
@@ -69,7 +71,8 @@ class Playlist
     /**
      * @var string
      */
-    protected $type;
+    protected $type = self::TYPE;
+
     /**
      * @var string
      */
@@ -90,10 +93,11 @@ class Playlist
      * @param bool                           $public
      * @param string                         $snapshotId
      * @param array                          $tracks
-     * @param string                         $type
      * @param string                         $uri
      */
     public function __construct(
+        string $name,
+        bool $public,
         bool $collaborative,
         string $description,
         array $externalUrls,
@@ -101,14 +105,13 @@ class Playlist
         string $href,
         string $id,
         array $images,
-        string $name,
         User $owner,
-        bool $public,
         string $snapshotId,
         array $tracks,
-        string $type,
         string $uri
     ) {
+        $this->name = $name;
+        $this->public = $public;
         $this->collaborative = $collaborative;
         $this->description = $description;
         $this->externalUrls = $externalUrls;
@@ -116,12 +119,9 @@ class Playlist
         $this->href = $href;
         $this->id = $id;
         $this->images = $images;
-        $this->name = $name;
         $this->owner = $owner;
-        $this->public = $public;
         $this->snapshotId = $snapshotId;
         $this->tracks = $tracks;
-        $this->type = $type;
         $this->uri = $uri;
     }
 
@@ -136,7 +136,7 @@ class Playlist
         $description = $playlist['description'];
 
         $externalUrls = [];
-        foreach ($artist['external_urls'] as $externalUrl) {
+        foreach ($playlist['external_urls'] as $externalUrl) {
             $externalUrls[] = External::create($externalUrl);
         }
 
@@ -146,8 +146,8 @@ class Playlist
         $id = $playlist['id'];
 
         $images = [];
-        if (isset($artist['images'])) {
-            foreach ($artist['images'] as $image) {
+        if (isset($playlist['images'])) {
+            foreach ($playlist['images'] as $image) {
                 $images[] = Image::create($image);
             }
         }
@@ -164,10 +164,11 @@ class Playlist
             $tracks[] = Track::create($track);
         }
 
-        $type = $playlist['type'];
         $uri = $playlist['uri'];
 
         return new self(
+            $name,
+            $public,
             $collaborative,
             $description,
             $externalUrls,
@@ -175,12 +176,9 @@ class Playlist
             $href,
             $id,
             $images,
-            $name,
             $owner,
-            $public,
             $snapshotId,
             $tracks,
-            $type,
             $uri
         );
     }

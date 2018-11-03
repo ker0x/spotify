@@ -8,7 +8,7 @@ use Fig\Http\Message\RequestMethodInterface;
 use Kerox\Spotify\Request\Request;
 use Kerox\Spotify\Response\AlbumResponse;
 use Kerox\Spotify\Response\AlbumsResponse;
-use Kerox\Spotify\Response\AlbumTracksResponse;
+use Kerox\Spotify\Response\PagingResponse;
 use Psr\Http\Message\ResponseInterface;
 
 class Albums extends AbstractApi
@@ -56,7 +56,7 @@ class Albums extends AbstractApi
         $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
         $response = $this->client->sendRequest($request);
 
-        return new AlbumTracksResponse($response);
+        return new PagingResponse($response);
     }
 
     /**

@@ -4,20 +4,14 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Response;
 
-use Kerox\Spotify\Model\Paging;
 use Kerox\Spotify\Model\Track;
 
-class AlbumTracksResponse extends AbstractResponse
+class TracksResponse extends AbstractResponse
 {
     /**
      * @var \Kerox\Spotify\Model\Track[]
      */
     protected $tracks = [];
-
-    /**
-     * @var \Kerox\Spotify\Model\Paging
-     */
-    protected $paging;
 
     /**
      * @return \Kerox\Spotify\Model\Track[]
@@ -28,13 +22,21 @@ class AlbumTracksResponse extends AbstractResponse
     }
 
     /**
-     * @param int $trackNumber
+     * @param int $artistNumber
      *
-     * @return \Kerox\Spotify\Model\Track|null
+     * @return \Kerox\Spotify\Model\Track
      */
-    public function getTrack(int $trackNumber): ?Track
+    public function getTrack(int $artistNumber): Track
     {
-        return $this->tracks[++$trackNumber] ?? null;
+        return $this->tracks[++$artistNumber];
+    }
+
+    /**
+     * @return int
+     */
+    public function getTotal(): int
+    {
+        return \count($this->tracks);
     }
 
     /**
@@ -42,10 +44,8 @@ class AlbumTracksResponse extends AbstractResponse
      */
     protected function parseResponse(array $content): void
     {
-        foreach ($content['items'] as $track) {
+        foreach ($content['tracks'] as $track) {
             $this->tracks[] = Track::create($track);
         }
-
-        $this->paging = Paging::create($content);
     }
 }

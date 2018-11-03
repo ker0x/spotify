@@ -12,6 +12,11 @@ class Paging
     protected $href;
 
     /**
+     * @var array
+     */
+    protected $items = [];
+
+    /**
      * @var int
      */
     protected $limit;
@@ -40,6 +45,7 @@ class Paging
      * Paging constructor.
      *
      * @param string $href
+     * @param array  $items
      * @param int    $limit
      * @param string $next
      * @param int    $offset
@@ -48,6 +54,7 @@ class Paging
      */
     public function __construct(
         string $href,
+        array $items,
         int $limit,
         string $next,
         int $offset,
@@ -55,6 +62,7 @@ class Paging
         int $total
     ) {
         $this->href = $href;
+        $this->items = $items;
         $this->limit = $limit;
         $this->next = $next;
         $this->offset = $offset;
@@ -69,6 +77,27 @@ class Paging
      */
     public static function create(array $paging): self
     {
+        $items = [];
+        foreach ($paging['items'] as $item) {
+            $type = $item['type'] ?? null;
+
+            if ($type === Album::TYPE) {
+                $items[] = Album::create($item);
+            }
+
+            if ($type === Artist::TYPE) {
+                $items[] = Artist::create($item);
+            }
+
+            if ($type === Track::TYPE) {
+                $items[] = Track::create($item);
+            }
+
+            if ($type === Playlist::TYPE) {
+                $items[] = Playlist::create($item);
+            }
+        }
+
         $href = $paging['href'];
         $limit = $paging['limit'];
         $next = $paging['next'];
@@ -76,7 +105,7 @@ class Paging
         $previous = $paging['previous'];
         $total = $paging['total'];
 
-        return new self($href, $limit, $next, $offset, $previous, $total);
+        return new self($href, $items, $limit, $next, $offset, $previous, $total);
     }
 
     /**
@@ -85,6 +114,24 @@ class Paging
     public function getHref(): string
     {
         return $this->href;
+    }
+
+    /**
+     * @return array
+     */
+    public function getItems(): array
+    {
+        return $this->items;
+    }
+
+    /**
+     * @var int $key
+     *
+     * @return mixed
+     */
+    public function getItem(int $key)
+    {
+        return $this->items[++$key];
     }
 
     /**

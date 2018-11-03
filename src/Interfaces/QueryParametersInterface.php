@@ -16,6 +16,9 @@ interface QueryParametersInterface
     public const PARAMETER_SEED_ARTISTS = 'seed_artists';
     public const PARAMETER_SEED_GENRES = 'seed_genres';
     public const PARAMETER_SEED_TRACKS = 'seed_tracks';
+    public const PARAMETER_Q = 'q';
+    public const PARAMETER_TYPE = 'type';
+    public const PARAMETER_INCLUDE_EXTERNAL = 'include_external';
 
     public const PARAMETER_LIMIT = 'limit';
     public const PARAMETER_OFFSET = 'offset';

@@ -13,7 +13,10 @@ class ArtistResponse extends AbstractResponse
      */
     protected $artist;
 
-    public function getAlbum(): Artist
+    /**
+     * @return \Kerox\Spotify\Model\Artist
+     */
+    public function getArtist(): Artist
     {
         return $this->artist;
     }

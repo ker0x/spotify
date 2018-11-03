@@ -14,6 +14,7 @@ class Users extends AbstractApi
     /**
      * @param string $id
      *
+     * @throws \Kerox\Spotify\Exception\SpotifyException
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
@@ -29,11 +30,12 @@ class Users extends AbstractApi
     }
 
     /**
+     * @throws \Kerox\Spotify\Exception\SpotifyException
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function met(): ResponseInterface
+    public function me(): ResponseInterface
     {
         $uri = $this->buildUri('me');
 
@@ -41,5 +43,10 @@ class Users extends AbstractApi
         $response = $this->client->sendRequest($request);
 
         return new UserResponse($response);
+    }
+
+    public function following(array $ids): ResponseInterface
+    {
+
     }
 }
