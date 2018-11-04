@@ -6,19 +6,19 @@ namespace Kerox\Spotify\Response;
 
 use Kerox\Spotify\Model\Paging;
 
-class PagingResponse extends AbstractResponse
+class UserFollowingResponse extends AbstractResponse
 {
     /**
      * @var \Kerox\Spotify\Model\Paging
      */
-    protected $paging;
+    protected $artists;
 
     /**
      * @return \Kerox\Spotify\Model\Paging
      */
-    public function getPaging(): Paging
+    public function getArtists(): Paging
     {
-        return $this->paging;
+        return $this->artists;
     }
 
     /**
@@ -26,6 +26,6 @@ class PagingResponse extends AbstractResponse
      */
     protected function parseResponse(array $content): void
     {
-        $this->paging = Paging::create($content);
+        $this->artists = Paging::create($content['artists']);
     }
 }

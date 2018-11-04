@@ -14,19 +14,19 @@ use Psr\Http\Message\ResponseInterface;
 class Albums extends AbstractApi
 {
     /**
-     * @param string $id
-     * @param array  $queryParameters
+     * @param string      $id
+     * @param string|null $market
      *
-     * @throws \Kerox\Spotify\Exception\SpotifyException
+     * @throws \Kerox\Spotify\Exception\InvalidLimitException
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function get(string $id, array $queryParameters = []): ResponseInterface
+    public function get(string $id, string $market = null): ResponseInterface
     {
-        $this->isValidQueryParameters($queryParameters, [self::PARAMETER_MARKET]);
-
-        $uri = $this->buildUri(sprintf('albums/%s', $id), $queryParameters);
+        $uri = $this->buildUri(sprintf('albums/%s', $id), [
+            self::PARAMETER_MARKET => $market,
+        ]);
 
         $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
         $response = $this->client->sendRequest($request);
@@ -35,23 +35,72 @@ class Albums extends AbstractApi
     }
 
     /**
-     * @param string $id
-     * @param array  $queryParameters
+     * @param string      $id
+     * @param string|null $market
+     * @param int         $limit
+     * @param int         $offset
      *
-     * @throws \Kerox\Spotify\Exception\SpotifyException
+     * @throws \Kerox\Spotify\Exception\InvalidLimitException
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function tracks(string $id, array $queryParameters = []): ResponseInterface
+    public function tracks(string $id, string $market = null, int $limit = 20, int $offset = 0): ResponseInterface
     {
-        $this->isValidQueryParameters($queryParameters, [
-            self::PARAMETER_MARKET,
-            self::PARAMETER_LIMIT,
-            self::PARAMETER_OFFSET,
+        $uri = $this->buildUri(sprintf('albums/%s/tracks', $id), [
+            self::PARAMETER_MARKET => $market,
+            self::PARAMETER_LIMIT => $limit,
+            self::PARAMETER_OFFSET => $offset,
         ]);
 
-        $uri = $this->buildUri(sprintf('albums/%s/tracks', $id), $queryParameters);
+        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
+        $response = $this->client->sendRequest($request);
+
+        return new PagingResponse($response);
+    }
+
+    /**
+     * @param array       $ids
+     * @param string|null $market
+     *
+     * @throws \Kerox\Spotify\Exception\InvalidArrayException
+     * @throws \Kerox\Spotify\Exception\InvalidLimitException
+     * @throws \Psr\Http\Client\ClientExceptionInterface
+     *
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    public function several(array $ids, string $market = null): ResponseInterface
+    {
+        $this->isValidArray($ids, 20);
+
+        $uri = $this->buildUri('albums', [
+            self::PARAMETER_IDS => $ids,
+            self::PARAMETER_MARKET => $market,
+        ]);
+
+        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
+        $response = $this->client->sendRequest($request);
+
+        return new AlbumsResponse($response);
+    }
+
+    /**
+     * @param int         $limit
+     * @param int         $offset
+     * @param string|null $market
+     *
+     * @throws \Kerox\Spotify\Exception\InvalidLimitException
+     * @throws \Psr\Http\Client\ClientExceptionInterface
+     *
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    public function saved(int $limit = 20, int $offset = 0, string $market = null): ResponseInterface
+    {
+        $uri = $this->buildUri('me/albums', [
+            self::PARAMETER_LIMIT => $limit,
+            self::PARAMETER_OFFSET => $offset,
+            self::PARAMETER_MARKET => $market,
+        ]);
 
         $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
         $response = $this->client->sendRequest($request);
@@ -61,25 +110,41 @@ class Albums extends AbstractApi
 
     /**
      * @param array $ids
-     * @param array $queryParameters
      *
-     * @throws \Kerox\Spotify\Exception\SpotifyException
+     * @throws \Kerox\Spotify\Exception\InvalidArrayException
+     * @throws \Kerox\Spotify\Exception\InvalidLimitException
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function several(array $ids, array $queryParameters = []): ResponseInterface
+    public function add(array $ids): ResponseInterface
     {
-        $this->isValidArray($ids, 20);
-        $this->isValidQueryParameters($queryParameters, [self::PARAMETER_MARKET]);
+        $this->isValidArray($ids, 50);
 
-        $queryParameters += [self::PARAMETER_IDS => $ids];
+        $uri = $this->buildUri('me/albums', [self::PARAMETER_IDS => $ids]);
 
-        $uri = $this->buildUri('albums', $queryParameters);
+        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_PUT);
 
-        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
-        $response = $this->client->sendRequest($request);
+        return $this->client->sendRequest($request);
+    }
 
-        return new AlbumsResponse($response);
+    /**
+     * @param array $ids
+     *
+     * @throws \Kerox\Spotify\Exception\InvalidArrayException
+     * @throws \Kerox\Spotify\Exception\InvalidLimitException
+     * @throws \Psr\Http\Client\ClientExceptionInterface
+     *
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    public function remove(array $ids): ResponseInterface
+    {
+        $this->isValidArray($ids, 50);
+
+        $uri = $this->buildUri('me/albums', [self::PARAMETER_IDS => $ids]);
+
+        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_DELETE);
+
+        return $this->client->sendRequest($request);
     }
 }

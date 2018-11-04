@@ -9,9 +9,9 @@ use Kerox\Spotify\Request\Request;
 use Kerox\Spotify\Response\CategoriesResponse;
 use Kerox\Spotify\Response\CategoryResponse;
 use Kerox\Spotify\Response\FeaturedResponse;
-use Kerox\Spotify\Response\ReleasesResponse;
 use Kerox\Spotify\Response\PlaylistsResponse;
 use Kerox\Spotify\Response\RecommendationsResponse;
+use Kerox\Spotify\Response\ReleasesResponse;
 use Psr\Http\Message\ResponseInterface;
 
 class Browse extends AbstractApi
@@ -29,7 +29,7 @@ class Browse extends AbstractApi
     {
         $this->isValidQueryParameters($queryParameters, [
             self::PARAMETER_COUNTRY,
-            self::PARAMETER_LOCALE
+            self::PARAMETER_LOCALE,
         ]);
 
         $uri = $this->buildUri(sprintf('categories/%s', $id), $queryParameters);
@@ -144,6 +144,15 @@ class Browse extends AbstractApi
         return new ReleasesResponse($response);
     }
 
+    /**
+     * @param array $queryParameters
+     *
+     * @throws \Kerox\Spotify\Exception\InvalidLimitException
+     * @throws \Kerox\Spotify\Exception\InvalidQueryParameterException
+     * @throws \Psr\Http\Client\ClientExceptionInterface
+     *
+     * @return \Psr\Http\Message\ResponseInterface
+     */
     public function recommendations(array $queryParameters = []): ResponseInterface
     {
         $this->isValidQueryParameters($queryParameters, [

@@ -29,24 +29,7 @@ class Users extends AbstractApi
         return new UserResponse($response);
     }
 
-    /**
-     * @throws \Kerox\Spotify\Exception\SpotifyException
-     * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
-     */
-    public function me(): ResponseInterface
+    public function playlists(): ResponseInterface
     {
-        $uri = $this->buildUri('me');
-
-        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
-        $response = $this->client->sendRequest($request);
-
-        return new UserResponse($response);
-    }
-
-    public function following(array $ids): ResponseInterface
-    {
-
     }
 }

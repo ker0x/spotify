@@ -17,10 +17,10 @@ trait ValidatorTrait
      *
      * @throws \Kerox\Spotify\Exception\InvalidArrayException
      */
-    protected function isValidArray(array $array, int $maxSize, ?int $minSize = null): void
+    protected function isValidArray(array $array, int $maxSize, int $minSize = 1): void
     {
         $countArray = \count($array);
-        if ($minSize !== null && $countArray < $minSize) {
+        if ($countArray < $minSize) {
             throw new InvalidArrayException(sprintf('The minimum number of items for this array is %d.', $minSize));
         }
         if ($countArray > $maxSize) {

@@ -79,22 +79,35 @@ class Paging
     {
         $items = [];
         foreach ($paging['items'] as $item) {
-            $type = $item['type'] ?? null;
+            if (isset($item['type'])) {
+                $type = $item['type'] ?? null;
+                if ($type === Album::TYPE) {
+                    $items[] = Album::create($item);
 
-            if ($type === Album::TYPE) {
-                $items[] = Album::create($item);
-            }
+                    continue;
+                }
 
-            if ($type === Artist::TYPE) {
-                $items[] = Artist::create($item);
-            }
+                if ($type === Artist::TYPE) {
+                    $items[] = Artist::create($item);
 
-            if ($type === Track::TYPE) {
-                $items[] = Track::create($item);
-            }
+                    continue;
+                }
 
-            if ($type === Playlist::TYPE) {
-                $items[] = Playlist::create($item);
+                if ($type === Track::TYPE) {
+                    $items[] = Track::create($item);
+
+                    continue;
+                }
+
+                if ($type === Playlist::TYPE) {
+                    $items[] = Playlist::create($item);
+
+                    continue;
+                }
+            } elseif (isset($item['added_at'])) {
+                $items[] = SavedTrack::create($item);
+
+                continue;
             }
         }
 
@@ -125,7 +138,7 @@ class Paging
     }
 
     /**
-     * @var int $key
+     * @var int
      *
      * @return mixed
      */

@@ -19,6 +19,7 @@ interface QueryParametersInterface
     public const PARAMETER_Q = 'q';
     public const PARAMETER_TYPE = 'type';
     public const PARAMETER_INCLUDE_EXTERNAL = 'include_external';
+    public const PARAMETER_AFTER = 'after';
 
     public const PARAMETER_LIMIT = 'limit';
     public const PARAMETER_OFFSET = 'offset';

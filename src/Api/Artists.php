@@ -60,21 +60,19 @@ class Artists extends AbstractApi
     }
 
     /**
-     * @param string $id
-     * @param array  $queryParameters
+     * @param string      $id
+     * @param string|null $market
      *
      * @throws \Kerox\Spotify\Exception\InvalidLimitException
-     * @throws \Kerox\Spotify\Exception\InvalidQueryParameterException
      * @throws \Psr\Http\Client\ClientExceptionInterface
+     *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function topTracks(string $id, array $queryParameters = []): ResponseInterface
+    public function topTracks(string $id, string $market = null): ResponseInterface
     {
-        $this->isValidQueryParameters($queryParameters, [
-            self::PARAMETER_MARKET,
+        $uri = $this->buildUri(sprintf('artists/%s/top-tracks', $id), [
+            self::PARAMETER_MARKET => $market,
         ]);
-
-        $uri = $this->buildUri(sprintf('artists/%s/top-tracks', $id), $queryParameters);
 
         $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
         $response = $this->client->sendRequest($request);
@@ -87,6 +85,7 @@ class Artists extends AbstractApi
      *
      * @throws \Kerox\Spotify\Exception\InvalidLimitException
      * @throws \Psr\Http\Client\ClientExceptionInterface
+     *
      * @return \Psr\Http\Message\ResponseInterface
      */
     public function related(string $id): ResponseInterface
@@ -122,8 +121,35 @@ class Artists extends AbstractApi
         return new ArtistsResponse($response);
     }
 
-    public function following(array $ids): ResponseInterface
+    /**
+     * @param array $ids
+     *
+     * @throws \Kerox\Spotify\Exception\InvalidArrayException
+     * @throws \Kerox\Spotify\Exception\InvalidLimitException
+     * @throws \Psr\Http\Client\ClientExceptionInterface
+     *
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    public function follow(array $ids): ResponseInterface
     {
+        $followClass = new Follow($this->oauthToken, $this->client, $this->baseUri);
 
+        return $followClass->add($ids);
+    }
+
+    /**
+     * @param array $ids
+     *
+     * @throws \Kerox\Spotify\Exception\InvalidArrayException
+     * @throws \Kerox\Spotify\Exception\InvalidLimitException
+     * @throws \Psr\Http\Client\ClientExceptionInterface
+     *
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    public function unfollow(array $ids): ResponseInterface
+    {
+        $followClass = new Follow($this->oauthToken, $this->client, $this->baseUri);
+
+        return $followClass->delete($ids);
     }
 }

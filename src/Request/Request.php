@@ -18,9 +18,11 @@ class Request extends \Zend\Diactoros\Request
      */
     public function __construct(string $oauthToken, UriInterface $uri, string $method, string $body = null)
     {
-        parent::__construct($uri, $method, $body, [
-            'Authorization' => 'Bearer ' . $oauthToken,
-            'Content-Type' => 'application/json',
-        ]);
+        $headers = ['Authorization' => sprintf('Bearer %s', $oauthToken)];
+        if ($body !== null) {
+            $headers['Content-Type'] = 'application/json';
+        }
+
+        parent::__construct($uri, $method, $body, $headers);
     }
 }
