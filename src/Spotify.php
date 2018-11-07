@@ -10,15 +10,15 @@ use Kerox\Spotify\Api\Browse;
 use Kerox\Spotify\Api\Follow;
 use Kerox\Spotify\Api\Library;
 use Kerox\Spotify\Api\Me;
-use Kerox\Spotify\Api\Personalization;
 use Kerox\Spotify\Api\Player;
 use Kerox\Spotify\Api\Playlists;
 use Kerox\Spotify\Api\Search;
 use Kerox\Spotify\Api\Tracks;
 use Kerox\Spotify\Api\Users;
 use Psr\Http\Client\ClientInterface;
+use Psr\Http\Message\ResponseInterface;
 
-class Spotify
+final class Spotify
 {
     public const API_URL = 'https://api.spotify.com';
     public const API_VERSION = 'v1';
@@ -26,17 +26,17 @@ class Spotify
     /**
      * @var string
      */
-    protected $oauthToken;
+    private $oauthToken;
 
     /**
      * @var \Psr\Http\Client\ClientInterface
      */
-    protected $client;
+    private $client;
 
     /**
      * @var string
      */
-    protected $baseUri;
+    private $baseUri;
 
     /**
      * Spotify constructor.
@@ -100,14 +100,6 @@ class Spotify
     }
 
     /**
-     * @return \Kerox\Spotify\Api\Personalization
-     */
-    public function personalize(): Personalization
-    {
-        return new Personalization($this->oauthToken, $this->client, $this->baseUri);
-    }
-
-    /**
      * @return \Kerox\Spotify\Api\Player
      */
     public function player(): Player
@@ -124,11 +116,16 @@ class Spotify
     }
 
     /**
-     * @return \Kerox\Spotify\Api\Search
+     * @param array $queryParameters
+     *
+     * @throws \Psr\Http\Client\ClientExceptionInterface
+     *
+     * @return \Psr\Http\Message\ResponseInterface
      */
-    public function search(): Search
-    {
-        return new Search($this->oauthToken, $this->client, $this->baseUri);
+    public function search(array $queryParameters = []): ResponseInterface {
+        $search = new Search($this->oauthToken, $this->client, $this->baseUri);
+
+        return $search($queryParameters);
     }
 
     /**

@@ -10,7 +10,7 @@ use Kerox\Spotify\Model\AudioAnalysis\Meta;
 use Kerox\Spotify\Model\AudioAnalysis\Section;
 use Kerox\Spotify\Model\AudioAnalysis\Segment;
 use Kerox\Spotify\Model\AudioAnalysis\Tatum;
-use Kerox\Spotify\Model\AudioAnalysis\Track;
+use Kerox\Spotify\Model\AudioAnalysis\Track as TrackAnalysis;
 
 class AudioAnalysis
 {
@@ -67,7 +67,7 @@ class AudioAnalysis
         array $sections,
         array $segments,
         array $tatums,
-        Track $track
+        TrackAnalysis $track
     ) {
         $this->bars = $bars;
         $this->beats = $beats;
@@ -107,7 +107,7 @@ class AudioAnalysis
             $tatums[] = Tatum::create($tatum);
         }
 
-        $track = Track::create($audioAnalysis['track']);
+        $track = TrackAnalysis::create($audioAnalysis['track']);
 
         return new self($bars, $beats, $meta, $sections, $segments, $tatums, $track);
     }
@@ -163,7 +163,7 @@ class AudioAnalysis
     /**
      * @return \Kerox\Spotify\Model\AudioAnalysis\Track
      */
-    public function getTrack(): Track
+    public function getTrack(): TrackAnalysis
     {
         return $this->track;
     }

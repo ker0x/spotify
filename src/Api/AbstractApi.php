@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Kerox\Spotify\Api;
 
 use Kerox\Spotify\Helper\UtilityTrait;
-use Kerox\Spotify\Helper\ValidatorTrait;
 use Kerox\Spotify\Interfaces\QueryParametersInterface;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\UriInterface;
@@ -14,7 +13,6 @@ use Zend\Diactoros\UriFactory;
 class AbstractApi implements QueryParametersInterface
 {
     use UtilityTrait;
-    use ValidatorTrait;
 
     /**
      * @var string
@@ -49,29 +47,35 @@ class AbstractApi implements QueryParametersInterface
      * @param string $uri
      * @param array  $queryParameters
      *
-     * @throws \Kerox\Spotify\Exception\InvalidLimitException
-     *
      * @return \Psr\Http\Message\UriInterface
      */
-    protected function buildUri(string $uri, array $queryParameters = []): UriInterface
+    protected function createUri(string $uri, array $queryParameters = []): UriInterface
+    {
+        $query = $this->filterQuery($queryParameters);
+
+        $factory = new UriFactory();
+
+        return $factory->createUri(urlencode(sprintf('%s/%s?%s', $this->baseUri, $uri, $query)));
+    }
+
+    /**
+     * @param array $queryParameters
+     *
+     * @return string
+     */
+    private function filterQuery(array $queryParameters): string
     {
         $queryParameters = $this->arrayFilter($queryParameters);
 
         $query = [];
         foreach ($queryParameters as $parameter => $value) {
-            if ($parameter === self::PARAMETER_LIMIT) {
-                $this->isValidLimit($value);
-            }
-
-            if ($parameter === self::PARAMETER_IDS) {
+            if (($parameter === self::PARAMETER_IDS || $parameter === self::PARAMETER_INCLUDE_GROUPS || $parameter === self::PARAMETER_TYPE) && \is_array($value)) {
                 $value = implode(',', $value);
             }
 
             $query[] = sprintf('%s=%s', $parameter, (string) $value);
         }
 
-        $factory = new UriFactory();
-
-        return $factory->createUri(sprintf('%s/%s?%s', $this->baseUri, $uri, implode('&', $query)));
+        return implode('&', $query);
     }
 }

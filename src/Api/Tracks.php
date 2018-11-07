@@ -14,19 +14,16 @@ use Psr\Http\Message\ResponseInterface;
 class Tracks extends AbstractApi
 {
     /**
-     * @param string      $id
-     * @param string|null $market
+     * @param string $id
+     * @param array  $queryParameters
      *
-     * @throws \Kerox\Spotify\Exception\InvalidLimitException
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function get(string $id, string $market = null): ResponseInterface
+    public function get(string $id, array $queryParameters = []): ResponseInterface
     {
-        $uri = $this->buildUri(sprintf('tracks/%s', $id), [
-            self::PARAMETER_MARKET => $market,
-        ]);
+        $uri = $this->createUri(sprintf('tracks/%s', $id), $queryParameters);
 
         $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
         $response = $this->client->sendRequest($request);
@@ -35,23 +32,15 @@ class Tracks extends AbstractApi
     }
 
     /**
-     * @param array       $ids
-     * @param string|null $market
+     * @param array $queryParameters
      *
-     * @throws \Kerox\Spotify\Exception\InvalidArrayException
-     * @throws \Kerox\Spotify\Exception\InvalidLimitException
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function several(array $ids, string $market = null): ResponseInterface
+    public function several(array $queryParameters = []): ResponseInterface
     {
-        $this->isValidArray($ids, 50);
-
-        $uri = $this->buildUri('tracks', [
-            self::PARAMETER_IDS => $ids,
-            self::PARAMETER_MARKET => $market,
-        ]);
+        $uri = $this->createUri('tracks', $queryParameters);
 
         $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
         $response = $this->client->sendRequest($request);
@@ -60,22 +49,15 @@ class Tracks extends AbstractApi
     }
 
     /**
-     * @param int         $limit
-     * @param int         $offset
-     * @param string|null $market
+     * @param array $queryParameters
      *
-     * @throws \Kerox\Spotify\Exception\InvalidLimitException
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function saved(int $limit = 20, int $offset = 0, string $market = null): ResponseInterface
+    public function saved(array $queryParameters = []): ResponseInterface
     {
-        $uri = $this->buildUri('me/tracks', [
-            self::PARAMETER_LIMIT => $limit,
-            self::PARAMETER_OFFSET => $offset,
-            self::PARAMETER_MARKET => $market,
-        ]);
+        $uri = $this->createUri('me/tracks', $queryParameters);
 
         $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
         $response = $this->client->sendRequest($request);
@@ -84,19 +66,15 @@ class Tracks extends AbstractApi
     }
 
     /**
-     * @param array $ids
+     * @param array $queryParameters
      *
-     * @throws \Kerox\Spotify\Exception\InvalidArrayException
-     * @throws \Kerox\Spotify\Exception\InvalidLimitException
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function add(array $ids): ResponseInterface
+    public function add(array $queryParameters = []): ResponseInterface
     {
-        $this->isValidArray($ids, 50);
-
-        $uri = $this->buildUri('me/tracks', [self::PARAMETER_IDS => $ids]);
+        $uri = $this->createUri('me/tracks', $queryParameters);
 
         $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_PUT);
 
@@ -104,19 +82,15 @@ class Tracks extends AbstractApi
     }
 
     /**
-     * @param array $ids
+     * @param array $queryParameters
      *
-     * @throws \Kerox\Spotify\Exception\InvalidArrayException
-     * @throws \Kerox\Spotify\Exception\InvalidLimitException
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function remove(array $ids): ResponseInterface
+    public function remove(array $queryParameters = []): ResponseInterface
     {
-        $this->isValidArray($ids, 50);
-
-        $uri = $this->buildUri('me/tracks', [self::PARAMETER_IDS => $ids]);
+        $uri = $this->createUri('me/tracks', $queryParameters);
 
         $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_DELETE);
 

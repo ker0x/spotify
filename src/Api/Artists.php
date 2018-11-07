@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Kerox\Spotify\Api;
 
 use Fig\Http\Message\RequestMethodInterface;
+use Kerox\Spotify\Interfaces\TypeInterface;
 use Kerox\Spotify\Request\Request;
 use Kerox\Spotify\Response\ArtistResponse;
 use Kerox\Spotify\Response\ArtistsResponse;
@@ -17,14 +18,13 @@ class Artists extends AbstractApi
     /**
      * @param string $id
      *
-     * @throws \Kerox\Spotify\Exception\SpotifyException
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
     public function get(string $id): ResponseInterface
     {
-        $uri = $this->buildUri(sprintf('artists/%s', $id));
+        $uri = $this->createUri(sprintf('artists/%s', $id));
 
         $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
         $response = $this->client->sendRequest($request);
@@ -36,22 +36,13 @@ class Artists extends AbstractApi
      * @param string $id
      * @param array  $queryParameters
      *
-     * @throws \Kerox\Spotify\Exception\SpotifyException
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
     public function albums(string $id, array $queryParameters = []): ResponseInterface
     {
-        $this->isValidQueryParameters($queryParameters, [
-            self::PARAMETER_INCLUDE_GROUPS,
-            self::PARAMETER_MARKET,
-            self::PARAMETER_COUNTRY,
-            self::PARAMETER_LIMIT,
-            self::PARAMETER_OFFSET,
-        ]);
-
-        $uri = $this->buildUri(sprintf('artists/%s', $id), $queryParameters);
+        $uri = $this->createUri(sprintf('artists/%s', $id), $queryParameters);
 
         $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
         $response = $this->client->sendRequest($request);
@@ -60,19 +51,16 @@ class Artists extends AbstractApi
     }
 
     /**
-     * @param string      $id
-     * @param string|null $market
+     * @param string $id
+     * @param array  $queryParameters
      *
-     * @throws \Kerox\Spotify\Exception\InvalidLimitException
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function topTracks(string $id, string $market = null): ResponseInterface
+    public function topTracks(string $id, array $queryParameters = []): ResponseInterface
     {
-        $uri = $this->buildUri(sprintf('artists/%s/top-tracks', $id), [
-            self::PARAMETER_MARKET => $market,
-        ]);
+        $uri = $this->createUri(sprintf('artists/%s/top-tracks', $id), $queryParameters);
 
         $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
         $response = $this->client->sendRequest($request);
@@ -83,14 +71,13 @@ class Artists extends AbstractApi
     /**
      * @param string $id
      *
-     * @throws \Kerox\Spotify\Exception\InvalidLimitException
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
     public function related(string $id): ResponseInterface
     {
-        $uri = $this->buildUri(sprintf('artists/%s/related-artists', $id));
+        $uri = $this->createUri(sprintf('artists/%s/related-artists', $id));
 
         $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
         $response = $this->client->sendRequest($request);
@@ -99,21 +86,15 @@ class Artists extends AbstractApi
     }
 
     /**
-     * @param array $ids
+     * @param array $queryParameters
      *
-     * @throws \Kerox\Spotify\Exception\InvalidArrayException
-     * @throws \Kerox\Spotify\Exception\InvalidLimitException
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function several(array $ids): ResponseInterface
+    public function several(array $queryParameters = []): ResponseInterface
     {
-        $this->isValidArray($ids, 50);
-
-        $uri = $this->buildUri('artists', [
-            self::PARAMETER_IDS => $ids,
-        ]);
+        $uri = $this->createUri('artists', $queryParameters);
 
         $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
         $response = $this->client->sendRequest($request);
@@ -124,8 +105,6 @@ class Artists extends AbstractApi
     /**
      * @param array $ids
      *
-     * @throws \Kerox\Spotify\Exception\InvalidArrayException
-     * @throws \Kerox\Spotify\Exception\InvalidLimitException
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
@@ -134,14 +113,15 @@ class Artists extends AbstractApi
     {
         $followClass = new Follow($this->oauthToken, $this->client, $this->baseUri);
 
-        return $followClass->add($ids);
+        return $followClass->add([
+            self::PARAMETER_IDS => $ids,
+            self::PARAMETER_TYPE => TypeInterface::TYPE_ARTIST,
+        ]);
     }
 
     /**
      * @param array $ids
      *
-     * @throws \Kerox\Spotify\Exception\InvalidArrayException
-     * @throws \Kerox\Spotify\Exception\InvalidLimitException
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
@@ -150,6 +130,9 @@ class Artists extends AbstractApi
     {
         $followClass = new Follow($this->oauthToken, $this->client, $this->baseUri);
 
-        return $followClass->delete($ids);
+        return $followClass->delete([
+            self::PARAMETER_IDS => $ids,
+            self::PARAMETER_TYPE => TypeInterface::TYPE_ARTIST,
+        ]);
     }
 }

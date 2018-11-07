@@ -5,31 +5,23 @@ declare(strict_types=1);
 namespace Kerox\Spotify\Api;
 
 use Fig\Http\Message\RequestMethodInterface;
-use Kerox\Spotify\Interfaces\FollowInterface;
+use Kerox\Spotify\Interfaces\TypeInterface;
 use Kerox\Spotify\Request\Request;
 use Kerox\Spotify\Response\FollowingResponse;
 use Psr\Http\Message\ResponseInterface;
 
-class Follow extends AbstractApi implements FollowInterface
+class Follow extends AbstractApi implements TypeInterface
 {
     /**
-     * @param array  $ids
-     * @param string $type
+     * @param array $queryParameters
      *
-     * @throws \Kerox\Spotify\Exception\InvalidArrayException
-     * @throws \Kerox\Spotify\Exception\InvalidLimitException
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function following(array $ids, string $type = self::TYPE_ARTIST): ResponseInterface
+    public function following(array $queryParameters = []): ResponseInterface
     {
-        $this->isValidArray($ids, 50);
-
-        $uri = $this->buildUri('me/following/contains', [
-            self::PARAMETER_IDS => $ids,
-            self::PARAMETER_TYPE => $type,
-        ]);
+        $uri = $this->createUri('me/following/contains', $queryParameters);
 
         $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
         $response = $this->client->sendRequest($request);
@@ -38,23 +30,15 @@ class Follow extends AbstractApi implements FollowInterface
     }
 
     /**
-     * @param array  $ids
-     * @param string $type
+     * @param array $queryParameters
      *
-     * @throws \Kerox\Spotify\Exception\InvalidArrayException
-     * @throws \Kerox\Spotify\Exception\InvalidLimitException
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function add(array $ids, string $type = self::TYPE_ARTIST): ResponseInterface
+    public function add(array $queryParameters = []): ResponseInterface
     {
-        $this->isValidArray($ids, 50);
-
-        $uri = $this->buildUri('me/following', [
-            self::PARAMETER_IDS => $ids,
-            self::PARAMETER_TYPE => $type,
-        ]);
+        $uri = $this->createUri('me/following', $queryParameters);
 
         $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_PUT);
 
@@ -62,23 +46,15 @@ class Follow extends AbstractApi implements FollowInterface
     }
 
     /**
-     * @param array  $ids
-     * @param string $type
+     * @param array $queryParameters
      *
-     * @throws \Kerox\Spotify\Exception\InvalidArrayException
-     * @throws \Kerox\Spotify\Exception\InvalidLimitException
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function delete(array $ids, string $type = self::TYPE_ARTIST): ResponseInterface
+    public function delete(array $queryParameters = []): ResponseInterface
     {
-        $this->isValidArray($ids, 50);
-
-        $uri = $this->buildUri('me/following', [
-            self::PARAMETER_IDS => $ids,
-            self::PARAMETER_TYPE => $type,
-        ]);
+        $uri = $this->createUri('me/following', $queryParameters);
 
         $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_DELETE);
 
