@@ -200,8 +200,8 @@ class Track
 
         $externalIds = [];
         if (isset($album['external_ids'])) {
-            foreach ($album['external_ids'] as $externalId) {
-                $externalIds[] = External::create($externalId);
+            foreach ($album['external_ids'] as $type => $url) {
+                $externalUrls[] = External::create($type, $url);;
             }
         }
 

@@ -55,7 +55,7 @@ class AbstractApi implements QueryParametersInterface
 
         $factory = new UriFactory();
 
-        return $factory->createUri(urlencode(sprintf('%s/%s?%s', $this->baseUri, $uri, $query)));
+        return $factory->createUri(sprintf('%s/%s?%s', $this->baseUri, $uri, urlencode($query)));
     }
 
     /**

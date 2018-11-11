@@ -57,8 +57,8 @@ class TrackLink
     public static function create(array $trackLink): self
     {
         $externalUrls = [];
-        foreach ($trackLink['external_urls'] as $externalUrl) {
-            $externalUrls[] = External::create($externalUrl);
+        foreach ($trackLink['external_urls'] as $type => $url) {
+            $externalUrls[] = External::create($type, $url);;
         }
 
         $href = $trackLink['href'];

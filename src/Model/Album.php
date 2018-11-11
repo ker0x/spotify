@@ -207,14 +207,14 @@ class Album
 
         $externalIds = [];
         if (isset($album['external_ids'])) {
-            foreach ($album['external_ids'] as $externalId) {
-                $externalIds[] = External::create($externalId);
+            foreach ($album['external_ids'] as $type => $id) {
+                $externalIds[] = External::create($type, $id);
             }
         }
 
         $externalUrls = [];
-        foreach ($album['external_urls'] as $externalUrl) {
-            $externalUrls[] = External::create($externalUrl);
+        foreach ($album['external_urls'] as $type => $url) {
+            $externalUrls[] = External::create($type, $url);;
         }
 
         $genres = $album['genres'] ?? null;

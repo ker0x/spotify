@@ -29,13 +29,14 @@ class External
     }
 
     /**
-     * @param array $external
+     * @param string $key
+     * @param string $value
      *
      * @return \Kerox\Spotify\Model\External
      */
-    public static function create(array $external): self
+    public static function create(string $key, string $value): self
     {
-        return new self(key($external), current($external));
+        return new self($key, $value);
     }
 
     /**

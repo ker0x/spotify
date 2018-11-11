@@ -22,7 +22,7 @@ class Followers
      * @param string $href
      * @param int    $total
      */
-    public function __construct(string $href, int $total)
+    public function __construct(?string $href, int $total)
     {
         $this->href = $href;
         $this->total = $total;

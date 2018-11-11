@@ -136,8 +136,8 @@ class Playlist
         $description = $playlist['description'];
 
         $externalUrls = [];
-        foreach ($playlist['external_urls'] as $externalUrl) {
-            $externalUrls[] = External::create($externalUrl);
+        foreach ($playlist['external_urls'] as $type => $url) {
+            $externalUrls[] = External::create($type, $url);;
         }
 
         $followers = Followers::create($playlist['followers']);

@@ -48,8 +48,8 @@ class Context
         $href = $context['href'];
 
         $externalUrls = [];
-        foreach ($context['external_urls'] as $externalUrl) {
-            $externalUrls[] = External::create($externalUrl);
+        foreach ($context['external_urls'] as $type => $url) {
+            $externalUrls[] = External::create($type, $url);;
         }
 
         $uri = $context['uri'];

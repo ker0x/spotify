@@ -120,8 +120,8 @@ class User
         $displayName = $user['display_name'];
 
         $externalUrls = [];
-        foreach ($user['external_urls'] as $externalUrl) {
-            $externalUrls[] = External::create($externalUrl);
+        foreach ($user['external_urls'] as $type => $url) {
+            $externalUrls[] = External::create($type, $url);;
         }
 
         $followers = Followers::create($user['followers']);

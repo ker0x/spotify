@@ -30,7 +30,7 @@
     "phpunit/phpunit": "^7.4"
   },
   "suggest": {
-    "league/oauth2-client": "To generate OAuth token",
+    "kerox/oauth2-spotify": "To generate OAuth token for Spotify",
     "php-http/httplug": "To send PSR-7 request with PSR-18 compatible HTTP client"
   },
   "autoload": {

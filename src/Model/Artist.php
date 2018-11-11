@@ -101,8 +101,8 @@ class Artist
     public static function create(array $artist): self
     {
         $externalUrls = [];
-        foreach ($artist['external_urls'] as $externalUrl) {
-            $externalUrls[] = External::create($externalUrl);
+        foreach ($artist['external_urls'] as $type => $url) {
+            $externalUrls[] = External::create($type, $url);;
         }
 
         $followers = Followers::create($artist['followers']);
