@@ -26,6 +26,6 @@ class PagingResponse extends AbstractResponse
      */
     protected function parseResponse(array $content): void
     {
-        $this->paging = Paging::create($content);
+        $this->paging = Paging::build($content);
     }
 }

@@ -75,7 +75,7 @@ class Meta
      *
      * @return \Kerox\Spotify\Model\AudioAnalysis\Meta
      */
-    public static function create(array $meta): self
+    public static function build(array $meta): self
     {
         return new self(
             $meta['analyzer_version'],

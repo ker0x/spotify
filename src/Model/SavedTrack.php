@@ -37,14 +37,14 @@ class SavedTrack
      *
      * @return \Kerox\Spotify\Model\SavedTrack
      */
-    public static function create(array $savedTrack): self
+    public static function build(array $savedTrack): self
     {
         $addedAt = DateTimeImmutable::createFromFormat(
             DateTimeInterface::ATOM,
             $savedTrack['added_at'],
             DateTimeZone::UTC
         );
-        $track = Track::create($savedTrack['track']);
+        $track = Track::build($savedTrack['track']);
 
         return new self($addedAt, $track);
     }

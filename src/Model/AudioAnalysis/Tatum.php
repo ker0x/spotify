@@ -11,7 +11,7 @@ class Tatum extends AbstractAudioAnalysis
      *
      * @return \Kerox\Spotify\Model\AudioAnalysis\Tatum
      */
-    public static function create(array $tatum): self
+    public static function build(array $tatum): self
     {
         return new self($tatum['start'], $tatum['duration'], $tatum['confidence']);
     }

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
+use Kerox\Spotify\Interfaces\TypeInterface;
+
 class Paging
 {
     /**
@@ -75,37 +77,37 @@ class Paging
      *
      * @return \Kerox\Spotify\Model\Paging
      */
-    public static function create(array $paging): self
+    public static function build(array $paging): self
     {
         $items = [];
         foreach ($paging['items'] as $item) {
             if (isset($item['type'])) {
                 $type = $item['type'] ?? null;
-                if ($type === Album::TYPE) {
-                    $items[] = Album::create($item);
+                if ($type === TypeInterface::TYPE_ALBUM) {
+                    $items[] = Album::build($item);
 
                     continue;
                 }
 
-                if ($type === Artist::TYPE) {
-                    $items[] = Artist::create($item);
+                if ($type === TypeInterface::TYPE_ARTIST) {
+                    $items[] = Artist::build($item);
 
                     continue;
                 }
 
-                if ($type === Track::TYPE) {
-                    $items[] = Track::create($item);
+                if ($type === TypeInterface::TYPE_TRACK) {
+                    $items[] = Track::build($item);
 
                     continue;
                 }
 
-                if ($type === Playlist::TYPE) {
-                    $items[] = Playlist::create($item);
+                if ($type === TypeInterface::TYPE_PLAYLIST) {
+                    $items[] = Playlist::build($item);
 
                     continue;
                 }
             } elseif (isset($item['added_at'])) {
-                $items[] = SavedTrack::create($item);
+                $items[] = SavedTrack::build($item);
 
                 continue;
             }

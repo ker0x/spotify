@@ -78,36 +78,41 @@ class AudioAnalysis
         $this->track = $track;
     }
 
-    public static function create(array $audioAnalysis): self
+    /**
+     * @param array $audioAnalysis
+     *
+     * @return \Kerox\Spotify\Model\AudioAnalysis
+     */
+    public static function build(array $audioAnalysis): self
     {
         $bars = [];
         foreach ($audioAnalysis['bars'] as $bar) {
-            $bars[] = Bar::create($bar);
+            $bars[] = Bar::build($bar);
         }
 
         $beats = [];
         foreach ($audioAnalysis['beats'] as $beat) {
-            $beats[] = Beat::create($beat);
+            $beats[] = Beat::build($beat);
         }
 
-        $meta = Meta::create($audioAnalysis['meta']);
+        $meta = Meta::build($audioAnalysis['meta']);
 
         $sections = [];
         foreach ($audioAnalysis['sections'] as $section) {
-            $sections[] = Section::create($section);
+            $sections[] = Section::build($section);
         }
 
         $segments = [];
         foreach ($audioAnalysis['segments'] as $segment) {
-            $segments[] = Segment::create($segment);
+            $segments[] = Segment::build($segment);
         }
 
         $tatums = [];
         foreach ($audioAnalysis['tatums'] as $tatum) {
-            $tatums[] = Tatum::create($tatum);
+            $tatums[] = Tatum::build($tatum);
         }
 
-        $track = TrackAnalysis::create($audioAnalysis['track']);
+        $track = TrackAnalysis::build($audioAnalysis['track']);
 
         return new self($bars, $beats, $meta, $sections, $segments, $tatums, $track);
     }

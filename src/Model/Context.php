@@ -42,14 +42,14 @@ class Context
         $this->uri = $uri;
     }
 
-    public static function create(array $context): self
+    public static function build(array $context): self
     {
         $type = $context['type'];
         $href = $context['href'];
 
         $externalUrls = [];
         foreach ($context['external_urls'] as $type => $url) {
-            $externalUrls[] = External::create($type, $url);;
+            $externalUrls[] = External::build($type, $url);;
         }
 
         $uri = $context['uri'];

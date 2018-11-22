@@ -26,7 +26,7 @@ class Cursor
      *
      * @return \Kerox\Spotify\Model\Cursor
      */
-    public static function create(array $cursor): self
+    public static function build(array $cursor): self
     {
         return new self($cursor['after']);
     }

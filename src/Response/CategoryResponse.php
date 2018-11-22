@@ -23,6 +23,6 @@ class CategoryResponse extends AbstractResponse
      */
     protected function parseResponse(array $content): void
     {
-        $this->category = Category::create($content);
+        $this->category = Category::build($content);
     }
 }

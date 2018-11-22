@@ -45,7 +45,7 @@ class ArtistsResponse extends AbstractResponse
     protected function parseResponse(array $content): void
     {
         foreach ($content['artists'] as $artist) {
-            $this->artists[] = Artist::create($artist);
+            $this->artists[] = Artist::build($artist);
         }
     }
 }

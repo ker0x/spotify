@@ -40,6 +40,6 @@ class FeaturedResponse extends AbstractResponse
     protected function parseResponse(array $content): void
     {
         $this->message = $content['message'];
-        $this->playlists = Paging::create($content['playlists']);
+        $this->playlists = Paging::build($content['playlists']);
     }
 }

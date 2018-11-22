@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
-class Artist
-{
-    public const TYPE = 'artist';
+use Kerox\Spotify\Interfaces\TypeInterface;
 
+class Artist implements TypeInterface
+{
     /**
      * @var array
      */
@@ -31,7 +31,7 @@ class Artist
     /**
      * @var string
      */
-    protected $type = self::TYPE;
+    protected $type = self::TYPE_ARTIST;
 
     /**
      * @var string
@@ -98,14 +98,14 @@ class Artist
      *
      * @return \Kerox\Spotify\Model\Artist
      */
-    public static function create(array $artist): self
+    public static function build(array $artist): self
     {
         $externalUrls = [];
         foreach ($artist['external_urls'] as $type => $url) {
-            $externalUrls[] = External::create($type, $url);;
+            $externalUrls[] = External::build($type, $url);;
         }
 
-        $followers = Followers::create($artist['followers']);
+        $followers = Followers::build($artist['followers']);
 
         $genres = $artist['genres'] ?? null;
         $href = $artist['href'];
@@ -114,7 +114,7 @@ class Artist
         $images = [];
         if (isset($artist['images'])) {
             foreach ($artist['images'] as $image) {
-                $images[] = Image::create($image);
+                $images[] = Image::build($image);
             }
         }
 

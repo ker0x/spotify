@@ -33,7 +33,7 @@ class Copyright
      *
      * @return \Kerox\Spotify\Model\Copyright
      */
-    public static function create(array $copyright): self
+    public static function build(array $copyright): self
     {
         return new self($copyright['text'], $copyright['type']);
     }

@@ -75,7 +75,7 @@ class Segment extends AbstractAudioAnalysis
      *
      * @return \Kerox\Spotify\Model\AudioAnalysis\Segment
      */
-    public static function create(array $segment): self
+    public static function build(array $segment): self
     {
         return new self(
             $segment['start'],

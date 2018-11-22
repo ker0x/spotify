@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
-class Album
-{
-    public const TYPE = 'album';
+use Kerox\Spotify\Interfaces\TypeInterface;
 
+class Album implements TypeInterface
+{
     /**
      * @var \Kerox\Spotify\Model\Artist[]
      */
@@ -71,7 +71,7 @@ class Album
     /**
      * @var string
      */
-    protected $type = self::TYPE;
+    protected $type = self::TYPE_ALBUM;
 
     /**
      * @var string
@@ -186,14 +186,14 @@ class Album
      *
      * @return \Kerox\Spotify\Model\Album
      */
-    public static function create(array $album): self
+    public static function build(array $album): self
     {
         $albumGroup = $album['album_group'] ?? null;
         $albumType = $album['album_type'] ?? null;
 
         $artists = [];
         foreach ($album['artists'] as $artist) {
-            $artists[] = Artist::create($artist);
+            $artists[] = Artist::build($artist);
         }
 
         $availableMarkets = $album['available_markets'];
@@ -201,20 +201,20 @@ class Album
         $copyrights = [];
         if (isset($album['copyrights'])) {
             foreach ($album['copyrights'] as $copyright) {
-                $copyrights[] = Copyright::create($copyright);
+                $copyrights[] = Copyright::build($copyright);
             }
         }
 
         $externalIds = [];
         if (isset($album['external_ids'])) {
             foreach ($album['external_ids'] as $type => $id) {
-                $externalIds[] = External::create($type, $id);
+                $externalIds[] = External::build($type, $id);
             }
         }
 
         $externalUrls = [];
         foreach ($album['external_urls'] as $type => $url) {
-            $externalUrls[] = External::create($type, $url);;
+            $externalUrls[] = External::build($type, $url);;
         }
 
         $genres = $album['genres'] ?? null;
@@ -223,7 +223,7 @@ class Album
 
         $images = [];
         foreach ($album['images'] as $image) {
-            $images[] = Image::create($image);
+            $images[] = Image::build($image);
         }
 
         $label = $album['label'] ?? null;
@@ -237,7 +237,7 @@ class Album
         $tracks = [];
         if (isset($album['tracks'])) {
             foreach ($album['tracks'] as $track) {
-                $tracks[] = Track::create($track);
+                $tracks[] = Track::build($track);
             }
         }
 

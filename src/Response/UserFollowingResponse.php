@@ -26,6 +26,6 @@ class UserFollowingResponse extends AbstractResponse
      */
     protected function parseResponse(array $content): void
     {
-        $this->artists = Paging::create($content['artists']);
+        $this->artists = Paging::build($content['artists']);
     }
 }

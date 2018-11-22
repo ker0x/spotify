@@ -26,6 +26,6 @@ class ArtistResponse extends AbstractResponse
      */
     protected function parseResponse(array $content): void
     {
-        $this->artist = Artist::create($content);
+        $this->artist = Artist::build($content);
     }
 }

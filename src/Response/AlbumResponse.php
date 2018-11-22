@@ -23,6 +23,6 @@ class AlbumResponse extends AbstractResponse
      */
     protected function parseResponse(array $content): void
     {
-        $this->album = Album::create($content);
+        $this->album = Album::build($content);
     }
 }

@@ -26,6 +26,6 @@ class PlaylistsResponse extends AbstractResponse
      */
     protected function parseResponse(array $content): void
     {
-        $this->playlists = Paging::create($content['playlists']);
+        $this->playlists = Paging::build($content['playlists']);
     }
 }

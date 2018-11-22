@@ -33,16 +33,16 @@ class Recommendations
      *
      * @return \Kerox\Spotify\Model\Recommendations
      */
-    public static function create(array $recommendations): self
+    public static function build(array $recommendations): self
     {
         $tracks = [];
         foreach ($recommendations['tracks'] as $track) {
-            $tracks[] = Track::create($track);
+            $tracks[] = Track::build($track);
         }
 
         $seeds = [];
         foreach ($recommendations['seeds'] as $seed) {
-            $seeds[] = RecommandationsSeed::create($seed);
+            $seeds[] = RecommandationsSeed::build($seed);
         }
 
         return new self($tracks, $seeds);

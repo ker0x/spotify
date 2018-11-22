@@ -47,13 +47,13 @@ class Category
      *
      * @return \Kerox\Spotify\Model\Category
      */
-    public static function create(array $category): self
+    public static function build(array $category): self
     {
         $href = $category['href'];
 
         $icons = [];
         foreach ($category['icons'] as $icon) {
-            $icons[] = Image::create($icon);
+            $icons[] = Image::build($icon);
         }
 
         $id = $category['id'];

@@ -44,15 +44,15 @@ class PlayHistory
      *
      * @return \Kerox\Spotify\Model\PlayHistory
      */
-    public static function create(array $playHistory): self
+    public static function build(array $playHistory): self
     {
-        $track = Track::create($playHistory['track']);
+        $track = Track::build($playHistory['track']);
         $playedAt = DateTimeImmutable::createFromFormat(
             DateTimeInterface::ATOM,
             $playHistory['played_at'],
             DateTimeZone::UTC
         );
-        $context = Context::create($playHistory['context']);
+        $context = Context::build($playHistory['context']);
 
         return new self($track, $playedAt, $context);
     }

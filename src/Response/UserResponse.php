@@ -26,6 +26,6 @@ class UserResponse extends AbstractResponse
      */
     protected function parseResponse(array $content): void
     {
-        $this->user = User::create($content);
+        $this->user = User::build($content);
     }
 }

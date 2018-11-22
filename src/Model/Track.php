@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
-class Track
-{
-    public const TYPE = 'track';
+use Kerox\Spotify\Interfaces\TypeInterface;
 
+class Track implements TypeInterface
+{
     /**
      * @var null|\Kerox\Spotify\Model\Album
      */
@@ -96,7 +96,7 @@ class Track
     /**
      * @var string
      */
-    protected $type = self::TYPE;
+    protected $type = self::TYPE_TRACK;
 
     /**
      * @var string
@@ -181,16 +181,16 @@ class Track
      *
      * @return \Kerox\Spotify\Model\Track
      */
-    public static function create(array $track): self
+    public static function build(array $track): self
     {
         $album = null;
         if (isset($track['album'])) {
-            $album = Album::create($track['album']);
+            $album = Album::build($track['album']);
         }
 
         $artists = [];
         foreach ($track['artists'] as $artist) {
-            $artists[] = Artist::create($artist);
+            $artists[] = Artist::build($artist);
         }
 
         $availableMarkets = $track['available_markets'];
@@ -201,20 +201,20 @@ class Track
         $externalIds = [];
         if (isset($album['external_ids'])) {
             foreach ($album['external_ids'] as $type => $url) {
-                $externalUrls[] = External::create($type, $url);;
+                $externalUrls[] = External::build($type, $url);;
             }
         }
 
         $externalUrls = [];
         foreach ($album['external_urls'] as $externalUrl) {
-            $externalUrls[] = External::create($externalUrl);
+            $externalUrls[] = External::build($externalUrl);
         }
 
         $href = $track['href'];
         $id = $track['id'];
 
         $isPlayable = $track['is_playable'];
-        $linkedFrom = TrackLink::create($track['linked_from']);
+        $linkedFrom = TrackLink::build($track['linked_from']);
 
         $restrictions = $track['restrictions'];
         $name = $track['name'];

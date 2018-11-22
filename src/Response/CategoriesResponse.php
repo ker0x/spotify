@@ -26,6 +26,6 @@ class CategoriesResponse extends AbstractResponse
      */
     protected function parseResponse(array $content): void
     {
-        $this->categories = Paging::create($content['categories']);
+        $this->categories = Paging::build($content['categories']);
     }
 }

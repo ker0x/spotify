@@ -11,7 +11,7 @@ class Bar extends AbstractAudioAnalysis
      *
      * @return \Kerox\Spotify\Model\AudioAnalysis\Bar
      */
-    public static function create(array $bar): self
+    public static function build(array $bar): self
     {
         return new self($bar['start'], $bar['duration'], $bar['confidence']);
     }

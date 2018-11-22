@@ -40,7 +40,7 @@ class Image
      *
      * @return \Kerox\Spotify\Model\Image
      */
-    public static function create(array $image): self
+    public static function build(array $image): self
     {
         $url = $image['url'];
         $height = $image['height'] ?? null;

@@ -45,7 +45,7 @@ class AlbumsResponse extends AbstractResponse
     protected function parseResponse(array $content): void
     {
         foreach ($content['albums'] as $album) {
-            $this->albums[] = Album::create($album);
+            $this->albums[] = Album::build($album);
         }
     }
 }

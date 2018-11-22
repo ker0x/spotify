@@ -218,7 +218,7 @@ class Track
      *
      * @return \Kerox\Spotify\Model\AudioAnalysis\Track
      */
-    public static function create(array $track): self
+    public static function build(array $track): self
     {
         return new self(
             $track['duration'],

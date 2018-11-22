@@ -99,7 +99,7 @@ class Section extends AbstractAudioAnalysis
      *
      * @return \Kerox\Spotify\Model\AudioAnalysis\Section
      */
-    public static function create(array $section): self
+    public static function build(array $section): self
     {
         return new self(
             $section['start'],

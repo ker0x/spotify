@@ -45,7 +45,7 @@ class TracksResponse extends AbstractResponse
     protected function parseResponse(array $content): void
     {
         foreach ($content['tracks'] as $track) {
-            $this->tracks[] = Track::create($track);
+            $this->tracks[] = Track::build($track);
         }
     }
 }

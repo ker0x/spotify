@@ -67,7 +67,7 @@ class RecommandationsSeed
      *
      * @return \Kerox\Spotify\Model\RecommandationsSeed
      */
-    public static function create(array $recommendationsSeed): self
+    public static function build(array $recommendationsSeed): self
     {
         $afterFilteringSize = $recommendationsSeed['afterFilteringSize'];
         $afterRelinkingSize = $recommendationsSeed['afterRelinkingSize'];

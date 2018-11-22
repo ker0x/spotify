@@ -115,23 +115,23 @@ class User
      *
      * @return \Kerox\Spotify\Model\User
      */
-    public static function create(array $user): self
+    public static function build(array $user): self
     {
         $displayName = $user['display_name'];
 
         $externalUrls = [];
         foreach ($user['external_urls'] as $type => $url) {
-            $externalUrls[] = External::create($type, $url);;
+            $externalUrls[] = External::build($type, $url);;
         }
 
-        $followers = Followers::create($user['followers']);
+        $followers = Followers::build($user['followers']);
 
         $href = $user['href'];
         $id = $user['id'];
 
         $images = [];
         foreach ($user['images'] as $image) {
-            $images[] = Image::create($image);
+            $images[] = Image::build($image);
         }
 
         $type = $user['type'];

@@ -33,7 +33,7 @@ class Followers
      *
      * @return \Kerox\Spotify\Model\Followers
      */
-    public static function create(array $followers): self
+    public static function build(array $followers): self
     {
         $href = $followers['href'];
         $total = $followers['total'];

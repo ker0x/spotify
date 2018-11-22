@@ -26,6 +26,6 @@ class TrackResponse extends AbstractResponse
      */
     protected function parseResponse(array $content): void
     {
-        $this->track = Track::create($content);
+        $this->track = Track::build($content);
     }
 }

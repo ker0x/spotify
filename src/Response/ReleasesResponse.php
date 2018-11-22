@@ -26,6 +26,6 @@ class ReleasesResponse extends AbstractResponse
      */
     protected function parseResponse(array $content): void
     {
-        $this->albums = Paging::create($content['albums']);
+        $this->albums = Paging::build($content['albums']);
     }
 }

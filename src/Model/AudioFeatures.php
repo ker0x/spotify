@@ -24,7 +24,7 @@ class AudioFeatures
     /**
      * @var int
      */
-    protected $duractionMs;
+    protected $durationMs;
 
     /**
      * @var float
@@ -102,7 +102,7 @@ class AudioFeatures
      * @param float  $acousticness
      * @param string $analysisUrl
      * @param float  $danceability
-     * @param int    $duractionMs
+     * @param int    $durationMs
      * @param float  $energy
      * @param string $id
      * @param float  $instrumentalness
@@ -122,7 +122,7 @@ class AudioFeatures
         float $acousticness,
         string $analysisUrl,
         float $danceability,
-        int $duractionMs,
+        int $durationMs,
         float $energy,
         string $id,
         float $instrumentalness,
@@ -141,7 +141,7 @@ class AudioFeatures
         $this->acousticness = $acousticness;
         $this->analysisUrl = $analysisUrl;
         $this->danceability = $danceability;
-        $this->duractionMs = $duractionMs;
+        $this->durationMs = $durationMs;
         $this->energy = $energy;
         $this->id = $id;
         $this->instrumentalness = $instrumentalness;
@@ -163,7 +163,7 @@ class AudioFeatures
      *
      * @return \Kerox\Spotify\Model\AudioFeatures
      */
-    public static function create(array $audioFeatures): self
+    public static function build(array $audioFeatures): self
     {
         $acousticness = $audioFeatures['acousticness'];
         $analysisUrl = $audioFeatures['analysis_url'];
@@ -233,9 +233,9 @@ class AudioFeatures
     /**
      * @return int
      */
-    public function getDuractionMs(): int
+    public function getDurationMs(): int
     {
-        return $this->duractionMs;
+        return $this->durationMs;
     }
 
     /**

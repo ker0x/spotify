@@ -11,7 +11,7 @@ class Beat extends AbstractAudioAnalysis
      *
      * @return \Kerox\Spotify\Model\AudioAnalysis\Beat
      */
-    public static function create(array $beat): self
+    public static function build(array $beat): self
     {
         return new self($beat['start'], $beat['duration'], $beat['confidence']);
     }

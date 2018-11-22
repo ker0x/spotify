@@ -34,7 +34,7 @@ class External
      *
      * @return \Kerox\Spotify\Model\External
      */
-    public static function create(string $key, string $value): self
+    public static function build(string $key, string $value): self
     {
         return new self($key, $value);
     }
