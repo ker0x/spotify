@@ -49,7 +49,7 @@ class Context
 
         $externalUrls = [];
         foreach ($context['external_urls'] as $type => $url) {
-            $externalUrls[] = External::build($type, $url);;
+            $externalUrls[] = External::build($type, $url);
         }
 
         $uri = $context['uri'];

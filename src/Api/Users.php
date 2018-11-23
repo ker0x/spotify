@@ -8,7 +8,6 @@ use Fig\Http\Message\RequestMethodInterface;
 use Kerox\Spotify\Request\Request;
 use Kerox\Spotify\Response\PagingResponse;
 use Kerox\Spotify\Response\UserResponse;
-use Psr\Http\Message\ResponseInterface;
 
 class Users extends AbstractApi
 {
@@ -17,9 +16,9 @@ class Users extends AbstractApi
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return \Kerox\Spotify\Response\UserResponse
      */
-    public function get(string $id): ResponseInterface
+    public function get(string $id): UserResponse
     {
         $uri = $this->createUri(sprintf('users/%s', $id));
 
@@ -35,9 +34,9 @@ class Users extends AbstractApi
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return \Kerox\Spotify\Response\PagingResponse
      */
-    public function playlists(string $id, array $queryParameters = []): ResponseInterface
+    public function playlists(string $id, array $queryParameters = []): PagingResponse
     {
         $uri = $this->createUri(sprintf('users/%s/playlists', $id), $queryParameters);
 

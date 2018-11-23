@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kerox\Spotify\Response;
 
 use Kerox\Spotify\Model\Image;

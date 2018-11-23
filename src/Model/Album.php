@@ -214,7 +214,7 @@ class Album implements TypeInterface
 
         $externalUrls = [];
         foreach ($album['external_urls'] as $type => $url) {
-            $externalUrls[] = External::build($type, $url);;
+            $externalUrls[] = External::build($type, $url);
         }
 
         $genres = $album['genres'] ?? null;

@@ -102,7 +102,7 @@ class Artist implements TypeInterface
     {
         $externalUrls = [];
         foreach ($artist['external_urls'] as $type => $url) {
-            $externalUrls[] = External::build($type, $url);;
+            $externalUrls[] = External::build($type, $url);
         }
 
         $followers = Followers::build($artist['followers']);

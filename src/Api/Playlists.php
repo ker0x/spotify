@@ -25,9 +25,9 @@ class Playlists extends AbstractApi
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return \Kerox\Spotify\Response\PlaylistResponse
      */
-    public function create(string $id, Playlist $playlist): ResponseInterface
+    public function create(string $id, Playlist $playlist): PlaylistResponse
     {
         $uri = $this->createUri(sprintf('users/%s/playlists', $id));
 
@@ -59,9 +59,9 @@ class Playlists extends AbstractApi
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return \Kerox\Spotify\Response\ArtistResponse
      */
-    public function get(string $id): ResponseInterface
+    public function get(string $id): ArtistResponse
     {
         $uri = $this->createUri(sprintf('playlists/%s', $id));
 
@@ -111,9 +111,9 @@ class Playlists extends AbstractApi
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return \Kerox\Spotify\Response\PagingResponse
      */
-    public function me(array $queryParameters = []): ResponseInterface
+    public function me(array $queryParameters = []): PagingResponse
     {
         $uri = $this->createUri('me/playlists', $queryParameters);
 
@@ -129,9 +129,9 @@ class Playlists extends AbstractApi
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return \Kerox\Spotify\Response\PagingResponse
      */
-    public function user(string $id, array $queryParameters = []): ResponseInterface
+    public function user(string $id, array $queryParameters = []): PagingResponse
     {
         $uri = $this->createUri(sprintf('users/%s/playlists', $id), $queryParameters);
 
@@ -147,9 +147,9 @@ class Playlists extends AbstractApi
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return \Kerox\Spotify\Response\PagingResponse
      */
-    public function tracks(string $id, array $queryParameters = []): ResponseInterface
+    public function tracks(string $id, array $queryParameters = []): PagingResponse
     {
         $uri = $this->createUri(sprintf('playlists/%s/tracks', $id), $queryParameters);
 
@@ -232,9 +232,9 @@ class Playlists extends AbstractApi
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return \Kerox\Spotify\Response\ImagesResponse
      */
-    public function cover(string $id): ResponseInterface
+    public function cover(string $id): ImagesResponse
     {
         $uri = $this->createUri(sprintf('playlists/%s/images', $id));
 
@@ -257,7 +257,7 @@ class Playlists extends AbstractApi
         $uri = $this->createUri(sprintf('playlists/%s/images', $id));
 
         $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_PUT, $image, [
-            'Content-Type' => 'image/jpeg'
+            'Content-Type' => 'image/jpeg',
         ]);
 
         return $this->client->sendRequest($request);

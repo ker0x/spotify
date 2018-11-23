@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kerox\Spotify\Model\Playlist;
 
 use JsonSerializable;

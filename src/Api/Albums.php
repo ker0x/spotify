@@ -19,9 +19,9 @@ class Albums extends AbstractApi
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return \Kerox\Spotify\Response\AlbumResponse
      */
-    public function get(string $id, array $queryParameters = []): ResponseInterface
+    public function get(string $id, array $queryParameters = []): AlbumResponse
     {
         $uri = $this->createUri(sprintf('albums/%s', $id), $queryParameters);
 
@@ -37,9 +37,9 @@ class Albums extends AbstractApi
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return \Kerox\Spotify\Response\PagingResponse
      */
-    public function tracks(string $id, array $queryParameters = []): ResponseInterface
+    public function tracks(string $id, array $queryParameters = []): PagingResponse
     {
         $uri = $this->createUri(sprintf('albums/%s/tracks', $id), $queryParameters);
 
@@ -54,9 +54,9 @@ class Albums extends AbstractApi
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return \Kerox\Spotify\Response\AlbumsResponse
      */
-    public function several(array $queryParameters = []): ResponseInterface
+    public function several(array $queryParameters = []): AlbumsResponse
     {
         $uri = $this->createUri('albums', $queryParameters);
 
@@ -70,9 +70,10 @@ class Albums extends AbstractApi
      * @param array $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     * @return \Psr\Http\Message\ResponseInterface
+     *
+     * @return \Kerox\Spotify\Response\PagingResponse
      */
-    public function saved(array $queryParameters = []): ResponseInterface
+    public function saved(array $queryParameters = []): PagingResponse
     {
         $uri = $this->createUri('me/albums', $queryParameters);
 

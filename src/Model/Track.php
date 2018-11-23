@@ -201,7 +201,7 @@ class Track implements TypeInterface
         $externalIds = [];
         if (isset($album['external_ids'])) {
             foreach ($album['external_ids'] as $type => $url) {
-                $externalUrls[] = External::build($type, $url);;
+                $externalUrls[] = External::build($type, $url);
             }
         }
 

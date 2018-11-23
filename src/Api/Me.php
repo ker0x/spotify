@@ -8,7 +8,6 @@ use Fig\Http\Message\RequestMethodInterface;
 use Kerox\Spotify\Interfaces\TypeInterface;
 use Kerox\Spotify\Request\Request;
 use Kerox\Spotify\Response\PagingResponse;
-use Kerox\Spotify\Response\PlaylistsResponse;
 use Kerox\Spotify\Response\UserFollowingResponse;
 use Kerox\Spotify\Response\UserResponse;
 use Psr\Http\Message\ResponseInterface;
@@ -18,9 +17,9 @@ class Me extends AbstractApi implements TypeInterface
     /**
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return \Kerox\Spotify\Response\UserResponse
      */
-    public function get(): ResponseInterface
+    public function get(): UserResponse
     {
         $uri = $this->createUri('me');
 
@@ -35,9 +34,9 @@ class Me extends AbstractApi implements TypeInterface
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return \Kerox\Spotify\Response\PagingResponse
      */
-    public function playlists(array $queryParameters = []): ResponseInterface
+    public function playlists(array $queryParameters = []): PagingResponse
     {
         $uri = $this->createUri('me/playlists', $queryParameters);
 
@@ -53,9 +52,10 @@ class Me extends AbstractApi implements TypeInterface
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return \Kerox\Spotify\Response\PagingResponse
      */
-    public function top(string $type = self::TYPE_ARTISTS, array $queryParameters = []): ResponseInterface {
+    public function top(string $type = self::TYPE_ARTISTS, array $queryParameters = []): PagingResponse
+    {
         $uri = $this->createUri(sprintf('me/top/%s', $type), $queryParameters);
 
         $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
@@ -77,7 +77,7 @@ class Me extends AbstractApi implements TypeInterface
 
         return $followClass->add([
             self::PARAMETER_IDS => $ids,
-            self::PARAMETER_TYPE => Follow::TYPE_USER
+            self::PARAMETER_TYPE => Follow::TYPE_USER,
         ]);
     }
 
@@ -94,7 +94,7 @@ class Me extends AbstractApi implements TypeInterface
 
         return $followClass->delete([
             self::PARAMETER_IDS => $ids,
-            self::PARAMETER_TYPE => Follow::TYPE_USER
+            self::PARAMETER_TYPE => Follow::TYPE_USER,
         ]);
     }
 
@@ -103,9 +103,9 @@ class Me extends AbstractApi implements TypeInterface
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return \Kerox\Spotify\Response\UserFollowingResponse
      */
-    public function following(array $queryParameters = []): ResponseInterface
+    public function following(array $queryParameters = []): UserFollowingResponse
     {
         $uri = $this->createUri('me/following', $queryParameters);
 

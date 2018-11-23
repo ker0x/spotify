@@ -58,7 +58,7 @@ class TrackLink implements TypeInterface
     {
         $externalUrls = [];
         foreach ($trackLink['external_urls'] as $type => $url) {
-            $externalUrls[] = External::build($type, $url);;
+            $externalUrls[] = External::build($type, $url);
         }
 
         $href = $trackLink['href'];

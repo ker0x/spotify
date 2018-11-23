@@ -15,8 +15,8 @@ use Kerox\Spotify\Api\Playlists;
 use Kerox\Spotify\Api\Search;
 use Kerox\Spotify\Api\Tracks;
 use Kerox\Spotify\Api\Users;
+use Kerox\Spotify\Response\SearchResponse;
 use Psr\Http\Client\ClientInterface;
-use Psr\Http\Message\ResponseInterface;
 
 final class Spotify
 {
@@ -120,9 +120,10 @@ final class Spotify
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return \Kerox\Spotify\Response\SearchResponse
      */
-    public function search(array $queryParameters = []): ResponseInterface {
+    public function search(array $queryParameters = []): SearchResponse
+    {
         $search = new Search($this->oauthToken, $this->client, $this->baseUri);
 
         return $search($queryParameters);

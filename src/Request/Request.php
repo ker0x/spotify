@@ -22,7 +22,7 @@ class Request extends \Zend\Diactoros\Request
         string $oauthToken,
         UriInterface $uri,
         string $method,
-        $body = null,
+        $body = 'php://temp',
         array $headers = []
     ) {
         $headers += ['Authorization' => sprintf('Bearer %s', $oauthToken)];

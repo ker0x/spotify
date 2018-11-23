@@ -121,7 +121,7 @@ class User
 
         $externalUrls = [];
         foreach ($user['external_urls'] as $type => $url) {
-            $externalUrls[] = External::build($type, $url);;
+            $externalUrls[] = External::build($type, $url);
         }
 
         $followers = Followers::build($user['followers']);

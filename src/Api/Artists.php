@@ -20,9 +20,9 @@ class Artists extends AbstractApi
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return \Kerox\Spotify\Response\ArtistResponse
      */
-    public function get(string $id): ResponseInterface
+    public function get(string $id): ArtistResponse
     {
         $uri = $this->createUri(sprintf('artists/%s', $id));
 
@@ -38,9 +38,9 @@ class Artists extends AbstractApi
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return \Kerox\Spotify\Response\PagingResponse
      */
-    public function albums(string $id, array $queryParameters = []): ResponseInterface
+    public function albums(string $id, array $queryParameters = []): PagingResponse
     {
         $uri = $this->createUri(sprintf('artists/%s', $id), $queryParameters);
 
@@ -56,9 +56,9 @@ class Artists extends AbstractApi
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return \Kerox\Spotify\Response\TracksResponse
      */
-    public function topTracks(string $id, array $queryParameters = []): ResponseInterface
+    public function topTracks(string $id, array $queryParameters = []): TracksResponse
     {
         $uri = $this->createUri(sprintf('artists/%s/top-tracks', $id), $queryParameters);
 
@@ -73,9 +73,9 @@ class Artists extends AbstractApi
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return \Kerox\Spotify\Response\ArtistsResponse
      */
-    public function related(string $id): ResponseInterface
+    public function related(string $id): ArtistsResponse
     {
         $uri = $this->createUri(sprintf('artists/%s/related-artists', $id));
 
@@ -90,9 +90,9 @@ class Artists extends AbstractApi
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return \Kerox\Spotify\Response\ArtistsResponse
      */
-    public function several(array $queryParameters = []): ResponseInterface
+    public function several(array $queryParameters = []): ArtistsResponse
     {
         $uri = $this->createUri('artists', $queryParameters);
 

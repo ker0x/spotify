@@ -54,7 +54,6 @@ class Playlist implements TypeInterface, JsonSerializable
      */
     protected $images;
 
-
     /**
      * @var \Kerox\Spotify\Model\User
      */
@@ -156,7 +155,7 @@ class Playlist implements TypeInterface, JsonSerializable
 
         $externalUrls = [];
         foreach ($playlist['external_urls'] as $type => $url) {
-            $externalUrls[] = External::build($type, $url);;
+            $externalUrls[] = External::build($type, $url);
         }
 
         $followers = Followers::build($playlist['followers']);
