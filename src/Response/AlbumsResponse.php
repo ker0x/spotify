@@ -24,11 +24,11 @@ class AlbumsResponse extends AbstractResponse
     /**
      * @param int $albumNumber
      *
-     * @return \Kerox\Spotify\Model\Album
+     * @return null|\Kerox\Spotify\Model\Album
      */
-    public function getAlbum(int $albumNumber): Album
+    public function getAlbum(int $albumNumber): ?Album
     {
-        return $this->albums[++$albumNumber];
+        return $this->albums[$albumNumber] ?? null;
     }
 
     /**

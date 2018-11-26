@@ -39,12 +39,12 @@ class Artist implements TypeInterface
     protected $uri;
 
     /**
-     * @var \Kerox\Spotify\Model\Followers|null
+     * @var null|\Kerox\Spotify\Model\Followers
      */
     protected $followers;
 
     /**
-     * @var null|string
+     * @var array
      */
     protected $genres;
 
@@ -67,7 +67,7 @@ class Artist implements TypeInterface
      * @param string                              $name
      * @param string                              $uri
      * @param \Kerox\Spotify\Model\Followers|null $followers
-     * @param null|string                         $genres
+     * @param array                               $genres
      * @param array                               $images
      * @param int|null                            $popularity
      */
@@ -78,7 +78,7 @@ class Artist implements TypeInterface
         string $name,
         string $uri,
         ?Followers $followers = null,
-        ?string $genres = null,
+        array $genres = [],
         array $images = [],
         ?int $popularity = null
     ) {
@@ -105,9 +105,12 @@ class Artist implements TypeInterface
             $externalUrls[] = External::build($type, $url);
         }
 
-        $followers = Followers::build($artist['followers']);
+        $followers = null;
+        if (isset($artist['followers'])) {
+            $followers = Followers::build($artist['followers']);
+        }
 
-        $genres = $artist['genres'] ?? null;
+        $genres = $artist['genres'] ?? [];
         $href = $artist['href'];
         $id = $artist['id'];
 
@@ -174,7 +177,7 @@ class Artist implements TypeInterface
     }
 
     /**
-     * @return \Kerox\Spotify\Model\Followers|null
+     * @return null|\Kerox\Spotify\Model\Followers
      */
     public function getFollowers(): ?Followers
     {
@@ -182,9 +185,9 @@ class Artist implements TypeInterface
     }
 
     /**
-     * @return null|string
+     * @return array
      */
-    public function getGenres(): ?string
+    public function getGenres(): array
     {
         return $this->genres;
     }

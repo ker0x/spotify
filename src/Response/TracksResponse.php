@@ -24,11 +24,11 @@ class TracksResponse extends AbstractResponse
     /**
      * @param int $artistNumber
      *
-     * @return \Kerox\Spotify\Model\Track
+     * @return null|\Kerox\Spotify\Model\Track
      */
-    public function getTrack(int $artistNumber): Track
+    public function getTrack(int $artistNumber): ?Track
     {
-        return $this->tracks[++$artistNumber];
+        return $this->tracks[$artistNumber] ?? null;
     }
 
     /**

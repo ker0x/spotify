@@ -24,7 +24,7 @@ class Paging
     protected $limit;
 
     /**
-     * @var string
+     * @var null|string
      */
     protected $next;
 
@@ -34,7 +34,7 @@ class Paging
     protected $offset;
 
     /**
-     * @var string
+     * @var null|string
      */
     protected $previous;
 
@@ -58,9 +58,9 @@ class Paging
         string $href,
         array $items,
         int $limit,
-        string $next,
+        ?string $next,
         int $offset,
-        string $previous,
+        ?string $previous,
         int $total
     ) {
         $this->href = $href;
@@ -160,7 +160,7 @@ class Paging
     /**
      * @return string
      */
-    public function getNext(): string
+    public function getNext(): ?string
     {
         return $this->next;
     }
@@ -176,7 +176,7 @@ class Paging
     /**
      * @return string
      */
-    public function getPrevious(): string
+    public function getPrevious(): ?string
     {
         return $this->previous;
     }

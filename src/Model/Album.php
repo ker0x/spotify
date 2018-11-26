@@ -109,33 +109,33 @@ class Album implements TypeInterface
     protected $label;
 
     /**
-     * @var null|\Kerox\Spotify\Model\Track[]
+     * @var null|\Kerox\Spotify\Model\Paging
      */
     protected $tracks;
 
     /**
      * Album constructor.
      *
-     * @param array       $artists
-     * @param array       $availableMarkets
-     * @param array       $externalUrls
-     * @param string      $href
-     * @param string      $id
-     * @param array       $images
-     * @param string      $name
-     * @param string      $releaseDate
-     * @param string      $releaseDatePrecision
-     * @param int         $totalTracks
-     * @param string      $restrictions
-     * @param string      $uri
-     * @param null|string $albumType
-     * @param null|string $albumGroup
-     * @param array       $copyrights
-     * @param array       $externalIds
-     * @param null|string $genres
-     * @param null|string $label
-     * @param int|null    $popularity
-     * @param array       $tracks
+     * @param array                            $artists
+     * @param array                            $availableMarkets
+     * @param array                            $externalUrls
+     * @param string                           $href
+     * @param string                           $id
+     * @param array                            $images
+     * @param string                           $name
+     * @param string                           $releaseDate
+     * @param string                           $releaseDatePrecision
+     * @param int                              $totalTracks
+     * @param null|string                      $restrictions
+     * @param string                           $uri
+     * @param null|\Kerox\Spotify\Model\Paging $tracks
+     * @param null|string                      $albumType
+     * @param null|string                      $albumGroup
+     * @param array                            $copyrights
+     * @param array                            $externalIds
+     * @param array                            $genres
+     * @param null|string                      $label
+     * @param int|null                         $popularity
      */
     public function __construct(
         array $artists,
@@ -148,16 +148,16 @@ class Album implements TypeInterface
         string $releaseDate,
         string $releaseDatePrecision,
         int $totalTracks,
-        string $restrictions,
+        ?string $restrictions,
         string $uri,
+        ?Paging $tracks = null,
         ?string $albumType = null,
         ?string $albumGroup = null,
         array $copyrights = [],
         array $externalIds = [],
-        ?string $genres = null,
+        array $genres = [],
         ?string $label = null,
-        ?int $popularity = null,
-        array $tracks = []
+        ?int $popularity = null
     ) {
         $this->artists = $artists;
         $this->availableMarkets = $availableMarkets;
@@ -171,14 +171,14 @@ class Album implements TypeInterface
         $this->totalTracks = $totalTracks;
         $this->restrictions = $restrictions;
         $this->uri = $uri;
-        $this->albumGroup = $albumGroup;
+        $this->tracks = $tracks;
         $this->albumType = $albumType;
+        $this->albumGroup = $albumGroup;
         $this->copyrights = $copyrights;
         $this->externalIds = $externalIds;
         $this->genres = $genres;
         $this->label = $label;
         $this->popularity = $popularity;
-        $this->tracks = $tracks;
     }
 
     /**
@@ -196,7 +196,7 @@ class Album implements TypeInterface
             $artists[] = Artist::build($artist);
         }
 
-        $availableMarkets = $album['available_markets'];
+        $availableMarkets = $album['available_markets'] ?? [];
 
         $copyrights = [];
         if (isset($album['copyrights'])) {
@@ -217,7 +217,7 @@ class Album implements TypeInterface
             $externalUrls[] = External::build($type, $url);
         }
 
-        $genres = $album['genres'] ?? null;
+        $genres = $album['genres'] ?? [];
         $href = $album['href'];
         $id = $album['id'];
 
@@ -232,13 +232,11 @@ class Album implements TypeInterface
         $releaseDate = $album['release_date'];
         $releaseDatePrecision = $album['release_date_precision'];
         $totalTracks = $album['total_tracks'];
-        $restrictions = $album['restrictions'];
+        $restrictions = $album['restrictions'] ?? null;
 
-        $tracks = [];
+        $tracks = null;
         if (isset($album['tracks'])) {
-            foreach ($album['tracks'] as $track) {
-                $tracks[] = Track::build($track);
-            }
+            $tracks = Paging::build($album['tracks']);
         }
 
         $uri = $album['uri'];
@@ -256,14 +254,14 @@ class Album implements TypeInterface
             $totalTracks,
             $restrictions,
             $uri,
-            $albumGroup,
+            $tracks,
             $albumType,
+            $albumGroup,
             $copyrights,
             $externalIds,
             $genres,
             $label,
-            $popularity,
-            $tracks
+            $popularity
         );
     }
 
@@ -278,7 +276,7 @@ class Album implements TypeInterface
     /**
      * @return array
      */
-    public function getAvailableMarkets(): array
+    public function getAvailableMarkets(): ?array
     {
         return $this->availableMarkets;
     }
@@ -353,9 +351,9 @@ class Album implements TypeInterface
     }
 
     /**
-     * @return string
+     * @return null|string
      */
-    public function getRestrictions(): string
+    public function getRestrictions(): ?string
     {
         return $this->restrictions;
     }
@@ -409,9 +407,9 @@ class Album implements TypeInterface
     }
 
     /**
-     * @return null|string
+     * @return array
      */
-    public function getGenres(): ?string
+    public function getGenres(): array
     {
         return $this->genres;
     }
@@ -425,9 +423,9 @@ class Album implements TypeInterface
     }
 
     /**
-     * @return \Kerox\Spotify\Model\Track[]|null
+     * @return null|\Kerox\Spotify\Model\Paging
      */
-    public function getTracks(): ?array
+    public function getTracks(): ?Paging
     {
         return $this->tracks;
     }
