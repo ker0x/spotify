@@ -64,7 +64,7 @@ class Track implements TypeInterface
     protected $isPlayable;
 
     /**
-     * @var \Kerox\Spotify\Model\TrackLink
+     * @var null|\Kerox\Spotify\Model\TrackLink
      */
     protected $linkedForm;
 
@@ -143,7 +143,7 @@ class Track implements TypeInterface
         string $href,
         string $id,
         bool $isPlayable,
-        TrackLink $linkedForm,
+        ?TrackLink $linkedForm,
         array $restrictions,
         string $name,
         string $previewUrl,
@@ -193,37 +193,41 @@ class Track implements TypeInterface
             $artists[] = Artist::build($artist);
         }
 
-        $availableMarkets = $track['available_markets'];
+        $availableMarkets = $track['available_markets'] ?? [];
         $discNumber = $track['disc_number'];
         $durationMs = $track['duration_ms'];
         $explicit = $track['explicit'];
 
         $externalIds = [];
-        if (isset($album['external_ids'])) {
-            foreach ($album['external_ids'] as $type => $url) {
+        if (isset($track['external_ids'])) {
+            foreach ($track['external_ids'] as $type => $url) {
                 $externalUrls[] = External::build($type, $url);
             }
         }
 
         $externalUrls = [];
-        foreach ($album['external_urls'] as $externalUrl) {
-            $externalUrls[] = External::build($externalUrl);
+        foreach ($track['external_urls'] as $type => $url) {
+            $externalUrls[] = External::build($type, $url);
         }
 
         $href = $track['href'];
         $id = $track['id'];
 
+        $isLocal = $track['is_local'];
         $isPlayable = $track['is_playable'];
-        $linkedFrom = TrackLink::build($track['linked_from']);
 
-        $restrictions = $track['restrictions'];
+        $linkedFrom = null;
+        if (isset($track['linked_from'])) {
+            $linkedFrom = TrackLink::build($track['linked_from']);
+        }
+
+        $restrictions = $track['restrictions'] ?? [];
         $name = $track['name'];
         $popularity = $track['popularity'] ?? null;
         $previewUrl = $track['preview_url'];
         $trackNumber = $track['track_number'];
         $type = $track['type'];
         $uri = $track['uri'];
-        $isLocal = $track['is_local'];
 
         return new self(
             $artists,
@@ -338,9 +342,9 @@ class Track implements TypeInterface
     }
 
     /**
-     * @return \Kerox\Spotify\Model\TrackLink
+     * @return null|\Kerox\Spotify\Model\TrackLink
      */
-    public function getLinkedForm(): TrackLink
+    public function getLinkedForm(): ?TrackLink
     {
         return $this->linkedForm;
     }

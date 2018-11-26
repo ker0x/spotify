@@ -1,0 +1,804 @@
+{
+  "artists": [
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/0jnsk9HBra6NMjO2oANoPY"
+      },
+      "followers": {
+        "href": null,
+        "total": 6528442
+      },
+      "genres": [
+        "dance pop",
+        "edm",
+        "pop",
+        "pop rap"
+      ],
+      "href": "https://api.spotify.com/v1/artists/0jnsk9HBra6NMjO2oANoPY",
+      "id": "0jnsk9HBra6NMjO2oANoPY",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/2d0b5f483c7ed95b7c3c63147c3d38f9366b2c21",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/98f6070f467c5b95e09505aeda1aa5b48d1a133d",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/d1a78628d48a855d51ab7d74b6d78c22ee8a2b63",
+          "width": 160
+        }
+      ],
+      "name": "Flo Rida",
+      "popularity": 81,
+      "type": "artist",
+      "uri": "spotify:artist:0jnsk9HBra6NMjO2oANoPY"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/6MF9fzBmfXghAz953czmBC"
+      },
+      "followers": {
+        "href": null,
+        "total": 1368862
+      },
+      "genres": [
+        "dance pop",
+        "edm",
+        "pop",
+        "pop rap",
+        "post-teen pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/6MF9fzBmfXghAz953czmBC",
+      "id": "6MF9fzBmfXghAz953czmBC",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/dedc6fcfc7ec914af993c783a60a8f34bdcfaa01",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/2c156e614f24740952bd2f216df2ff34f0b285bb",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/f32759120c9bdcecd757c96be04e5e8a3f8f8b8b",
+          "width": 160
+        }
+      ],
+      "name": "Taio Cruz",
+      "popularity": 71,
+      "type": "artist",
+      "uri": "spotify:artist:6MF9fzBmfXghAz953czmBC"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/085pc2PYOi8bGKj0PNjekA"
+      },
+      "followers": {
+        "href": null,
+        "total": 2353765
+      },
+      "genres": [
+        "dance pop",
+        "pop",
+        "pop rap",
+        "post-teen pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/085pc2PYOi8bGKj0PNjekA",
+      "id": "085pc2PYOi8bGKj0PNjekA",
+      "images": [
+        {
+          "height": 1000,
+          "url": "https://i.scdn.co/image/d9e6047498dc100048c4597be2aa1d20ebf6df40",
+          "width": 1000
+        },
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ffb9f989856095ea16e38a0898e424294b88903c",
+          "width": 640
+        },
+        {
+          "height": 200,
+          "url": "https://i.scdn.co/image/9158bbe4ccd59e97461be0714563b6a5a413af84",
+          "width": 200
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/761fa85a5fda519a84a8fb12a353cbd8431666cb",
+          "width": 64
+        }
+      ],
+      "name": "will.i.am",
+      "popularity": 75,
+      "type": "artist",
+      "uri": "spotify:artist:085pc2PYOi8bGKj0PNjekA"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/3sgFRtyBnxXD5ESfmbK4dl"
+      },
+      "followers": {
+        "href": null,
+        "total": 2914340
+      },
+      "genres": [
+        "dance pop",
+        "pop rap"
+      ],
+      "href": "https://api.spotify.com/v1/artists/3sgFRtyBnxXD5ESfmbK4dl",
+      "id": "3sgFRtyBnxXD5ESfmbK4dl",
+      "images": [
+        {
+          "height": 675,
+          "url": "https://i.scdn.co/image/2d75f5222d8a92d5e12419ae3e5238261f943df6",
+          "width": 1000
+        },
+        {
+          "height": 432,
+          "url": "https://i.scdn.co/image/a91b72640d92fa70bfc7556d38114b3f010c5cc5",
+          "width": 640
+        },
+        {
+          "height": 135,
+          "url": "https://i.scdn.co/image/9b592e53e0ae00516c65580a254113bc7d0933e2",
+          "width": 200
+        },
+        {
+          "height": 43,
+          "url": "https://i.scdn.co/image/e7a7f70dc456d6844e2c15b44c4ff1853aac54f8",
+          "width": 64
+        }
+      ],
+      "name": "LMFAO",
+      "popularity": 68,
+      "type": "artist",
+      "uri": "spotify:artist:3sgFRtyBnxXD5ESfmbK4dl"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/698hF4vcwHwPy8ltmXermq"
+      },
+      "followers": {
+        "href": null,
+        "total": 782108
+      },
+      "genres": [
+        "dance pop",
+        "edm",
+        "pop",
+        "pop rap"
+      ],
+      "href": "https://api.spotify.com/v1/artists/698hF4vcwHwPy8ltmXermq",
+      "id": "698hF4vcwHwPy8ltmXermq",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/93b2785adf676fad08b852122e6e48753c3d966b",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/02e203c0ed401e606165e2ad147e9cafc5d2b4ca",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/ecf893208cb15bbc1312b9aeaf42aec12fa6df33",
+          "width": 160
+        }
+      ],
+      "name": "Far East Movement",
+      "popularity": 68,
+      "type": "artist",
+      "uri": "spotify:artist:698hF4vcwHwPy8ltmXermq"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/6S0dmVVn4udvppDhZIWxCr"
+      },
+      "followers": {
+        "href": null,
+        "total": 1174446
+      },
+      "genres": [
+        "dance pop",
+        "pop",
+        "pop rap",
+        "post-teen pop",
+        "r&b",
+        "urban contemporary"
+      ],
+      "href": "https://api.spotify.com/v1/artists/6S0dmVVn4udvppDhZIWxCr",
+      "id": "6S0dmVVn4udvppDhZIWxCr",
+      "images": [
+        {
+          "height": 860,
+          "url": "https://i.scdn.co/image/faf6044a48f42c6530483f31e9e213d159546eb5",
+          "width": 750
+        },
+        {
+          "height": 734,
+          "url": "https://i.scdn.co/image/d998c11101483881a1c1a7ddea987d8f6466a2e3",
+          "width": 640
+        },
+        {
+          "height": 229,
+          "url": "https://i.scdn.co/image/8efebfbfad1daa764334cbc70ee6becad461e9c5",
+          "width": 200
+        },
+        {
+          "height": 73,
+          "url": "https://i.scdn.co/image/4237286c9d8ab36f2257f9fa618a22643a55e2bd",
+          "width": 64
+        }
+      ],
+      "name": "Sean Kingston",
+      "popularity": 73,
+      "type": "artist",
+      "uri": "spotify:artist:6S0dmVVn4udvppDhZIWxCr"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/07YZf4WDAMNwqr4jfgOZ8y"
+      },
+      "followers": {
+        "href": null,
+        "total": 6204935
+      },
+      "genres": [
+        "dance pop",
+        "pinoy hip hop",
+        "pop",
+        "pop rap",
+        "post-teen pop",
+        "r&b"
+      ],
+      "href": "https://api.spotify.com/v1/artists/07YZf4WDAMNwqr4jfgOZ8y",
+      "id": "07YZf4WDAMNwqr4jfgOZ8y",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/300b459748ce4d11ce1e222eb3d7dff8e854d6da",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/94ec695562c35fcbf00cc51ca765fc8002393d58",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/95c580b7f4eb48f34a3e9b73ec763801d3eb9e9d",
+          "width": 160
+        }
+      ],
+      "name": "Jason Derulo",
+      "popularity": 85,
+      "type": "artist",
+      "uri": "spotify:artist:07YZf4WDAMNwqr4jfgOZ8y"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/37GUqxafAvAKGMZbXCUnmr"
+      },
+      "followers": {
+        "href": null,
+        "total": 256769
+      },
+      "genres": [
+        "dance pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/37GUqxafAvAKGMZbXCUnmr",
+      "id": "37GUqxafAvAKGMZbXCUnmr",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/a6de4701474f33883ef59f3b3bf9d3d4fc470c58",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/f1338354e7daedde907e850c814da74c2df9acb0",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/aa914c63d37f50d7e9dc5304b7cad56943a1be09",
+          "width": 160
+        }
+      ],
+      "name": "Mohombi",
+      "popularity": 60,
+      "type": "artist",
+      "uri": "spotify:artist:37GUqxafAvAKGMZbXCUnmr"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/7qG3b048QCHVRO5Pv1T5lw"
+      },
+      "followers": {
+        "href": null,
+        "total": 7644684
+      },
+      "genres": [
+        "dance pop",
+        "latin",
+        "latin pop",
+        "mexican pop",
+        "pop",
+        "pop quebecois",
+        "tropical"
+      ],
+      "href": "https://api.spotify.com/v1/artists/7qG3b048QCHVRO5Pv1T5lw",
+      "id": "7qG3b048QCHVRO5Pv1T5lw",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/4c723d629fd621c9de4e4df4583ab2ff6a6d3656",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/c72609e125290028a76731309494eb08ca76e86b",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/f35c591b7b4820654e35f82bb2b69b65289b4fa1",
+          "width": 160
+        }
+      ],
+      "name": "Enrique Iglesias",
+      "popularity": 80,
+      "type": "artist",
+      "uri": "spotify:artist:7qG3b048QCHVRO5Pv1T5lw"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/7sfl4Xt5KmfyDs2T3SVSMK"
+      },
+      "followers": {
+        "href": null,
+        "total": 724359
+      },
+      "genres": [
+        "crunk",
+        "dance pop",
+        "dirty south rap",
+        "pop rap",
+        "southern hip hop",
+        "trap music"
+      ],
+      "href": "https://api.spotify.com/v1/artists/7sfl4Xt5KmfyDs2T3SVSMK",
+      "id": "7sfl4Xt5KmfyDs2T3SVSMK",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab976e368187909123518fcceefbfbab44ae6d3c",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/a0619a0d4d9881a8954ea44e340cdeb697d446d6",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/a13610d139e7943df5be0ad28ad7e21cf82cd266",
+          "width": 160
+        }
+      ],
+      "name": "Lil Jon",
+      "popularity": 75,
+      "type": "artist",
+      "uri": "spotify:artist:7sfl4Xt5KmfyDs2T3SVSMK"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/4pADjHPWyrlAF0FA7joK2H"
+      },
+      "followers": {
+        "href": null,
+        "total": 743306
+      },
+      "genres": [
+        "australian pop",
+        "dance pop",
+        "desi",
+        "indian pop",
+        "pop",
+        "pop rap",
+        "post-teen pop",
+        "r&b",
+        "urban contemporary"
+      ],
+      "href": "https://api.spotify.com/v1/artists/4pADjHPWyrlAF0FA7joK2H",
+      "id": "4pADjHPWyrlAF0FA7joK2H",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/5802cbd4236451a2ae39d213fd087fa925bfca1c",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/2c44835e228b8e9e29c33240f79750a070ae2bdd",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/c80dfa54876f9b878dd85f231ae92562f9d0acc7",
+          "width": 160
+        }
+      ],
+      "name": "Jay Sean",
+      "popularity": 67,
+      "type": "artist",
+      "uri": "spotify:artist:4pADjHPWyrlAF0FA7joK2H"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/5Y5TRrQiqgUO4S36tzjIRZ"
+      },
+      "followers": {
+        "href": null,
+        "total": 1204418
+      },
+      "genres": [
+        "dance pop",
+        "hip hop",
+        "hip pop",
+        "pop",
+        "pop rap",
+        "r&b",
+        "rap",
+        "urban contemporary"
+      ],
+      "href": "https://api.spotify.com/v1/artists/5Y5TRrQiqgUO4S36tzjIRZ",
+      "id": "5Y5TRrQiqgUO4S36tzjIRZ",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/71e2c7a1026d3a2397ae7ee08797a95d9a16c19f",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/7003b8afd2d8cd0485b7d1aee66a18a5df77b290",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/403883343e55df40147b4f6bd3f7c8a2e395a7d6",
+          "width": 160
+        }
+      ],
+      "name": "Timbaland",
+      "popularity": 77,
+      "type": "artist",
+      "uri": "spotify:artist:5Y5TRrQiqgUO4S36tzjIRZ"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/3Isy6kedDrgPYoTS1dazA9"
+      },
+      "followers": {
+        "href": null,
+        "total": 2105717
+      },
+      "genres": [
+        "dance pop",
+        "dancehall",
+        "pop",
+        "pop rap"
+      ],
+      "href": "https://api.spotify.com/v1/artists/3Isy6kedDrgPYoTS1dazA9",
+      "id": "3Isy6kedDrgPYoTS1dazA9",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/2b630d40e1dc16992fe7cea9e5d9368f320ed311",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/fbaebff79b83a47cd9fc1353f459541fdcddbdc2",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/c23bdbe73cd9ca7aa398e52960aae91b8b106b13",
+          "width": 160
+        }
+      ],
+      "name": "Sean Paul",
+      "popularity": 83,
+      "type": "artist",
+      "uri": "spotify:artist:3Isy6kedDrgPYoTS1dazA9"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/0Ol3Jol2T3lZZVLNNzWPhj"
+      },
+      "followers": {
+        "href": null,
+        "total": 128310
+      },
+      "genres": [
+        "dance pop",
+        "hands up",
+        "pop house",
+        "tropical house"
+      ],
+      "href": "https://api.spotify.com/v1/artists/0Ol3Jol2T3lZZVLNNzWPhj",
+      "id": "0Ol3Jol2T3lZZVLNNzWPhj",
+      "images": [
+        {
+          "height": 600,
+          "url": "https://i.scdn.co/image/29ba42d4e7f1de8aca3dccc8b6bc0a82d3a45c92",
+          "width": 600
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/0ec2aaac11060e654c8989d1fee1c003b21f289c",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/0d8f81b8ee24ac390ac2e0084ede2a7a81cac541",
+          "width": 64
+        }
+      ],
+      "name": "R.I.O.",
+      "popularity": 58,
+      "type": "artist",
+      "uri": "spotify:artist:0Ol3Jol2T3lZZVLNNzWPhj"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/6yTYR09WCvsgdnurDW4WQo"
+      },
+      "followers": {
+        "href": null,
+        "total": 436337
+      },
+      "genres": [
+        "dance pop",
+        "edm",
+        "tropical house"
+      ],
+      "href": "https://api.spotify.com/v1/artists/6yTYR09WCvsgdnurDW4WQo",
+      "id": "6yTYR09WCvsgdnurDW4WQo",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/0068c647094592dfa88be8bb5d9bc56dff884d3e",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/b346b38901f207980471bcc9e1a05c7efb3cd45d",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/1f527ff43b3d448a6f9ea7106b8eced61ee55935",
+          "width": 160
+        }
+      ],
+      "name": "DJ Antoine",
+      "popularity": 65,
+      "type": "artist",
+      "uri": "spotify:artist:6yTYR09WCvsgdnurDW4WQo"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/2cy1zPcrFcXAJTP0APWewL"
+      },
+      "followers": {
+        "href": null,
+        "total": 1038154
+      },
+      "genres": [
+        "cubaton",
+        "dance pop",
+        "latin",
+        "latin hip hop",
+        "latin pop",
+        "pop",
+        "reggaeton",
+        "tropical"
+      ],
+      "href": "https://api.spotify.com/v1/artists/2cy1zPcrFcXAJTP0APWewL",
+      "id": "2cy1zPcrFcXAJTP0APWewL",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/cca1e9c926559d571220621b66f1bacdb418cf2e",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/4cca1764a2efe151b3a4471610d608fd4e205b5d",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/74735eac1e4644171d0cd75b3c80e77120f08d7d",
+          "width": 160
+        }
+      ],
+      "name": "Gente De Zona",
+      "popularity": 76,
+      "type": "artist",
+      "uri": "spotify:artist:2cy1zPcrFcXAJTP0APWewL"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/2w9zwq3AktTeYYMuhMjju8"
+      },
+      "followers": {
+        "href": null,
+        "total": 723834
+      },
+      "genres": [
+        "dance pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/2w9zwq3AktTeYYMuhMjju8",
+      "id": "2w9zwq3AktTeYYMuhMjju8",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/c4f8ddbac222d6eb147c43eee5d64f2135f13a5b",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/14facc03ba20bce1232c05f08c012da9f7f70609",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/d02bf2e3d2fc9c23a37fd28a35450bdececb39c2",
+          "width": 160
+        }
+      ],
+      "name": "INNA",
+      "popularity": 67,
+      "type": "artist",
+      "uri": "spotify:artist:2w9zwq3AktTeYYMuhMjju8"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/2DlGxzQSjYe5N6G9nkYghR"
+      },
+      "followers": {
+        "href": null,
+        "total": 5593638
+      },
+      "genres": [
+        "dance pop",
+        "pop",
+        "post-teen pop",
+        "r&b",
+        "urban contemporary"
+      ],
+      "href": "https://api.spotify.com/v1/artists/2DlGxzQSjYe5N6G9nkYghR",
+      "id": "2DlGxzQSjYe5N6G9nkYghR",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ff43581eee26081911255b2247d99c0ea67021b0",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/a7f4259cfcdd637e07472ec32f783c9a6b87948a",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/7ea733d03559c4fc20a0732000e197c71e1eee4b",
+          "width": 160
+        }
+      ],
+      "name": "Jennifer Lopez",
+      "popularity": 80,
+      "type": "artist",
+      "uri": "spotify:artist:2DlGxzQSjYe5N6G9nkYghR"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/5NS0854TqZQVoRmJKSWtFZ"
+      },
+      "followers": {
+        "href": null,
+        "total": 1314928
+      },
+      "genres": [
+        "dance pop",
+        "electro latino",
+        "latin",
+        "latin hip hop",
+        "latin pop",
+        "pop",
+        "pop reggaeton",
+        "reggaeton",
+        "tropical"
+      ],
+      "href": "https://api.spotify.com/v1/artists/5NS0854TqZQVoRmJKSWtFZ",
+      "id": "5NS0854TqZQVoRmJKSWtFZ",
+      "images": [
+        {
+          "height": 1333,
+          "url": "https://i.scdn.co/image/58f4cb709e715a2c3d2e37401a09145a109aa20c",
+          "width": 1000
+        },
+        {
+          "height": 853,
+          "url": "https://i.scdn.co/image/c9a8768ade92fc93e8fbec79d9cc11d6aac5e3d3",
+          "width": 640
+        },
+        {
+          "height": 267,
+          "url": "https://i.scdn.co/image/51a7beea1943851b2e3527b889662a2d1676233b",
+          "width": 200
+        },
+        {
+          "height": 85,
+          "url": "https://i.scdn.co/image/402f284329cd6c70170632c32e99d5799162d2ba",
+          "width": 64
+        }
+      ],
+      "name": "Chino & Nacho",
+      "popularity": 66,
+      "type": "artist",
+      "uri": "spotify:artist:5NS0854TqZQVoRmJKSWtFZ"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/6c4sUNBgdonFJz8Kx2VsGz"
+      },
+      "followers": {
+        "href": null,
+        "total": 265119
+      },
+      "genres": [
+        "dance pop",
+        "norwegian hip hop",
+        "norwegian pop",
+        "pop rap"
+      ],
+      "href": "https://api.spotify.com/v1/artists/6c4sUNBgdonFJz8Kx2VsGz",
+      "id": "6c4sUNBgdonFJz8Kx2VsGz",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/316c4a45a1ae634c72de288ff673eb501575f1ce",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/b40ee4bcd9ba13f7a1e1ddea765bbf8c96265e9d",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/707bbcc13ea6609ecb7d8ec79eda4239171acd54",
+          "width": 160
+        }
+      ],
+      "name": "Madcon",
+      "popularity": 62,
+      "type": "artist",
+      "uri": "spotify:artist:6c4sUNBgdonFJz8Kx2VsGz"
+    }
+  ]
+}

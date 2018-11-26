@@ -24,11 +24,11 @@ class ArtistsResponse extends AbstractResponse
     /**
      * @param int $artistNumber
      *
-     * @return \Kerox\Spotify\Model\Artist
+     * @return null|\Kerox\Spotify\Model\Artist
      */
-    public function getArtist(int $artistNumber): Artist
+    public function getArtist(int $artistNumber): ?Artist
     {
-        return $this->artists[++$artistNumber];
+        return $this->artists[$artistNumber] ?? null;
     }
 
     /**

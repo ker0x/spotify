@@ -1,0 +1,550 @@
+{
+  "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/albums?offset=5&limit=10&include_groups=single,appears_on&market=FR",
+  "items": [
+    {
+      "album_group": "single",
+      "album_type": "single",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
+          },
+          "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
+          "id": "0TnOYISbd1XYRBk9myaseg",
+          "name": "Pitbull",
+          "type": "artist",
+          "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/5jEhSJbVizVdf6Ypr8cIuV"
+      },
+      "href": "https://api.spotify.com/v1/albums/5jEhSJbVizVdf6Ypr8cIuV",
+      "id": "5jEhSJbVizVdf6Ypr8cIuV",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/1c8773b17774e9101a170e24e342307382719525",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/a823de7f60f27dceee8324c4f55200a203b23d13",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/3ba105dbd6fdfdd12fe767b32b38797e043ea932",
+          "width": 64
+        }
+      ],
+      "name": "So Sorry",
+      "release_date": "2018-06-29",
+      "release_date_precision": "day",
+      "total_tracks": 1,
+      "type": "album",
+      "uri": "spotify:album:5jEhSJbVizVdf6Ypr8cIuV"
+    },
+    {
+      "album_group": "single",
+      "album_type": "single",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/7qG3b048QCHVRO5Pv1T5lw"
+          },
+          "href": "https://api.spotify.com/v1/artists/7qG3b048QCHVRO5Pv1T5lw",
+          "id": "7qG3b048QCHVRO5Pv1T5lw",
+          "name": "Enrique Iglesias",
+          "type": "artist",
+          "uri": "spotify:artist:7qG3b048QCHVRO5Pv1T5lw"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
+          },
+          "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
+          "id": "0TnOYISbd1XYRBk9myaseg",
+          "name": "Pitbull",
+          "type": "artist",
+          "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/1TtXnWcUs0FCkaZDPGYHdf"
+          },
+          "href": "https://api.spotify.com/v1/artists/1TtXnWcUs0FCkaZDPGYHdf",
+          "id": "1TtXnWcUs0FCkaZDPGYHdf",
+          "name": "Darell",
+          "type": "artist",
+          "uri": "spotify:artist:1TtXnWcUs0FCkaZDPGYHdf"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/4688cnvrt7sLcKXCnb8oGi"
+      },
+      "href": "https://api.spotify.com/v1/albums/4688cnvrt7sLcKXCnb8oGi",
+      "id": "4688cnvrt7sLcKXCnb8oGi",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/19dd9c05ab4bd5ac910363ea1b897ef65b363e81",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/4bd382e221ff592f3d1ac99160ddd8795e25da32",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/bd38506d09470c164bf577d1caaf19b305530c25",
+          "width": 64
+        }
+      ],
+      "name": "MOVE TO MIAMI (Darell Version)",
+      "release_date": "2018-06-22",
+      "release_date_precision": "day",
+      "total_tracks": 1,
+      "type": "album",
+      "uri": "spotify:album:4688cnvrt7sLcKXCnb8oGi"
+    },
+    {
+      "album_group": "single",
+      "album_type": "single",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
+          },
+          "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
+          "id": "0TnOYISbd1XYRBk9myaseg",
+          "name": "Pitbull",
+          "type": "artist",
+          "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/5lKZWd6HiSCLfnDGrq9RAm"
+          },
+          "href": "https://api.spotify.com/v1/artists/5lKZWd6HiSCLfnDGrq9RAm",
+          "id": "5lKZWd6HiSCLfnDGrq9RAm",
+          "name": "Leona Lewis",
+          "type": "artist",
+          "uri": "spotify:artist:5lKZWd6HiSCLfnDGrq9RAm"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/2cu3dRKIAbo8OdwPWSjizK"
+      },
+      "href": "https://api.spotify.com/v1/albums/2cu3dRKIAbo8OdwPWSjizK",
+      "id": "2cu3dRKIAbo8OdwPWSjizK",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/022e48b8103edd7557c781332983a7be9af5baf4",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/e62e07c0dd8fee2348951ea7b2ca142126bf44a0",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/eeec0c2c5a6f39036b7f09410a351a965c9c3397",
+          "width": 64
+        }
+      ],
+      "name": "Amore",
+      "release_date": "2018-06-15",
+      "release_date_precision": "day",
+      "total_tracks": 1,
+      "type": "album",
+      "uri": "spotify:album:2cu3dRKIAbo8OdwPWSjizK"
+    },
+    {
+      "album_group": "single",
+      "album_type": "single",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/7qG3b048QCHVRO5Pv1T5lw"
+          },
+          "href": "https://api.spotify.com/v1/artists/7qG3b048QCHVRO5Pv1T5lw",
+          "id": "7qG3b048QCHVRO5Pv1T5lw",
+          "name": "Enrique Iglesias",
+          "type": "artist",
+          "uri": "spotify:artist:7qG3b048QCHVRO5Pv1T5lw"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
+          },
+          "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
+          "id": "0TnOYISbd1XYRBk9myaseg",
+          "name": "Pitbull",
+          "type": "artist",
+          "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/2xnmgrPrmOIbHvMMSEOoBP"
+      },
+      "href": "https://api.spotify.com/v1/albums/2xnmgrPrmOIbHvMMSEOoBP",
+      "id": "2xnmgrPrmOIbHvMMSEOoBP",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/f22706498e010ffb9528123ee7e4e0aa2c2ac900",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/28c2909e49ffd86e87a7a9c06d91984b26642049",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/9c1da0319478252c358017abbd9ae76a1b43899c",
+          "width": 64
+        }
+      ],
+      "name": "MOVE TO MIAMI",
+      "release_date": "2018-05-03",
+      "release_date_precision": "day",
+      "total_tracks": 1,
+      "type": "album",
+      "uri": "spotify:album:2xnmgrPrmOIbHvMMSEOoBP"
+    },
+    {
+      "album_group": "single",
+      "album_type": "single",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
+          },
+          "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
+          "id": "0TnOYISbd1XYRBk9myaseg",
+          "name": "Pitbull",
+          "type": "artist",
+          "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/6PfeVu2JNQTctpO7nXYQd2"
+      },
+      "href": "https://api.spotify.com/v1/albums/6PfeVu2JNQTctpO7nXYQd2",
+      "id": "6PfeVu2JNQTctpO7nXYQd2",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/696cea5e3ac057f6119feb4578851d7273870870",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/547f58551a4027608a7b658b70e18fb34b569685",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/a3d9d2eb4ab9cd1c1ea411f675d3f6572c50837c",
+          "width": 64
+        }
+      ],
+      "name": "Muévelo Loca Boom Boom",
+      "release_date": "2017-12-15",
+      "release_date_precision": "day",
+      "total_tracks": 1,
+      "type": "album",
+      "uri": "spotify:album:6PfeVu2JNQTctpO7nXYQd2"
+    },
+    {
+      "album_group": "single",
+      "album_type": "single",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
+          },
+          "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
+          "id": "0TnOYISbd1XYRBk9myaseg",
+          "name": "Pitbull",
+          "type": "artist",
+          "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/329e4yvIujISKGKz1BZZbO"
+          },
+          "href": "https://api.spotify.com/v1/artists/329e4yvIujISKGKz1BZZbO",
+          "id": "329e4yvIujISKGKz1BZZbO",
+          "name": "Farruko",
+          "type": "artist",
+          "uri": "spotify:artist:329e4yvIujISKGKz1BZZbO"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0d7jzRhjOifL8X9hxNvbEn"
+          },
+          "href": "https://api.spotify.com/v1/artists/0d7jzRhjOifL8X9hxNvbEn",
+          "id": "0d7jzRhjOifL8X9hxNvbEn",
+          "name": "El Micha",
+          "type": "artist",
+          "uri": "spotify:artist:0d7jzRhjOifL8X9hxNvbEn"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/7dp6eMkW7MdQEQ7yzJQbTc"
+      },
+      "href": "https://api.spotify.com/v1/albums/7dp6eMkW7MdQEQ7yzJQbTc",
+      "id": "7dp6eMkW7MdQEQ7yzJQbTc",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/0c582f8e879bcc92c65f698a291dec59e1010735",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/a5b29d8f16c5728cb5f10bb94e891921b7129284",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/de47caf0ee0720758519e1d7100dc4178c7fa01e",
+          "width": 64
+        }
+      ],
+      "name": "Mucho Booty",
+      "release_date": "2017-12-01",
+      "release_date_precision": "day",
+      "total_tracks": 1,
+      "type": "album",
+      "uri": "spotify:album:7dp6eMkW7MdQEQ7yzJQbTc"
+    },
+    {
+      "album_group": "single",
+      "album_type": "single",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
+          },
+          "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
+          "id": "0TnOYISbd1XYRBk9myaseg",
+          "name": "Pitbull",
+          "type": "artist",
+          "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/5RgfpVCvkEXIlWoUBDtBfg"
+      },
+      "href": "https://api.spotify.com/v1/albums/5RgfpVCvkEXIlWoUBDtBfg",
+      "id": "5RgfpVCvkEXIlWoUBDtBfg",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/b29280e5bbf13835b9adc8f31b2d530c372efe1f",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ccf91191a581ca89f3e91d051a87e4e9be37159c",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/8aaf107a5f0caeba6e1eb50572278c93ae7da4eb",
+          "width": 64
+        }
+      ],
+      "name": "Better On Me (The Remixes)",
+      "release_date": "2017-11-17",
+      "release_date_precision": "day",
+      "total_tracks": 3,
+      "type": "album",
+      "uri": "spotify:album:5RgfpVCvkEXIlWoUBDtBfg"
+    },
+    {
+      "album_group": "single",
+      "album_type": "single",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
+          },
+          "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
+          "id": "0TnOYISbd1XYRBk9myaseg",
+          "name": "Pitbull",
+          "type": "artist",
+          "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/6RqG6OjPJVHi1RAcXTxglq"
+          },
+          "href": "https://api.spotify.com/v1/artists/6RqG6OjPJVHi1RAcXTxglq",
+          "id": "6RqG6OjPJVHi1RAcXTxglq",
+          "name": "Stereotypes",
+          "type": "artist",
+          "uri": "spotify:artist:6RqG6OjPJVHi1RAcXTxglq"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/1xQ025l0OQOwLSSVRmeipV"
+      },
+      "href": "https://api.spotify.com/v1/albums/1xQ025l0OQOwLSSVRmeipV",
+      "id": "1xQ025l0OQOwLSSVRmeipV",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/92f5f54059c6916e4970b74864fb217d7430ae79",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/3ba8541b636991e06b4a6059fab14338dd6c2b3d",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/63b0d2efcb8b8f8d68d8fe1406eb9639d10984e9",
+          "width": 64
+        }
+      ],
+      "name": "Jungle",
+      "release_date": "2017-11-10",
+      "release_date_precision": "day",
+      "total_tracks": 1,
+      "type": "album",
+      "uri": "spotify:album:1xQ025l0OQOwLSSVRmeipV"
+    },
+    {
+      "album_group": "single",
+      "album_type": "single",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
+          },
+          "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
+          "id": "0TnOYISbd1XYRBk9myaseg",
+          "name": "Pitbull",
+          "type": "artist",
+          "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/1l8Fu6IkuTP0U5QetQJ5Xt"
+          },
+          "href": "https://api.spotify.com/v1/artists/1l8Fu6IkuTP0U5QetQJ5Xt",
+          "id": "1l8Fu6IkuTP0U5QetQJ5Xt",
+          "name": "Fifth Harmony",
+          "type": "artist",
+          "uri": "spotify:artist:1l8Fu6IkuTP0U5QetQJ5Xt"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/0VK6orfLKcpNUBWfbCTu2S"
+      },
+      "href": "https://api.spotify.com/v1/albums/0VK6orfLKcpNUBWfbCTu2S",
+      "id": "0VK6orfLKcpNUBWfbCTu2S",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/c330bc0b869644ca1dd9a75a63e43cd0b2274d91",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/521396ba4eefe598fc8d39f6c6f35f1e818d5f34",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/0fa0bcf4ebaef142f741050bb479ca360079b43a",
+          "width": 64
+        }
+      ],
+      "name": "Por Favor",
+      "release_date": "2017-10-27",
+      "release_date_precision": "day",
+      "total_tracks": 1,
+      "type": "album",
+      "uri": "spotify:album:0VK6orfLKcpNUBWfbCTu2S"
+    },
+    {
+      "album_group": "single",
+      "album_type": "single",
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/18oKcALJUVhhAwOPjW8YnK"
+          },
+          "href": "https://api.spotify.com/v1/artists/18oKcALJUVhhAwOPjW8YnK",
+          "id": "18oKcALJUVhhAwOPjW8YnK",
+          "name": "Shorty",
+          "type": "artist",
+          "uri": "spotify:artist:18oKcALJUVhhAwOPjW8YnK"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/7wU2WGCJ8HxkekHHE2QLul"
+          },
+          "href": "https://api.spotify.com/v1/artists/7wU2WGCJ8HxkekHHE2QLul",
+          "id": "7wU2WGCJ8HxkekHHE2QLul",
+          "name": "Fuego",
+          "type": "artist",
+          "uri": "spotify:artist:7wU2WGCJ8HxkekHHE2QLul"
+        },
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0TnOYISbd1XYRBk9myaseg"
+          },
+          "href": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg",
+          "id": "0TnOYISbd1XYRBk9myaseg",
+          "name": "Pitbull",
+          "type": "artist",
+          "uri": "spotify:artist:0TnOYISbd1XYRBk9myaseg"
+        }
+      ],
+      "external_urls": {
+        "spotify": "https://open.spotify.com/album/6BQn8uryNsEGrZ5uDJbb6H"
+      },
+      "href": "https://api.spotify.com/v1/albums/6BQn8uryNsEGrZ5uDJbb6H",
+      "id": "6BQn8uryNsEGrZ5uDJbb6H",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/7d1cd9dd308b6e36c01df49a02df97f1b37ebef3",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/9c832a15d6b4771cb55128fba8ea969216d622ac",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/3c307de3eb733b533cf5a3eea17d910fdf36da8d",
+          "width": 64
+        }
+      ],
+      "name": "La Dura Remix",
+      "release_date": "2017-04-07",
+      "release_date_precision": "day",
+      "total_tracks": 2,
+      "type": "album",
+      "uri": "spotify:album:6BQn8uryNsEGrZ5uDJbb6H"
+    }
+  ],
+  "limit": 10,
+  "next": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/albums?offset=15&limit=10&include_groups=single,appears_on&market=FR",
+  "offset": 5,
+  "previous": "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/albums?offset=0&limit=10&include_groups=single,appears_on&market=FR",
+  "total": 487
+}
