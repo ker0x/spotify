@@ -1,0 +1,758 @@
+{
+  "tracks": [
+    {
+      "album": {
+        "album_type": "ALBUM",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/3WGpXCj9YhhfX11TToZcXP"
+            },
+            "href": "https://api.spotify.com/v1/artists/3WGpXCj9YhhfX11TToZcXP",
+            "id": "3WGpXCj9YhhfX11TToZcXP",
+            "name": "Troye Sivan",
+            "type": "artist",
+            "uri": "spotify:artist:3WGpXCj9YhhfX11TToZcXP"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/75K7Ki7WchpgjTHHR4hDmo"
+        },
+        "href": "https://api.spotify.com/v1/albums/75K7Ki7WchpgjTHHR4hDmo",
+        "id": "75K7Ki7WchpgjTHHR4hDmo",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/cfc482aab99c658b5e62c58becabe5691754b2dc",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/25ff1b1b091697c25250faff0d1904ff6b49b2fc",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/d7cc861b2d596ee4886acaf7e8d64eb73e3c0747",
+            "width": 64
+          }
+        ],
+        "name": "The Fault in Our Stars",
+        "type": "album",
+        "uri": "spotify:album:75K7Ki7WchpgjTHHR4hDmo"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/3WGpXCj9YhhfX11TToZcXP"
+          },
+          "href": "https://api.spotify.com/v1/artists/3WGpXCj9YhhfX11TToZcXP",
+          "id": "3WGpXCj9YhhfX11TToZcXP",
+          "name": "Troye Sivan",
+          "type": "artist",
+          "uri": "spotify:artist:3WGpXCj9YhhfX11TToZcXP"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 187194,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "TCABN1391107"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/6LteLVcW0oWLjuW6nePyWb"
+      },
+      "href": "https://api.spotify.com/v1/tracks/6LteLVcW0oWLjuW6nePyWb",
+      "id": "6LteLVcW0oWLjuW6nePyWb",
+      "is_playable": true,
+      "name": "The Fault in Our Stars",
+      "popularity": 64,
+      "preview_url": "https://p.scdn.co/mp3-preview/fbc1dd8da1f98f74dd62b6eb21817a7d156901c0?cid=774b29d4f13844c495f206cafdad9c86",
+      "track_number": 1,
+      "type": "track",
+      "uri": "spotify:track:6LteLVcW0oWLjuW6nePyWb"
+    },
+    {
+      "album": {
+        "album_type": "ALBUM",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+            },
+            "href": "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+            "id": "0L8ExT028jH3ddEcZwqJJ5",
+            "name": "Red Hot Chili Peppers",
+            "type": "artist",
+            "uri": "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/6deiaArbeoqp1xPEGdEKp1"
+        },
+        "href": "https://api.spotify.com/v1/albums/6deiaArbeoqp1xPEGdEKp1",
+        "id": "6deiaArbeoqp1xPEGdEKp1",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/b14027718a46fb43d8c6d8c88092fba9f75d9d21",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/39577b5613c625bd98e53ba74963be0a98bdd857",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/0efaf4d918fa1de42dbe8cdca0a1763b418fcfdf",
+            "width": 64
+          }
+        ],
+        "name": "By The Way (Deluxe Version)",
+        "type": "album",
+        "uri": "spotify:album:6deiaArbeoqp1xPEGdEKp1"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+          },
+          "href": "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+          "id": "0L8ExT028jH3ddEcZwqJJ5",
+          "name": "Red Hot Chili Peppers",
+          "type": "artist",
+          "uri": "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 231933,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "USWB10201693"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/1ndGB6rvxKYN9seCYO1dTF"
+      },
+      "href": "https://api.spotify.com/v1/tracks/1ndGB6rvxKYN9seCYO1dTF",
+      "id": "1ndGB6rvxKYN9seCYO1dTF",
+      "is_playable": true,
+      "name": "The Zephyr Song",
+      "popularity": 66,
+      "preview_url": "https://p.scdn.co/mp3-preview/379c2dd39b694289486d590a01eb813c24410f9f?cid=774b29d4f13844c495f206cafdad9c86",
+      "track_number": 6,
+      "type": "track",
+      "uri": "spotify:track:1ndGB6rvxKYN9seCYO1dTF"
+    },
+    {
+      "album": {
+        "album_type": "ALBUM",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/4NHQUGzhtTLFvgF5SZesLK"
+            },
+            "href": "https://api.spotify.com/v1/artists/4NHQUGzhtTLFvgF5SZesLK",
+            "id": "4NHQUGzhtTLFvgF5SZesLK",
+            "name": "Tove Lo",
+            "type": "artist",
+            "uri": "spotify:artist:4NHQUGzhtTLFvgF5SZesLK"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/5Z5O36p7BivXzkucc0PAfw"
+        },
+        "href": "https://api.spotify.com/v1/albums/5Z5O36p7BivXzkucc0PAfw",
+        "id": "5Z5O36p7BivXzkucc0PAfw",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/10e359ca5c32b609274c8fcde447fcd9c4cb31fe",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/003397ef673672fc37b9d9178c6e52e65fe48c31",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/214e5d43690c718994a429c6c814976657c51d32",
+            "width": 64
+          }
+        ],
+        "name": "Queen Of The Clouds",
+        "type": "album",
+        "uri": "spotify:album:5Z5O36p7BivXzkucc0PAfw"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/4NHQUGzhtTLFvgF5SZesLK"
+          },
+          "href": "https://api.spotify.com/v1/artists/4NHQUGzhtTLFvgF5SZesLK",
+          "id": "4NHQUGzhtTLFvgF5SZesLK",
+          "name": "Tove Lo",
+          "type": "artist",
+          "uri": "spotify:artist:4NHQUGzhtTLFvgF5SZesLK"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 244373,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "SEUM71401549"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/5Ji7E8Xi5kMoZiYFvmuf7H"
+      },
+      "href": "https://api.spotify.com/v1/tracks/5Ji7E8Xi5kMoZiYFvmuf7H",
+      "id": "5Ji7E8Xi5kMoZiYFvmuf7H",
+      "is_playable": true,
+      "name": "This Time Around",
+      "popularity": 39,
+      "preview_url": null,
+      "track_number": 14,
+      "type": "track",
+      "uri": "spotify:track:5Ji7E8Xi5kMoZiYFvmuf7H"
+    },
+    {
+      "album": {
+        "album_type": "ALBUM",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/2xiIXseIJcq3nG7C8fHeBj"
+            },
+            "href": "https://api.spotify.com/v1/artists/2xiIXseIJcq3nG7C8fHeBj",
+            "id": "2xiIXseIJcq3nG7C8fHeBj",
+            "name": "Three Days Grace",
+            "type": "artist",
+            "uri": "spotify:artist:2xiIXseIJcq3nG7C8fHeBj"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/13topfW33NjnACjnRiZBX7"
+        },
+        "href": "https://api.spotify.com/v1/albums/13topfW33NjnACjnRiZBX7",
+        "id": "13topfW33NjnACjnRiZBX7",
+        "images": [
+          {
+            "height": 632,
+            "url": "https://i.scdn.co/image/3e8d606984416611844a7c95cfcc78d1a51ea4cc",
+            "width": 640
+          },
+          {
+            "height": 296,
+            "url": "https://i.scdn.co/image/c44041807422c06f636d949ed12db935b0b5e290",
+            "width": 300
+          },
+          {
+            "height": 63,
+            "url": "https://i.scdn.co/image/4baa0379b884f1bbec41e58c4a27ad4d295824fb",
+            "width": 64
+          }
+        ],
+        "name": "Three Days Grace",
+        "type": "album",
+        "uri": "spotify:album:13topfW33NjnACjnRiZBX7"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/2xiIXseIJcq3nG7C8fHeBj"
+          },
+          "href": "https://api.spotify.com/v1/artists/2xiIXseIJcq3nG7C8fHeBj",
+          "id": "2xiIXseIJcq3nG7C8fHeBj",
+          "name": "Three Days Grace",
+          "type": "artist",
+          "uri": "spotify:artist:2xiIXseIJcq3nG7C8fHeBj"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 186893,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "USJI10300077"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/0CA3RxBx2xSQXPfpmUBK1v"
+      },
+      "href": "https://api.spotify.com/v1/tracks/0CA3RxBx2xSQXPfpmUBK1v",
+      "id": "0CA3RxBx2xSQXPfpmUBK1v",
+      "is_playable": true,
+      "name": "Just Like You",
+      "popularity": 53,
+      "preview_url": "https://p.scdn.co/mp3-preview/1276a2b1f5aded2deaf36fcb2fc7bc4ac03e629a?cid=774b29d4f13844c495f206cafdad9c86",
+      "track_number": 2,
+      "type": "track",
+      "uri": "spotify:track:0CA3RxBx2xSQXPfpmUBK1v"
+    },
+    {
+      "album": {
+        "album_type": "ALBUM",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/4ghjRm4M2vChDfTUycx0Ce"
+            },
+            "href": "https://api.spotify.com/v1/artists/4ghjRm4M2vChDfTUycx0Ce",
+            "id": "4ghjRm4M2vChDfTUycx0Ce",
+            "name": "New Found Glory",
+            "type": "artist",
+            "uri": "spotify:artist:4ghjRm4M2vChDfTUycx0Ce"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/6EOdIHWk1U9Mr1uHR2OU61"
+        },
+        "href": "https://api.spotify.com/v1/albums/6EOdIHWk1U9Mr1uHR2OU61",
+        "id": "6EOdIHWk1U9Mr1uHR2OU61",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/b44ed8649b97fbc77bc05ebb9dd6da12b56464eb",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/20af701e9c00887edc98f0c6cc2b44b54f50fc1a",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/5df1b70434a4555bc40396287a989dd234927804",
+            "width": 64
+          }
+        ],
+        "name": "Makes Me Sick",
+        "type": "album",
+        "uri": "spotify:album:6EOdIHWk1U9Mr1uHR2OU61"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/4ghjRm4M2vChDfTUycx0Ce"
+          },
+          "href": "https://api.spotify.com/v1/artists/4ghjRm4M2vChDfTUycx0Ce",
+          "id": "4ghjRm4M2vChDfTUycx0Ce",
+          "name": "New Found Glory",
+          "type": "artist",
+          "uri": "spotify:artist:4ghjRm4M2vChDfTUycx0Ce"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 203869,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "USHR21688002"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/0eGagEzVbuRrDUJy3evjI3"
+      },
+      "href": "https://api.spotify.com/v1/tracks/0eGagEzVbuRrDUJy3evjI3",
+      "id": "0eGagEzVbuRrDUJy3evjI3",
+      "is_playable": true,
+      "name": "Party On Apocalypse",
+      "popularity": 46,
+      "preview_url": "https://p.scdn.co/mp3-preview/48befb445c229ed34877ee07daabb4192844f684?cid=774b29d4f13844c495f206cafdad9c86",
+      "track_number": 2,
+      "type": "track",
+      "uri": "spotify:track:0eGagEzVbuRrDUJy3evjI3"
+    },
+    {
+      "album": {
+        "album_type": "ALBUM",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/4tususHNaR68xdgLstlGBA"
+            },
+            "href": "https://api.spotify.com/v1/artists/4tususHNaR68xdgLstlGBA",
+            "id": "4tususHNaR68xdgLstlGBA",
+            "name": "Of Mice & Men",
+            "type": "artist",
+            "uri": "spotify:artist:4tususHNaR68xdgLstlGBA"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/78yMb0lsPLAEuugaeLeLL0"
+        },
+        "href": "https://api.spotify.com/v1/albums/78yMb0lsPLAEuugaeLeLL0",
+        "id": "78yMb0lsPLAEuugaeLeLL0",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/631aa440fc5de746e691252d3b45219485a17561",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/2973adccfbb404d8d2372327ee9b8d86ea06009f",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/8dec420508b067ebdf12272b7ff9942acc5ec533",
+            "width": 64
+          }
+        ],
+        "name": "Defy",
+        "type": "album",
+        "uri": "spotify:album:78yMb0lsPLAEuugaeLeLL0"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/4tususHNaR68xdgLstlGBA"
+          },
+          "href": "https://api.spotify.com/v1/artists/4tususHNaR68xdgLstlGBA",
+          "id": "4tususHNaR68xdgLstlGBA",
+          "name": "Of Mice & Men",
+          "type": "artist",
+          "uri": "spotify:artist:4tususHNaR68xdgLstlGBA"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 249506,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "QMRSZ1701237"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/15TC83LO1QAu0BZLRdHw01"
+      },
+      "href": "https://api.spotify.com/v1/tracks/15TC83LO1QAu0BZLRdHw01",
+      "id": "15TC83LO1QAu0BZLRdHw01",
+      "is_playable": true,
+      "name": "Unbreakable",
+      "popularity": 55,
+      "preview_url": "https://p.scdn.co/mp3-preview/3a9295f6b1fc6046fedf8c56618c3645d42f5002?cid=774b29d4f13844c495f206cafdad9c86",
+      "track_number": 5,
+      "type": "track",
+      "uri": "spotify:track:15TC83LO1QAu0BZLRdHw01"
+    },
+    {
+      "album": {
+        "album_type": "ALBUM",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/26VFTg2z8YR0cCuwLzESi2"
+            },
+            "href": "https://api.spotify.com/v1/artists/26VFTg2z8YR0cCuwLzESi2",
+            "id": "26VFTg2z8YR0cCuwLzESi2",
+            "name": "Halsey",
+            "type": "artist",
+            "uri": "spotify:artist:26VFTg2z8YR0cCuwLzESi2"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/2OIDVh8ubFC6sJs5wpZMP9"
+        },
+        "href": "https://api.spotify.com/v1/albums/2OIDVh8ubFC6sJs5wpZMP9",
+        "id": "2OIDVh8ubFC6sJs5wpZMP9",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/92f67e4e44e71a6241efb6685cf5e2637f8fef3c",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/a4e8fc602a720f0ca4549866ed6a94249aa5f61a",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/ec2eac06dfd9519e61ff230d0e780a26076e42a4",
+            "width": 64
+          }
+        ],
+        "name": "Room 93",
+        "type": "album",
+        "uri": "spotify:album:2OIDVh8ubFC6sJs5wpZMP9"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/26VFTg2z8YR0cCuwLzESi2"
+          },
+          "href": "https://api.spotify.com/v1/artists/26VFTg2z8YR0cCuwLzESi2",
+          "id": "26VFTg2z8YR0cCuwLzESi2",
+          "name": "Halsey",
+          "type": "artist",
+          "uri": "spotify:artist:26VFTg2z8YR0cCuwLzESi2"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 211669,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "USUM71414528"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/5XijWLBY0vwl5MPUpQA2Ha"
+      },
+      "href": "https://api.spotify.com/v1/tracks/5XijWLBY0vwl5MPUpQA2Ha",
+      "id": "5XijWLBY0vwl5MPUpQA2Ha",
+      "is_playable": true,
+      "name": "Is There Somewhere",
+      "popularity": 64,
+      "preview_url": null,
+      "track_number": 1,
+      "type": "track",
+      "uri": "spotify:track:5XijWLBY0vwl5MPUpQA2Ha"
+    },
+    {
+      "album": {
+        "album_type": "ALBUM",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/6PAt558ZEZl0DmdXlnjMgD"
+            },
+            "href": "https://api.spotify.com/v1/artists/6PAt558ZEZl0DmdXlnjMgD",
+            "id": "6PAt558ZEZl0DmdXlnjMgD",
+            "name": "Eric Clapton",
+            "type": "artist",
+            "uri": "spotify:artist:6PAt558ZEZl0DmdXlnjMgD"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/0GBrlPh90D25SQ6EJu4VtT"
+        },
+        "href": "https://api.spotify.com/v1/albums/0GBrlPh90D25SQ6EJu4VtT",
+        "id": "0GBrlPh90D25SQ6EJu4VtT",
+        "images": [
+          {
+            "height": 635,
+            "url": "https://i.scdn.co/image/530ed499a5f120b7653ff578b8884e22a3fd51b2",
+            "width": 640
+          },
+          {
+            "height": 297,
+            "url": "https://i.scdn.co/image/d3a4f721eea9cf47b927f5ef9828624ad034b5d2",
+            "width": 300
+          },
+          {
+            "height": 63,
+            "url": "https://i.scdn.co/image/81b0be3e8c5ce1d750f584a267abe3440f4920e6",
+            "width": 64
+          }
+        ],
+        "name": "Slowhand 35th Anniversary",
+        "type": "album",
+        "uri": "spotify:album:0GBrlPh90D25SQ6EJu4VtT"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/6PAt558ZEZl0DmdXlnjMgD"
+          },
+          "href": "https://api.spotify.com/v1/artists/6PAt558ZEZl0DmdXlnjMgD",
+          "id": "6PAt558ZEZl0DmdXlnjMgD",
+          "name": "Eric Clapton",
+          "type": "artist",
+          "uri": "spotify:artist:6PAt558ZEZl0DmdXlnjMgD"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 221640,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "NLF057790024"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/2udGjDmpK1dH9VGyw7nrei"
+      },
+      "href": "https://api.spotify.com/v1/tracks/2udGjDmpK1dH9VGyw7nrei",
+      "id": "2udGjDmpK1dH9VGyw7nrei",
+      "is_playable": true,
+      "name": "Cocaine",
+      "popularity": 68,
+      "preview_url": null,
+      "track_number": 1,
+      "type": "track",
+      "uri": "spotify:track:2udGjDmpK1dH9VGyw7nrei"
+    },
+    {
+      "album": {
+        "album_type": "ALBUM",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/4NHQUGzhtTLFvgF5SZesLK"
+            },
+            "href": "https://api.spotify.com/v1/artists/4NHQUGzhtTLFvgF5SZesLK",
+            "id": "4NHQUGzhtTLFvgF5SZesLK",
+            "name": "Tove Lo",
+            "type": "artist",
+            "uri": "spotify:artist:4NHQUGzhtTLFvgF5SZesLK"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/6jggnLM3SdDnjQ3GWmIZ4L"
+        },
+        "href": "https://api.spotify.com/v1/albums/6jggnLM3SdDnjQ3GWmIZ4L",
+        "id": "6jggnLM3SdDnjQ3GWmIZ4L",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/dc7bbcd3d046104c6e16b3edc8eb276081ac6b50",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/73e8f30d32e685503f62655ebd3998e2c9818604",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/733658e11a2481fa80df775209b9cd185de2a033",
+            "width": 64
+          }
+        ],
+        "name": "BLUE LIPS (lady wood phase II)",
+        "type": "album",
+        "uri": "spotify:album:6jggnLM3SdDnjQ3GWmIZ4L"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/4NHQUGzhtTLFvgF5SZesLK"
+          },
+          "href": "https://api.spotify.com/v1/artists/4NHQUGzhtTLFvgF5SZesLK",
+          "id": "4NHQUGzhtTLFvgF5SZesLK",
+          "name": "Tove Lo",
+          "type": "artist",
+          "uri": "spotify:artist:4NHQUGzhtTLFvgF5SZesLK"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 206058,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "SEUM71701023"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/4eTUG3TF3lQuar1lLkN0cG"
+      },
+      "href": "https://api.spotify.com/v1/tracks/4eTUG3TF3lQuar1lLkN0cG",
+      "id": "4eTUG3TF3lQuar1lLkN0cG",
+      "is_playable": true,
+      "name": "bad days",
+      "popularity": 52,
+      "preview_url": null,
+      "track_number": 13,
+      "type": "track",
+      "uri": "spotify:track:4eTUG3TF3lQuar1lLkN0cG"
+    },
+    {
+      "album": {
+        "album_type": "ALBUM",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we"
+            },
+            "href": "https://api.spotify.com/v1/artists/6M2wZ9GZgrQXHCFfjv46we",
+            "id": "6M2wZ9GZgrQXHCFfjv46we",
+            "name": "Dua Lipa",
+            "type": "artist",
+            "uri": "spotify:artist:6M2wZ9GZgrQXHCFfjv46we"
+          }
+        ],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/3NW16XZ8U99Qm8E9v52UTz"
+        },
+        "href": "https://api.spotify.com/v1/albums/3NW16XZ8U99Qm8E9v52UTz",
+        "id": "3NW16XZ8U99Qm8E9v52UTz",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/96597406dbdb1c14da0e57886d83960fa1c57be2",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/1b4be55f2423ec325a201d0203dce62e45b3141a",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/c80671481c5e8e92645f678be80fc146fc9e9af3",
+            "width": 64
+          }
+        ],
+        "name": "Spotify Session",
+        "type": "album",
+        "uri": "spotify:album:3NW16XZ8U99Qm8E9v52UTz"
+      },
+      "artists": [
+        {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we"
+          },
+          "href": "https://api.spotify.com/v1/artists/6M2wZ9GZgrQXHCFfjv46we",
+          "id": "6M2wZ9GZgrQXHCFfjv46we",
+          "name": "Dua Lipa",
+          "type": "artist",
+          "uri": "spotify:artist:6M2wZ9GZgrQXHCFfjv46we"
+        }
+      ],
+      "disc_number": 1,
+      "duration_ms": 195840,
+      "explicit": false,
+      "external_ids": {
+        "isrc": "GBAHT1600296"
+      },
+      "external_urls": {
+        "spotify": "https://open.spotify.com/track/7wIYDzWW82O6Rc4vGuzjND"
+      },
+      "href": "https://api.spotify.com/v1/tracks/7wIYDzWW82O6Rc4vGuzjND",
+      "id": "7wIYDzWW82O6Rc4vGuzjND",
+      "is_playable": true,
+      "name": "I'm Not The Only One (Sam Smith Cover) - Live From Spotify, London",
+      "popularity": 69,
+      "preview_url": "https://p.scdn.co/mp3-preview/f72ea74d8394c13c317b9f851529097b78ed53c2?cid=774b29d4f13844c495f206cafdad9c86",
+      "track_number": 3,
+      "type": "track",
+      "uri": "spotify:track:7wIYDzWW82O6Rc4vGuzjND"
+    }
+  ],
+  "seeds": [
+    {
+      "initialPoolSize": 250,
+      "afterFilteringSize": 250,
+      "afterRelinkingSize": 247,
+      "id": "4NHQUGzhtTLFvgF5SZesLK",
+      "type": "ARTIST",
+      "href": "https://api.spotify.com/v1/artists/4NHQUGzhtTLFvgF5SZesLK"
+    },
+    {
+      "initialPoolSize": 250,
+      "afterFilteringSize": 250,
+      "afterRelinkingSize": 243,
+      "id": "0c6xIDDpzE81m2q797ordA",
+      "type": "TRACK",
+      "href": "https://api.spotify.com/v1/tracks/0c6xIDDpzE81m2q797ordA"
+    },
+    {
+      "initialPoolSize": 995,
+      "afterFilteringSize": 313,
+      "afterRelinkingSize": 313,
+      "id": "rock",
+      "type": "GENRE",
+      "href": null
+    },
+    {
+      "initialPoolSize": 100,
+      "afterFilteringSize": 100,
+      "afterRelinkingSize": 98,
+      "id": "metal",
+      "type": "GENRE",
+      "href": null
+    }
+  ]
+}

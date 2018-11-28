@@ -110,6 +110,10 @@ class Paging
                 $items[] = SavedTrack::build($item);
 
                 continue;
+            } else {
+                $items[] = Category::build($item);
+
+                continue;
             }
         }
 
@@ -146,7 +150,7 @@ class Paging
      */
     public function getItem(int $key)
     {
-        return $this->items[++$key];
+        return $this->items[$key];
     }
 
     /**

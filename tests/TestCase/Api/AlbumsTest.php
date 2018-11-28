@@ -47,7 +47,9 @@ class AlbumsTest extends TestCase
         $client->method('sendRequest')->willReturn($response);
 
         $spotify = new Spotify($this->oauthToken, $client);
-        $response = $spotify->albums()->get('4aawyAB9vmqN3uQ7FjRGTy', ['market' => 'FR']);
+        $response = $spotify->albums()->get('4aawyAB9vmqN3uQ7FjRGTy', [
+            QueryParametersInterface::PARAMETER_MARKET => 'FR'
+        ]);
 
         $album = $response->getAlbum();
 
@@ -69,6 +71,8 @@ class AlbumsTest extends TestCase
         $this->assertInstanceOf(Paging::class, $album->getTracks());
         $this->assertSame('album', $album->getType());
         $this->assertSame('spotify:album:4aawyAB9vmqN3uQ7FjRGTy', $album->getUri());
+        $this->assertNull($album->getRestrictions());
+        $this->assertNull($album->getAlbumGroup());
     }
 
     public function testGetTracksFromAnAlbum(): void
@@ -95,17 +99,23 @@ class AlbumsTest extends TestCase
 
         $paging = $response->getPaging();
 
-        $this->assertSame('https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTy/tracks?offset=5&limit=10&market=FR',
-            $paging->getHref());
         $this->assertContainsOnlyInstancesOf(Track::class, $paging->getItems());
         $this->assertInstanceOf(Track::class, $paging->getItem(1));
         $this->assertSame(10, $paging->getLimit());
-        $this->assertSame('https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTy/tracks?offset=15&limit=10&market=FR',
-            $paging->getNext());
         $this->assertSame(5, $paging->getOffset());
-        $this->assertSame('https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTy/tracks?offset=0&limit=10&market=FR',
-            $paging->getPrevious());
         $this->assertSame(18, $paging->getTotal());
+        $this->assertSame(
+            'https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTy/tracks?offset=5&limit=10&market=FR',
+            $paging->getHref()
+        );
+        $this->assertSame(
+            'https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTy/tracks?offset=15&limit=10&market=FR',
+            $paging->getNext()
+        );
+        $this->assertSame(
+            'https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTy/tracks?offset=0&limit=10&market=FR',
+            $paging->getPrevious()
+        );
     }
 
     public function testGetSeveralAlbums(): void

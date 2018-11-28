@@ -25,7 +25,7 @@ class Playlist implements TypeInterface, JsonSerializable
     protected $collaborative;
 
     /**
-     * @var string
+     * @var null|string
      */
     protected $description;
 
@@ -58,6 +58,11 @@ class Playlist implements TypeInterface, JsonSerializable
      * @var \Kerox\Spotify\Model\User
      */
     protected $owner;
+
+    /**
+     * @var null|string
+     */
+    protected $primaryColor;
 
     /**
      * @var string
@@ -100,13 +105,14 @@ class Playlist implements TypeInterface, JsonSerializable
         string $name,
         bool $public,
         bool $collaborative,
-        string $description,
+        ?string $description = null,
         array $externalUrls = [],
         ?Followers $followers = null,
         ?string $href = null,
         ?string $id = null,
         array $images = [],
         ?User $owner = null,
+        ?string $primaryColor = null,
         ?string $snapshotId = null,
         array $tracks = [],
         ?string $uri = null
@@ -121,6 +127,7 @@ class Playlist implements TypeInterface, JsonSerializable
         $this->id = $id;
         $this->images = $images;
         $this->owner = $owner;
+        $this->primaryColor = $primaryColor;
         $this->snapshotId = $snapshotId;
         $this->tracks = $tracks;
         $this->uri = $uri;
@@ -150,15 +157,18 @@ class Playlist implements TypeInterface, JsonSerializable
      */
     public static function build(array $playlist): self
     {
-        $collaborative = $playlist['collaborative'];
-        $description = $playlist['description'];
+        $collaborative = $playlist['collaborative'] ?? false;
+        $description = $playlist['description'] ?? null;
 
         $externalUrls = [];
         foreach ($playlist['external_urls'] as $type => $url) {
             $externalUrls[] = External::build($type, $url);
         }
 
-        $followers = Followers::build($playlist['followers']);
+        $followers = null;
+        if (isset($playlist['followers'])) {
+            $followers = Followers::build($playlist['followers']);
+        }
 
         $href = $playlist['href'];
         $id = $playlist['id'];
@@ -174,14 +184,10 @@ class Playlist implements TypeInterface, JsonSerializable
 
         $owner = User::build($playlist['owner']);
 
-        $public = $playlist['public'];
+        $primaryColor = $playlist['primary_color'] ?? null;
+        $public = $playlist['public'] ?? false;
         $snapshotId = $playlist['snapshot_id'];
-
-        $tracks = [];
-        foreach ($playlist['tracks'] as $track) {
-            $tracks[] = Track::build($track);
-        }
-
+        $tracks = $playlist['tracks'] ?? [];
         $uri = $playlist['uri'];
 
         return new self(
@@ -195,6 +201,7 @@ class Playlist implements TypeInterface, JsonSerializable
             $id,
             $images,
             $owner,
+            $primaryColor,
             $snapshotId,
             $tracks,
             $uri
@@ -210,9 +217,9 @@ class Playlist implements TypeInterface, JsonSerializable
     }
 
     /**
-     * @return string
+     * @return null|string
      */
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->description;
     }
@@ -274,6 +281,14 @@ class Playlist implements TypeInterface, JsonSerializable
     }
 
     /**
+     * @return null|string
+     */
+    public function getPrimaryColor(): ?string
+    {
+        return $this->primaryColor;
+    }
+
+    /**
      * @return bool
      */
     public function isPublic(): bool
@@ -290,11 +305,19 @@ class Playlist implements TypeInterface, JsonSerializable
     }
 
     /**
-     * @return array
+     * @return null|string
      */
-    public function getTracks(): array
+    public function getLinkToTracks(): ?string
     {
-        return $this->tracks;
+        return $this->tracks['href'] ?? null;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTotalTracks(): int
+    {
+        return $this->tracks['total'] ?? 0;
     }
 
     /**

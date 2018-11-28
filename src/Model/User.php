@@ -85,12 +85,12 @@ class User
     public function __construct(
         string $displayName,
         array $externalUrls,
-        Followers $followers,
         string $href,
         string $id,
         array $images,
         string $type,
         string $uri,
+        ?Followers $followers = null,
         ?string $birthDate = null,
         ?string $country = null,
         ?string $email = null,
@@ -98,12 +98,12 @@ class User
     ) {
         $this->displayName = $displayName;
         $this->externalUrls = $externalUrls;
-        $this->followers = $followers;
         $this->href = $href;
         $this->id = $id;
         $this->images = $images;
         $this->type = $type;
         $this->uri = $uri;
+        $this->followers = $followers;
         $this->birthDate = $birthDate;
         $this->country = $country;
         $this->email = $email;
@@ -124,14 +124,19 @@ class User
             $externalUrls[] = External::build($type, $url);
         }
 
-        $followers = Followers::build($user['followers']);
+        $followers = null;
+        if (isset($user['followers'])) {
+            $followers = Followers::build($user['followers']);
+        }
 
         $href = $user['href'];
         $id = $user['id'];
 
         $images = [];
-        foreach ($user['images'] as $image) {
-            $images[] = Image::build($image);
+        if (isset($user['images'])) {
+            foreach ($user['images'] as $image) {
+                $images[] = Image::build($image);
+            }
         }
 
         $type = $user['type'];
@@ -144,12 +149,12 @@ class User
         return new self(
             $displayName,
             $externalUrls,
-            $followers,
             $href,
             $id,
             $images,
             $type,
             $uri,
+            $followers,
             $birthDate,
             $country,
             $email,
