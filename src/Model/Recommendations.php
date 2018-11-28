@@ -9,23 +9,23 @@ class Recommendations
     /**
      * @var array
      */
-    protected $seeds;
+    protected $tracks;
 
     /**
      * @var array
      */
-    protected $tracks;
+    protected $seeds;
 
     /**
      * Recommendations constructor.
      *
-     * @param array $seeds
      * @param array $tracks
+     * @param array $seeds
      */
-    public function __construct(array $seeds, array $tracks)
+    public function __construct(array $tracks, array $seeds)
     {
-        $this->seeds = $seeds;
         $this->tracks = $tracks;
+        $this->seeds = $seeds;
     }
 
     /**
@@ -42,25 +42,25 @@ class Recommendations
 
         $seeds = [];
         foreach ($recommendations['seeds'] as $seed) {
-            $seeds[] = RecommandationsSeed::build($seed);
+            $seeds[] = Seed::build($seed);
         }
 
         return new self($tracks, $seeds);
     }
 
     /**
-     * @return array
-     */
-    public function getSeeds(): array
-    {
-        return $this->seeds;
-    }
-
-    /**
-     * @return array
+     * @return \Kerox\Spotify\Model\Track[]
      */
     public function getTracks(): array
     {
         return $this->tracks;
+    }
+
+    /**
+     * @return \Kerox\Spotify\Model\Seed[]
+     */
+    public function getSeeds(): array
+    {
+        return $this->seeds;
     }
 }

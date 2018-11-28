@@ -6,7 +6,8 @@ use Kerox\Spotify\Interfaces\QueryParametersInterface;
 use Kerox\Spotify\Model\Category;
 use Kerox\Spotify\Model\Image;
 use Kerox\Spotify\Model\Paging;
-use Kerox\Spotify\Model\Recommendations;
+use Kerox\Spotify\Model\Seed;
+use Kerox\Spotify\Model\Track;
 use Kerox\Spotify\Response\CategoriesResponse;
 use Kerox\Spotify\Response\FeaturedResponse;
 use Kerox\Spotify\Response\RecommendationsResponse;
@@ -212,6 +213,15 @@ class BrowseTest extends TestCase
             ],
         ]);
 
-        $this->assertInstanceOf(Recommendations::class, $response->getRecommendations());
+        $recommendations = $response->getRecommendations();
+
+        $this->assertContainsOnlyInstancesOf(Track::class, $recommendations->getTracks());
+        $this->assertContainsOnlyInstancesOf(Seed::class, $recommendations->getSeeds());
+        $this->assertSame(250, $recommendations->getSeeds()[0]->getInitialPoolSize());
+        $this->assertSame(250, $recommendations->getSeeds()[0]->getAfterFilteringSize());
+        $this->assertSame(247, $recommendations->getSeeds()[0]->getAfterRelinkingSize());
+        $this->assertSame('4NHQUGzhtTLFvgF5SZesLK', $recommendations->getSeeds()[0]->getId());
+        $this->assertSame('ARTIST', $recommendations->getSeeds()[0]->getType());
+        $this->assertSame('https://api.spotify.com/v1/artists/4NHQUGzhtTLFvgF5SZesLK', $recommendations->getSeeds()[0]->getHref());
     }
 }

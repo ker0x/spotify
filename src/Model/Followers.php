@@ -7,7 +7,7 @@ namespace Kerox\Spotify\Model;
 class Followers
 {
     /**
-     * @var string
+     * @var null|string
      */
     protected $href;
 
@@ -42,9 +42,9 @@ class Followers
     }
 
     /**
-     * @return string
+     * @return null|string
      */
-    public function getHref(): string
+    public function getHref(): ?string
     {
         return $this->href;
     }

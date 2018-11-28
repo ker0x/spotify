@@ -394,7 +394,7 @@ class Album implements TypeInterface
     }
 
     /**
-     * @return array
+     * @return \Kerox\Spotify\Model\Copyright[]
      */
     public function getCopyrights(): array
     {
@@ -402,7 +402,7 @@ class Album implements TypeInterface
     }
 
     /**
-     * @return array
+     * @return \Kerox\Spotify\Model\External[]
      */
     public function getExternalIds(): array
     {

@@ -51,6 +51,8 @@ class ArtistsTest extends TestCase
 
         $this->assertContainsOnlyInstancesOf(External::class, $artist->getExternalUrls());
         $this->assertInstanceOf(Followers::class, $artist->getFollowers());
+        $this->assertNull($artist->getFollowers()->getHref());
+        $this->assertSame(6406754, $artist->getFollowers()->getTotal());
         $this->assertSame(['dance pop', 'latin', 'pop', 'pop rap'], $artist->getGenres());
         $this->assertSame('https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg', $artist->getHref());
         $this->assertSame('0TnOYISbd1XYRBk9myaseg', $artist->getId());
