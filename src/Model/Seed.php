@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
-class RecommandationsSeed
+class Seed
 {
     /**
      * @var int
@@ -65,7 +65,7 @@ class RecommandationsSeed
     /**
      * @param array $recommendationsSeed
      *
-     * @return \Kerox\Spotify\Model\RecommandationsSeed
+     * @return \Kerox\Spotify\Model\Seed
      */
     public static function build(array $recommendationsSeed): self
     {
