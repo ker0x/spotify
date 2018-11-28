@@ -1,0 +1,327 @@
+{
+  "playlists": {
+    "href": "https://api.spotify.com/v1/browse/categories/dinner/playlists?country=FR&offset=5&limit=10",
+    "items": [
+      {
+        "collaborative": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWVidGk00tysG"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWVidGk00tysG",
+        "id": "37i9dQZF1DWVidGk00tysG",
+        "images": [
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/eba500a278daa9217e929b7bc863da404d3ebb8e",
+            "width": 300
+          }
+        ],
+        "name": "Chopin Piano",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTU0MzI3NDU1NCwwMDAwMDAwYjAwMDAwMTY3NTI1NGU1ZWQwMDAwMDE2NzJjN2I4Nzlk",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWVidGk00tysG/tracks",
+          "total": 50
+        },
+        "type": "playlist",
+        "uri": "spotify:user:spotify:playlist:37i9dQZF1DWVidGk00tysG"
+      },
+      {
+        "collaborative": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX6kz6Kli3wib"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX6kz6Kli3wib",
+        "id": "37i9dQZF1DX6kz6Kli3wib",
+        "images": [
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/92ae472ef35610e4f577cf34596740a1d50983c1",
+            "width": 300
+          }
+        ],
+        "name": "Chill Out Dinner",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTUzMjY4MjkxNiwwMDAwMDAyYjAwMDAwMTY0ZGIwNTUxZTcwMDAwMDE2MmYyYjBlOGQ4",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX6kz6Kli3wib/tracks",
+          "total": 111
+        },
+        "type": "playlist",
+        "uri": "spotify:user:spotify:playlist:37i9dQZF1DX6kz6Kli3wib"
+      },
+      {
+        "collaborative": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX2zAr9vdmFlU"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX2zAr9vdmFlU",
+        "id": "37i9dQZF1DX2zAr9vdmFlU",
+        "images": [
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/b773157839ab2aa0bd9ea8592ff29eb014e695c0",
+            "width": 300
+          }
+        ],
+        "name": "Latin Dinner",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTU0Mjc0OTQ3NSwwMDAwMDAyYjAwMDAwMTY3MzMwOGQyZmQwMDAwMDE2NzMzMDgzMzIy",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX2zAr9vdmFlU/tracks",
+          "total": 83
+        },
+        "type": "playlist",
+        "uri": "spotify:user:spotify:playlist:37i9dQZF1DX2zAr9vdmFlU"
+      },
+      {
+        "collaborative": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DXbvE0SE0Cczh"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXbvE0SE0Cczh",
+        "id": "37i9dQZF1DXbvE0SE0Cczh",
+        "images": [
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/d453d7aaf859e9dfd802548aaced4831dc3a7ced",
+            "width": 300
+          }
+        ],
+        "name": "Jukebox Joint",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTUyNDQ5MDEwMywwMDAwMDAwZDAwMDAwMTYxZTg4ODM5YjQwMDAwMDE2MmYyYjBlOGQ4",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXbvE0SE0Cczh/tracks",
+          "total": 53
+        },
+        "type": "playlist",
+        "uri": "spotify:user:spotify:playlist:37i9dQZF1DXbvE0SE0Cczh"
+      },
+      {
+        "collaborative": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DXdaMkR2m2cl5"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXdaMkR2m2cl5",
+        "id": "37i9dQZF1DXdaMkR2m2cl5",
+        "images": [
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/cc9bf5ac67188311783ad23b856fb8f5b0cb7bab",
+            "width": 300
+          }
+        ],
+        "name": "Folk Feast",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTUyNDQ5MDEwMywwMDAwMDAxZjAwMDAwMTYwZWM2MzU0OGIwMDAwMDE2MmYyYjBlOGQ4",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXdaMkR2m2cl5/tracks",
+          "total": 50
+        },
+        "type": "playlist",
+        "uri": "spotify:user:spotify:playlist:37i9dQZF1DXdaMkR2m2cl5"
+      },
+      {
+        "collaborative": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX4kJGZhtnOIh"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX4kJGZhtnOIh",
+        "id": "37i9dQZF1DX4kJGZhtnOIh",
+        "images": [
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/326035da17f8c49ea39482cfcc8c6a62ba3ddab0",
+            "width": 300
+          }
+        ],
+        "name": "Mellow Dinner",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTU0MzMyNDY0NiwwMDAwMDAxZDAwMDAwMTY3MmQ1YTlmZTEwMDAwMDE2MmYyYjBlOGQ4",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX4kJGZhtnOIh/tracks",
+          "total": 78
+        },
+        "type": "playlist",
+        "uri": "spotify:user:spotify:playlist:37i9dQZF1DX4kJGZhtnOIh"
+      },
+      {
+        "collaborative": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWT1R6bXL4dyW"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWT1R6bXL4dyW",
+        "id": "37i9dQZF1DWT1R6bXL4dyW",
+        "images": [
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/afb98e53a78d15e22b6d9aba27bc81139a410e5e",
+            "width": 300
+          }
+        ],
+        "name": "The Perfect Italian Dinner",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTUyNDQ5MDEwMywwMDAwMDAwYTAwMDAwMTYyMGMyNmIzOTIwMDAwMDE2MmYyYjBlOGQ4",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWT1R6bXL4dyW/tracks",
+          "total": 91
+        },
+        "type": "playlist",
+        "uri": "spotify:user:spotify:playlist:37i9dQZF1DWT1R6bXL4dyW"
+      },
+      {
+        "collaborative": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWZMxqlsEB7BT"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWZMxqlsEB7BT",
+        "id": "37i9dQZF1DWZMxqlsEB7BT",
+        "images": [
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/48b4e25a6208f361ba51c40bd596be958b60f63d",
+            "width": 300
+          }
+        ],
+        "name": "Chips and Salsa",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTU0MDczOTY4OCwwMDAwMDAxNDAwMDAwMTY2YmIzZGU5ZWQwMDAwMDE2MmYyYjBlOGQ4",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWZMxqlsEB7BT/tracks",
+          "total": 47
+        },
+        "type": "playlist",
+        "uri": "spotify:user:spotify:playlist:37i9dQZF1DWZMxqlsEB7BT"
+      },
+      {
+        "collaborative": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX44AF5xq04Oh"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX44AF5xq04Oh",
+        "id": "37i9dQZF1DX44AF5xq04Oh",
+        "images": [
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/5f236896f9e83a20735e46b3748afd9c27ec094c",
+            "width": 300
+          }
+        ],
+        "name": "Reggae BBQ",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTUyNDQ5MDEwMywwMDAwMDAxYTAwMDAwMTYxNmFiYjZiYzQwMDAwMDE2MmYyYjBlOGQ4",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX44AF5xq04Oh/tracks",
+          "total": 28
+        },
+        "type": "playlist",
+        "uri": "spotify:user:spotify:playlist:37i9dQZF1DX44AF5xq04Oh"
+      }
+    ],
+    "limit": 10,
+    "next": null,
+    "offset": 5,
+    "previous": "https://api.spotify.com/v1/browse/categories/dinner/playlists?country=FR&offset=0&limit=10",
+    "total": 14
+  }
+}

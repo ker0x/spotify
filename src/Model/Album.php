@@ -49,22 +49,22 @@ class Album implements TypeInterface
     protected $popularity;
 
     /**
-     * @var string
+     * @var null|string
      */
     protected $releaseDate;
 
     /**
-     * @var string
+     * @var null|string
      */
     protected $releaseDatePrecision;
 
     /**
-     * @var int
+     * @var null|int
      */
     protected $totalTracks;
 
     /**
-     * @var string
+     * @var null|string
      */
     protected $restrictions;
 
@@ -99,7 +99,7 @@ class Album implements TypeInterface
     protected $externalIds;
 
     /**
-     * @var null|string
+     * @var array
      */
     protected $genres;
 
@@ -145,11 +145,11 @@ class Album implements TypeInterface
         string $id,
         array $images,
         string $name,
-        string $releaseDate,
-        string $releaseDatePrecision,
-        int $totalTracks,
-        ?string $restrictions,
         string $uri,
+        ?string $releaseDate = null,
+        ?string $releaseDatePrecision = null,
+        ?int $totalTracks = null,
+        ?string $restrictions = null,
         ?Paging $tracks = null,
         ?string $albumType = null,
         ?string $albumGroup = null,
@@ -229,9 +229,9 @@ class Album implements TypeInterface
         $label = $album['label'] ?? null;
         $name = $album['name'];
         $popularity = $album['popularity'] ?? null;
-        $releaseDate = $album['release_date'];
-        $releaseDatePrecision = $album['release_date_precision'];
-        $totalTracks = $album['total_tracks'];
+        $releaseDate = $album['release_date'] ?? null;
+        $releaseDatePrecision = $album['release_date_precision'] ?? null;
+        $totalTracks = $album['total_tracks'] ?? null;
         $restrictions = $album['restrictions'] ?? null;
 
         $tracks = null;
@@ -249,11 +249,11 @@ class Album implements TypeInterface
             $id,
             $images,
             $name,
+            $uri,
             $releaseDate,
             $releaseDatePrecision,
             $totalTracks,
             $restrictions,
-            $uri,
             $tracks,
             $albumType,
             $albumGroup,
@@ -330,22 +330,25 @@ class Album implements TypeInterface
     }
 
     /**
-     * @return string
+     * @return null|string
      */
-    public function getReleaseDate(): string
+    public function getReleaseDate(): ?string
     {
         return $this->releaseDate;
     }
 
     /**
-     * @return string
+     * @return null|string
      */
-    public function getReleaseDatePrecision(): string
+    public function getReleaseDatePrecision(): ?string
     {
         return $this->releaseDatePrecision;
     }
 
-    public function getTotalTracks(): int
+    /**
+     * @return null|int
+     */
+    public function getTotalTracks(): ?int
     {
         return $this->totalTracks;
     }

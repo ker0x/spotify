@@ -69,7 +69,7 @@ class AbstractApi implements QueryParametersInterface
 
         $query = [];
         foreach ($queryParameters as $parameter => $value) {
-            if (($parameter === self::PARAMETER_IDS || $parameter === self::PARAMETER_INCLUDE_GROUPS || $parameter === self::PARAMETER_TYPE) && \is_array($value)) {
+            if (\is_array($value)) {
                 $value = implode(',', $value);
             }
 

@@ -1,0 +1,258 @@
+{
+  "message": "A demain !",
+  "playlists": {
+    "href": "https://api.spotify.com/v1/browse/featured-playlists?country=FR&locale=fr_fr&timestamp=2018-11-27T00%3A00%3A00&offset=5&limit=10",
+    "items": [
+      {
+        "collaborative": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWXLbJb1PtkXq"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWXLbJb1PtkXq",
+        "id": "37i9dQZF1DWXLbJb1PtkXq",
+        "images": [
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/04329fb1866dc801adb3453c1d31c859dba9da47",
+            "width": 300
+          }
+        ],
+        "name": "Génération 90",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTUzODc3MTg3OSwwMDAwMDAwNTAwMDAwMTY2NDVmMzg1YzMwMDAwMDE2NTZjNTdmYmM0",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWXLbJb1PtkXq/tracks",
+          "total": 50
+        },
+        "type": "playlist",
+        "uri": "spotify:user:spotify:playlist:37i9dQZF1DWXLbJb1PtkXq"
+      },
+      {
+        "collaborative": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX6RUdhus57oC"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX6RUdhus57oC",
+        "id": "37i9dQZF1DX6RUdhus57oC",
+        "images": [
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/e994e0094076fc7b3b766005d301ab612c137789",
+            "width": 300
+          }
+        ],
+        "name": "Douce nuit",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTU0MjU4MjA2MCwwMDAwMDAxNzAwMDAwMTY3MjkwZTQ0MTQwMDAwMDE2MmYyYjBlOGQ4",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX6RUdhus57oC/tracks",
+          "total": 50
+        },
+        "type": "playlist",
+        "uri": "spotify:user:spotify:playlist:37i9dQZF1DX6RUdhus57oC"
+      },
+      {
+        "collaborative": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX4sWSpwq3LiO"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX4sWSpwq3LiO",
+        "id": "37i9dQZF1DX4sWSpwq3LiO",
+        "images": [
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/56228f9353b23405516a6ea8af1c22083f450b57",
+            "width": 300
+          }
+        ],
+        "name": "Peaceful Piano",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTU0MjEyMzA1OSwwMDAwMDA4MDAwMDAwMTY3MGRiMjdhMjcwMDAwMDE2MmYyYjBlOGQ4",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX4sWSpwq3LiO/tracks",
+          "total": 165
+        },
+        "type": "playlist",
+        "uri": "spotify:user:spotify:playlist:37i9dQZF1DX4sWSpwq3LiO"
+      },
+      {
+        "collaborative": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWWGfAvkwMeip"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWWGfAvkwMeip",
+        "id": "37i9dQZF1DWWGfAvkwMeip",
+        "images": [
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/9bc45d79cb30c385f6195ed739a402b938908abf",
+            "width": 300
+          }
+        ],
+        "name": "La Face B",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTU0Mjk2MjcwNywwMDAwMDA5ODAwMDAwMTY3M2ZiZTdjNGQwMDAwMDE2NzNjYzZhZTcy",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWWGfAvkwMeip/tracks",
+          "total": 50
+        },
+        "type": "playlist",
+        "uri": "spotify:user:spotify:playlist:37i9dQZF1DWWGfAvkwMeip"
+      },
+      {
+        "collaborative": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX3Ogo9pFvBkY"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX3Ogo9pFvBkY",
+        "id": "37i9dQZF1DX3Ogo9pFvBkY",
+        "images": [
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/95c639b2601ec59068e3808adcbc358c1f8ee067",
+            "width": 300
+          }
+        ],
+        "name": "Ambient Chill",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTU0MjQxMTMxMCwwMDAwMDAyMTAwMDAwMTY3MWVlMGQzZGEwMDAwMDE2NDYwODFkYmY4",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX3Ogo9pFvBkY/tracks",
+          "total": 90
+        },
+        "type": "playlist",
+        "uri": "spotify:user:spotify:playlist:37i9dQZF1DX3Ogo9pFvBkY"
+      },
+      {
+        "collaborative": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX2UXfvEIZvDK"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX2UXfvEIZvDK",
+        "id": "37i9dQZF1DX2UXfvEIZvDK",
+        "images": [
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/1daf03215e7a6ad303706bc6584e41bfbd5db75d",
+            "width": 300
+          }
+        ],
+        "name": "Modern Chill Rock",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTUzODE0NTgxOSwwMDAwMDAzYzAwMDAwMTY2MjBhMjljZDAwMDAwMDE2MmYyYjBlOGQ4",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX2UXfvEIZvDK/tracks",
+          "total": 50
+        },
+        "type": "playlist",
+        "uri": "spotify:user:spotify:playlist:37i9dQZF1DX2UXfvEIZvDK"
+      },
+      {
+        "collaborative": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX4PP3DA4J0N8"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX4PP3DA4J0N8",
+        "id": "37i9dQZF1DX4PP3DA4J0N8",
+        "images": [
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/910417054b27bce2e63e359e812484a898faacc3",
+            "width": 300
+          }
+        ],
+        "name": "Nature Sounds",
+        "owner": {
+          "display_name": "Spotify",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTUzNDcwMTE4MCwwMDAwMDAwYTAwMDAwMTY1NTM1MTk1NTMwMDAwMDE2MmYyYjBlOGQ4",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX4PP3DA4J0N8/tracks",
+          "total": 55
+        },
+        "type": "playlist",
+        "uri": "spotify:user:spotify:playlist:37i9dQZF1DX4PP3DA4J0N8"
+      }
+    ],
+    "limit": 10,
+    "next": null,
+    "offset": 5,
+    "previous": "https://api.spotify.com/v1/browse/featured-playlists?country=FR&locale=fr_fr&timestamp=2018-11-27T00%3A00%3A00&offset=0&limit=10",
+    "total": 12
+  }
+}

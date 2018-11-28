@@ -84,7 +84,7 @@ class Track implements TypeInterface
     protected $popularity;
 
     /**
-     * @var string
+     * @var null|string
      */
     protected $previewUrl;
 
@@ -146,11 +146,11 @@ class Track implements TypeInterface
         ?TrackLink $linkedForm,
         array $restrictions,
         string $name,
-        string $previewUrl,
         int $trackNumber,
         string $type,
         string $uri,
         bool $isLocal,
+        ?string $previewUrl = null,
         ?Album $album = null,
         ?int $popularity = null
     ) {
@@ -213,7 +213,7 @@ class Track implements TypeInterface
         $href = $track['href'];
         $id = $track['id'];
 
-        $isLocal = $track['is_local'];
+        $isLocal = $track['is_local'] ?? false;
         $isPlayable = $track['is_playable'];
 
         $linkedFrom = null;
@@ -224,7 +224,7 @@ class Track implements TypeInterface
         $restrictions = $track['restrictions'] ?? [];
         $name = $track['name'];
         $popularity = $track['popularity'] ?? null;
-        $previewUrl = $track['preview_url'];
+        $previewUrl = $track['preview_url'] ?? null;
         $trackNumber = $track['track_number'];
         $type = $track['type'];
         $uri = $track['uri'];
@@ -243,11 +243,11 @@ class Track implements TypeInterface
             $linkedFrom,
             $restrictions,
             $name,
-            $previewUrl,
             $trackNumber,
             $type,
             $uri,
             $isLocal,
+            $previewUrl,
             $album,
             $popularity
         );
@@ -374,9 +374,9 @@ class Track implements TypeInterface
     }
 
     /**
-     * @return string
+     * @return null|string
      */
-    public function getPreviewUrl(): string
+    public function getPreviewUrl(): ?string
     {
         return $this->previewUrl;
     }
