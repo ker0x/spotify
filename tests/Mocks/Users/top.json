@@ -1,0 +1,400 @@
+{
+  "items": [
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/3SiCxhceGZgzusCLHd4Zz6"
+      },
+      "followers": {
+        "href": null,
+        "total": 31923
+      },
+      "genres": [
+        "instrumental post-rock",
+        "post-metal",
+        "post-rock"
+      ],
+      "href": "https://api.spotify.com/v1/artists/3SiCxhceGZgzusCLHd4Zz6",
+      "id": "3SiCxhceGZgzusCLHd4Zz6",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/9a45679ac34b488bbe8c2c338ca891781dfc4950",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/6bff24fc9d910f6d66a5ddd07afcd1c3d5edc969",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/f4b5f8c99e6efef21a6d25d759dacae6b40e97bb",
+          "width": 160
+        }
+      ],
+      "name": "Long Distance Calling",
+      "popularity": 43,
+      "type": "artist",
+      "uri": "spotify:artist:3SiCxhceGZgzusCLHd4Zz6"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/4k1ELeJKT1ISyDv8JivPpB"
+      },
+      "followers": {
+        "href": null,
+        "total": 869354
+      },
+      "genres": [
+        "big beat",
+        "breakbeat",
+        "electronic",
+        "hardcore techno"
+      ],
+      "href": "https://api.spotify.com/v1/artists/4k1ELeJKT1ISyDv8JivPpB",
+      "id": "4k1ELeJKT1ISyDv8JivPpB",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/5b00f36e95b6383e94107d645a5d06b4ad10f1ac",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/60c9955c4ef27b930cf3ec6c1bc2a9bcf7bf01c3",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/13b93537f425308177a7f523d92ae9bd211736d3",
+          "width": 160
+        }
+      ],
+      "name": "The Prodigy",
+      "popularity": 71,
+      "type": "artist",
+      "uri": "spotify:artist:4k1ELeJKT1ISyDv8JivPpB"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/5IbVJkPWprYL733JHcFSBR"
+      },
+      "followers": {
+        "href": null,
+        "total": 10106
+      },
+      "genres": [
+        "instrumental rock",
+        "math pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/5IbVJkPWprYL733JHcFSBR",
+      "id": "5IbVJkPWprYL733JHcFSBR",
+      "images": [
+        {
+          "height": 600,
+          "url": "https://i.scdn.co/image/7fa8f51cb25e3bf5d62c809951c747307abcedbe",
+          "width": 399
+        },
+        {
+          "height": 301,
+          "url": "https://i.scdn.co/image/6fb998957d50135171fcbc86dd6365e7c52d38c4",
+          "width": 200
+        },
+        {
+          "height": 96,
+          "url": "https://i.scdn.co/image/fee03587d72034b846dfa879a5b8f4e0b866ee78",
+          "width": 64
+        }
+      ],
+      "name": "Adebisi Shank",
+      "popularity": 28,
+      "type": "artist",
+      "uri": "spotify:artist:5IbVJkPWprYL733JHcFSBR"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/5LfGQac0EIXyAN8aUwmNAQ"
+      },
+      "followers": {
+        "href": null,
+        "total": 2593660
+      },
+      "genres": [
+        "alternative metal",
+        "permanent wave",
+        "pop punk",
+        "post-grunge",
+        "punk",
+        "rock",
+        "skate punk"
+      ],
+      "href": "https://api.spotify.com/v1/artists/5LfGQac0EIXyAN8aUwmNAQ",
+      "id": "5LfGQac0EIXyAN8aUwmNAQ",
+      "images": [
+        {
+          "height": 667,
+          "url": "https://i.scdn.co/image/95bdabfcd4719c71269c626d04238dbf5ad8718d",
+          "width": 1000
+        },
+        {
+          "height": 427,
+          "url": "https://i.scdn.co/image/c587d950d9a46b4d0a160ad130bda6a1e5df1a0c",
+          "width": 640
+        },
+        {
+          "height": 133,
+          "url": "https://i.scdn.co/image/e8330e4aa61b8bc5f0a3eaedb8d1ffb7b6f10026",
+          "width": 200
+        },
+        {
+          "height": 43,
+          "url": "https://i.scdn.co/image/0ffc914034ba1d8bb6e6dc85ea87e1fc2ef78332",
+          "width": 64
+        }
+      ],
+      "name": "The Offspring",
+      "popularity": 77,
+      "type": "artist",
+      "uri": "spotify:artist:5LfGQac0EIXyAN8aUwmNAQ"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/0X380XXQSNBYuleKzav5UO"
+      },
+      "followers": {
+        "href": null,
+        "total": 1057450
+      },
+      "genres": [
+        "alternative metal",
+        "alternative rock",
+        "cyberpunk",
+        "industrial",
+        "industrial metal",
+        "industrial rock",
+        "nu metal",
+        "post-grunge",
+        "rock"
+      ],
+      "href": "https://api.spotify.com/v1/artists/0X380XXQSNBYuleKzav5UO",
+      "id": "0X380XXQSNBYuleKzav5UO",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/959969ce11b5b44c45e0061473cf0f19215fdf53",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/3afed3f5f7d15ef0f3d1b0ee0672df9e9251932a",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/247c355dde622fe0bd7c633ff1667872efd68351",
+          "width": 160
+        }
+      ],
+      "name": "Nine Inch Nails",
+      "popularity": 69,
+      "type": "artist",
+      "uri": "spotify:artist:0X380XXQSNBYuleKzav5UO"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/1KDvR3odlKqAOjqT2Rp3Dn"
+      },
+      "followers": {
+        "href": null,
+        "total": 351
+      },
+      "genres": [
+        "outlaw country",
+        "red dirt",
+        "texas country"
+      ],
+      "href": "https://api.spotify.com/v1/artists/1KDvR3odlKqAOjqT2Rp3Dn",
+      "id": "1KDvR3odlKqAOjqT2Rp3Dn",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/b45b0a6cc0bc08669334226160d9db8d1fde7d02",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/b143eb011c4d84da3c2a3ecf02b6c62d18441876",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/f76a2eba0937139f229ee3e424c7ce23c5247e84",
+          "width": 160
+        }
+      ],
+      "name": "The Great Divide",
+      "popularity": 9,
+      "type": "artist",
+      "uri": "spotify:artist:1KDvR3odlKqAOjqT2Rp3Dn"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/1it6OQb9fceS1M3gfd6erX"
+      },
+      "followers": {
+        "href": null,
+        "total": 22033
+      },
+      "genres": [
+        "dark jazz"
+      ],
+      "href": "https://api.spotify.com/v1/artists/1it6OQb9fceS1M3gfd6erX",
+      "id": "1it6OQb9fceS1M3gfd6erX",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/4238aa5ce9c6c42735702cd907013237bd4435df",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/5bfab660926797784db5f0df8a7a4e92e3d37f08",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/cdd1cfd517903ea46e60fec32a3020c3400563e0",
+          "width": 64
+        }
+      ],
+      "name": "The Kilimanjaro Darkjazz Ensemble",
+      "popularity": 35,
+      "type": "artist",
+      "uri": "spotify:artist:1it6OQb9fceS1M3gfd6erX"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/0qT79UgT5tY4yudH9VfsdT"
+      },
+      "followers": {
+        "href": null,
+        "total": 1795213
+      },
+      "genres": [
+        "alternative metal",
+        "canadian punk",
+        "nu metal",
+        "pop punk",
+        "post-grunge",
+        "punk"
+      ],
+      "href": "https://api.spotify.com/v1/artists/0qT79UgT5tY4yudH9VfsdT",
+      "id": "0qT79UgT5tY4yudH9VfsdT",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/34a52aea7e7e3a194df14ce5ca5632d1c09e4dfe",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/dce9f74a873b9f35465924f77ba2615e81fd9838",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/32ef11caad3a505d62eb95c277cb460e8754b920",
+          "width": 160
+        }
+      ],
+      "name": "Sum 41",
+      "popularity": 72,
+      "type": "artist",
+      "uri": "spotify:artist:0qT79UgT5tY4yudH9VfsdT"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/2snm3HmsnDUDxbIChdl2Oj"
+      },
+      "followers": {
+        "href": null,
+        "total": 34147
+      },
+      "genres": [
+        "hollywood",
+        "movie tunes"
+      ],
+      "href": "https://api.spotify.com/v1/artists/2snm3HmsnDUDxbIChdl2Oj",
+      "id": "2snm3HmsnDUDxbIChdl2Oj",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/0a31455f3c881140c22c5aa4e1979b510a84aeeb",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/6d96e5fd4936b75ed02f5695d03d0dfd0ed7a264",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/3a5307e7090600dac3c6e858b045302acf1c58e3",
+          "width": 160
+        }
+      ],
+      "name": "Justin Hurwitz",
+      "popularity": 67,
+      "type": "artist",
+      "uri": "spotify:artist:2snm3HmsnDUDxbIChdl2Oj"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/2VYQTNDsvvKN9wmU5W7xpj"
+      },
+      "followers": {
+        "href": null,
+        "total": 1781737
+      },
+      "genres": [
+        "alternative metal",
+        "industrial",
+        "industrial metal",
+        "industrial rock",
+        "nu metal",
+        "rap rock",
+        "rock",
+        "wrestling"
+      ],
+      "href": "https://api.spotify.com/v1/artists/2VYQTNDsvvKN9wmU5W7xpj",
+      "id": "2VYQTNDsvvKN9wmU5W7xpj",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/42436559ae029809674c8498f2c998e138a7a757",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/894fc33a5d7df99c5464ec6aacb2957b42b169fd",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/17e5a4d7060361f729658499e223fcb7b76967b1",
+          "width": 160
+        }
+      ],
+      "name": "Marilyn Manson",
+      "popularity": 74,
+      "type": "artist",
+      "uri": "spotify:artist:2VYQTNDsvvKN9wmU5W7xpj"
+    }
+  ],
+  "total": 50,
+  "limit": 10,
+  "offset": 5,
+  "href": "https://api.spotify.com/v1/me/top/artists?limit=10&offset=5",
+  "previous": null,
+  "next": "https://api.spotify.com/v1/me/top/artists?limit=10&offset=15"
+}

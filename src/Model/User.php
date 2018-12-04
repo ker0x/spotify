@@ -47,7 +47,7 @@ class User
     protected $id;
 
     /**
-     * @var array
+     * @var \Kerox\Spotify\Model\Image[]
      */
     protected $images;
 
@@ -227,7 +227,7 @@ class User
     }
 
     /**
-     * @return array
+     * @return \Kerox\Spotify\Model\Image[]
      */
     public function getImages(): array
     {
