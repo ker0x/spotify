@@ -1,0 +1,394 @@
+{
+  "artists": {
+    "items": [
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/0L8ExT028jH3ddEcZwqJJ5"
+        },
+        "followers": {
+          "href": null,
+          "total": 9064932
+        },
+        "genres": [
+          "alternative rock",
+          "funk metal",
+          "permanent wave",
+          "post-grunge",
+          "rock"
+        ],
+        "href": "https://api.spotify.com/v1/artists/0L8ExT028jH3ddEcZwqJJ5",
+        "id": "0L8ExT028jH3ddEcZwqJJ5",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/5b2072e522bf3324019a8c2dc3db20116dff0b87",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/9527e700b5c80aa67350d5de0da10a0aa754fcb1",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/a7af6412632c81ebfb5e39495aa3dacc564cb22b",
+            "width": 160
+          }
+        ],
+        "name": "Red Hot Chili Peppers",
+        "popularity": 85,
+        "type": "artist",
+        "uri": "spotify:artist:0L8ExT028jH3ddEcZwqJJ5"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/0RqtSIYZmd4fiBKVFqyIqD"
+        },
+        "followers": {
+          "href": null,
+          "total": 2006996
+        },
+        "genres": [
+          "modern rock",
+          "pop punk",
+          "post-grunge",
+          "rock"
+        ],
+        "href": "https://api.spotify.com/v1/artists/0RqtSIYZmd4fiBKVFqyIqD",
+        "id": "0RqtSIYZmd4fiBKVFqyIqD",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/77c0b320fcd21be3329a0b2251409a2081247b57",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/e45c3f34b1a88245f5c8ef16c5b9fb6b0fe1c8a9",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/731ed9a97b37aa46ee522317ede95895c3f3ec89",
+            "width": 160
+          }
+        ],
+        "name": "Thirty Seconds To Mars",
+        "popularity": 74,
+        "type": "artist",
+        "uri": "spotify:artist:0RqtSIYZmd4fiBKVFqyIqD"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/0TF6B1cp2QZXLE0NjhTMT9"
+        },
+        "followers": {
+          "href": null,
+          "total": 27140
+        },
+        "genres": [
+          "instrumental rock",
+          "japanese post-rock",
+          "math pop",
+          "post-rock"
+        ],
+        "href": "https://api.spotify.com/v1/artists/0TF6B1cp2QZXLE0NjhTMT9",
+        "id": "0TF6B1cp2QZXLE0NjhTMT9",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/ee723078cfe061dc07b63530e8c1d1162283cb54",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/bafd398a177842d21c48c895c451791467d66e1f",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/027ba0a5a66bf00360405f55fdd60811fd0db2d1",
+            "width": 160
+          }
+        ],
+        "name": "LITE",
+        "popularity": 38,
+        "type": "artist",
+        "uri": "spotify:artist:0TF6B1cp2QZXLE0NjhTMT9"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/0VE0GTaTSeeGSzrQpLmeb9"
+        },
+        "followers": {
+          "href": null,
+          "total": 78566
+        },
+        "genres": [
+          "black thrash",
+          "norwegian metal",
+          "norwegian rock"
+        ],
+        "href": "https://api.spotify.com/v1/artists/0VE0GTaTSeeGSzrQpLmeb9",
+        "id": "0VE0GTaTSeeGSzrQpLmeb9",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/3236b9afafaa5343afd007e75fc0176507ef92a8",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/22985e79fcc6cc7dfc1ac628e62d551affeaf8e3",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/1fac5cca28ce092afff7eb692d486ec02af935f5",
+            "width": 160
+          }
+        ],
+        "name": "Kvelertak",
+        "popularity": 47,
+        "type": "artist",
+        "uri": "spotify:artist:0VE0GTaTSeeGSzrQpLmeb9"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/0VJIBKdqJygrupAxpSTk7q"
+        },
+        "followers": {
+          "href": null,
+          "total": 217850
+        },
+        "genres": [
+          "french rock"
+        ],
+        "href": "https://api.spotify.com/v1/artists/0VJIBKdqJygrupAxpSTk7q",
+        "id": "0VJIBKdqJygrupAxpSTk7q",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/817ffcbaf41efb28de6b27893afb13ae205364ad",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/a2b3d6658084bd306e22abc56274618913c39ed0",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/ca9194b14799e992777b6f531cb0bf8b2e0d9d26",
+            "width": 160
+          }
+        ],
+        "name": "Shaka Ponk",
+        "popularity": 53,
+        "type": "artist",
+        "uri": "spotify:artist:0VJIBKdqJygrupAxpSTk7q"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/0WwSkZ7LtFUFjGjMZBMt6T"
+        },
+        "followers": {
+          "href": null,
+          "total": 1853888
+        },
+        "genres": [
+          "album rock",
+          "classic rock",
+          "mellow gold",
+          "rock",
+          "soft rock"
+        ],
+        "href": "https://api.spotify.com/v1/artists/0WwSkZ7LtFUFjGjMZBMt6T",
+        "id": "0WwSkZ7LtFUFjGjMZBMt6T",
+        "images": [
+          {
+            "height": 1021,
+            "url": "https://i.scdn.co/image/54a86ecf1de16b17e2ed000a9ca8a1590c9a3b80",
+            "width": 1000
+          },
+          {
+            "height": 653,
+            "url": "https://i.scdn.co/image/caf04a8a030c70dd697ee0b37562033bbe3cdb4f",
+            "width": 640
+          },
+          {
+            "height": 204,
+            "url": "https://i.scdn.co/image/7756c61bed0dc7650b188a4c7be984dc4e1d7651",
+            "width": 200
+          },
+          {
+            "height": 65,
+            "url": "https://i.scdn.co/image/0ba7e13266153e59b9b611cbd43e21aec7f6737c",
+            "width": 64
+          }
+        ],
+        "name": "Dire Straits",
+        "popularity": 76,
+        "type": "artist",
+        "uri": "spotify:artist:0WwSkZ7LtFUFjGjMZBMt6T"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/0X380XXQSNBYuleKzav5UO"
+        },
+        "followers": {
+          "href": null,
+          "total": 1057458
+        },
+        "genres": [
+          "alternative metal",
+          "alternative rock",
+          "cyberpunk",
+          "industrial",
+          "industrial metal",
+          "industrial rock",
+          "nu metal",
+          "post-grunge",
+          "rock"
+        ],
+        "href": "https://api.spotify.com/v1/artists/0X380XXQSNBYuleKzav5UO",
+        "id": "0X380XXQSNBYuleKzav5UO",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/959969ce11b5b44c45e0061473cf0f19215fdf53",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/3afed3f5f7d15ef0f3d1b0ee0672df9e9251932a",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/247c355dde622fe0bd7c633ff1667872efd68351",
+            "width": 160
+          }
+        ],
+        "name": "Nine Inch Nails",
+        "popularity": 69,
+        "type": "artist",
+        "uri": "spotify:artist:0X380XXQSNBYuleKzav5UO"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/0YC192cP3KPCRWx8zr8MfZ"
+        },
+        "followers": {
+          "href": null,
+          "total": 1365530
+        },
+        "genres": [
+          "german soundtrack",
+          "soundtrack"
+        ],
+        "href": "https://api.spotify.com/v1/artists/0YC192cP3KPCRWx8zr8MfZ",
+        "id": "0YC192cP3KPCRWx8zr8MfZ",
+        "images": [
+          {
+            "height": 563,
+            "url": "https://i.scdn.co/image/14657235e8724181f8b32c6bfa54cdbf86d70852",
+            "width": 1000
+          },
+          {
+            "height": 360,
+            "url": "https://i.scdn.co/image/960a8d4afdf777c543618e384428aacffdcf517a",
+            "width": 640
+          },
+          {
+            "height": 113,
+            "url": "https://i.scdn.co/image/94ad4486b19037fa88ed58a946698365f4a7bb73",
+            "width": 200
+          },
+          {
+            "height": 36,
+            "url": "https://i.scdn.co/image/3d05c3dffd54fb06b0191f258e88ca3b5832250f",
+            "width": 64
+          }
+        ],
+        "name": "Hans Zimmer",
+        "popularity": 78,
+        "type": "artist",
+        "uri": "spotify:artist:0YC192cP3KPCRWx8zr8MfZ"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/0aQZgmmJf5XcxZldSyT1Nh"
+        },
+        "followers": {
+          "href": null,
+          "total": 70
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/artists/0aQZgmmJf5XcxZldSyT1Nh",
+        "id": "0aQZgmmJf5XcxZldSyT1Nh",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/f5e95006182de528a930be7a906dafb160abf397",
+            "width": 640
+          },
+          {
+            "height": 300,
+            "url": "https://i.scdn.co/image/f8a1fdf82aecd8936edcb9b39bb0e9cc900cdf0f",
+            "width": 300
+          },
+          {
+            "height": 64,
+            "url": "https://i.scdn.co/image/d0606e185e9c9aaf192016857cdc9426581121ce",
+            "width": 64
+          }
+        ],
+        "name": "Lenin Was a Zombie",
+        "popularity": 1,
+        "type": "artist",
+        "uri": "spotify:artist:0aQZgmmJf5XcxZldSyT1Nh"
+      },
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/0bRtSoJSpQdnbB3dWrWprR"
+        },
+        "followers": {
+          "href": null,
+          "total": 59902
+        },
+        "genres": [],
+        "href": "https://api.spotify.com/v1/artists/0bRtSoJSpQdnbB3dWrWprR",
+        "id": "0bRtSoJSpQdnbB3dWrWprR",
+        "images": [
+          {
+            "height": 640,
+            "url": "https://i.scdn.co/image/6928f5a6650b2cb99a05effbb74c5054c98aa76c",
+            "width": 640
+          },
+          {
+            "height": 320,
+            "url": "https://i.scdn.co/image/2077c69cfa0bb89a77c347f4959150706581aeaa",
+            "width": 320
+          },
+          {
+            "height": 160,
+            "url": "https://i.scdn.co/image/088bcab77e88479b7c8802f90a6b2ac4fae04bba",
+            "width": 160
+          }
+        ],
+        "name": "The Acid",
+        "popularity": 48,
+        "type": "artist",
+        "uri": "spotify:artist:0bRtSoJSpQdnbB3dWrWprR"
+      }
+    ],
+    "next": "https://api.spotify.com/v1/me/following?type=artist&after=0bRtSoJSpQdnbB3dWrWprR&limit=10",
+    "total": 174,
+    "cursors": {
+      "after": "0bRtSoJSpQdnbB3dWrWprR"
+    },
+    "limit": 10,
+    "href": "https://api.spotify.com/v1/me/following?type=artist&after=0I2XqVXqHScXjHhk6AYYRe&limit=10"
+  }
+}
