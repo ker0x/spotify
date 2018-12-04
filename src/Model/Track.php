@@ -66,7 +66,7 @@ class Track implements TypeInterface
     /**
      * @var null|\Kerox\Spotify\Model\TrackLink
      */
-    protected $linkedForm;
+    protected $linkedFrom;
 
     /**
      * @var array
@@ -111,26 +111,26 @@ class Track implements TypeInterface
     /**
      * Track constructor.
      *
-     * @param array                           $artists
-     * @param array                           $availableMarkets
-     * @param int                             $discNumber
-     * @param int                             $durationMs
-     * @param bool                            $explicit
-     * @param array                           $externalIds
-     * @param array                           $externalUrls
-     * @param string                          $href
-     * @param string                          $id
-     * @param bool                            $isPlayable
-     * @param \Kerox\Spotify\Model\TrackLink  $linkedForm
-     * @param array                           $restrictions
-     * @param string                          $name
-     * @param string                          $previewUrl
-     * @param int                             $trackNumber
-     * @param string                          $type
-     * @param string                          $uri
-     * @param bool                            $isLocal
-     * @param \Kerox\Spotify\Model\Album|null $album
-     * @param int|null                        $popularity
+     * @param array                               $artists
+     * @param array                               $availableMarkets
+     * @param int                                 $discNumber
+     * @param int                                 $durationMs
+     * @param bool                                $explicit
+     * @param array                               $externalIds
+     * @param array                               $externalUrls
+     * @param string                              $href
+     * @param string                              $id
+     * @param bool                                $isPlayable
+     * @param \Kerox\Spotify\Model\TrackLink|null $linkedFrom
+     * @param array                               $restrictions
+     * @param string                              $name
+     * @param int                                 $trackNumber
+     * @param string                              $type
+     * @param string                              $uri
+     * @param bool                                $isLocal
+     * @param string                              $previewUrl
+     * @param \Kerox\Spotify\Model\Album|null     $album
+     * @param int|null                            $popularity
      */
     public function __construct(
         array $artists,
@@ -143,7 +143,7 @@ class Track implements TypeInterface
         string $href,
         string $id,
         bool $isPlayable,
-        ?TrackLink $linkedForm,
+        ?TrackLink $linkedFrom,
         array $restrictions,
         string $name,
         int $trackNumber,
@@ -164,7 +164,7 @@ class Track implements TypeInterface
         $this->href = $href;
         $this->id = $id;
         $this->isPlayable = $isPlayable;
-        $this->linkedForm = $linkedForm;
+        $this->linkedFrom = $linkedFrom;
         $this->restrictions = $restrictions;
         $this->name = $name;
         $this->previewUrl = $previewUrl;
@@ -201,7 +201,7 @@ class Track implements TypeInterface
         $externalIds = [];
         if (isset($track['external_ids'])) {
             foreach ($track['external_ids'] as $type => $url) {
-                $externalUrls[] = External::build($type, $url);
+                $externalIds[] = External::build($type, $url);
             }
         }
 
@@ -344,9 +344,9 @@ class Track implements TypeInterface
     /**
      * @return null|\Kerox\Spotify\Model\TrackLink
      */
-    public function getLinkedForm(): ?TrackLink
+    public function getLinkedFrom(): ?TrackLink
     {
-        return $this->linkedForm;
+        return $this->linkedFrom;
     }
 
     /**
