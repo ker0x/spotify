@@ -13,6 +13,7 @@ use Kerox\Spotify\Response\UserResponse;
 use Kerox\Spotify\Spotify;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\ClientInterface;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 
 class MeTest extends TestCase
@@ -31,7 +32,7 @@ class MeTest extends TestCase
 
     public function testGetMe(): void
     {
-        $body = file_get_contents(__DIR__ . '/../../Mocks/Users/me.json');
+        $body = file_get_contents(__DIR__ . '/../../Mocks/Me/get.json');
 
         $stream = $this->createMock(StreamInterface::class);
         $stream->method('__toString')->willReturn($body);
@@ -45,7 +46,7 @@ class MeTest extends TestCase
         $client->method('sendRequest')->willReturn($response);
 
         $spotify = new Spotify($this->oauthToken, $client);
-        $response = $spotify->users()->get('0123456789');
+        $response = $spotify->me()->get();
 
         $user = $response->getUser();
 
@@ -70,7 +71,7 @@ class MeTest extends TestCase
 
     public function testGetMePlaylists(): void
     {
-        $body = file_get_contents(__DIR__ . '/../../Mocks/Users/playlists.json');
+        $body = file_get_contents(__DIR__ . '/../../Mocks/Me/playlists.json');
 
         $stream = $this->createMock(StreamInterface::class);
         $stream->method('__toString')->willReturn($body);
@@ -112,7 +113,7 @@ class MeTest extends TestCase
 
     public function testGetTop(): void
     {
-        $body = file_get_contents(__DIR__ . '/../../Mocks/Users/top.json');
+        $body = file_get_contents(__DIR__ . '/../../Mocks/Me/top.json');
 
         $stream = $this->createMock(StreamInterface::class);
         $stream->method('__toString')->willReturn($body);
@@ -142,5 +143,41 @@ class MeTest extends TestCase
         $this->assertSame('https://api.spotify.com/v1/me/top/artists?limit=10&offset=5', $paging->getHref());
         $this->assertSame('https://api.spotify.com/v1/me/top/artists?limit=10&offset=15', $paging->getNext());
         $this->assertNull($paging->getPrevious());
+    }
+
+    public function testFollow(): void
+    {
+        $response = $this->createMock(ResponseInterface::class);
+        $response->method('getStatusCode')->willReturn(200);
+
+        $client = $this->createMock(ClientInterface::class);
+        $client->method('sendRequest')->willReturn($response);
+
+        $spotify = new Spotify($this->oauthToken, $client);
+        $response = $spotify->me()->follow([
+            '2CIMQHirSU0MQqyYHq0eOx',
+            '57dN52uHvrHOxijzpIgu3E',
+            '1vCWHaC5f2uS3yhpwWbIA6',
+        ]);
+
+        $this->assertSame(200, $response->getStatusCode());
+    }
+
+    public function testUnfollow(): void
+    {
+        $response = $this->createMock(ResponseInterface::class);
+        $response->method('getStatusCode')->willReturn(200);
+
+        $client = $this->createMock(ClientInterface::class);
+        $client->method('sendRequest')->willReturn($response);
+
+        $spotify = new Spotify($this->oauthToken, $client);
+        $response = $spotify->me()->unfollow([
+            '2CIMQHirSU0MQqyYHq0eOx',
+            '57dN52uHvrHOxijzpIgu3E',
+            '1vCWHaC5f2uS3yhpwWbIA6',
+        ]);
+
+        $this->assertSame(200, $response->getStatusCode());
     }
 }

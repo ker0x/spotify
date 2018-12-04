@@ -2,7 +2,10 @@
 
 namespace Kerox\Spotify\Test\TestCase\Api;
 
+use Kerox\Spotify\Interfaces\QueryParametersInterface;
 use Kerox\Spotify\Model\External;
+use Kerox\Spotify\Model\Playlist;
+use Kerox\Spotify\Response\PagingResponse;
 use Kerox\Spotify\Response\UserResponse;
 use Kerox\Spotify\Spotify;
 use PHPUnit\Framework\TestCase;
@@ -52,5 +55,44 @@ class UsersTest extends TestCase
         $this->assertEmpty($user->getImages());
         $this->assertSame('user', $user->getType());
         $this->assertSame('spotify:user:0123456789', $user->getUri());
+    }
+
+    public function testGetUserPlaylists(): void
+    {
+        $body = file_get_contents(__DIR__ . '/../../Mocks/Users/playlists.json');
+
+        $stream = $this->createMock(StreamInterface::class);
+        $stream->method('__toString')->willReturn($body);
+
+        $response = $this->createMock(PagingResponse::class);
+        $response->method('getBody')->willReturn($stream);
+        $response->method('getHeader')->willReturn(['content-type' => 'json']);
+        $response->method('getStatusCode')->willReturn(200);
+
+        $client = $this->createMock(ClientInterface::class);
+        $client->method('sendRequest')->willReturn($response);
+
+        $spotify = new Spotify($this->oauthToken, $client);
+        $response = $spotify->users()->playlists('0123456789', [
+            QueryParametersInterface::PARAMETER_LIMIT => 10,
+            QueryParametersInterface::PARAMETER_OFFSET => 5,
+        ]);
+
+        $paging = $response->getPaging();
+
+        $this->assertContainsOnlyInstancesOf(Playlist::class, $paging->getItems());
+        $this->assertInstanceOf(Playlist::class, $paging->getItem(0));
+        $this->assertSame(10, $paging->getLimit());
+        $this->assertSame(5, $paging->getOffset());
+        $this->assertSame(6, $paging->getTotal());
+        $this->assertSame(
+            'https://api.spotify.com/v1/users/0123456789/playlists?offset=5&limit=10',
+            $paging->getHref()
+        );
+        $this->assertNull($paging->getNext());
+        $this->assertSame(
+            'https://api.spotify.com/v1/users/0123456789/playlists?offset=0&limit=10',
+            $paging->getPrevious()
+        );
     }
 }
