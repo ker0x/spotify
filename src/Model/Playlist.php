@@ -70,7 +70,7 @@ class Playlist implements TypeInterface, JsonSerializable
     protected $snapshotId;
 
     /**
-     * @var array
+     * @var null|\Kerox\Spotify\Model\Paging
      */
     protected $tracks;
 
@@ -87,6 +87,8 @@ class Playlist implements TypeInterface, JsonSerializable
     /**
      * Playlist constructor.
      *
+     * @param string                         $name
+     * @param bool                           $public
      * @param bool                           $collaborative
      * @param string                         $description
      * @param array                          $externalUrls
@@ -94,11 +96,10 @@ class Playlist implements TypeInterface, JsonSerializable
      * @param string                         $href
      * @param string                         $id
      * @param array                          $images
-     * @param string                         $name
      * @param \Kerox\Spotify\Model\User      $owner
-     * @param bool                           $public
+     * @param string|null                    $primaryColor
      * @param string                         $snapshotId
-     * @param array                          $tracks
+     * @param \Kerox\Spotify\Model\Paging    $tracks
      * @param string                         $uri
      */
     public function __construct(
@@ -114,7 +115,7 @@ class Playlist implements TypeInterface, JsonSerializable
         ?User $owner = null,
         ?string $primaryColor = null,
         ?string $snapshotId = null,
-        array $tracks = [],
+        ?Paging $tracks = null,
         ?string $uri = null
     ) {
         $this->name = $name;
@@ -165,7 +166,6 @@ class Playlist implements TypeInterface, JsonSerializable
             $externalUrls[] = External::build($type, $url);
         }
 
-        $followers = null;
         if (isset($playlist['followers'])) {
             $followers = Followers::build($playlist['followers']);
         }
@@ -187,7 +187,7 @@ class Playlist implements TypeInterface, JsonSerializable
         $primaryColor = $playlist['primary_color'] ?? null;
         $public = $playlist['public'] ?? false;
         $snapshotId = $playlist['snapshot_id'];
-        $tracks = $playlist['tracks'] ?? [];
+        $tracks = Paging::build($playlist['tracks']);
         $uri = $playlist['uri'];
 
         return new self(
@@ -196,7 +196,7 @@ class Playlist implements TypeInterface, JsonSerializable
             $collaborative,
             $description,
             $externalUrls,
-            $followers,
+            $followers ?? null,
             $href,
             $id,
             $images,
@@ -305,19 +305,11 @@ class Playlist implements TypeInterface, JsonSerializable
     }
 
     /**
-     * @return null|string
+     * @return null|\Kerox\Spotify\Model\Paging
      */
-    public function getLinkToTracks(): ?string
+    public function getTracks(): ?Paging
     {
-        return $this->tracks['href'] ?? null;
-    }
-
-    /**
-     * @return int
-     */
-    public function getTotalTracks(): int
-    {
-        return $this->tracks['total'] ?? 0;
+        return $this->tracks;
     }
 
     /**
@@ -348,7 +340,7 @@ class Playlist implements TypeInterface, JsonSerializable
             'description' => $this->description,
         ];
 
-        return array_filter($array);
+        return $array;
     }
 
     /**

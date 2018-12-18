@@ -25,7 +25,6 @@
     "zendframework/zend-diactoros": "^2.0"
   },
   "require-dev": {
-    "codacy/coverage": "^1.4",
     "friendsofphp/php-cs-fixer": "^2.5",
     "phpunit/phpunit": "^7.4"
   },

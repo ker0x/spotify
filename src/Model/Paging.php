@@ -80,49 +80,51 @@ class Paging
     public static function build(array $paging): self
     {
         $items = [];
-        foreach ($paging['items'] as $item) {
-            if (isset($item['type'])) {
-                $type = $item['type'] ?? null;
-                if ($type === TypeInterface::TYPE_ALBUM) {
-                    $items[] = Album::build($item);
+        if (isset($paging['items'])) {
+            foreach ($paging['items'] as $item) {
+                if (isset($item['type'])) {
+                    $type = $item['type'] ?? null;
+                    if ($type === TypeInterface::TYPE_ALBUM) {
+                        $items[] = Album::build($item);
+
+                        continue;
+                    }
+
+                    if ($type === TypeInterface::TYPE_ARTIST) {
+                        $items[] = Artist::build($item);
+
+                        continue;
+                    }
+
+                    if ($type === TypeInterface::TYPE_TRACK) {
+                        $items[] = Track::build($item);
+
+                        continue;
+                    }
+
+                    if ($type === TypeInterface::TYPE_PLAYLIST) {
+                        $items[] = Playlist::build($item);
+
+                        continue;
+                    }
+                } elseif (isset($item['added_at'])) {
+                    $items[] = SavedTrack::build($item);
+
+                    continue;
+                } else {
+                    $items[] = Category::build($item);
 
                     continue;
                 }
-
-                if ($type === TypeInterface::TYPE_ARTIST) {
-                    $items[] = Artist::build($item);
-
-                    continue;
-                }
-
-                if ($type === TypeInterface::TYPE_TRACK) {
-                    $items[] = Track::build($item);
-
-                    continue;
-                }
-
-                if ($type === TypeInterface::TYPE_PLAYLIST) {
-                    $items[] = Playlist::build($item);
-
-                    continue;
-                }
-            } elseif (isset($item['added_at'])) {
-                $items[] = SavedTrack::build($item);
-
-                continue;
-            } else {
-                $items[] = Category::build($item);
-
-                continue;
             }
         }
 
         $href = $paging['href'];
-        $limit = $paging['limit'];
-        $next = $paging['next'];
-        $offset = $paging['offset'];
-        $previous = $paging['previous'];
-        $total = $paging['total'];
+        $limit = $paging['limit'] ?? 0;
+        $next = $paging['next'] ?? null;
+        $offset = $paging['offset'] ?? 0;
+        $previous = $paging['previous'] ?? null;
+        $total = $paging['total'] ?? 0;
 
         return new self($href, $items, $limit, $next, $offset, $previous, $total);
     }
