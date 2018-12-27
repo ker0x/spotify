@@ -12,17 +12,17 @@ class External
     protected $type;
 
     /**
-     * @var string
+     * @var null|string
      */
     protected $value;
 
     /**
      * External constructor.
      *
-     * @param string $type
-     * @param string $value
+     * @param string      $type
+     * @param null|string $value
      */
-    public function __construct(string $type, string $value)
+    public function __construct(string $type, ?string $value = null)
     {
         $this->type = $type;
         $this->value = $value;
@@ -34,7 +34,7 @@ class External
      *
      * @return \Kerox\Spotify\Model\External
      */
-    public static function build(string $key, string $value): self
+    public static function build(string $key, ?string $value = null): self
     {
         return new self($key, $value);
     }
@@ -50,7 +50,7 @@ class External
     /**
      * @return string
      */
-    public function getValue(): string
+    public function getValue(): ?string
     {
         return $this->value;
     }

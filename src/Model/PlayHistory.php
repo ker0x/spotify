@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
-use DateTimeImmutable;
+use DateTime;
 use DateTimeInterface;
 use DateTimeZone;
 
@@ -47,8 +47,8 @@ class PlayHistory
     public static function build(array $playHistory): self
     {
         $track = Track::build($playHistory['track']);
-        $playedAt = DateTimeImmutable::createFromFormat(
-            DateTimeInterface::ATOM,
+        $playedAt = DateTime::createFromFormat(
+            DateTime::ATOM,
             $playHistory['played_at'],
             DateTimeZone::UTC
         );

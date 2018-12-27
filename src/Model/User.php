@@ -83,26 +83,26 @@ class User
      * @param null|string                    $product
      */
     public function __construct(
-        string $displayName,
         array $externalUrls,
         string $href,
         string $id,
         array $images,
         string $type,
         string $uri,
+        ?string $displayName = null,
         ?Followers $followers = null,
         ?string $birthDate = null,
         ?string $country = null,
         ?string $email = null,
         ?string $product = null
     ) {
-        $this->displayName = $displayName;
         $this->externalUrls = $externalUrls;
         $this->href = $href;
         $this->id = $id;
         $this->images = $images;
         $this->type = $type;
         $this->uri = $uri;
+        $this->displayName = $displayName;
         $this->followers = $followers;
         $this->birthDate = $birthDate;
         $this->country = $country;
@@ -117,7 +117,7 @@ class User
      */
     public static function build(array $user): self
     {
-        $displayName = $user['display_name'];
+        $displayName = $user['display_name'] ?? null;
 
         $externalUrls = [];
         foreach ($user['external_urls'] as $type => $url) {
@@ -147,13 +147,13 @@ class User
         $product = $user['product'] ?? null;
 
         return new self(
-            $displayName,
             $externalUrls,
             $href,
             $id,
             $images,
             $type,
             $uri,
+            $displayName,
             $followers,
             $birthDate,
             $country,

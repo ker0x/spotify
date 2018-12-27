@@ -1,0 +1,390 @@
+{
+  "href": "https://api.spotify.com/v1/users/1199545168/playlists?offset=5&limit=10",
+  "items": [
+    {
+      "collaborative": false,
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/1ez5flTnliXAJhE80PoHsb"
+      },
+      "href": "https://api.spotify.com/v1/playlists/1ez5flTnliXAJhE80PoHsb",
+      "id": "1ez5flTnliXAJhE80PoHsb",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/0b2e8cb3cdbc898a3fbeddee0616377a3d3edaad15ef352cfa3405c61201243bcb73daf3b0d60282a513085979167ba2d9d824e3e914929006a2d55fd9b0ea2be95059e4ba57a5d9270684c5f2b6eb86",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/0b2e8cb3cdbc898a3fbeddee0616377a3d3edaad15ef352cfa3405c61201243bcb73daf3b0d60282a513085979167ba2d9d824e3e914929006a2d55fd9b0ea2be95059e4ba57a5d9270684c5f2b6eb86",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/0b2e8cb3cdbc898a3fbeddee0616377a3d3edaad15ef352cfa3405c61201243bcb73daf3b0d60282a513085979167ba2d9d824e3e914929006a2d55fd9b0ea2be95059e4ba57a5d9270684c5f2b6eb86",
+          "width": 60
+        }
+      ],
+      "name": "Mes titres Shazam",
+      "owner": {
+        "display_name": "Romain Monteil",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/1199545168"
+        },
+        "href": "https://api.spotify.com/v1/users/1199545168",
+        "id": "1199545168",
+        "type": "user",
+        "uri": "spotify:user:1199545168"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "NDIsZTQ4NzljYzk1ZmViNzMyN2RmMmViN2UxZDlmYjliM2IyMjYxYTQxZg==",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/1ez5flTnliXAJhE80PoHsb/tracks",
+        "total": 36
+      },
+      "type": "playlist",
+      "uri": "spotify:user:1199545168:playlist:1ez5flTnliXAJhE80PoHsb"
+    },
+    {
+      "collaborative": false,
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/4MUJlEnmJfgxYG0vpAjWnG"
+      },
+      "href": "https://api.spotify.com/v1/playlists/4MUJlEnmJfgxYG0vpAjWnG",
+      "id": "4MUJlEnmJfgxYG0vpAjWnG",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/1d4e28084f1526f861697f289c6e7751e08e8ccf43e1fc32ef39302f5bbb4f9eb66bc3248d7fe4eb45bfec80c89665b6ee11dd65babfa384c8e32febec806c6d58d80b7b09cb69e6beb2a4dfd4d3bd53",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/1d4e28084f1526f861697f289c6e7751e08e8ccf43e1fc32ef39302f5bbb4f9eb66bc3248d7fe4eb45bfec80c89665b6ee11dd65babfa384c8e32febec806c6d58d80b7b09cb69e6beb2a4dfd4d3bd53",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/1d4e28084f1526f861697f289c6e7751e08e8ccf43e1fc32ef39302f5bbb4f9eb66bc3248d7fe4eb45bfec80c89665b6ee11dd65babfa384c8e32febec806c6d58d80b7b09cb69e6beb2a4dfd4d3bd53",
+          "width": 60
+        }
+      ],
+      "name": "Indie Folk",
+      "owner": {
+        "display_name": "Romain Monteil",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/1199545168"
+        },
+        "href": "https://api.spotify.com/v1/users/1199545168",
+        "id": "1199545168",
+        "type": "user",
+        "uri": "spotify:user:1199545168"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MzQsMjMwMDdmMWJjMjRlMTQxMmZlZWFiMmQwZGZmZDY2ZmQ1MDU2OGFlZQ==",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/4MUJlEnmJfgxYG0vpAjWnG/tracks",
+        "total": 33
+      },
+      "type": "playlist",
+      "uri": "spotify:user:1199545168:playlist:4MUJlEnmJfgxYG0vpAjWnG"
+    },
+    {
+      "collaborative": false,
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/1f5ZzLDTXHTDR8CYIEddpW"
+      },
+      "href": "https://api.spotify.com/v1/playlists/1f5ZzLDTXHTDR8CYIEddpW",
+      "id": "1f5ZzLDTXHTDR8CYIEddpW",
+      "images": [
+        {
+          "height": null,
+          "url": "https://pl.scdn.co/images/pl/default/6b42081b8219ab89f23bcef3cba2d66d5d82479c",
+          "width": null
+        }
+      ],
+      "name": "Life Is Strange [2015]",
+      "owner": {
+        "display_name": "officiallifeisstrange",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/officiallifeisstrange"
+        },
+        "href": "https://api.spotify.com/v1/users/officiallifeisstrange",
+        "id": "officiallifeisstrange",
+        "type": "user",
+        "uri": "spotify:user:officiallifeisstrange"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "NzAzNyxkODkxNGZmMGRlYTBhZjA1MDVhZTQ0NDg0ZjE4MmYxNGRmZjJmMjJm",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/1f5ZzLDTXHTDR8CYIEddpW/tracks",
+        "total": 14
+      },
+      "type": "playlist",
+      "uri": "spotify:user:officiallifeisstrange:playlist:1f5ZzLDTXHTDR8CYIEddpW"
+    },
+    {
+      "collaborative": false,
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/0AD72c3t6NfFrtF1HAy1W2"
+      },
+      "href": "https://api.spotify.com/v1/playlists/0AD72c3t6NfFrtF1HAy1W2",
+      "id": "0AD72c3t6NfFrtF1HAy1W2",
+      "images": [
+        {
+          "height": null,
+          "url": "https://pl.scdn.co/images/pl/default/65313d25d2455b16a91fa194b7386ca4ce48253e",
+          "width": null
+        }
+      ],
+      "name": "Post-Rock Room",
+      "owner": {
+        "display_name": "Arief Nasa",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/12122854064"
+        },
+        "href": "https://api.spotify.com/v1/users/12122854064",
+        "id": "12122854064",
+        "type": "user",
+        "uri": "spotify:user:12122854064"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "Mjc5LGQ2YmUwYmJmNjE3ZDIyODE4MzkyZDJlNGQyMjZlOTViYTM4ZjM4NmE=",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/0AD72c3t6NfFrtF1HAy1W2/tracks",
+        "total": 181
+      },
+      "type": "playlist",
+      "uri": "spotify:user:12122854064:playlist:0AD72c3t6NfFrtF1HAy1W2"
+    },
+    {
+      "collaborative": false,
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/0Gp4eE6xp2WPga8t70qbQZ"
+      },
+      "href": "https://api.spotify.com/v1/playlists/0Gp4eE6xp2WPga8t70qbQZ",
+      "id": "0Gp4eE6xp2WPga8t70qbQZ",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://mosaic.scdn.co/640/3e7ded9ae32ecd7d46eea2565b277656a84eb8d74fedf05f4fde165c02c044d6977973ebf036c0c1933d7a9d453928e557c4c8c43062e706b2227262bb6bb58b42afeb0fdd13922ec0d138e6734421e1",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://mosaic.scdn.co/300/3e7ded9ae32ecd7d46eea2565b277656a84eb8d74fedf05f4fde165c02c044d6977973ebf036c0c1933d7a9d453928e557c4c8c43062e706b2227262bb6bb58b42afeb0fdd13922ec0d138e6734421e1",
+          "width": 300
+        },
+        {
+          "height": 60,
+          "url": "https://mosaic.scdn.co/60/3e7ded9ae32ecd7d46eea2565b277656a84eb8d74fedf05f4fde165c02c044d6977973ebf036c0c1933d7a9d453928e557c4c8c43062e706b2227262bb6bb58b42afeb0fdd13922ec0d138e6734421e1",
+          "width": 60
+        }
+      ],
+      "name": "Math Rock",
+      "owner": {
+        "display_name": "Sam Grein",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/1261939062"
+        },
+        "href": "https://api.spotify.com/v1/users/1261939062",
+        "id": "1261939062",
+        "type": "user",
+        "uri": "spotify:user:1261939062"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MTI1LDljZDRkMThlNTIzMjFmOTdhNmQwYjg4ZTU2ZjdjZGZlZjhhZjJmNWQ=",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/0Gp4eE6xp2WPga8t70qbQZ/tracks",
+        "total": 728
+      },
+      "type": "playlist",
+      "uri": "spotify:user:1261939062:playlist:0Gp4eE6xp2WPga8t70qbQZ"
+    },
+    {
+      "collaborative": false,
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWVFJtzvDHN4L"
+      },
+      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWVFJtzvDHN4L",
+      "id": "37i9dQZF1DWVFJtzvDHN4L",
+      "images": [
+        {
+          "height": null,
+          "url": "https://pl.scdn.co/images/pl/default/aef06e6a3efa874bcbc5e22018cb98ddf6b5e93f",
+          "width": null
+        }
+      ],
+      "name": "Cinematic Chillout",
+      "owner": {
+        "display_name": "Spotify",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/spotify"
+        },
+        "href": "https://api.spotify.com/v1/users/spotify",
+        "id": "spotify",
+        "type": "user",
+        "uri": "spotify:user:spotify"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MTUzNDI2MTk3NiwwMDAwMDAzZTAwMDAwMTY1MzkyM2RjOWUwMDAwMDE2MmYyYjBlOGQ4",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWVFJtzvDHN4L/tracks",
+        "total": 50
+      },
+      "type": "playlist",
+      "uri": "spotify:user:spotify:playlist:37i9dQZF1DWVFJtzvDHN4L"
+    },
+    {
+      "collaborative": false,
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/3pBnQakqa3Cd13p4qQP5Rn"
+      },
+      "href": "https://api.spotify.com/v1/playlists/3pBnQakqa3Cd13p4qQP5Rn",
+      "id": "3pBnQakqa3Cd13p4qQP5Rn",
+      "images": [
+        {
+          "height": null,
+          "url": "https://pl.scdn.co/images/pl/default/bcc3043fe589160b5ec6d08d9e1f52b625879f78",
+          "width": null
+        }
+      ],
+      "name": "Post Rock Top Tracks",
+      "owner": {
+        "display_name": "Playlistic",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/soundrop"
+        },
+        "href": "https://api.spotify.com/v1/users/soundrop",
+        "id": "soundrop",
+        "type": "user",
+        "uri": "spotify:user:soundrop"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "NDgzLGEyOGI0N2VlNWYyMGFhZDkwZDc0MjM4OGI0ZDY2NDlmOGJhYjIyMmM=",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/3pBnQakqa3Cd13p4qQP5Rn/tracks",
+        "total": 75
+      },
+      "type": "playlist",
+      "uri": "spotify:user:soundrop:playlist:3pBnQakqa3Cd13p4qQP5Rn"
+    },
+    {
+      "collaborative": false,
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWWTdxbiocWOL"
+      },
+      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWWTdxbiocWOL",
+      "id": "37i9dQZF1DWWTdxbiocWOL",
+      "images": [
+        {
+          "height": null,
+          "url": "https://pl.scdn.co/images/pl/default/269c06d710c763e4766274a66d64fd5093226f4a",
+          "width": null
+        }
+      ],
+      "name": "Calm Before the Storm",
+      "owner": {
+        "display_name": "Spotify",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/spotify"
+        },
+        "href": "https://api.spotify.com/v1/users/spotify",
+        "id": "spotify",
+        "type": "user",
+        "uri": "spotify:user:spotify"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MTUzODIyNzU4NCwwMDAwMDAxZDAwMDAwMTY2MjU4MjNmOWUwMDAwMDE2MmYyYjBlOGQ4",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWWTdxbiocWOL/tracks",
+        "total": 40
+      },
+      "type": "playlist",
+      "uri": "spotify:user:spotify:playlist:37i9dQZF1DWWTdxbiocWOL"
+    },
+    {
+      "collaborative": false,
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/37i9dQZF1DX11ghcIxjcjE"
+      },
+      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX11ghcIxjcjE",
+      "id": "37i9dQZF1DX11ghcIxjcjE",
+      "images": [
+        {
+          "height": null,
+          "url": "https://pl.scdn.co/images/pl/default/3f15a993a223f739b6e9402a30e62f38edee1898",
+          "width": null
+        }
+      ],
+      "name": "Grunge Forever",
+      "owner": {
+        "display_name": "Spotify",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/spotify"
+        },
+        "href": "https://api.spotify.com/v1/users/spotify",
+        "id": "spotify",
+        "type": "user",
+        "uri": "spotify:user:spotify"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MTUzODIyMTMyOCwwMDAwMDAzOTAwMDAwMTY2MjUyMmM4MGMwMDAwMDE2MzNhY2UwNTk4",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DX11ghcIxjcjE/tracks",
+        "total": 50
+      },
+      "type": "playlist",
+      "uri": "spotify:user:spotify:playlist:37i9dQZF1DX11ghcIxjcjE"
+    },
+    {
+      "collaborative": false,
+      "external_urls": {
+        "spotify": "https://open.spotify.com/playlist/37i9dQZF1DWWSuZL7uNdVA"
+      },
+      "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWWSuZL7uNdVA",
+      "id": "37i9dQZF1DWWSuZL7uNdVA",
+      "images": [
+        {
+          "height": null,
+          "url": "https://pl.scdn.co/images/pl/default/08b655b429033f2a7bebf170f90bbe073b215ebc",
+          "width": null
+        }
+      ],
+      "name": "Top of the Rock",
+      "owner": {
+        "display_name": "Spotify",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/spotify"
+        },
+        "href": "https://api.spotify.com/v1/users/spotify",
+        "id": "spotify",
+        "type": "user",
+        "uri": "spotify:user:spotify"
+      },
+      "primary_color": null,
+      "public": false,
+      "snapshot_id": "MTU0NDUyMjM1OCwwMDAwMDA5YzAwMDAwMTY3OWNiNGRkNTAwMDAwMDE2Nzk4ZmY1NzBi",
+      "tracks": {
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWWSuZL7uNdVA/tracks",
+        "total": 50
+      },
+      "type": "playlist",
+      "uri": "spotify:user:spotify:playlist:37i9dQZF1DWWSuZL7uNdVA"
+    }
+  ],
+  "limit": 10,
+  "next": "https://api.spotify.com/v1/users/1199545168/playlists?offset=15&limit=10",
+  "offset": 5,
+  "previous": "https://api.spotify.com/v1/users/1199545168/playlists?offset=0&limit=10",
+  "total": 43
+}

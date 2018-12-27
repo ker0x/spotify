@@ -11,7 +11,6 @@ use Kerox\Spotify\Model\Playlist\RemoveTracks;
 use Kerox\Spotify\Model\Playlist\ReorderTracks;
 use Kerox\Spotify\Model\Playlist\ReplaceTracks;
 use Kerox\Spotify\Request\Request;
-use Kerox\Spotify\Response\ArtistResponse;
 use Kerox\Spotify\Response\ImagesResponse;
 use Kerox\Spotify\Response\PagingResponse;
 use Kerox\Spotify\Response\PlaylistResponse;
@@ -59,16 +58,16 @@ class Playlists extends AbstractApi
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
-     * @return \Kerox\Spotify\Response\ArtistResponse
+     * @return \Kerox\Spotify\Response\PlaylistResponse
      */
-    public function get(string $id): ArtistResponse
+    public function get(string $id): PlaylistResponse
     {
         $uri = $this->createUri(sprintf('playlists/%s', $id));
 
         $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_PUT);
         $response = $this->client->sendRequest($request);
 
-        return new ArtistResponse($response);
+        return new PlaylistResponse($response);
     }
 
     /**
@@ -83,9 +82,9 @@ class Playlists extends AbstractApi
     {
         $uri = $this->createUri(sprintf('playlists/%s/followers', $id));
 
-        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_PUT, json_encode([
+        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_PUT, [
             'public' => $public,
-        ]));
+        ]);
 
         return $this->client->sendRequest($request);
     }

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
-use DateTimeImmutable;
+use DateTime;
 use DateTimeInterface;
 use DateTimeZone;
 
@@ -39,10 +39,10 @@ class SavedAlbum
      */
     public static function build(array $savedTrack): self
     {
-        $addedAt = DateTimeImmutable::createFromFormat(
-            DateTimeInterface::ATOM,
+        $addedAt = DateTime::createFromFormat(
+            DateTime::ATOM,
             $savedTrack['added_at'],
-            DateTimeZone::UTC
+            new DateTimeZone('UTC')
         );
         $album = Album::build($savedTrack['album']);
 

@@ -1,0 +1,105 @@
+{
+  "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DWVFJtzvDHN4L/tracks?offset=0&limit=1&market=FR",
+  "items": [
+    {
+      "added_at": "2018-08-14T15:52:56Z",
+      "added_by": {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/user/"
+        },
+        "href": "https://api.spotify.com/v1/users/",
+        "id": "",
+        "type": "user",
+        "uri": "spotify:user:"
+      },
+      "is_local": false,
+      "primary_color": null,
+      "track": {
+        "album": {
+          "album_type": "album",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/00oL7zWxmWveTsKF7DnIRd"
+              },
+              "href": "https://api.spotify.com/v1/artists/00oL7zWxmWveTsKF7DnIRd",
+              "id": "00oL7zWxmWveTsKF7DnIRd",
+              "name": "Kyle Dixon & Michael Stein",
+              "type": "artist",
+              "uri": "spotify:artist:00oL7zWxmWveTsKF7DnIRd"
+            }
+          ],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/1puplOrvmUGoq2VxsB0ENJ"
+          },
+          "href": "https://api.spotify.com/v1/albums/1puplOrvmUGoq2VxsB0ENJ",
+          "id": "1puplOrvmUGoq2VxsB0ENJ",
+          "images": [
+            {
+              "height": 640,
+              "url": "https://i.scdn.co/image/802b7c0501bc87aac70106fe0a2de9dd6598744d",
+              "width": 640
+            },
+            {
+              "height": 300,
+              "url": "https://i.scdn.co/image/984e723d433769e33d35070793c02e62440721d4",
+              "width": 300
+            },
+            {
+              "height": 64,
+              "url": "https://i.scdn.co/image/167d936f19ea4215d5b1f6f7a78f43608d92a962",
+              "width": 64
+            }
+          ],
+          "name": "Stranger Things, Vol. 1 (A Netflix Original Series Soundtrack)",
+          "release_date": "2016-08-12",
+          "release_date_precision": "day",
+          "total_tracks": 36,
+          "type": "album",
+          "uri": "spotify:album:1puplOrvmUGoq2VxsB0ENJ"
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/00oL7zWxmWveTsKF7DnIRd"
+            },
+            "href": "https://api.spotify.com/v1/artists/00oL7zWxmWveTsKF7DnIRd",
+            "id": "00oL7zWxmWveTsKF7DnIRd",
+            "name": "Kyle Dixon & Michael Stein",
+            "type": "artist",
+            "uri": "spotify:artist:00oL7zWxmWveTsKF7DnIRd"
+          }
+        ],
+        "disc_number": 1,
+        "duration_ms": 143880,
+        "episode": false,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "USLS51683404"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/4cocLXeDOiFIPBgZCvJ3RF"
+        },
+        "href": "https://api.spotify.com/v1/tracks/4cocLXeDOiFIPBgZCvJ3RF",
+        "id": "4cocLXeDOiFIPBgZCvJ3RF",
+        "is_local": false,
+        "is_playable": true,
+        "name": "This Isn't You",
+        "popularity": 52,
+        "preview_url": "https://p.scdn.co/mp3-preview/1d6035954565eba26379c91ad84c0bdf977b920c?cid=774b29d4f13844c495f206cafdad9c86",
+        "track": true,
+        "track_number": 4,
+        "type": "track",
+        "uri": "spotify:track:4cocLXeDOiFIPBgZCvJ3RF"
+      },
+      "video_thumbnail": {
+        "url": null
+      }
+    }
+  ],
+  "limit": 1,
+  "next": "https://api.spotify.com/v1/playlists/37i9dQZF1DWVFJtzvDHN4L/tracks?offset=1&limit=1&market=FR",
+  "offset": 0,
+  "previous": null,
+  "total": 50
+}
