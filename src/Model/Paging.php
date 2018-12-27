@@ -108,9 +108,17 @@ class Paging
                         continue;
                     }
                 } elseif (isset($item['added_at'])) {
-                    $items[] = SavedTrack::build($item);
+                    if (isset($item['album'])) {
+                        $items[] = SavedAlbum::build($item);
 
-                    continue;
+                        continue;
+                    }
+
+                    if (isset($item['track'])) {
+                        $items[] = SavedTrack::build($item);
+
+                        continue;
+                    }
                 } else {
                     $items[] = Category::build($item);
 

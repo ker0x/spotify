@@ -214,7 +214,7 @@ class Track implements TypeInterface
         $id = $track['id'];
 
         $isLocal = $track['is_local'] ?? false;
-        $isPlayable = $track['is_playable'];
+        $isPlayable = $track['is_playable'] ?? false;
 
         $linkedFrom = null;
         if (isset($track['linked_from'])) {

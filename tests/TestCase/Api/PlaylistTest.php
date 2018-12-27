@@ -2,7 +2,7 @@
 
 namespace Kerox\Spotify\Test\TestCase\Api;
 
-use DateTimeImmutable;
+use DateTime;
 use Kerox\Spotify\Interfaces\QueryParametersInterface;
 use Kerox\Spotify\Model\External;
 use Kerox\Spotify\Model\Followers;
@@ -18,7 +18,6 @@ use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
-use Zend\Diactoros\Response;
 
 class PlaylistTest extends TestCase
 {
@@ -51,7 +50,7 @@ class PlaylistTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->playlists()->get('3cEYpjA9oz9GiPac4AsH4n', [
-            QueryParametersInterface::PARAMETER_MARKET => 'FR'
+            QueryParametersInterface::PARAMETER_MARKET => 'FR',
         ]);
 
         $playlist = $response->getPlaylist();
@@ -69,7 +68,7 @@ class PlaylistTest extends TestCase
         $this->assertTrue($playlist->isPublic());
         $this->assertSame('MTcsZDhlNTBiODE0ZTExZDExYjM4NGFlZmFlOTQ1NGE1NTk3ZjNmM2RmOQ==', $playlist->getSnapshotId());
         $this->assertInstanceOf(Paging::class, $playlist->getTracks());
-        $this->assertInstanceOf(DateTimeImmutable::class, $playlist->getTracks()->getItem(0)->getAddedAt());
+        $this->assertInstanceOf(DateTime::class, $playlist->getTracks()->getItem(0)->getAddedAt());
         $this->assertInstanceOf(User::class, $playlist->getTracks()->getItem(0)->getAddedBy());
         $this->assertFalse($playlist->getTracks()->getItem(0)->isLocal());
         $this->assertNull($playlist->getTracks()->getItem(0)->getPrimaryColor());
@@ -101,12 +100,15 @@ class PlaylistTest extends TestCase
 
         $paging = $response->getPaging();
 
-        $this->assertSame('https://api.spotify.com/v1/users/1199545168/playlists?offset=5&limit=10', $paging->getHref());
+        $this->assertSame('https://api.spotify.com/v1/users/1199545168/playlists?offset=5&limit=10',
+            $paging->getHref());
         $this->assertContainsOnlyInstancesOf(Playlist::class, $paging->getItems());
         $this->assertSame(10, $paging->getLimit());
-        $this->assertSame('https://api.spotify.com/v1/users/1199545168/playlists?offset=15&limit=10', $paging->getNext());
+        $this->assertSame('https://api.spotify.com/v1/users/1199545168/playlists?offset=15&limit=10',
+            $paging->getNext());
         $this->assertSame(5, $paging->getOffset());
-        $this->assertSame('https://api.spotify.com/v1/users/1199545168/playlists?offset=0&limit=10', $paging->getPrevious());
+        $this->assertSame('https://api.spotify.com/v1/users/1199545168/playlists?offset=0&limit=10',
+            $paging->getPrevious());
         $this->assertSame(43, $paging->getTotal());
     }
 
@@ -133,12 +135,15 @@ class PlaylistTest extends TestCase
 
         $paging = $response->getPaging();
 
-        $this->assertSame('https://api.spotify.com/v1/users/1199545168/playlists?offset=5&limit=10', $paging->getHref());
+        $this->assertSame('https://api.spotify.com/v1/users/1199545168/playlists?offset=5&limit=10',
+            $paging->getHref());
         $this->assertContainsOnlyInstancesOf(Playlist::class, $paging->getItems());
         $this->assertSame(10, $paging->getLimit());
-        $this->assertSame('https://api.spotify.com/v1/users/1199545168/playlists?offset=15&limit=10', $paging->getNext());
+        $this->assertSame('https://api.spotify.com/v1/users/1199545168/playlists?offset=15&limit=10',
+            $paging->getNext());
         $this->assertSame(5, $paging->getOffset());
-        $this->assertSame('https://api.spotify.com/v1/users/1199545168/playlists?offset=0&limit=10', $paging->getPrevious());
+        $this->assertSame('https://api.spotify.com/v1/users/1199545168/playlists?offset=0&limit=10',
+            $paging->getPrevious());
         $this->assertSame(43, $paging->getTotal());
     }
 
@@ -166,10 +171,12 @@ class PlaylistTest extends TestCase
 
         $paging = $response->getPaging();
 
-        $this->assertSame('https://api.spotify.com/v1/playlists/37i9dQZF1DWVFJtzvDHN4L/tracks?offset=0&limit=1&market=FR', $paging->getHref());
+        $this->assertSame('https://api.spotify.com/v1/playlists/37i9dQZF1DWVFJtzvDHN4L/tracks?offset=0&limit=1&market=FR',
+            $paging->getHref());
         $this->assertContainsOnlyInstancesOf(SavedTrack::class, $paging->getItems());
         $this->assertSame(1, $paging->getLimit());
-        $this->assertSame('https://api.spotify.com/v1/playlists/37i9dQZF1DWVFJtzvDHN4L/tracks?offset=1&limit=1&market=FR', $paging->getNext());
+        $this->assertSame('https://api.spotify.com/v1/playlists/37i9dQZF1DWVFJtzvDHN4L/tracks?offset=1&limit=1&market=FR',
+            $paging->getNext());
         $this->assertSame(0, $paging->getOffset());
         $this->assertNull($paging->getPrevious());
         $this->assertSame(50, $paging->getTotal());

@@ -13,6 +13,7 @@ use Kerox\Spotify\Response\ArtistResponse;
 use Kerox\Spotify\Spotify;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\ClientInterface;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 
 class ArtistsTest extends TestCase
@@ -178,5 +179,41 @@ class ArtistsTest extends TestCase
         $this->assertContainsOnlyInstancesOf(Artist::class, $response->getArtists());
         $this->assertInstanceOf(Artist::class, $response->getArtist(1));
         $this->assertSame(2, $response->getTotal());
+    }
+
+    public function testFollowArtist(): void
+    {
+        $response = $this->createMock(ResponseInterface::class);
+        $response->method('getStatusCode')->willReturn(204);
+
+        $client = $this->createMock(ClientInterface::class);
+        $client->method('sendRequest')->willReturn($response);
+
+        $spotify = new Spotify($this->oauthToken, $client);
+        $response = $spotify->artists()->follow([
+            '2CIMQHirSU0MQqyYHq0eOx',
+            '57dN52uHvrHOxijzpIgu3E',
+            '1vCWHaC5f2uS3yhpwWbIA6',
+        ]);
+
+        $this->assertSame(204, $response->getStatusCode());
+    }
+
+    public function testUnfollowArtist(): void
+    {
+        $response = $this->createMock(ResponseInterface::class);
+        $response->method('getStatusCode')->willReturn(204);
+
+        $client = $this->createMock(ClientInterface::class);
+        $client->method('sendRequest')->willReturn($response);
+
+        $spotify = new Spotify($this->oauthToken, $client);
+        $response = $spotify->artists()->unfollow([
+            '2CIMQHirSU0MQqyYHq0eOx',
+            '57dN52uHvrHOxijzpIgu3E',
+            '1vCWHaC5f2uS3yhpwWbIA6',
+        ]);
+
+        $this->assertSame(204, $response->getStatusCode());
     }
 }
