@@ -6,6 +6,7 @@ namespace Kerox\Spotify;
 
 use Kerox\Spotify\Api\Albums;
 use Kerox\Spotify\Api\Artists;
+use Kerox\Spotify\Api\Audio;
 use Kerox\Spotify\Api\Browse;
 use Kerox\Spotify\Api\Follow;
 use Kerox\Spotify\Api\Me;
@@ -63,6 +64,14 @@ final class Spotify
     public function artists(): Artists
     {
         return new Artists($this->oauthToken, $this->client, $this->baseUri);
+    }
+
+    /**
+     * @return \Kerox\Spotify\Api\Audio
+     */
+    public function audio(): Audio
+    {
+        return new Audio($this->oauthToken, $this->client, $this->baseUri);
     }
 
     /**

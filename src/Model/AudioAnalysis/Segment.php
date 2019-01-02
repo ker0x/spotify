@@ -22,7 +22,7 @@ class Segment extends AbstractAudioAnalysis
     protected $loudnessMax;
 
     /**
-     * @var float
+     * @var null|float
      */
     protected $loudnessEnd;
 
@@ -56,9 +56,9 @@ class Segment extends AbstractAudioAnalysis
         float $loudnessStart,
         float $loudnessMaxTime,
         float $loudnessMax,
-        float $loudnessEnd,
-        array $pitches,
-        array $timbre
+        ?float $loudnessEnd = null,
+        array $pitches = [],
+        array $timbre = []
     ) {
         parent::__construct($start, $duration, $confidence);
 
@@ -84,9 +84,9 @@ class Segment extends AbstractAudioAnalysis
             $segment['loudness_start'],
             $segment['loudness_max_time'],
             $segment['loudness_max'],
-            $segment['loudness_end'],
-            $segment['pitches'],
-            $segment['timbre']
+            $segment['loudness_end'] ?? null,
+            $segment['pitches'] ?? [],
+            $segment['timbre'] ?? []
         );
     }
 
@@ -115,9 +115,9 @@ class Segment extends AbstractAudioAnalysis
     }
 
     /**
-     * @return float
+     * @return null|float
      */
-    public function getLoudnessEnd(): float
+    public function getLoudnessEnd(): ?float
     {
         return $this->loudnessEnd;
     }

@@ -13,6 +13,9 @@ class AlbumResponse extends AbstractResponse
      */
     protected $album;
 
+    /**
+     * @return \Kerox\Spotify\Model\Album
+     */
     public function getAlbum(): Album
     {
         return $this->album;
