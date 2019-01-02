@@ -43,18 +43,18 @@ class SavedTrack
     /**
      * SavedTrack constructor.
      *
-     * @param \DateTimeInterface         $addedAt
-     * @param \Kerox\Spotify\Model\User  $addedBy
-     * @param bool|null                  $isLocal
-     * @param \Kerox\Spotify\Model\Track $track
-     * @param array                      $videoThumbnail
-     * @param string|null                $primaryColor
+     * @param \DateTimeInterface             $addedAt
+     * @param bool|null                      $isLocal
+     * @param \Kerox\Spotify\Model\User|null $addedBy
+     * @param \Kerox\Spotify\Model\Track     $track
+     * @param array                          $videoThumbnail
+     * @param string|null                    $primaryColor
      */
     public function __construct(
         DateTimeInterface $addedAt,
-        User $addedBy,
         Track $track,
-        array $videoThumbnail,
+        ?User $addedBy = null,
+        array $videoThumbnail = [],
         bool $isLocal = false,
         ?string $primaryColor = null
     ) {
@@ -78,17 +78,22 @@ class SavedTrack
             $savedTrack['added_at'],
             new DateTimeZone('UTC')
         );
-        $addedBy = User::build($savedTrack['added_by']);
+
+        if (isset($savedTrack['added_by'])) {
+            $addedBy = User::build($savedTrack['added_by']);
+        }
         $isLocal = $savedTrack['is_local'] ?? false;
         $primaryColor = $savedTrack['primary_color'] ?? null;
         $track = Track::build($savedTrack['track']);
 
         $videoThumbnail = [];
-        foreach ($savedTrack['video_thumbnail'] as $type => $url) {
-            $videoThumbnail[] = External::build($type, $url);
+        if (isset($savedTrack['video_thumbnail'])) {
+            foreach ($savedTrack['video_thumbnail'] as $type => $url) {
+                $videoThumbnail[] = External::build($type, $url);
+            }
         }
 
-        return new self($addedAt, $addedBy, $track, $videoThumbnail, $isLocal, $primaryColor);
+        return new self($addedAt, $track, $addedBy ?? null, $videoThumbnail, $isLocal, $primaryColor);
     }
 
     /**

@@ -11,6 +11,7 @@ use Kerox\Spotify\Model\Paging;
 use Kerox\Spotify\Model\Playlist;
 use Kerox\Spotify\Model\Playlist\AddTracks;
 use Kerox\Spotify\Model\Playlist\RemoveTracks;
+use Kerox\Spotify\Model\Playlist\ReorderTracks;
 use Kerox\Spotify\Model\Playlist\ReplaceTracks;
 use Kerox\Spotify\Model\SavedTrack;
 use Kerox\Spotify\Model\TrackLink;
@@ -334,8 +335,12 @@ class PlaylistTest extends TestCase
         $client = $this->createMock(ClientInterface::class);
         $client->method('sendRequest')->willReturn($response);
 
+        $reorderTrack = ReorderTracks::create(1, 2)
+            ->setRangeLength(3)
+            ->setSnapshotId('jzKx3i0b6LCaJbtmHBDBAYu3bt8BOXKwVjyl6qQ2Yf6nFXkbmzuEa+ZIU1yF+');
+
         $spotify = new Spotify($this->oauthToken, $client);
-        $response = $spotify->playlists()->reorder('7d2D2S200NyUE5KYs80PwO', Playlist\ReorderTracks::create(1, 2));
+        $response = $spotify->playlists()->reorder('7d2D2S200NyUE5KYs80PwO', $reorderTrack);
 
         $decodedBody = json_decode($response->getBody(), true);
 
@@ -351,11 +356,13 @@ class PlaylistTest extends TestCase
         $client = $this->createMock(ClientInterface::class);
         $client->method('sendRequest')->willReturn($response);
 
-        $spotify = new Spotify($this->oauthToken, $client);
-        $response = $spotify->playlists()->replace('7d2D2S200NyUE5KYs80PwO', ReplaceTracks::create([
+        $replaceTrack = ReplaceTracks::create([
             'spotify:track:7ouMYWpwJ422jRcDASZB7P',
-            'spotify:album:0eFHYz8NmK75zSplL5qlfM',
-        ]));
+            'spotify:track:0eFHYz8NmK75zSplL5qlfM',
+        ])->add('spotify:track:4VqPOruhp5EdPBeR92t6lQ');
+
+        $spotify = new Spotify($this->oauthToken, $client);
+        $response = $spotify->playlists()->replace('7d2D2S200NyUE5KYs80PwO', $replaceTrack);
 
         $this->assertSame(201, $response->getStatusCode());
     }
