@@ -7,6 +7,11 @@ namespace Kerox\Spotify\Model\AudioAnalysis;
 class Track
 {
     /**
+     * @var int
+     */
+    protected $numSamples;
+
+    /**
      * @var float
      */
     protected $duration;
@@ -133,6 +138,7 @@ class Track
     /**
      * Track constructor.
      *
+     * @param int    $numSamples
      * @param float  $duration
      * @param string $sampleMd5
      * @param int    $offsetSeconds
@@ -160,6 +166,7 @@ class Track
      * @param float  $rhythmVersion
      */
     public function __construct(
+        int $numSamples,
         float $duration,
         string $sampleMd5,
         int $offsetSeconds,
@@ -186,6 +193,7 @@ class Track
         string $rhythmString,
         float $rhythmVersion
     ) {
+        $this->numSamples = $numSamples;
         $this->duration = $duration;
         $this->sampleMd5 = $sampleMd5;
         $this->offsetSeconds = $offsetSeconds;
@@ -221,6 +229,7 @@ class Track
     public static function build(array $track): self
     {
         return new self(
+            $track['num_samples'],
             $track['duration'],
             $track['sample_md5'],
             $track['offset_seconds'],
@@ -247,6 +256,14 @@ class Track
             $track['rhythmstring'],
             $track['rhythm_version']
         );
+    }
+
+    /**
+     * @return int
+     */
+    public function getNumSamples(): int
+    {
+        return $this->numSamples;
     }
 
     /**

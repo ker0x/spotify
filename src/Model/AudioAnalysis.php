@@ -126,11 +126,31 @@ class AudioAnalysis
     }
 
     /**
+     * @param int $index
+     *
+     * @return null|\Kerox\Spotify\Model\AudioAnalysis\Bar
+     */
+    public function getBar(int $index): ?Bar
+    {
+        return $this->bars[$index] ?? null;
+    }
+
+    /**
      * @return \Kerox\Spotify\Model\AudioAnalysis\Beat[]
      */
     public function getBeats(): array
     {
         return $this->beats;
+    }
+
+    /**
+     * @param int $index
+     *
+     * @return null|\Kerox\Spotify\Model\AudioAnalysis\Beat
+     */
+    public function getBeat(int $index): ?Beat
+    {
+        return $this->beats[$index] ?? null;
     }
 
     /**
@@ -150,6 +170,16 @@ class AudioAnalysis
     }
 
     /**
+     * @param int $index
+     *
+     * @return null|\Kerox\Spotify\Model\AudioAnalysis\Section
+     */
+    public function getSection(int $index): ?Section
+    {
+        return $this->sections[$index] ?? null;
+    }
+
+    /**
      * @return \Kerox\Spotify\Model\AudioAnalysis\Segment[]
      */
     public function getSegments(): array
@@ -158,11 +188,31 @@ class AudioAnalysis
     }
 
     /**
+     * @param int $index
+     *
+     * @return null|\Kerox\Spotify\Model\AudioAnalysis\Segment
+     */
+    public function getSegment(int $index): ?Segment
+    {
+        return $this->segments[$index] ?? null;
+    }
+
+    /**
      * @return \Kerox\Spotify\Model\AudioAnalysis\Tatum[]
      */
     public function getTatums(): array
     {
         return $this->tatums;
+    }
+
+    /**
+     * @param int $index
+     *
+     * @return null|\Kerox\Spotify\Model\AudioAnalysis\Tatum
+     */
+    public function getTatum(int $index): ?Tatum
+    {
+        return $this->tatums[$index] ?? null;
     }
 
     /**
