@@ -8,9 +8,7 @@ use Kerox\Spotify\Api\Albums;
 use Kerox\Spotify\Api\Artists;
 use Kerox\Spotify\Api\Browse;
 use Kerox\Spotify\Api\Follow;
-use Kerox\Spotify\Api\Library;
 use Kerox\Spotify\Api\Me;
-use Kerox\Spotify\Api\Player;
 use Kerox\Spotify\Api\Playlists;
 use Kerox\Spotify\Api\Search;
 use Kerox\Spotify\Api\Tracks;
@@ -84,27 +82,11 @@ final class Spotify
     }
 
     /**
-     * @return \Kerox\Spotify\Api\Library
-     */
-    public function library(): Library
-    {
-        return new Library($this->oauthToken, $this->client, $this->baseUri);
-    }
-
-    /**
      * @return \Kerox\Spotify\Api\Me
      */
     public function me(): Me
     {
         return new Me($this->oauthToken, $this->client, $this->baseUri);
-    }
-
-    /**
-     * @return \Kerox\Spotify\Api\Player
-     */
-    public function player(): Player
-    {
-        return new Player($this->oauthToken, $this->client, $this->baseUri);
     }
 
     /**
