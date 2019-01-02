@@ -6,13 +6,16 @@ use Kerox\Spotify\Interfaces\QueryParametersInterface;
 use Kerox\Spotify\Model\Album;
 use Kerox\Spotify\Model\Artist;
 use Kerox\Spotify\Model\External;
+use Kerox\Spotify\Model\SavedTrack;
 use Kerox\Spotify\Model\Track;
 use Kerox\Spotify\Model\TrackLink;
+use Kerox\Spotify\Response\PagingResponse;
 use Kerox\Spotify\Response\TrackResponse;
 use Kerox\Spotify\Response\TracksResponse;
 use Kerox\Spotify\Spotify;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\ClientInterface;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 
 class TracksTest extends TestCase
@@ -46,7 +49,7 @@ class TracksTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->tracks()->get('0tGPJ0bkWOUmH7MEOR77qc', [
-            QueryParametersInterface::PARAMETER_MARKET => 'FR'
+            QueryParametersInterface::PARAMETER_MARKET => 'FR',
         ]);
 
         $track = $response->getTrack();
@@ -65,7 +68,8 @@ class TracksTest extends TestCase
         $this->assertInstanceOf(TrackLink::class, $track->getLinkedFrom());
         $this->assertSame('Cut To The Feeling', $track->getName());
         $this->assertSame(65, $track->getPopularity());
-        $this->assertSame('https://p.scdn.co/mp3-preview/229bb6a4c7011158cc7e1aff11957e274dc05e84?cid=774b29d4f13844c495f206cafdad9c86', $track->getPreviewUrl());
+        $this->assertSame('https://p.scdn.co/mp3-preview/229bb6a4c7011158cc7e1aff11957e274dc05e84?cid=774b29d4f13844c495f206cafdad9c86',
+            $track->getPreviewUrl());
         $this->assertSame(1, $track->getTrackNumber());
         $this->assertSame('track', $track->getType());
         $this->assertSame('spotify:track:6EJiVf7U0p1BBfs0qqeb1f', $track->getUri());
@@ -100,5 +104,76 @@ class TracksTest extends TestCase
         $this->assertInstanceOf(Track::class, $response->getTrack(1));
         $this->assertNull($response->getTrack(3));
         $this->assertSame(3, $response->getTotal());
+    }
+
+    public function testGetSavedTracks(): void
+    {
+        $body = file_get_contents(__DIR__ . '/../../Mocks/Tracks/saved.json');
+
+        $stream = $this->createMock(StreamInterface::class);
+        $stream->method('__toString')->willReturn($body);
+
+        $response = $this->createMock(PagingResponse::class);
+        $response->method('getBody')->willReturn($stream);
+        $response->method('getHeader')->willReturn(['content-type' => 'json']);
+        $response->method('getStatusCode')->willReturn(200);
+
+        $client = $this->createMock(ClientInterface::class);
+        $client->method('sendRequest')->willReturn($response);
+
+        $spotify = new Spotify($this->oauthToken, $client);
+        $response = $spotify->tracks()->saved([
+            QueryParametersInterface::PARAMETER_LIMIT => 20,
+            QueryParametersInterface::PARAMETER_OFFSET => 0,
+            QueryParametersInterface::PARAMETER_MARKET => 'FR',
+        ]);
+
+        $paging = $response->getPaging();
+
+        $this->assertSame('https://api.spotify.com/v1/me/tracks?offset=0&limit=20', $paging->getHref());
+        $this->assertSame(20, $paging->getLimit());
+        $this->assertSame('https://api.spotify.com/v1/me/tracks?offset=20&limit=20', $paging->getNext());
+        $this->assertSame(0, $paging->getOffset());
+        $this->assertNull($paging->getPrevious());
+        $this->assertSame(53, $paging->getTotal());
+        $this->assertContainsOnlyInstancesOf(SavedTrack::class, $paging->getItems());
+    }
+
+    public function testAddTrackForCurrentUser(): void
+    {
+        $response = $this->createMock(ResponseInterface::class);
+        $response->method('getStatusCode')->willReturn(200);
+
+        $client = $this->createMock(ClientInterface::class);
+        $client->method('sendRequest')->willReturn($response);
+
+        $spotify = new Spotify($this->oauthToken, $client);
+        $response = $spotify->tracks()->add([
+            QueryParametersInterface::PARAMETER_IDS => [
+                '7ouMYWpwJ422jRcDASZB7P',
+                '0eFHYz8NmK75zSplL5qlfM',
+            ]
+        ]);
+
+        $this->assertSame(200, $response->getStatusCode());
+    }
+
+    public function testRemoveTrackForCurrentUser(): void
+    {
+        $response = $this->createMock(ResponseInterface::class);
+        $response->method('getStatusCode')->willReturn(200);
+
+        $client = $this->createMock(ClientInterface::class);
+        $client->method('sendRequest')->willReturn($response);
+
+        $spotify = new Spotify($this->oauthToken, $client);
+        $response = $spotify->tracks()->remove([
+            QueryParametersInterface::PARAMETER_IDS => [
+                '7ouMYWpwJ422jRcDASZB7P',
+                '0eFHYz8NmK75zSplL5qlfM',
+            ]
+        ]);
+
+        $this->assertSame(200, $response->getStatusCode());
     }
 }
