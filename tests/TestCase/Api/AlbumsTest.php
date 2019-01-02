@@ -2,6 +2,7 @@
 
 namespace Kerox\Spotify\Test\TestCase\Api;
 
+use DateTime;
 use Kerox\Spotify\Interfaces\QueryParametersInterface;
 use Kerox\Spotify\Model\Album;
 use Kerox\Spotify\Model\Artist;
@@ -190,6 +191,12 @@ class AlbumsTest extends TestCase
         $this->assertSame(0, $paging->getOffset());
         $this->assertNull($paging->getPrevious());
         $this->assertSame(3, $paging->getTotal());
+
+        /** @var \Kerox\Spotify\Model\SavedAlbum $savedAlbum */
+        $savedAlbum = $paging->getItem(0);
+
+        $this->assertInstanceOf(DateTime::class, $savedAlbum->getAddedAt());
+        $this->assertInstanceOf(Album::class, $savedAlbum->getAlbum());
     }
 
     public function testAddAlbumsForCurrentUser()

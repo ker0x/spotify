@@ -28,7 +28,7 @@ class ImagesResponse extends AbstractResponse
      */
     public function getImage(int $imageNumber): Image
     {
-        return $this->images[++$imageNumber];
+        return $this->images[$imageNumber];
     }
 
     /**

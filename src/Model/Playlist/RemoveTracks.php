@@ -46,10 +46,12 @@ class RemoveTracks implements JsonSerializable
      */
     public function toArray(): array
     {
-        return [
+        $array = [
             'tracks' => $this->tracks,
             'snapshot_id' => $this->snapshotId,
         ];
+
+        return array_filter($array);
     }
 
     /**
