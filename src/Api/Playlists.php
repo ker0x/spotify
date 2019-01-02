@@ -48,7 +48,7 @@ class Playlists extends AbstractApi
     {
         $uri = $this->createUri(sprintf('playlists/%s', $id));
 
-        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_POST, $playlist);
+        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_PUT, $playlist);
 
         return $this->client->sendRequest($request);
     }
@@ -64,7 +64,7 @@ class Playlists extends AbstractApi
     {
         $uri = $this->createUri(sprintf('playlists/%s', $id));
 
-        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_PUT);
+        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
         $response = $this->client->sendRequest($request);
 
         return new PlaylistResponse($response);

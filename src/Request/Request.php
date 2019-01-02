@@ -27,7 +27,7 @@ class Request extends \Zend\Diactoros\Request
     ) {
         $headers += ['Authorization' => sprintf('Bearer %s', $oauthToken)];
         if ($body instanceof JsonSerializable || \is_array($body)) {
-            $body = json_encode($body, JSON_PRETTY_PRINT + JSON_UNESCAPED_SLASHES + JSON_UNESCAPED_UNICODE);
+            $body = json_encode($body);
 
             $headers += ['Content-Type' => 'application/json'];
         }

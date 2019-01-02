@@ -50,7 +50,7 @@ class PlayHistory
         $playedAt = DateTime::createFromFormat(
             DateTime::ATOM,
             $playHistory['played_at'],
-            DateTimeZone::UTC
+            new DateTimeZone('UTC')
         );
         $context = Context::build($playHistory['context']);
 
