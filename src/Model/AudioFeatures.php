@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
-class AudioFeatures
+use Kerox\Spotify\Interfaces\ModelInterface;
+
+class AudioFeatures implements ModelInterface
 {
     /**
      * @var float

@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace Kerox\Spotify\Model;
 
 use JsonSerializable;
+use Kerox\Spotify\Interfaces\ModelInterface;
 use Kerox\Spotify\Interfaces\TypeInterface;
 
-class Playlist implements TypeInterface, JsonSerializable
+class Playlist implements ModelInterface, TypeInterface, JsonSerializable
 {
     /**
      * @var string
@@ -163,7 +164,7 @@ class Playlist implements TypeInterface, JsonSerializable
 
         $externalUrls = [];
         foreach ($playlist['external_urls'] as $type => $url) {
-            $externalUrls[] = External::build($type, $url);
+            $externalUrls[] = External::build([$type, $url]);
         }
 
         $followers = null;

@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
+use Kerox\Spotify\Interfaces\ModelInterface;
 use Kerox\Spotify\Interfaces\TypeInterface;
 
-class Track implements TypeInterface
+class Track implements ModelInterface, TypeInterface
 {
     /**
      * @var null|\Kerox\Spotify\Model\Album
@@ -201,13 +202,13 @@ class Track implements TypeInterface
         $externalIds = [];
         if (isset($track['external_ids'])) {
             foreach ($track['external_ids'] as $type => $url) {
-                $externalIds[] = External::build($type, $url);
+                $externalIds[] = External::build([$type, $url]);
             }
         }
 
         $externalUrls = [];
         foreach ($track['external_urls'] as $type => $url) {
-            $externalUrls[] = External::build($type, $url);
+            $externalUrls[] = External::build([$type, $url]);
         }
 
         $href = $track['href'];

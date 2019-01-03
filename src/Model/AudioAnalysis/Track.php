@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model\AudioAnalysis;
 
-class Track
+use Kerox\Spotify\Interfaces\ModelInterface;
+
+class Track implements ModelInterface
 {
     /**
      * @var int

@@ -7,8 +7,9 @@ namespace Kerox\Spotify\Model;
 use DateTime;
 use DateTimeInterface;
 use DateTimeZone;
+use Kerox\Spotify\Interfaces\ModelInterface;
 
-class SavedTrack
+class SavedTrack implements ModelInterface
 {
     /**
      * @var \DateTimeInterface
@@ -89,7 +90,7 @@ class SavedTrack
         $videoThumbnail = [];
         if (isset($savedTrack['video_thumbnail'])) {
             foreach ($savedTrack['video_thumbnail'] as $type => $url) {
-                $videoThumbnail[] = External::build($type, $url);
+                $videoThumbnail[] = External::build([$type, $url]);
             }
         }
 

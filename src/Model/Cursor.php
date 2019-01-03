@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
-class Cursor
+use Kerox\Spotify\Interfaces\ModelInterface;
+
+class Cursor implements ModelInterface
 {
     /**
      * @var string

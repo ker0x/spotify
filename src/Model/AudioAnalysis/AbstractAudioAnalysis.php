@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model\AudioAnalysis;
 
-abstract class AbstractAudioAnalysis
+use Kerox\Spotify\Interfaces\ModelInterface;
+
+abstract class AbstractAudioAnalysis implements ModelInterface
 {
     /**
      * @var float

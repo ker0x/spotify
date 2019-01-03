@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
-class Image
+use Kerox\Spotify\Interfaces\ModelInterface;
+
+class Image implements ModelInterface
 {
     /**
      * @var string

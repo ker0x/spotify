@@ -7,8 +7,9 @@ namespace Kerox\Spotify\Model;
 use DateTime;
 use DateTimeInterface;
 use DateTimeZone;
+use Kerox\Spotify\Interfaces\ModelInterface;
 
-class SavedAlbum
+class SavedAlbum implements ModelInterface
 {
     /**
      * @var \DateTimeInterface

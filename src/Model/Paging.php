@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
-use Kerox\Spotify\Interfaces\TypeInterface;
+use Kerox\Spotify\Factory\ItemFactory;
+use Kerox\Spotify\Interfaces\ModelInterface;
 
-class Paging
+class Paging implements ModelInterface
 {
     /**
      * @var string
@@ -90,48 +91,7 @@ class Paging
         $items = [];
         if (isset($paging['items'])) {
             foreach ($paging['items'] as $item) {
-                if (isset($item['type'])) {
-                    $type = $item['type'] ?? null;
-                    if ($type === TypeInterface::TYPE_ALBUM) {
-                        $items[] = Album::build($item);
-
-                        continue;
-                    }
-
-                    if ($type === TypeInterface::TYPE_ARTIST) {
-                        $items[] = Artist::build($item);
-
-                        continue;
-                    }
-
-                    if ($type === TypeInterface::TYPE_TRACK) {
-                        $items[] = Track::build($item);
-
-                        continue;
-                    }
-
-                    if ($type === TypeInterface::TYPE_PLAYLIST) {
-                        $items[] = Playlist::build($item);
-
-                        continue;
-                    }
-                } elseif (isset($item['added_at'])) {
-                    if (isset($item['album'])) {
-                        $items[] = SavedAlbum::build($item);
-
-                        continue;
-                    }
-
-                    if (isset($item['track'])) {
-                        $items[] = SavedTrack::build($item);
-
-                        continue;
-                    }
-                } else {
-                    $items[] = Category::build($item);
-
-                    continue;
-                }
+                $items[] = ItemFactory::create($item);
             }
         }
 

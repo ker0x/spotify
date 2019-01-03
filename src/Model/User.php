@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
-class User
+use Kerox\Spotify\Interfaces\ModelInterface;
+
+class User implements ModelInterface
 {
     /**
      * @var null|string
@@ -121,7 +123,7 @@ class User
 
         $externalUrls = [];
         foreach ($user['external_urls'] as $type => $url) {
-            $externalUrls[] = External::build($type, $url);
+            $externalUrls[] = External::build([$type, $url]);
         }
 
         $followers = null;

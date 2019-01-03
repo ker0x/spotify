@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
+use Kerox\Spotify\Interfaces\ModelInterface;
 use Kerox\Spotify\Model\AudioAnalysis\Bar;
 use Kerox\Spotify\Model\AudioAnalysis\Beat;
 use Kerox\Spotify\Model\AudioAnalysis\Meta;
@@ -12,7 +13,7 @@ use Kerox\Spotify\Model\AudioAnalysis\Segment;
 use Kerox\Spotify\Model\AudioAnalysis\Tatum;
 use Kerox\Spotify\Model\AudioAnalysis\Track as TrackAnalysis;
 
-class AudioAnalysis
+class AudioAnalysis implements ModelInterface
 {
     /**
      * @var \Kerox\Spotify\Model\AudioAnalysis\Bar[]

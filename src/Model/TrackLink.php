@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
+use Kerox\Spotify\Interfaces\ModelInterface;
 use Kerox\Spotify\Interfaces\TypeInterface;
 
-class TrackLink implements TypeInterface
+class TrackLink implements ModelInterface, TypeInterface
 {
     /**
      * @var array
@@ -58,7 +59,7 @@ class TrackLink implements TypeInterface
     {
         $externalUrls = [];
         foreach ($trackLink['external_urls'] as $type => $url) {
-            $externalUrls[] = External::build($type, $url);
+            $externalUrls[] = External::build([$type, $url]);
         }
 
         $href = $trackLink['href'];

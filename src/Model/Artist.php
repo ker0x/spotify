@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
+use Kerox\Spotify\Interfaces\ModelInterface;
 use Kerox\Spotify\Interfaces\TypeInterface;
 
-class Artist implements TypeInterface
+class Artist implements ModelInterface, TypeInterface
 {
     /**
      * @var array
@@ -102,7 +103,7 @@ class Artist implements TypeInterface
     {
         $externalUrls = [];
         foreach ($artist['external_urls'] as $type => $url) {
-            $externalUrls[] = External::build($type, $url);
+            $externalUrls[] = External::build([$type, $url]);
         }
 
         $followers = null;

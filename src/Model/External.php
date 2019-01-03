@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
-class External
+use Kerox\Spotify\Interfaces\ModelInterface;
+
+class External implements ModelInterface
 {
     /**
      * @var string
@@ -29,13 +31,14 @@ class External
     }
 
     /**
-     * @param string $key
-     * @param string $value
+     * @param array $external
      *
      * @return \Kerox\Spotify\Model\External
      */
-    public static function build(string $key, ?string $value = null): self
+    public static function build(array $external): self
     {
+        [$key, $value] = $external;
+
         return new self($key, $value);
     }
 

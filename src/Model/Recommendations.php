@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
-class Recommendations
+use Kerox\Spotify\Interfaces\ModelInterface;
+
+class Recommendations implements ModelInterface
 {
     /**
      * @var array
