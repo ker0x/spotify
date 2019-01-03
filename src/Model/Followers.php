@@ -9,7 +9,7 @@ use Kerox\Spotify\Interfaces\ModelInterface;
 class Followers implements ModelInterface
 {
     /**
-     * @var null|string
+     * @var string|null
      */
     protected $href;
 
@@ -44,7 +44,7 @@ class Followers implements ModelInterface
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getHref(): ?string
     {

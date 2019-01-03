@@ -9,12 +9,12 @@ use Kerox\Spotify\Interfaces\ModelInterface;
 class User implements ModelInterface
 {
     /**
-     * @var null|string
+     * @var string|null
      */
     protected $birthDate;
 
     /**
-     * @var null|string
+     * @var string|null
      */
     protected $country;
 
@@ -24,7 +24,7 @@ class User implements ModelInterface
     protected $displayName;
 
     /**
-     * @var null|string
+     * @var string|null
      */
     protected $email;
 
@@ -54,7 +54,7 @@ class User implements ModelInterface
     protected $images;
 
     /**
-     * @var null|string
+     * @var string|null
      */
     protected $product;
 
@@ -79,10 +79,10 @@ class User implements ModelInterface
      * @param array                          $images
      * @param string                         $type
      * @param string                         $uri
-     * @param null|string                    $birthDate
-     * @param null|string                    $country
-     * @param null|string                    $email
-     * @param null|string                    $product
+     * @param string|null                    $birthDate
+     * @param string|null                    $country
+     * @param string|null                    $email
+     * @param string|null                    $product
      */
     public function __construct(
         array $externalUrls,
@@ -165,7 +165,7 @@ class User implements ModelInterface
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getBirthDate(): ?string
     {
@@ -173,7 +173,7 @@ class User implements ModelInterface
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getCountry(): ?string
     {
@@ -189,7 +189,7 @@ class User implements ModelInterface
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getEmail(): ?string
     {
@@ -237,7 +237,7 @@ class User implements ModelInterface
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getProduct(): ?string
     {

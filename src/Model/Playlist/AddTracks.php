@@ -14,7 +14,7 @@ class AddTracks implements JsonSerializable
     protected $uris;
 
     /**
-     * @var null|int
+     * @var int|null
      */
     protected $position;
 

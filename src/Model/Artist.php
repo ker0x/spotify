@@ -40,7 +40,7 @@ class Artist implements ModelInterface, TypeInterface
     protected $uri;
 
     /**
-     * @var null|\Kerox\Spotify\Model\Followers
+     * @var \Kerox\Spotify\Model\Followers|null
      */
     protected $followers;
 
@@ -178,7 +178,7 @@ class Artist implements ModelInterface, TypeInterface
     }
 
     /**
-     * @return null|\Kerox\Spotify\Model\Followers
+     * @return \Kerox\Spotify\Model\Followers|null
      */
     public function getFollowers(): ?Followers
     {

@@ -19,7 +19,7 @@ class Seed implements ModelInterface
     protected $afterRelinkingSize;
 
     /**
-     * @var null|string
+     * @var string|null
      */
     protected $href;
 
@@ -43,7 +43,7 @@ class Seed implements ModelInterface
      *
      * @param int         $afterFilteringSize
      * @param int         $afterRelinkingSize
-     * @param null|string $href
+     * @param string|null $href
      * @param string      $id
      * @param int         $initialPoolSize
      * @param string      $type
@@ -105,7 +105,7 @@ class Seed implements ModelInterface
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getHref(): ?string
     {

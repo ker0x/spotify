@@ -25,7 +25,7 @@ class Paging implements ModelInterface
     protected $limit;
 
     /**
-     * @var null|string
+     * @var string|null
      */
     protected $next;
 
@@ -35,7 +35,7 @@ class Paging implements ModelInterface
     protected $offset;
 
     /**
-     * @var null|string
+     * @var string|null
      */
     protected $previous;
 

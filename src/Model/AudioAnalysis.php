@@ -129,7 +129,7 @@ class AudioAnalysis implements ModelInterface
     /**
      * @param int $index
      *
-     * @return null|\Kerox\Spotify\Model\AudioAnalysis\Bar
+     * @return \Kerox\Spotify\Model\AudioAnalysis\Bar|null
      */
     public function getBar(int $index): ?Bar
     {
@@ -147,7 +147,7 @@ class AudioAnalysis implements ModelInterface
     /**
      * @param int $index
      *
-     * @return null|\Kerox\Spotify\Model\AudioAnalysis\Beat
+     * @return \Kerox\Spotify\Model\AudioAnalysis\Beat|null
      */
     public function getBeat(int $index): ?Beat
     {
@@ -173,7 +173,7 @@ class AudioAnalysis implements ModelInterface
     /**
      * @param int $index
      *
-     * @return null|\Kerox\Spotify\Model\AudioAnalysis\Section
+     * @return \Kerox\Spotify\Model\AudioAnalysis\Section|null
      */
     public function getSection(int $index): ?Section
     {
@@ -191,7 +191,7 @@ class AudioAnalysis implements ModelInterface
     /**
      * @param int $index
      *
-     * @return null|\Kerox\Spotify\Model\AudioAnalysis\Segment
+     * @return \Kerox\Spotify\Model\AudioAnalysis\Segment|null
      */
     public function getSegment(int $index): ?Segment
     {
@@ -209,7 +209,7 @@ class AudioAnalysis implements ModelInterface
     /**
      * @param int $index
      *
-     * @return null|\Kerox\Spotify\Model\AudioAnalysis\Tatum
+     * @return \Kerox\Spotify\Model\AudioAnalysis\Tatum|null
      */
     public function getTatum(int $index): ?Tatum
     {

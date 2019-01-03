@@ -29,7 +29,7 @@ class ItemFactory
      */
     public static function create(array $item): ModelInterface
     {
-        if (isset($item['type']) && array_key_exists($item['type'], self::TYPES)) {
+        if (isset($item['type']) && \array_key_exists($item['type'], self::TYPES)) {
             $className = self::TYPES[$item['type']];
 
             return $className::build($item);

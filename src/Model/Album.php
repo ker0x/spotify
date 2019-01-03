@@ -45,27 +45,27 @@ class Album implements ModelInterface, TypeInterface
     protected $name;
 
     /**
-     * @var null|int
+     * @var int|null
      */
     protected $popularity;
 
     /**
-     * @var null|string
+     * @var string|null
      */
     protected $releaseDate;
 
     /**
-     * @var null|string
+     * @var string|null
      */
     protected $releaseDatePrecision;
 
     /**
-     * @var null|int
+     * @var int|null
      */
     protected $totalTracks;
 
     /**
-     * @var null|string
+     * @var string|null
      */
     protected $restrictions;
 
@@ -80,12 +80,12 @@ class Album implements ModelInterface, TypeInterface
     protected $uri;
 
     /**
-     * @var null|string
+     * @var string|null
      */
     protected $albumGroup;
 
     /**
-     * @var null|string
+     * @var string|null
      */
     protected $albumType;
 
@@ -105,12 +105,12 @@ class Album implements ModelInterface, TypeInterface
     protected $genres;
 
     /**
-     * @var null|string
+     * @var string|null
      */
     protected $label;
 
     /**
-     * @var null|\Kerox\Spotify\Model\Paging
+     * @var \Kerox\Spotify\Model\Paging|null
      */
     protected $tracks;
 
@@ -127,15 +127,15 @@ class Album implements ModelInterface, TypeInterface
      * @param string                           $releaseDate
      * @param string                           $releaseDatePrecision
      * @param int                              $totalTracks
-     * @param null|string                      $restrictions
+     * @param string|null                      $restrictions
      * @param string                           $uri
-     * @param null|\Kerox\Spotify\Model\Paging $tracks
-     * @param null|string                      $albumType
-     * @param null|string                      $albumGroup
+     * @param \Kerox\Spotify\Model\Paging|null $tracks
+     * @param string|null                      $albumType
+     * @param string|null                      $albumGroup
      * @param array                            $copyrights
      * @param array                            $externalIds
      * @param array                            $genres
-     * @param null|string                      $label
+     * @param string|null                      $label
      * @param int|null                         $popularity
      */
     public function __construct(
@@ -331,7 +331,7 @@ class Album implements ModelInterface, TypeInterface
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getReleaseDate(): ?string
     {
@@ -339,7 +339,7 @@ class Album implements ModelInterface, TypeInterface
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getReleaseDatePrecision(): ?string
     {
@@ -347,7 +347,7 @@ class Album implements ModelInterface, TypeInterface
     }
 
     /**
-     * @return null|int
+     * @return int|null
      */
     public function getTotalTracks(): ?int
     {
@@ -355,7 +355,7 @@ class Album implements ModelInterface, TypeInterface
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getRestrictions(): ?string
     {
@@ -379,7 +379,7 @@ class Album implements ModelInterface, TypeInterface
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getAlbumGroup(): ?string
     {
@@ -387,7 +387,7 @@ class Album implements ModelInterface, TypeInterface
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getAlbumType(): ?string
     {
@@ -419,7 +419,7 @@ class Album implements ModelInterface, TypeInterface
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getLabel(): ?string
     {
@@ -427,7 +427,7 @@ class Album implements ModelInterface, TypeInterface
     }
 
     /**
-     * @return null|\Kerox\Spotify\Model\Paging
+     * @return \Kerox\Spotify\Model\Paging|null
      */
     public function getTracks(): ?Paging
     {

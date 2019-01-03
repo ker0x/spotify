@@ -14,7 +14,7 @@ class RemoveTracks implements JsonSerializable
     private $tracks;
 
     /**
-     * @var null|string
+     * @var string|null
      */
     private $snapshotId;
 
@@ -22,7 +22,7 @@ class RemoveTracks implements JsonSerializable
      * RemoveTracks constructor.
      *
      * @param array       $tracks
-     * @param null|string $snapshotId
+     * @param string|null $snapshotId
      */
     public function __construct(array $tracks, ?string $snapshotId = null)
     {
@@ -32,7 +32,7 @@ class RemoveTracks implements JsonSerializable
 
     /**
      * @param array       $tracks
-     * @param null|string $snapshotId
+     * @param string|null $snapshotId
      *
      * @return \Kerox\Spotify\Model\Playlist\RemoveTracks
      */
