@@ -42,7 +42,7 @@ You will then need to:
 * run `composer install` to get these dependencies added to your vendor directory
 * add the autoloader to your application with this line: `require('vendor/autoload.php');`
 
-## Advance usage
+## Usage
 
 Please, refer to the [wiki](https://github.com/ker0x/spotify/wiki) to learn how to use this library
 

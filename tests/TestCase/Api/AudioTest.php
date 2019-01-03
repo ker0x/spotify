@@ -9,6 +9,7 @@ use Kerox\Spotify\Model\AudioAnalysis\Segment;
 use Kerox\Spotify\Model\AudioAnalysis\Tatum;
 use Kerox\Spotify\Model\AudioFeatures;
 use Kerox\Spotify\Response\AudioAnalysisResponse;
+use Kerox\Spotify\Response\AudioFeaturesResponse;
 use Kerox\Spotify\Spotify;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\ClientInterface;
@@ -137,7 +138,7 @@ class AudioTest extends TestCase
         $stream = $this->createMock(StreamInterface::class);
         $stream->method('__toString')->willReturn($body);
 
-        $response = $this->createMock(AudioAnalysisResponse::class);
+        $response = $this->createMock(AudioFeaturesResponse::class);
         $response->method('getBody')->willReturn($stream);
         $response->method('getHeader')->willReturn(['content-type' => 'json']);
         $response->method('getStatusCode')->willReturn(200);
@@ -178,7 +179,7 @@ class AudioTest extends TestCase
         $stream = $this->createMock(StreamInterface::class);
         $stream->method('__toString')->willReturn($body);
 
-        $response = $this->createMock(AudioAnalysisResponse::class);
+        $response = $this->createMock(AudioFeaturesResponse::class);
         $response->method('getBody')->willReturn($stream);
         $response->method('getHeader')->willReturn(['content-type' => 'json']);
         $response->method('getStatusCode')->willReturn(200);

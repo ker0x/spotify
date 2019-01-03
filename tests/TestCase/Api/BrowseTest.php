@@ -9,7 +9,9 @@ use Kerox\Spotify\Model\Paging;
 use Kerox\Spotify\Model\Seed;
 use Kerox\Spotify\Model\Track;
 use Kerox\Spotify\Response\CategoriesResponse;
+use Kerox\Spotify\Response\CategoryResponse;
 use Kerox\Spotify\Response\FeaturedResponse;
+use Kerox\Spotify\Response\PlaylistsResponse;
 use Kerox\Spotify\Response\RecommendationsResponse;
 use Kerox\Spotify\Response\ReleasesResponse;
 use Kerox\Spotify\Spotify;
@@ -38,7 +40,7 @@ class BrowseTest extends TestCase
         $stream = $this->createMock(StreamInterface::class);
         $stream->method('__toString')->willReturn($body);
 
-        $response = $this->createMock(CategoriesResponse::class);
+        $response = $this->createMock(CategoryResponse::class);
         $response->method('getBody')->willReturn($stream);
         $response->method('getHeader')->willReturn(['content-type' => 'json']);
         $response->method('getStatusCode')->willReturn(200);
@@ -164,7 +166,7 @@ class BrowseTest extends TestCase
         $stream = $this->createMock(StreamInterface::class);
         $stream->method('__toString')->willReturn($body);
 
-        $response = $this->createMock(CategoriesResponse::class);
+        $response = $this->createMock(PlaylistsResponse::class);
         $response->method('getBody')->willReturn($stream);
         $response->method('getHeader')->willReturn(['content-type' => 'json']);
         $response->method('getStatusCode')->willReturn(200);

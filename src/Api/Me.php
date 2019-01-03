@@ -40,7 +40,7 @@ class Me extends AbstractApi implements TypeInterface
     {
         $uri = $this->createUri('me/playlists', $queryParameters);
 
-        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_PUT);
+        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
         $response = $this->client->sendRequest($request);
 
         return new PagingResponse($response);

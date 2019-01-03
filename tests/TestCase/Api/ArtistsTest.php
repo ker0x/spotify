@@ -10,6 +10,9 @@ use Kerox\Spotify\Model\Followers;
 use Kerox\Spotify\Model\Image;
 use Kerox\Spotify\Model\Track;
 use Kerox\Spotify\Response\ArtistResponse;
+use Kerox\Spotify\Response\ArtistsResponse;
+use Kerox\Spotify\Response\PagingResponse;
+use Kerox\Spotify\Response\TracksResponse;
 use Kerox\Spotify\Spotify;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\ClientInterface;
@@ -71,7 +74,7 @@ class ArtistsTest extends TestCase
         $stream = $this->createMock(StreamInterface::class);
         $stream->method('__toString')->willReturn($body);
 
-        $response = $this->createMock(ArtistResponse::class);
+        $response = $this->createMock(PagingResponse::class);
         $response->method('getBody')->willReturn($stream);
         $response->method('getHeader')->willReturn(['content-type' => 'json']);
         $response->method('getStatusCode')->willReturn(200);
@@ -112,7 +115,7 @@ class ArtistsTest extends TestCase
         $stream = $this->createMock(StreamInterface::class);
         $stream->method('__toString')->willReturn($body);
 
-        $response = $this->createMock(ArtistResponse::class);
+        $response = $this->createMock(TracksResponse::class);
         $response->method('getBody')->willReturn($stream);
         $response->method('getHeader')->willReturn(['content-type' => 'json']);
         $response->method('getStatusCode')->willReturn(200);
@@ -137,7 +140,7 @@ class ArtistsTest extends TestCase
         $stream = $this->createMock(StreamInterface::class);
         $stream->method('__toString')->willReturn($body);
 
-        $response = $this->createMock(ArtistResponse::class);
+        $response = $this->createMock(ArtistsResponse::class);
         $response->method('getBody')->willReturn($stream);
         $response->method('getHeader')->willReturn(['content-type' => 'json']);
         $response->method('getStatusCode')->willReturn(200);
@@ -160,7 +163,7 @@ class ArtistsTest extends TestCase
         $stream = $this->createMock(StreamInterface::class);
         $stream->method('__toString')->willReturn($body);
 
-        $response = $this->createMock(ArtistResponse::class);
+        $response = $this->createMock(ArtistsResponse::class);
         $response->method('getBody')->willReturn($stream);
         $response->method('getHeader')->willReturn(['content-type' => 'json']);
         $response->method('getStatusCode')->willReturn(200);
