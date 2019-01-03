@@ -166,6 +166,7 @@ class Playlist implements TypeInterface, JsonSerializable
             $externalUrls[] = External::build($type, $url);
         }
 
+        $followers = null;
         if (isset($playlist['followers'])) {
             $followers = Followers::build($playlist['followers']);
         }
@@ -196,7 +197,7 @@ class Playlist implements TypeInterface, JsonSerializable
             $collaborative,
             $description,
             $externalUrls,
-            $followers ?? null,
+            $followers,
             $href,
             $id,
             $images,

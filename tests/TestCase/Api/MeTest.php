@@ -5,10 +5,12 @@ namespace Kerox\Spotify\Test\TestCase\Api;
 use Kerox\Spotify\Interfaces\QueryParametersInterface;
 use Kerox\Spotify\Interfaces\TypeInterface;
 use Kerox\Spotify\Model\Artist;
+use Kerox\Spotify\Model\Cursor;
 use Kerox\Spotify\Model\External;
 use Kerox\Spotify\Model\Image;
 use Kerox\Spotify\Model\Playlist;
 use Kerox\Spotify\Response\PagingResponse;
+use Kerox\Spotify\Response\UserFollowingResponse;
 use Kerox\Spotify\Response\UserResponse;
 use Kerox\Spotify\Spotify;
 use PHPUnit\Framework\TestCase;
@@ -179,5 +181,38 @@ class MeTest extends TestCase
         ]);
 
         $this->assertSame(200, $response->getStatusCode());
+    }
+
+    public function testFollowing(): void
+    {
+        $body = file_get_contents(__DIR__ . '/../../Mocks/Me/following.json');
+
+        $stream = $this->createMock(StreamInterface::class);
+        $stream->method('__toString')->willReturn($body);
+
+        $response = $this->createMock(UserFollowingResponse::class);
+        $response->method('getBody')->willReturn($stream);
+        $response->method('getHeader')->willReturn(['content-type' => 'json']);
+        $response->method('getStatusCode')->willReturn(200);
+
+        $client = $this->createMock(ClientInterface::class);
+        $client->method('sendRequest')->willReturn($response);
+
+        $spotify = new Spotify($this->oauthToken, $client);
+        $response = $spotify->me()->following([
+            QueryParametersInterface::PARAMETER_TYPE => [
+                'artist'
+            ],
+            QueryParametersInterface::PARAMETER_AFTER => '0I2XqVXqHScXjHhk6AYYRe',
+            QueryParametersInterface::PARAMETER_LIMIT => 1,
+        ]);
+
+        $this->assertContainsOnlyInstancesOf(Artist::class, $response->getArtists()->getItems());
+        $this->assertSame('https://api.spotify.com/v1/me/following?type=artist&after=0bRtSoJSpQdnbB3dWrWprR&limit=10', $response->getArtists()->getNext());
+        $this->assertSame(174, $response->getArtists()->getTotal());
+        $this->assertInstanceOf(Cursor::class, $response->getArtists()->getCursors());
+        $this->assertSame('0bRtSoJSpQdnbB3dWrWprR', $response->getArtists()->getCursors()->getAfter());
+        $this->assertSame(10, $response->getArtists()->getLimit());
+        $this->assertSame('https://api.spotify.com/v1/me/following?type=artist&after=0I2XqVXqHScXjHhk6AYYRe&limit=10', $response->getArtists()->getHref());
     }
 }

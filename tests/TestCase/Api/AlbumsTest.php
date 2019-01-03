@@ -59,6 +59,7 @@ class AlbumsTest extends TestCase
 
         $this->assertSame('album', $album->getAlbumType());
         $this->assertContainsOnlyInstancesOf(Artist::class, $album->getArtists());
+        $this->assertEmpty($album->getAvailableMarkets());
         $this->assertContainsOnlyInstancesOf(Copyright::class, $album->getCopyrights());
         $this->assertSame('(P) 2012 RCA Records, a division of Sony Music Entertainment', $album->getCopyrights()[0]->getText());
         $this->assertSame('P', $album->getCopyrights()[0]->getType());
@@ -95,7 +96,7 @@ class AlbumsTest extends TestCase
         $stream = $this->createMock(StreamInterface::class);
         $stream->method('__toString')->willReturn($body);
 
-        $response = $this->createMock(AlbumResponse::class);
+        $response = $this->createMock(PagingResponse::class);
         $response->method('getBody')->willReturn($stream);
         $response->method('getHeader')->willReturn(['content-type' => 'json']);
         $response->method('getStatusCode')->willReturn(200);
@@ -161,7 +162,7 @@ class AlbumsTest extends TestCase
         $this->assertSame(2, $response->getTotal());
     }
 
-    public function testGetAlbumsForCurrentUser()
+    public function testGetAlbumsForCurrentUser(): void
     {
         $body = file_get_contents(__DIR__ . '/../../Mocks/Albums/saved.json');
 
@@ -199,7 +200,7 @@ class AlbumsTest extends TestCase
         $this->assertInstanceOf(Album::class, $savedAlbum->getAlbum());
     }
 
-    public function testAddAlbumsForCurrentUser()
+    public function testAddAlbumsForCurrentUser(): void
     {
         $response = $this->createMock(ResponseInterface::class);
         $response->method('getStatusCode')->willReturn(201);
@@ -219,7 +220,7 @@ class AlbumsTest extends TestCase
         $this->assertSame(201, $response->getStatusCode());
     }
 
-    public function testDeleteAlbumsForCurrentUser()
+    public function testDeleteAlbumsForCurrentUser(): void
     {
         $response = $this->createMock(ResponseInterface::class);
         $response->method('getStatusCode')->willReturn(200);
