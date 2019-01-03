@@ -28,7 +28,7 @@ A PHP Library to easily use [Spotify API](https://developer.spotify.com/document
 
 ## Warning
 
-This library use [PSR-18 HTTP Client](https://www.php-fig.org/psr/psr-18/), which means that **no** HTTP Client, like [Guzzle](https://github.com/guzzle/guzzle) or [httplug](https://github.com/php-http/httplug), are provided within. You will need to require them separately. 
+This library use [PSR-18 HTTP Client](https://www.php-fig.org/psr/psr-18/) interface, which means that **no** HTTP Client, like [Guzzle](https://github.com/guzzle/guzzle) or [httplug](https://github.com/php-http/httplug), are provided within. You will need to require them separately. 
 
 ## Installation
 
