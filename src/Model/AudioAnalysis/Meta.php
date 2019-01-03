@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model\AudioAnalysis;
 
-class Meta
+use Kerox\Spotify\Interfaces\ModelInterface;
+
+class Meta implements ModelInterface
 {
     /**
      * @var string

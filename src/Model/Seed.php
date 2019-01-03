@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
-class Seed
+use Kerox\Spotify\Interfaces\ModelInterface;
+
+class Seed implements ModelInterface
 {
     /**
      * @var int

@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
-class Copyright
+use Kerox\Spotify\Interfaces\ModelInterface;
+
+class Copyright implements ModelInterface
 {
     /**
      * @var string

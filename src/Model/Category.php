@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
-class Category
+use Kerox\Spotify\Interfaces\ModelInterface;
+
+class Category implements ModelInterface
 {
     /**
      * @var string

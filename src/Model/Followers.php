@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
-class Followers
+use Kerox\Spotify\Interfaces\ModelInterface;
+
+class Followers implements ModelInterface
 {
     /**
      * @var null|string
