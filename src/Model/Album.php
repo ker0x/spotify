@@ -276,7 +276,7 @@ class Album implements TypeInterface
     /**
      * @return array
      */
-    public function getAvailableMarkets(): ?array
+    public function getAvailableMarkets(): array
     {
         return $this->availableMarkets;
     }

@@ -1,73 +1,60 @@
 {
-  "artists": {
-    "href": "https://api.spotify.com/v1/search?query=Muse&type=artist&market=US&offset=5&limit=10",
+  "albums": {
+    "href": "https://api.spotify.com/v1/search?query=Muse&type=album&market=FR&offset=1&limit=1",
     "items": [
       {
-        "external_urls": {
-          "spotify": "https://open.spotify.com/artist/0EcCExwuVReDp8Y86sLXUo"
-        },
-        "followers": {
-          "href": null,
-          "total": 75
-        },
-        "genres": [],
-        "href": "https://api.spotify.com/v1/artists/0EcCExwuVReDp8Y86sLXUo",
-        "id": "0EcCExwuVReDp8Y86sLXUo",
-        "images": [
+        "album_type": "album",
+        "artists": [
           {
-            "height": 640,
-            "url": "https://i.scdn.co/image/fef4944016086c9f0afb7ee943ab0a0d746b30e7",
-            "width": 640
-          },
-          {
-            "height": 320,
-            "url": "https://i.scdn.co/image/39d74c5be6e3e929bdca315b2a4c60fc6c581487",
-            "width": 320
-          },
-          {
-            "height": 160,
-            "url": "https://i.scdn.co/image/ae04510bb2b9493375de9e3748651e4574de4084",
-            "width": 160
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/12Chz98pHFMPJEknJQMWvI"
+            },
+            "href": "https://api.spotify.com/v1/artists/12Chz98pHFMPJEknJQMWvI",
+            "id": "12Chz98pHFMPJEknJQMWvI",
+            "name": "Muse",
+            "type": "artist",
+            "uri": "spotify:artist:12Chz98pHFMPJEknJQMWvI"
           }
         ],
-        "name": "Charlee Muse",
-        "popularity": 27,
-        "type": "artist",
-        "uri": "spotify:artist:0EcCExwuVReDp8Y86sLXUo"
-      },
-      {
         "external_urls": {
-          "spotify": "https://open.spotify.com/artist/0LjVOGAofVR8GpUkRODKhA"
+          "spotify": "https://open.spotify.com/album/0eFHYz8NmK75zSplL5qlfM"
         },
-        "followers": {
-          "href": null,
-          "total": 804
-        },
-        "genres": [],
-        "href": "https://api.spotify.com/v1/artists/0LjVOGAofVR8GpUkRODKhA",
-        "id": "0LjVOGAofVR8GpUkRODKhA",
+        "href": "https://api.spotify.com/v1/albums/0eFHYz8NmK75zSplL5qlfM",
+        "id": "0eFHYz8NmK75zSplL5qlfM",
         "images": [
           {
             "height": 640,
-            "url": "https://i.scdn.co/image/1c53abd7fe545193ea50f9792ee26a6cbaa9bedc",
+            "url": "https://i.scdn.co/image/6e1be3ceda70250c701caee5a16bef205e94bc98",
             "width": 640
           },
           {
             "height": 300,
-            "url": "https://i.scdn.co/image/b51c07cb74c73cebc47aad63efdd8a122a605b4d",
+            "url": "https://i.scdn.co/image/28752dcf4b27ba14c1fc62f04ff469aa53c113d7",
             "width": 300
           },
           {
             "height": 64,
-            "url": "https://i.scdn.co/image/adf4216797d74906fd5652f271620c8b0f253f0d",
+            "url": "https://i.scdn.co/image/26098aaa50a3450f0bac8f1a7d7677accf3f3cb6",
             "width": 64
           }
         ],
-        "name": "Sky Muse",
-        "popularity": 23,
-        "type": "artist",
-        "uri": "spotify:artist:0LjVOGAofVR8GpUkRODKhA"
-      },
+        "name": "The Resistance",
+        "release_date": "2009-09-10",
+        "release_date_precision": "day",
+        "total_tracks": 11,
+        "type": "album",
+        "uri": "spotify:album:0eFHYz8NmK75zSplL5qlfM"
+      }
+    ],
+    "limit": 1,
+    "next": "https://api.spotify.com/v1/search?query=Muse&type=album&market=FR&offset=2&limit=1",
+    "offset": 1,
+    "previous": "https://api.spotify.com/v1/search?query=Muse&type=album&market=FR&offset=0&limit=1",
+    "total": 1359
+  },
+  "artists": {
+    "href": "https://api.spotify.com/v1/search?query=Muse&type=artist&market=FR&offset=1&limit=1",
+    "items": [
       {
         "external_urls": {
           "spotify": "https://open.spotify.com/artist/15qpUkIDVVWsb60MTzCVsJ"
@@ -100,203 +87,16 @@
         "popularity": 25,
         "type": "artist",
         "uri": "spotify:artist:15qpUkIDVVWsb60MTzCVsJ"
-      },
-      {
-        "external_urls": {
-          "spotify": "https://open.spotify.com/artist/3uIGREwbP57eNOtcol8yrC"
-        },
-        "followers": {
-          "href": null,
-          "total": 346
-        },
-        "genres": [
-          "harp"
-        ],
-        "href": "https://api.spotify.com/v1/artists/3uIGREwbP57eNOtcol8yrC",
-        "id": "3uIGREwbP57eNOtcol8yrC",
-        "images": [],
-        "name": "Celtic Muse",
-        "popularity": 17,
-        "type": "artist",
-        "uri": "spotify:artist:3uIGREwbP57eNOtcol8yrC"
-      },
-      {
-        "external_urls": {
-          "spotify": "https://open.spotify.com/artist/3fELQaGklkAy7LlPmMcP67"
-        },
-        "followers": {
-          "href": null,
-          "total": 17
-        },
-        "genres": [],
-        "href": "https://api.spotify.com/v1/artists/3fELQaGklkAy7LlPmMcP67",
-        "id": "3fELQaGklkAy7LlPmMcP67",
-        "images": [
-          {
-            "height": 640,
-            "url": "https://i.scdn.co/image/427b82256d7e5c311a1b040c5297a31c901c81e0",
-            "width": 640
-          },
-          {
-            "height": 320,
-            "url": "https://i.scdn.co/image/92689e6e20682799eedec308761f9ed134b21abb",
-            "width": 320
-          },
-          {
-            "height": 160,
-            "url": "https://i.scdn.co/image/0968242393fde847a220870cb416a7ac7a62b4b1",
-            "width": 160
-          }
-        ],
-        "name": "Muse-Sic",
-        "popularity": 10,
-        "type": "artist",
-        "uri": "spotify:artist:3fELQaGklkAy7LlPmMcP67"
-      },
-      {
-        "external_urls": {
-          "spotify": "https://open.spotify.com/artist/7dwv5d4pNWa18YFMiXZiFi"
-        },
-        "followers": {
-          "href": null,
-          "total": 133
-        },
-        "genres": [],
-        "href": "https://api.spotify.com/v1/artists/7dwv5d4pNWa18YFMiXZiFi",
-        "id": "7dwv5d4pNWa18YFMiXZiFi",
-        "images": [
-          {
-            "height": 640,
-            "url": "https://i.scdn.co/image/2094e57ac2d673414f5a733b1db969fcb402567d",
-            "width": 640
-          },
-          {
-            "height": 320,
-            "url": "https://i.scdn.co/image/56849064097581066c7d2051e5b5a464dad08f52",
-            "width": 320
-          },
-          {
-            "height": 160,
-            "url": "https://i.scdn.co/image/0767244f8c471f4b8f2ac1e7552ce15c6a3d2d8c",
-            "width": 160
-          }
-        ],
-        "name": "The Muse Maker",
-        "popularity": 14,
-        "type": "artist",
-        "uri": "spotify:artist:7dwv5d4pNWa18YFMiXZiFi"
-      },
-      {
-        "external_urls": {
-          "spotify": "https://open.spotify.com/artist/2fG1yJINYy4n12TEyenffE"
-        },
-        "followers": {
-          "href": null,
-          "total": 6
-        },
-        "genres": [],
-        "href": "https://api.spotify.com/v1/artists/2fG1yJINYy4n12TEyenffE",
-        "id": "2fG1yJINYy4n12TEyenffE",
-        "images": [],
-        "name": "Kandy Muse",
-        "popularity": 14,
-        "type": "artist",
-        "uri": "spotify:artist:2fG1yJINYy4n12TEyenffE"
-      },
-      {
-        "external_urls": {
-          "spotify": "https://open.spotify.com/artist/1zFNYw5kgA7UEKWqNHf1Et"
-        },
-        "followers": {
-          "href": null,
-          "total": 1809
-        },
-        "genres": [
-          "electropop"
-        ],
-        "href": "https://api.spotify.com/v1/artists/1zFNYw5kgA7UEKWqNHf1Et",
-        "id": "1zFNYw5kgA7UEKWqNHf1Et",
-        "images": [
-          {
-            "height": 640,
-            "url": "https://i.scdn.co/image/37b8c747761d4e769f50cafe0cfac5e5699d11c4",
-            "width": 640
-          },
-          {
-            "height": 300,
-            "url": "https://i.scdn.co/image/1dbe9563251b3a2411a08e116214ecdc72ea5d36",
-            "width": 300
-          },
-          {
-            "height": 64,
-            "url": "https://i.scdn.co/image/019776540e398dae278322f9f030f36afb0614d2",
-            "width": 64
-          }
-        ],
-        "name": "Dangerous Muse",
-        "popularity": 13,
-        "type": "artist",
-        "uri": "spotify:artist:1zFNYw5kgA7UEKWqNHf1Et"
-      },
-      {
-        "external_urls": {
-          "spotify": "https://open.spotify.com/artist/4WUHZVB8wkTnWXQGbF4SCz"
-        },
-        "followers": {
-          "href": null,
-          "total": 283
-        },
-        "genres": [],
-        "href": "https://api.spotify.com/v1/artists/4WUHZVB8wkTnWXQGbF4SCz",
-        "id": "4WUHZVB8wkTnWXQGbF4SCz",
-        "images": [
-          {
-            "height": 640,
-            "url": "https://i.scdn.co/image/964cdc5b9760e360749c3f716997fa50460ddef0",
-            "width": 640
-          },
-          {
-            "height": 320,
-            "url": "https://i.scdn.co/image/5f5dfc727bc263a8e79f8fb9b2b4d63217a994be",
-            "width": 320
-          },
-          {
-            "height": 160,
-            "url": "https://i.scdn.co/image/8a18bfaf687c7bd34458ea8410c3c7fffbd7796c",
-            "width": 160
-          }
-        ],
-        "name": "Matt Muse",
-        "popularity": 7,
-        "type": "artist",
-        "uri": "spotify:artist:4WUHZVB8wkTnWXQGbF4SCz"
-      },
-      {
-        "external_urls": {
-          "spotify": "https://open.spotify.com/artist/3i2BIU5Mp9c3Rsit2WCfbx"
-        },
-        "followers": {
-          "href": null,
-          "total": 30
-        },
-        "genres": [],
-        "href": "https://api.spotify.com/v1/artists/3i2BIU5Mp9c3Rsit2WCfbx",
-        "id": "3i2BIU5Mp9c3Rsit2WCfbx",
-        "images": [],
-        "name": "Muse",
-        "popularity": 8,
-        "type": "artist",
-        "uri": "spotify:artist:3i2BIU5Mp9c3Rsit2WCfbx"
       }
     ],
-    "limit": 10,
-    "next": "https://api.spotify.com/v1/search?query=Muse&type=artist&market=US&offset=15&limit=10",
-    "offset": 5,
-    "previous": "https://api.spotify.com/v1/search?query=Muse&type=artist&market=US&offset=0&limit=10",
-    "total": 215
+    "limit": 1,
+    "next": "https://api.spotify.com/v1/search?query=Muse&type=artist&market=FR&offset=2&limit=1",
+    "offset": 1,
+    "previous": "https://api.spotify.com/v1/search?query=Muse&type=artist&market=FR&offset=0&limit=1",
+    "total": 214
   },
   "tracks": {
-    "href": "https://api.spotify.com/v1/search?query=Muse&type=track&market=US&offset=5&limit=10",
+    "href": "https://api.spotify.com/v1/search?query=Muse&type=track&market=FR&offset=1&limit=1",
     "items": [
       {
         "album": {
@@ -314,82 +114,6 @@
             }
           ],
           "external_urls": {
-            "spotify": "https://open.spotify.com/album/0lw68yx3MhKflWFqCsGkIs"
-          },
-          "href": "https://api.spotify.com/v1/albums/0lw68yx3MhKflWFqCsGkIs",
-          "id": "0lw68yx3MhKflWFqCsGkIs",
-          "images": [
-            {
-              "height": 640,
-              "url": "https://i.scdn.co/image/9e5288926fadb82f873ccf2b45300c3a6f65fa14",
-              "width": 640
-            },
-            {
-              "height": 300,
-              "url": "https://i.scdn.co/image/f1cad0d6974d6236abd07a59106e8450d85cae24",
-              "width": 300
-            },
-            {
-              "height": 64,
-              "url": "https://i.scdn.co/image/81a3f82578dc938c53efdcb405f6a3d3ebbf009f",
-              "width": 64
-            }
-          ],
-          "name": "Black Holes And Revelations",
-          "release_date": "2006-06-19",
-          "release_date_precision": "day",
-          "total_tracks": 12,
-          "type": "album",
-          "uri": "spotify:album:0lw68yx3MhKflWFqCsGkIs"
-        },
-        "artists": [
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/12Chz98pHFMPJEknJQMWvI"
-            },
-            "href": "https://api.spotify.com/v1/artists/12Chz98pHFMPJEknJQMWvI",
-            "id": "12Chz98pHFMPJEknJQMWvI",
-            "name": "Muse",
-            "type": "artist",
-            "uri": "spotify:artist:12Chz98pHFMPJEknJQMWvI"
-          }
-        ],
-        "disc_number": 1,
-        "duration_ms": 240213,
-        "explicit": false,
-        "external_ids": {
-          "isrc": "GBAHT0500592"
-        },
-        "external_urls": {
-          "spotify": "https://open.spotify.com/track/3skn2lauGk7Dx6bVIt5DVj"
-        },
-        "href": "https://api.spotify.com/v1/tracks/3skn2lauGk7Dx6bVIt5DVj",
-        "id": "3skn2lauGk7Dx6bVIt5DVj",
-        "is_local": false,
-        "is_playable": true,
-        "name": "Starlight",
-        "popularity": 71,
-        "preview_url": "https://p.scdn.co/mp3-preview/f7a1b8a270f310e43ced2720c9af5f29f6476b79?cid=774b29d4f13844c495f206cafdad9c86",
-        "track_number": 2,
-        "type": "track",
-        "uri": "spotify:track:3skn2lauGk7Dx6bVIt5DVj"
-      },
-      {
-        "album": {
-          "album_type": "album",
-          "artists": [
-            {
-              "external_urls": {
-                "spotify": "https://open.spotify.com/artist/12Chz98pHFMPJEknJQMWvI"
-              },
-              "href": "https://api.spotify.com/v1/artists/12Chz98pHFMPJEknJQMWvI",
-              "id": "12Chz98pHFMPJEknJQMWvI",
-              "name": "Muse",
-              "type": "artist",
-              "uri": "spotify:artist:12Chz98pHFMPJEknJQMWvI"
-            }
-          ],
-          "external_urls": {
             "spotify": "https://open.spotify.com/album/5OZgDtx180ZZPMpm36J2zC"
           },
           "href": "https://api.spotify.com/v1/albums/5OZgDtx180ZZPMpm36J2zC",
@@ -431,638 +155,75 @@
           }
         ],
         "disc_number": 1,
-        "duration_ms": 206106,
+        "duration_ms": 235600,
         "explicit": false,
         "external_ids": {
-          "isrc": "GBAHT1800045"
+          "isrc": "GBAHT1800405"
         },
         "external_urls": {
-          "spotify": "https://open.spotify.com/track/57lCa95tmjJ8EYdNTex8Kk"
+          "spotify": "https://open.spotify.com/track/3eSyMBd7ERw68NVB3jlRmW"
         },
-        "href": "https://api.spotify.com/v1/tracks/57lCa95tmjJ8EYdNTex8Kk",
-        "id": "57lCa95tmjJ8EYdNTex8Kk",
+        "href": "https://api.spotify.com/v1/tracks/3eSyMBd7ERw68NVB3jlRmW",
+        "id": "3eSyMBd7ERw68NVB3jlRmW",
         "is_local": false,
         "is_playable": true,
-        "name": "Thought Contagion",
-        "popularity": 68,
-        "preview_url": "https://p.scdn.co/mp3-preview/5413d31316e3ae199934badae527f6fe2b26262a?cid=774b29d4f13844c495f206cafdad9c86",
-        "track_number": 7,
-        "type": "track",
-        "uri": "spotify:track:57lCa95tmjJ8EYdNTex8Kk"
-      },
-      {
-        "album": {
-          "album_type": "album",
-          "artists": [
-            {
-              "external_urls": {
-                "spotify": "https://open.spotify.com/artist/12Chz98pHFMPJEknJQMWvI"
-              },
-              "href": "https://api.spotify.com/v1/artists/12Chz98pHFMPJEknJQMWvI",
-              "id": "12Chz98pHFMPJEknJQMWvI",
-              "name": "Muse",
-              "type": "artist",
-              "uri": "spotify:artist:12Chz98pHFMPJEknJQMWvI"
-            }
-          ],
-          "external_urls": {
-            "spotify": "https://open.spotify.com/album/0lw68yx3MhKflWFqCsGkIs"
-          },
-          "href": "https://api.spotify.com/v1/albums/0lw68yx3MhKflWFqCsGkIs",
-          "id": "0lw68yx3MhKflWFqCsGkIs",
-          "images": [
-            {
-              "height": 640,
-              "url": "https://i.scdn.co/image/9e5288926fadb82f873ccf2b45300c3a6f65fa14",
-              "width": 640
-            },
-            {
-              "height": 300,
-              "url": "https://i.scdn.co/image/f1cad0d6974d6236abd07a59106e8450d85cae24",
-              "width": 300
-            },
-            {
-              "height": 64,
-              "url": "https://i.scdn.co/image/81a3f82578dc938c53efdcb405f6a3d3ebbf009f",
-              "width": 64
-            }
-          ],
-          "name": "Black Holes And Revelations",
-          "release_date": "2006-06-19",
-          "release_date_precision": "day",
-          "total_tracks": 12,
-          "type": "album",
-          "uri": "spotify:album:0lw68yx3MhKflWFqCsGkIs"
-        },
-        "artists": [
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/12Chz98pHFMPJEknJQMWvI"
-            },
-            "href": "https://api.spotify.com/v1/artists/12Chz98pHFMPJEknJQMWvI",
-            "id": "12Chz98pHFMPJEknJQMWvI",
-            "name": "Muse",
-            "type": "artist",
-            "uri": "spotify:artist:12Chz98pHFMPJEknJQMWvI"
-          }
-        ],
-        "disc_number": 1,
-        "duration_ms": 366213,
-        "explicit": false,
-        "external_ids": {
-          "isrc": "GBAHT0500600"
-        },
-        "external_urls": {
-          "spotify": "https://open.spotify.com/track/7ouMYWpwJ422jRcDASZB7P"
-        },
-        "href": "https://api.spotify.com/v1/tracks/7ouMYWpwJ422jRcDASZB7P",
-        "id": "7ouMYWpwJ422jRcDASZB7P",
-        "is_local": false,
-        "is_playable": true,
-        "name": "Knights Of Cydonia",
-        "popularity": 66,
-        "preview_url": "https://p.scdn.co/mp3-preview/d7624ec5f93b6d92c1836a95c40ecce463584f6e?cid=774b29d4f13844c495f206cafdad9c86",
-        "track_number": 11,
-        "type": "track",
-        "uri": "spotify:track:7ouMYWpwJ422jRcDASZB7P"
-      },
-      {
-        "album": {
-          "album_type": "album",
-          "artists": [
-            {
-              "external_urls": {
-                "spotify": "https://open.spotify.com/artist/12Chz98pHFMPJEknJQMWvI"
-              },
-              "href": "https://api.spotify.com/v1/artists/12Chz98pHFMPJEknJQMWvI",
-              "id": "12Chz98pHFMPJEknJQMWvI",
-              "name": "Muse",
-              "type": "artist",
-              "uri": "spotify:artist:12Chz98pHFMPJEknJQMWvI"
-            }
-          ],
-          "external_urls": {
-            "spotify": "https://open.spotify.com/album/5OZgDtx180ZZPMpm36J2zC"
-          },
-          "href": "https://api.spotify.com/v1/albums/5OZgDtx180ZZPMpm36J2zC",
-          "id": "5OZgDtx180ZZPMpm36J2zC",
-          "images": [
-            {
-              "height": 640,
-              "url": "https://i.scdn.co/image/0b15f63923b517c1ebd65b58b903327b297293c3",
-              "width": 640
-            },
-            {
-              "height": 300,
-              "url": "https://i.scdn.co/image/98ce46f08cf1083fbcfae03f150b8e19b38289b6",
-              "width": 300
-            },
-            {
-              "height": 64,
-              "url": "https://i.scdn.co/image/28a8487234c901ae9fe127d1d0eef738a91e46d6",
-              "width": 64
-            }
-          ],
-          "name": "Simulation Theory (Super Deluxe)",
-          "release_date": "2018-11-09",
-          "release_date_precision": "day",
-          "total_tracks": 21,
-          "type": "album",
-          "uri": "spotify:album:5OZgDtx180ZZPMpm36J2zC"
-        },
-        "artists": [
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/12Chz98pHFMPJEknJQMWvI"
-            },
-            "href": "https://api.spotify.com/v1/artists/12Chz98pHFMPJEknJQMWvI",
-            "id": "12Chz98pHFMPJEknJQMWvI",
-            "name": "Muse",
-            "type": "artist",
-            "uri": "spotify:artist:12Chz98pHFMPJEknJQMWvI"
-          }
-        ],
-        "disc_number": 1,
-        "duration_ms": 227213,
-        "explicit": false,
-        "external_ids": {
-          "isrc": "GBAHT1800404"
-        },
-        "external_urls": {
-          "spotify": "https://open.spotify.com/track/0dMYPDqcI4ca4cjqlmp9mE"
-        },
-        "href": "https://api.spotify.com/v1/tracks/0dMYPDqcI4ca4cjqlmp9mE",
-        "id": "0dMYPDqcI4ca4cjqlmp9mE",
-        "is_local": false,
-        "is_playable": true,
-        "name": "The Dark Side",
-        "popularity": 68,
-        "preview_url": "https://p.scdn.co/mp3-preview/5995cbc458c74a9f4beb50ca250a9920d3b1d8ab?cid=774b29d4f13844c495f206cafdad9c86",
-        "track_number": 2,
-        "type": "track",
-        "uri": "spotify:track:0dMYPDqcI4ca4cjqlmp9mE"
-      },
-      {
-        "album": {
-          "album_type": "album",
-          "artists": [
-            {
-              "external_urls": {
-                "spotify": "https://open.spotify.com/artist/12Chz98pHFMPJEknJQMWvI"
-              },
-              "href": "https://api.spotify.com/v1/artists/12Chz98pHFMPJEknJQMWvI",
-              "id": "12Chz98pHFMPJEknJQMWvI",
-              "name": "Muse",
-              "type": "artist",
-              "uri": "spotify:artist:12Chz98pHFMPJEknJQMWvI"
-            }
-          ],
-          "external_urls": {
-            "spotify": "https://open.spotify.com/album/5OZgDtx180ZZPMpm36J2zC"
-          },
-          "href": "https://api.spotify.com/v1/albums/5OZgDtx180ZZPMpm36J2zC",
-          "id": "5OZgDtx180ZZPMpm36J2zC",
-          "images": [
-            {
-              "height": 640,
-              "url": "https://i.scdn.co/image/0b15f63923b517c1ebd65b58b903327b297293c3",
-              "width": 640
-            },
-            {
-              "height": 300,
-              "url": "https://i.scdn.co/image/98ce46f08cf1083fbcfae03f150b8e19b38289b6",
-              "width": 300
-            },
-            {
-              "height": 64,
-              "url": "https://i.scdn.co/image/28a8487234c901ae9fe127d1d0eef738a91e46d6",
-              "width": 64
-            }
-          ],
-          "name": "Simulation Theory (Super Deluxe)",
-          "release_date": "2018-11-09",
-          "release_date_precision": "day",
-          "total_tracks": 21,
-          "type": "album",
-          "uri": "spotify:album:5OZgDtx180ZZPMpm36J2zC"
-        },
-        "artists": [
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/12Chz98pHFMPJEknJQMWvI"
-            },
-            "href": "https://api.spotify.com/v1/artists/12Chz98pHFMPJEknJQMWvI",
-            "id": "12Chz98pHFMPJEknJQMWvI",
-            "name": "Muse",
-            "type": "artist",
-            "uri": "spotify:artist:12Chz98pHFMPJEknJQMWvI"
-          }
-        ],
-        "disc_number": 1,
-        "duration_ms": 180506,
-        "explicit": false,
-        "external_ids": {
-          "isrc": "GBAHT1800417"
-        },
-        "external_urls": {
-          "spotify": "https://open.spotify.com/track/2sHLWUTiaBPGOIZinpqO4C"
-        },
-        "href": "https://api.spotify.com/v1/tracks/2sHLWUTiaBPGOIZinpqO4C",
-        "id": "2sHLWUTiaBPGOIZinpqO4C",
-        "is_local": false,
-        "is_playable": true,
-        "name": "Propaganda",
-        "popularity": 67,
-        "preview_url": "https://p.scdn.co/mp3-preview/f80e299a7079ada8c9d24bbff84da6935383b305?cid=774b29d4f13844c495f206cafdad9c86",
-        "track_number": 4,
-        "type": "track",
-        "uri": "spotify:track:2sHLWUTiaBPGOIZinpqO4C"
-      },
-      {
-        "album": {
-          "album_type": "album",
-          "artists": [
-            {
-              "external_urls": {
-                "spotify": "https://open.spotify.com/artist/6FxuPrpa8phaP3Xn73emhT"
-              },
-              "href": "https://api.spotify.com/v1/artists/6FxuPrpa8phaP3Xn73emhT",
-              "id": "6FxuPrpa8phaP3Xn73emhT",
-              "name": "The Wood Brothers",
-              "type": "artist",
-              "uri": "spotify:artist:6FxuPrpa8phaP3Xn73emhT"
-            }
-          ],
-          "external_urls": {
-            "spotify": "https://open.spotify.com/album/2xkAdEXW7nGQAJMptaOk2d"
-          },
-          "href": "https://api.spotify.com/v1/albums/2xkAdEXW7nGQAJMptaOk2d",
-          "id": "2xkAdEXW7nGQAJMptaOk2d",
-          "images": [
-            {
-              "height": 640,
-              "url": "https://i.scdn.co/image/afe446daa20f89d46cf63b5d5c43c2227104f216",
-              "width": 640
-            },
-            {
-              "height": 300,
-              "url": "https://i.scdn.co/image/2a19e9365f480f60243a7bb603b977adea4eb423",
-              "width": 300
-            },
-            {
-              "height": 64,
-              "url": "https://i.scdn.co/image/63099a2357dfa3d7057d20b4fcc910f71d8254da",
-              "width": 64
-            }
-          ],
-          "name": "The Muse",
-          "release_date": "2013",
-          "release_date_precision": "year",
-          "total_tracks": 11,
-          "type": "album",
-          "uri": "spotify:album:2xkAdEXW7nGQAJMptaOk2d"
-        },
-        "artists": [
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/6FxuPrpa8phaP3Xn73emhT"
-            },
-            "href": "https://api.spotify.com/v1/artists/6FxuPrpa8phaP3Xn73emhT",
-            "id": "6FxuPrpa8phaP3Xn73emhT",
-            "name": "The Wood Brothers",
-            "type": "artist",
-            "uri": "spotify:artist:6FxuPrpa8phaP3Xn73emhT"
-          }
-        ],
-        "disc_number": 1,
-        "duration_ms": 243440,
-        "explicit": false,
-        "external_ids": {
-          "isrc": "QMZ6E1300120"
-        },
-        "external_urls": {
-          "spotify": "https://open.spotify.com/track/0MJ5Qltavj6AWdxjheHlSI"
-        },
-        "href": "https://api.spotify.com/v1/tracks/0MJ5Qltavj6AWdxjheHlSI",
-        "id": "0MJ5Qltavj6AWdxjheHlSI",
-        "is_local": false,
-        "is_playable": true,
-        "name": "I Got Loaded",
-        "popularity": 58,
-        "preview_url": "https://p.scdn.co/mp3-preview/45964696f4583064fedebecfc8314f7fe882f9e1?cid=774b29d4f13844c495f206cafdad9c86",
-        "track_number": 8,
-        "type": "track",
-        "uri": "spotify:track:0MJ5Qltavj6AWdxjheHlSI"
-      },
-      {
-        "album": {
-          "album_type": "album",
-          "artists": [
-            {
-              "external_urls": {
-                "spotify": "https://open.spotify.com/artist/6FxuPrpa8phaP3Xn73emhT"
-              },
-              "href": "https://api.spotify.com/v1/artists/6FxuPrpa8phaP3Xn73emhT",
-              "id": "6FxuPrpa8phaP3Xn73emhT",
-              "name": "The Wood Brothers",
-              "type": "artist",
-              "uri": "spotify:artist:6FxuPrpa8phaP3Xn73emhT"
-            }
-          ],
-          "external_urls": {
-            "spotify": "https://open.spotify.com/album/2xkAdEXW7nGQAJMptaOk2d"
-          },
-          "href": "https://api.spotify.com/v1/albums/2xkAdEXW7nGQAJMptaOk2d",
-          "id": "2xkAdEXW7nGQAJMptaOk2d",
-          "images": [
-            {
-              "height": 640,
-              "url": "https://i.scdn.co/image/afe446daa20f89d46cf63b5d5c43c2227104f216",
-              "width": 640
-            },
-            {
-              "height": 300,
-              "url": "https://i.scdn.co/image/2a19e9365f480f60243a7bb603b977adea4eb423",
-              "width": 300
-            },
-            {
-              "height": 64,
-              "url": "https://i.scdn.co/image/63099a2357dfa3d7057d20b4fcc910f71d8254da",
-              "width": 64
-            }
-          ],
-          "name": "The Muse",
-          "release_date": "2013",
-          "release_date_precision": "year",
-          "total_tracks": 11,
-          "type": "album",
-          "uri": "spotify:album:2xkAdEXW7nGQAJMptaOk2d"
-        },
-        "artists": [
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/6FxuPrpa8phaP3Xn73emhT"
-            },
-            "href": "https://api.spotify.com/v1/artists/6FxuPrpa8phaP3Xn73emhT",
-            "id": "6FxuPrpa8phaP3Xn73emhT",
-            "name": "The Wood Brothers",
-            "type": "artist",
-            "uri": "spotify:artist:6FxuPrpa8phaP3Xn73emhT"
-          }
-        ],
-        "disc_number": 1,
-        "duration_ms": 218520,
-        "explicit": false,
-        "external_ids": {
-          "isrc": "QMZ6E1300118"
-        },
-        "external_urls": {
-          "spotify": "https://open.spotify.com/track/5NNXPVydz9kE8xOY7ycj4r"
-        },
-        "href": "https://api.spotify.com/v1/tracks/5NNXPVydz9kE8xOY7ycj4r",
-        "id": "5NNXPVydz9kE8xOY7ycj4r",
-        "is_local": false,
-        "is_playable": true,
-        "name": "Keep Me Around",
-        "popularity": 57,
-        "preview_url": "https://p.scdn.co/mp3-preview/6df1759631dbe835bfb8ea3cc9adf0e5ea4b30dc?cid=774b29d4f13844c495f206cafdad9c86",
-        "track_number": 6,
-        "type": "track",
-        "uri": "spotify:track:5NNXPVydz9kE8xOY7ycj4r"
-      },
-      {
-        "album": {
-          "album_type": "album",
-          "artists": [
-            {
-              "external_urls": {
-                "spotify": "https://open.spotify.com/artist/12Chz98pHFMPJEknJQMWvI"
-              },
-              "href": "https://api.spotify.com/v1/artists/12Chz98pHFMPJEknJQMWvI",
-              "id": "12Chz98pHFMPJEknJQMWvI",
-              "name": "Muse",
-              "type": "artist",
-              "uri": "spotify:artist:12Chz98pHFMPJEknJQMWvI"
-            }
-          ],
-          "external_urls": {
-            "spotify": "https://open.spotify.com/album/5OZgDtx180ZZPMpm36J2zC"
-          },
-          "href": "https://api.spotify.com/v1/albums/5OZgDtx180ZZPMpm36J2zC",
-          "id": "5OZgDtx180ZZPMpm36J2zC",
-          "images": [
-            {
-              "height": 640,
-              "url": "https://i.scdn.co/image/0b15f63923b517c1ebd65b58b903327b297293c3",
-              "width": 640
-            },
-            {
-              "height": 300,
-              "url": "https://i.scdn.co/image/98ce46f08cf1083fbcfae03f150b8e19b38289b6",
-              "width": 300
-            },
-            {
-              "height": 64,
-              "url": "https://i.scdn.co/image/28a8487234c901ae9fe127d1d0eef738a91e46d6",
-              "width": 64
-            }
-          ],
-          "name": "Simulation Theory (Super Deluxe)",
-          "release_date": "2018-11-09",
-          "release_date_precision": "day",
-          "total_tracks": 21,
-          "type": "album",
-          "uri": "spotify:album:5OZgDtx180ZZPMpm36J2zC"
-        },
-        "artists": [
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/12Chz98pHFMPJEknJQMWvI"
-            },
-            "href": "https://api.spotify.com/v1/artists/12Chz98pHFMPJEknJQMWvI",
-            "id": "12Chz98pHFMPJEknJQMWvI",
-            "name": "Muse",
-            "type": "artist",
-            "uri": "spotify:artist:12Chz98pHFMPJEknJQMWvI"
-          }
-        ],
-        "disc_number": 1,
-        "duration_ms": 226786,
-        "explicit": false,
-        "external_ids": {
-          "isrc": "GBAHT1800329"
-        },
-        "external_urls": {
-          "spotify": "https://open.spotify.com/track/1esX5rtwwssnsEQNQk0HGg"
-        },
-        "href": "https://api.spotify.com/v1/tracks/1esX5rtwwssnsEQNQk0HGg",
-        "id": "1esX5rtwwssnsEQNQk0HGg",
-        "is_local": false,
-        "is_playable": true,
-        "name": "Something Human",
-        "popularity": 67,
-        "preview_url": "https://p.scdn.co/mp3-preview/68dc3591178007faf97bf5e49803f19d1f95a6f1?cid=774b29d4f13844c495f206cafdad9c86",
-        "track_number": 6,
-        "type": "track",
-        "uri": "spotify:track:1esX5rtwwssnsEQNQk0HGg"
-      },
-      {
-        "album": {
-          "album_type": "album",
-          "artists": [
-            {
-              "external_urls": {
-                "spotify": "https://open.spotify.com/artist/12Chz98pHFMPJEknJQMWvI"
-              },
-              "href": "https://api.spotify.com/v1/artists/12Chz98pHFMPJEknJQMWvI",
-              "id": "12Chz98pHFMPJEknJQMWvI",
-              "name": "Muse",
-              "type": "artist",
-              "uri": "spotify:artist:12Chz98pHFMPJEknJQMWvI"
-            }
-          ],
-          "external_urls": {
-            "spotify": "https://open.spotify.com/album/5OZgDtx180ZZPMpm36J2zC"
-          },
-          "href": "https://api.spotify.com/v1/albums/5OZgDtx180ZZPMpm36J2zC",
-          "id": "5OZgDtx180ZZPMpm36J2zC",
-          "images": [
-            {
-              "height": 640,
-              "url": "https://i.scdn.co/image/0b15f63923b517c1ebd65b58b903327b297293c3",
-              "width": 640
-            },
-            {
-              "height": 300,
-              "url": "https://i.scdn.co/image/98ce46f08cf1083fbcfae03f150b8e19b38289b6",
-              "width": 300
-            },
-            {
-              "height": 64,
-              "url": "https://i.scdn.co/image/28a8487234c901ae9fe127d1d0eef738a91e46d6",
-              "width": 64
-            }
-          ],
-          "name": "Simulation Theory (Super Deluxe)",
-          "release_date": "2018-11-09",
-          "release_date_precision": "day",
-          "total_tracks": 21,
-          "type": "album",
-          "uri": "spotify:album:5OZgDtx180ZZPMpm36J2zC"
-        },
-        "artists": [
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/12Chz98pHFMPJEknJQMWvI"
-            },
-            "href": "https://api.spotify.com/v1/artists/12Chz98pHFMPJEknJQMWvI",
-            "id": "12Chz98pHFMPJEknJQMWvI",
-            "name": "Muse",
-            "type": "artist",
-            "uri": "spotify:artist:12Chz98pHFMPJEknJQMWvI"
-          }
-        ],
-        "disc_number": 1,
-        "duration_ms": 245960,
-        "explicit": false,
-        "external_ids": {
-          "isrc": "GBAHT1800406"
-        },
-        "external_urls": {
-          "spotify": "https://open.spotify.com/track/7f0vVL3xi4i78Rv5Ptn2s1"
-        },
-        "href": "https://api.spotify.com/v1/tracks/7f0vVL3xi4i78Rv5Ptn2s1",
-        "id": "7f0vVL3xi4i78Rv5Ptn2s1",
-        "is_local": false,
-        "is_playable": true,
-        "name": "Algorithm",
-        "popularity": 66,
-        "preview_url": "https://p.scdn.co/mp3-preview/00d386644c07673f05878e337f977911c0ba740b?cid=774b29d4f13844c495f206cafdad9c86",
-        "track_number": 1,
-        "type": "track",
-        "uri": "spotify:track:7f0vVL3xi4i78Rv5Ptn2s1"
-      },
-      {
-        "album": {
-          "album_type": "album",
-          "artists": [
-            {
-              "external_urls": {
-                "spotify": "https://open.spotify.com/artist/12Chz98pHFMPJEknJQMWvI"
-              },
-              "href": "https://api.spotify.com/v1/artists/12Chz98pHFMPJEknJQMWvI",
-              "id": "12Chz98pHFMPJEknJQMWvI",
-              "name": "Muse",
-              "type": "artist",
-              "uri": "spotify:artist:12Chz98pHFMPJEknJQMWvI"
-            }
-          ],
-          "external_urls": {
-            "spotify": "https://open.spotify.com/album/2wart5Qjnvx1fd7LPdQxgJ"
-          },
-          "href": "https://api.spotify.com/v1/albums/2wart5Qjnvx1fd7LPdQxgJ",
-          "id": "2wart5Qjnvx1fd7LPdQxgJ",
-          "images": [
-            {
-              "height": 640,
-              "url": "https://i.scdn.co/image/849eecf3c9df835181c2970c435ac2d008346ea3",
-              "width": 640
-            },
-            {
-              "height": 300,
-              "url": "https://i.scdn.co/image/8b6392caa83625135f0f53d6e2b0631bbe4c4c0b",
-              "width": 300
-            },
-            {
-              "height": 64,
-              "url": "https://i.scdn.co/image/8978459cc3ad68b39bd6dbda418625b06ba5d80c",
-              "width": 64
-            }
-          ],
-          "name": "Drones",
-          "release_date": "2015-06-04",
-          "release_date_precision": "day",
-          "total_tracks": 12,
-          "type": "album",
-          "uri": "spotify:album:2wart5Qjnvx1fd7LPdQxgJ"
-        },
-        "artists": [
-          {
-            "external_urls": {
-              "spotify": "https://open.spotify.com/artist/12Chz98pHFMPJEknJQMWvI"
-            },
-            "href": "https://api.spotify.com/v1/artists/12Chz98pHFMPJEknJQMWvI",
-            "id": "12Chz98pHFMPJEknJQMWvI",
-            "name": "Muse",
-            "type": "artist",
-            "uri": "spotify:artist:12Chz98pHFMPJEknJQMWvI"
-          }
-        ],
-        "disc_number": 1,
-        "duration_ms": 316717,
-        "explicit": true,
-        "external_ids": {
-          "isrc": "GBAHT1500068"
-        },
-        "external_urls": {
-          "spotify": "https://open.spotify.com/track/383QXk8nb2YrARMUwDdjQS"
-        },
-        "href": "https://api.spotify.com/v1/tracks/383QXk8nb2YrARMUwDdjQS",
-        "id": "383QXk8nb2YrARMUwDdjQS",
-        "is_local": false,
-        "is_playable": true,
-        "name": "Psycho",
-        "popularity": 66,
-        "preview_url": "https://p.scdn.co/mp3-preview/9825aad9fc20222cfd2db3eba32469181b90c8d8?cid=774b29d4f13844c495f206cafdad9c86",
+        "name": "Pressure",
+        "popularity": 72,
+        "preview_url": "https://p.scdn.co/mp3-preview/261288083ebf6c294ee89f868bb1b3040c18346f?cid=774b29d4f13844c495f206cafdad9c86",
         "track_number": 3,
         "type": "track",
-        "uri": "spotify:track:383QXk8nb2YrARMUwDdjQS"
+        "uri": "spotify:track:3eSyMBd7ERw68NVB3jlRmW"
       }
     ],
-    "limit": 10,
-    "next": "https://api.spotify.com/v1/search?query=Muse&type=track&market=US&offset=15&limit=10",
-    "offset": 5,
-    "previous": "https://api.spotify.com/v1/search?query=Muse&type=track&market=US&offset=0&limit=10",
-    "total": 12888
+    "limit": 1,
+    "next": "https://api.spotify.com/v1/search?query=Muse&type=track&market=FR&offset=2&limit=1",
+    "offset": 1,
+    "previous": "https://api.spotify.com/v1/search?query=Muse&type=track&market=FR&offset=0&limit=1",
+    "total": 13528
+  },
+  "playlists": {
+    "href": "https://api.spotify.com/v1/search?query=Muse&type=playlist&market=FR&offset=1&limit=1",
+    "items": [
+      {
+        "collaborative": false,
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/2Tg6Pz4Ol2pnsshGBjraoL"
+        },
+        "href": "https://api.spotify.com/v1/playlists/2Tg6Pz4Ol2pnsshGBjraoL",
+        "id": "2Tg6Pz4Ol2pnsshGBjraoL",
+        "images": [
+          {
+            "height": null,
+            "url": "https://pl.scdn.co/images/pl/default/0f944d842a38b8e7d14b55b018810991359b7803",
+            "width": null
+          }
+        ],
+        "name": "Muse Complete",
+        "owner": {
+          "display_name": "muse_official",
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/muse_official"
+          },
+          "href": "https://api.spotify.com/v1/users/muse_official",
+          "id": "muse_official",
+          "type": "user",
+          "uri": "spotify:user:muse_official"
+        },
+        "primary_color": null,
+        "public": null,
+        "snapshot_id": "MTU2LGU3N2MyNTUyMzAzZWZhM2U1NGE0YjFkZmZmNDQ0YjRhYWI3NzEwNTI=",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/2Tg6Pz4Ol2pnsshGBjraoL/tracks",
+          "total": 121
+        },
+        "type": "playlist",
+        "uri": "spotify:user:muse_official:playlist:2Tg6Pz4Ol2pnsshGBjraoL"
+      }
+    ],
+    "limit": 1,
+    "next": "https://api.spotify.com/v1/search?query=Muse&type=playlist&market=FR&offset=2&limit=1",
+    "offset": 1,
+    "previous": "https://api.spotify.com/v1/search?query=Muse&type=playlist&market=FR&offset=0&limit=1",
+    "total": 30188
   }
 }

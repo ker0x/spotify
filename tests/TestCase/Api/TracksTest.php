@@ -56,6 +56,7 @@ class TracksTest extends TestCase
 
         $this->assertInstanceOf(Album::class, $track->getAlbum());
         $this->assertContainsOnlyInstancesOf(Artist::class, $track->getArtists());
+        $this->assertEmpty($track->getAvailableMarkets());
         $this->assertSame(1, $track->getDiscNumber());
         $this->assertSame(207959, $track->getDurationMs());
         $this->assertFalse($track->isExplicit());
@@ -66,6 +67,7 @@ class TracksTest extends TestCase
         $this->assertFalse($track->isLocal());
         $this->assertTrue($track->isPlayable());
         $this->assertInstanceOf(TrackLink::class, $track->getLinkedFrom());
+        $this->assertEmpty($track->getRestrictions());
         $this->assertSame('Cut To The Feeling', $track->getName());
         $this->assertSame(65, $track->getPopularity());
         $this->assertSame('https://p.scdn.co/mp3-preview/229bb6a4c7011158cc7e1aff11957e274dc05e84?cid=774b29d4f13844c495f206cafdad9c86',

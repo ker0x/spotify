@@ -44,16 +44,18 @@ class SearchTest extends TestCase
             QueryParametersInterface::PARAMETER_QUERY => 'Muse',
             QueryParametersInterface::PARAMETER_TYPE => [
                 'track',
-                'artist'
+                'artist',
+                'playlist',
+                'album'
             ],
-            QueryParametersInterface::PARAMETER_MARKET => 'US',
-            QueryParametersInterface::PARAMETER_LIMIT => 10,
-            QueryParametersInterface::PARAMETER_OFFSET => 5,
+            QueryParametersInterface::PARAMETER_MARKET => 'FR',
+            QueryParametersInterface::PARAMETER_LIMIT => 1,
+            QueryParametersInterface::PARAMETER_OFFSET => 1,
         ]);
 
-        $this->assertNull($response->getAlbums());
+        $this->assertInstanceOf(Paging::class, $response->getAlbums());
         $this->assertInstanceOf(Paging::class, $response->getArtists());
-        $this->assertNull($response->getPlaylists());
+        $this->assertInstanceOf(Paging::class, $response->getPlaylists());
         $this->assertInstanceOf(Paging::class, $response->getTracks());
     }
 }

@@ -44,15 +44,21 @@ class Paging
     protected $total;
 
     /**
+     * @var \Kerox\Spotify\Model\Cursor|null
+     */
+    protected $cursors;
+
+    /**
      * Paging constructor.
      *
-     * @param string $href
-     * @param array  $items
-     * @param int    $limit
-     * @param string $next
-     * @param int    $offset
-     * @param string $previous
-     * @param int    $total
+     * @param string                           $href
+     * @param array                            $items
+     * @param int                              $limit
+     * @param string                           $next
+     * @param int                              $offset
+     * @param string                           $previous
+     * @param int                              $total
+     * @param \Kerox\Spotify\Model\Cursor|null $cursors
      */
     public function __construct(
         string $href,
@@ -61,7 +67,8 @@ class Paging
         ?string $next,
         int $offset,
         ?string $previous,
-        int $total
+        int $total,
+        ?Cursor $cursors
     ) {
         $this->href = $href;
         $this->items = $items;
@@ -70,6 +77,7 @@ class Paging
         $this->offset = $offset;
         $this->previous = $previous;
         $this->total = $total;
+        $this->cursors = $cursors;
     }
 
     /**
@@ -127,6 +135,11 @@ class Paging
             }
         }
 
+        $cursors = null;
+        if (isset($paging['cursors'])) {
+            $cursors = Cursor::build($paging['cursors']);
+        }
+
         $href = $paging['href'];
         $limit = $paging['limit'] ?? 0;
         $next = $paging['next'] ?? null;
@@ -134,7 +147,7 @@ class Paging
         $previous = $paging['previous'] ?? null;
         $total = $paging['total'] ?? 0;
 
-        return new self($href, $items, $limit, $next, $offset, $previous, $total);
+        return new self($href, $items, $limit, $next, $offset, $previous, $total, $cursors);
     }
 
     /**
@@ -201,5 +214,13 @@ class Paging
     public function getTotal(): int
     {
         return $this->total;
+    }
+
+    /**
+     * @return \Kerox\Spotify\Model\Cursor|null
+     */
+    public function getCursors(): ?Cursor
+    {
+        return $this->cursors;
     }
 }

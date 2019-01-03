@@ -50,6 +50,11 @@ class FollowTest extends TestCase
             ]
         ]);
 
+        $this->assertSame([
+            '2CIMQHirSU0MQqyYHq0eOx' => false,
+            '57dN52uHvrHOxijzpIgu3E' => true,
+            '1vCWHaC5f2uS3yhpwWbIA6' => false,
+        ], $response->getResult());
         $this->assertFalse($response->isFollowing('2CIMQHirSU0MQqyYHq0eOx'));
         $this->assertTrue($response->isFollowing('57dN52uHvrHOxijzpIgu3E'));
         $this->assertFalse($response->isFollowing('1vCWHaC5f2uS3yhpwWbIA6'));
