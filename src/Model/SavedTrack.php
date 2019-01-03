@@ -12,12 +12,17 @@ use Kerox\Spotify\Interfaces\ModelInterface;
 class SavedTrack implements ModelInterface
 {
     /**
-     * @var \DateTimeInterface
+     * @var \Kerox\Spotify\Model\Track
+     */
+    protected $track;
+
+    /**
+     * @var null|\DateTimeInterface
      */
     protected $addedAt;
 
     /**
-     * @var \Kerox\Spotify\Model\User
+     * @var null|\Kerox\Spotify\Model\User
      */
     protected $addedBy;
 
@@ -32,11 +37,6 @@ class SavedTrack implements ModelInterface
     protected $primaryColor;
 
     /**
-     * @var \Kerox\Spotify\Model\Track
-     */
-    protected $track;
-
-    /**
      * @var array
      */
     protected $videoThumbnail;
@@ -44,27 +44,27 @@ class SavedTrack implements ModelInterface
     /**
      * SavedTrack constructor.
      *
-     * @param \DateTimeInterface             $addedAt
-     * @param bool|null                      $isLocal
-     * @param \Kerox\Spotify\Model\User|null $addedBy
      * @param \Kerox\Spotify\Model\Track     $track
+     * @param \DateTimeInterface|null        $addedAt
+     * @param \Kerox\Spotify\Model\User|null $addedBy
      * @param array                          $videoThumbnail
+     * @param bool|null                      $isLocal
      * @param string|null                    $primaryColor
      */
     public function __construct(
-        DateTimeInterface $addedAt,
         Track $track,
+        ?DateTimeInterface $addedAt = null,
         ?User $addedBy = null,
         array $videoThumbnail = [],
         bool $isLocal = false,
         ?string $primaryColor = null
     ) {
+        $this->track = $track;
         $this->addedAt = $addedAt;
         $this->addedBy = $addedBy;
-        $this->primaryColor = $primaryColor;
-        $this->track = $track;
-        $this->isLocal = $isLocal;
         $this->videoThumbnail = $videoThumbnail;
+        $this->isLocal = $isLocal;
+        $this->primaryColor = $primaryColor;
     }
 
     /**
@@ -74,18 +74,17 @@ class SavedTrack implements ModelInterface
      */
     public static function build(array $savedTrack): self
     {
+        $track = Track::build($savedTrack['track']);
         $addedAt = DateTime::createFromFormat(
             DateTime::ATOM,
             $savedTrack['added_at'],
             new DateTimeZone('UTC')
-        );
+        ) ?: null;
 
+        $addedBy = null;
         if (isset($savedTrack['added_by'])) {
             $addedBy = User::build($savedTrack['added_by']);
         }
-        $isLocal = $savedTrack['is_local'] ?? false;
-        $primaryColor = $savedTrack['primary_color'] ?? null;
-        $track = Track::build($savedTrack['track']);
 
         $videoThumbnail = [];
         if (isset($savedTrack['video_thumbnail'])) {
@@ -93,22 +92,32 @@ class SavedTrack implements ModelInterface
                 $videoThumbnail[] = External::build([$type, $url]);
             }
         }
+        $isLocal = $savedTrack['is_local'] ?? false;
+        $primaryColor = $savedTrack['primary_color'] ?? null;
 
-        return new self($addedAt, $track, $addedBy ?? null, $videoThumbnail, $isLocal, $primaryColor);
+        return new self($track, $addedAt, $addedBy, $videoThumbnail, $isLocal, $primaryColor);
+    }
+
+    /**
+     * @return \Kerox\Spotify\Model\Track
+     */
+    public function getTrack(): Track
+    {
+        return $this->track;
     }
 
     /**
      * @return \DateTimeInterface
      */
-    public function getAddedAt(): DateTimeInterface
+    public function getAddedAt(): ?DateTimeInterface
     {
         return $this->addedAt;
     }
 
     /**
-     * @return \Kerox\Spotify\Model\User
+     * @return null|\Kerox\Spotify\Model\User
      */
-    public function getAddedBy(): User
+    public function getAddedBy(): ?User
     {
         return $this->addedBy;
     }
@@ -127,14 +136,6 @@ class SavedTrack implements ModelInterface
     public function getPrimaryColor(): ?string
     {
         return $this->primaryColor;
-    }
-
-    /**
-     * @return \Kerox\Spotify\Model\Track
-     */
-    public function getTrack(): Track
-    {
-        return $this->track;
     }
 
     /**
