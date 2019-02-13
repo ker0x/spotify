@@ -10,7 +10,7 @@ use Kerox\Spotify\Interfaces\TypeInterface;
 class Track implements ModelInterface, TypeInterface
 {
     /**
-     * @var null|\Kerox\Spotify\Model\Album
+     * @var \Kerox\Spotify\Model\Album|null
      */
     protected $album;
 
@@ -40,7 +40,7 @@ class Track implements ModelInterface, TypeInterface
     protected $explicit;
 
     /**
-     * @var null|\Kerox\Spotify\Model\External[]
+     * @var \Kerox\Spotify\Model\External[]|null
      */
     protected $externalIds;
 
@@ -65,7 +65,7 @@ class Track implements ModelInterface, TypeInterface
     protected $isPlayable;
 
     /**
-     * @var null|\Kerox\Spotify\Model\TrackLink
+     * @var \Kerox\Spotify\Model\TrackLink|null
      */
     protected $linkedFrom;
 
@@ -80,12 +80,12 @@ class Track implements ModelInterface, TypeInterface
     protected $name;
 
     /**
-     * @var null|int
+     * @var int|null
      */
     protected $popularity;
 
     /**
-     * @var null|string
+     * @var string|null
      */
     protected $previewUrl;
 
@@ -343,7 +343,7 @@ class Track implements ModelInterface, TypeInterface
     }
 
     /**
-     * @return null|\Kerox\Spotify\Model\TrackLink
+     * @return \Kerox\Spotify\Model\TrackLink|null
      */
     public function getLinkedFrom(): ?TrackLink
     {
@@ -375,7 +375,7 @@ class Track implements ModelInterface, TypeInterface
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getPreviewUrl(): ?string
     {

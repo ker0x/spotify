@@ -17,12 +17,12 @@ class SavedTrack implements ModelInterface
     protected $track;
 
     /**
-     * @var null|\DateTimeInterface
+     * @var \DateTimeInterface|null
      */
     protected $addedAt;
 
     /**
-     * @var null|\Kerox\Spotify\Model\User
+     * @var \Kerox\Spotify\Model\User|null
      */
     protected $addedBy;
 
@@ -115,7 +115,7 @@ class SavedTrack implements ModelInterface
     }
 
     /**
-     * @return null|\Kerox\Spotify\Model\User
+     * @return \Kerox\Spotify\Model\User|null
      */
     public function getAddedBy(): ?User
     {

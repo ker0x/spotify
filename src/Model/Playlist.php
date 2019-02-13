@@ -26,7 +26,7 @@ class Playlist implements ModelInterface, TypeInterface, JsonSerializable
     protected $collaborative;
 
     /**
-     * @var null|string
+     * @var string|null
      */
     protected $description;
 
@@ -61,7 +61,7 @@ class Playlist implements ModelInterface, TypeInterface, JsonSerializable
     protected $owner;
 
     /**
-     * @var null|string
+     * @var string|null
      */
     protected $primaryColor;
 
@@ -71,7 +71,7 @@ class Playlist implements ModelInterface, TypeInterface, JsonSerializable
     protected $snapshotId;
 
     /**
-     * @var null|\Kerox\Spotify\Model\Paging
+     * @var \Kerox\Spotify\Model\Paging|null
      */
     protected $tracks;
 
@@ -219,7 +219,7 @@ class Playlist implements ModelInterface, TypeInterface, JsonSerializable
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getDescription(): ?string
     {
@@ -283,7 +283,7 @@ class Playlist implements ModelInterface, TypeInterface, JsonSerializable
     }
 
     /**
-     * @return null|string
+     * @return string|null
      */
     public function getPrimaryColor(): ?string
     {
@@ -307,7 +307,7 @@ class Playlist implements ModelInterface, TypeInterface, JsonSerializable
     }
 
     /**
-     * @return null|\Kerox\Spotify\Model\Paging
+     * @return \Kerox\Spotify\Model\Paging|null
      */
     public function getTracks(): ?Paging
     {

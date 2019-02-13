@@ -12,7 +12,7 @@ use Kerox\Spotify\Interfaces\ModelInterface;
 class SavedAlbum implements ModelInterface
 {
     /**
-     * @var null|\DateTimeInterface
+     * @var \DateTimeInterface|null
      */
     protected $addedAt;
 
@@ -25,7 +25,7 @@ class SavedAlbum implements ModelInterface
      * SavedTrack constructor.
      *
      * @param \Kerox\Spotify\Model\Album $album
-     * @param null|\DateTimeInterface    $addedAt
+     * @param \DateTimeInterface|null    $addedAt
      */
     public function __construct(Album $album, ?DateTimeInterface $addedAt = null)
     {
@@ -51,7 +51,7 @@ class SavedAlbum implements ModelInterface
     }
 
     /**
-     * @return null|\DateTimeInterface
+     * @return \DateTimeInterface|null
      */
     public function getAddedAt(): ?DateTimeInterface
     {

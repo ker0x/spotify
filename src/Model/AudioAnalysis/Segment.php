@@ -22,7 +22,7 @@ class Segment extends AbstractAudioAnalysis
     protected $loudnessMax;
 
     /**
-     * @var null|float
+     * @var float|null
      */
     protected $loudnessEnd;
 
@@ -115,7 +115,7 @@ class Segment extends AbstractAudioAnalysis
     }
 
     /**
-     * @return null|float
+     * @return float|null
      */
     public function getLoudnessEnd(): ?float
     {

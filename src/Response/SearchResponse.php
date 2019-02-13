@@ -9,22 +9,22 @@ use Kerox\Spotify\Model\Paging;
 class SearchResponse extends AbstractResponse
 {
     /**
-     * @var null|\Kerox\Spotify\Model\Paging
+     * @var \Kerox\Spotify\Model\Paging|null
      */
     protected $albums;
 
     /**
-     * @var null|\Kerox\Spotify\Model\Paging
+     * @var \Kerox\Spotify\Model\Paging|null
      */
     protected $artists;
 
     /**
-     * @var null|\Kerox\Spotify\Model\Paging
+     * @var \Kerox\Spotify\Model\Paging|null
      */
     protected $playlists;
 
     /**
-     * @var null|\Kerox\Spotify\Model\Paging
+     * @var \Kerox\Spotify\Model\Paging|null
      */
     protected $tracks;
 

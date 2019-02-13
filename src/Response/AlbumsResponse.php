@@ -24,7 +24,7 @@ class AlbumsResponse extends AbstractResponse
     /**
      * @param int $albumNumber
      *
-     * @return null|\Kerox\Spotify\Model\Album
+     * @return \Kerox\Spotify\Model\Album|null
      */
     public function getAlbum(int $albumNumber): ?Album
     {

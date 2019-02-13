@@ -24,7 +24,7 @@ class ArtistsResponse extends AbstractResponse
     /**
      * @param int $artistNumber
      *
-     * @return null|\Kerox\Spotify\Model\Artist
+     * @return \Kerox\Spotify\Model\Artist|null
      */
     public function getArtist(int $artistNumber): ?Artist
     {

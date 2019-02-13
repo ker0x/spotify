@@ -14,7 +14,7 @@ class External implements ModelInterface
     protected $type;
 
     /**
-     * @var null|string
+     * @var string|null
      */
     protected $value;
 
@@ -22,7 +22,7 @@ class External implements ModelInterface
      * External constructor.
      *
      * @param string      $type
-     * @param null|string $value
+     * @param string|null $value
      */
     public function __construct(string $type, ?string $value = null)
     {

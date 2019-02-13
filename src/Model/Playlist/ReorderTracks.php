@@ -14,7 +14,7 @@ class ReorderTracks implements JsonSerializable
     protected $rangeStart;
 
     /**
-     * @var null|int
+     * @var int|null
      */
     protected $rangeLength;
 
@@ -24,7 +24,7 @@ class ReorderTracks implements JsonSerializable
     protected $insertBefore;
 
     /**
-     * @var null|string
+     * @var string|null
      */
     protected $snapshotId;
 

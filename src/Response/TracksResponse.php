@@ -24,7 +24,7 @@ class TracksResponse extends AbstractResponse
     /**
      * @param int $artistNumber
      *
-     * @return null|\Kerox\Spotify\Model\Track
+     * @return \Kerox\Spotify\Model\Track|null
      */
     public function getTrack(int $artistNumber): ?Track
     {
