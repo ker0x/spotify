@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Kerox\Spotify\Api;
 
 use Fig\Http\Message\RequestMethodInterface;
-use Kerox\Spotify\Interfaces\QueryParametersInterface;
+use Kerox\Spotify\Factory\QueryFactoryInterface;
 use Kerox\Spotify\Interfaces\TypeInterface;
 use Kerox\Spotify\Request\Request;
 use Kerox\Spotify\Response\FollowingResponse;
@@ -27,7 +27,7 @@ class Follow extends AbstractApi implements TypeInterface
         $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
         $response = $this->client->sendRequest($request);
 
-        return new FollowingResponse($response, $queryParameters[QueryParametersInterface::PARAMETER_IDS]);
+        return new FollowingResponse($response, $queryParameters[QueryFactoryInterface::PARAMETER_IDS]);
     }
 
     /**

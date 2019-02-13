@@ -2,7 +2,7 @@
 
 namespace Kerox\Spotify\Test\TestCase\Api;
 
-use Kerox\Spotify\Interfaces\QueryParametersInterface;
+use Kerox\Spotify\Interfaces\QueryFactoryInterface;
 use Kerox\Spotify\Model\External;
 use Kerox\Spotify\Model\Playlist;
 use Kerox\Spotify\Response\PagingResponse;
@@ -74,8 +74,8 @@ class UsersTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->users()->playlists('0123456789', [
-            QueryParametersInterface::PARAMETER_LIMIT => 10,
-            QueryParametersInterface::PARAMETER_OFFSET => 5,
+            QueryFactoryInterface::PARAMETER_LIMIT => 10,
+            QueryFactoryInterface::PARAMETER_OFFSET => 5,
         ]);
 
         $paging = $response->getPaging();

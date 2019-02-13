@@ -2,7 +2,7 @@
 
 namespace Kerox\Spotify\Test\TestCase\Api;
 
-use Kerox\Spotify\Interfaces\QueryParametersInterface;
+use Kerox\Spotify\Interfaces\QueryFactoryInterface;
 use Kerox\Spotify\Model\Category;
 use Kerox\Spotify\Model\Image;
 use Kerox\Spotify\Model\Paging;
@@ -50,8 +50,8 @@ class BrowseTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->browse()->category('dinner', [
-            QueryParametersInterface::PARAMETER_COUNTRY => 'FR',
-            QueryParametersInterface::PARAMETER_LOCALE => 'fr_FR',
+            QueryFactoryInterface::PARAMETER_COUNTRY => 'FR',
+            QueryFactoryInterface::PARAMETER_LOCALE => 'fr_FR',
         ]);
 
         $category = $response->getCategory();
@@ -79,10 +79,10 @@ class BrowseTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->browse()->categories([
-            QueryParametersInterface::PARAMETER_COUNTRY => 'FR',
-            QueryParametersInterface::PARAMETER_LOCALE => 'fr_FR',
-            QueryParametersInterface::PARAMETER_LIMIT => 10,
-            QueryParametersInterface::PARAMETER_OFFSET => 5,
+            QueryFactoryInterface::PARAMETER_COUNTRY => 'FR',
+            QueryFactoryInterface::PARAMETER_LOCALE => 'fr_FR',
+            QueryFactoryInterface::PARAMETER_LIMIT => 10,
+            QueryFactoryInterface::PARAMETER_OFFSET => 5,
         ]);
 
         $categories = $response->getCategories();
@@ -123,11 +123,11 @@ class BrowseTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->browse()->featured([
-            QueryParametersInterface::PARAMETER_COUNTRY => 'FR',
-            QueryParametersInterface::PARAMETER_LOCALE => 'fr_FR',
-            QueryParametersInterface::PARAMETER_TIMESTAMP => '2018-11-27T00:00:00',
-            QueryParametersInterface::PARAMETER_LIMIT => 10,
-            QueryParametersInterface::PARAMETER_OFFSET => 5,
+            QueryFactoryInterface::PARAMETER_COUNTRY => 'FR',
+            QueryFactoryInterface::PARAMETER_LOCALE => 'fr_FR',
+            QueryFactoryInterface::PARAMETER_TIMESTAMP => '2018-11-27T00:00:00',
+            QueryFactoryInterface::PARAMETER_LIMIT => 10,
+            QueryFactoryInterface::PARAMETER_OFFSET => 5,
         ]);
 
         $this->assertSame('A demain !', $response->getMessage());
@@ -151,9 +151,9 @@ class BrowseTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->browse()->releases([
-            QueryParametersInterface::PARAMETER_COUNTRY => 'FR',
-            QueryParametersInterface::PARAMETER_LIMIT => 10,
-            QueryParametersInterface::PARAMETER_OFFSET => 5,
+            QueryFactoryInterface::PARAMETER_COUNTRY => 'FR',
+            QueryFactoryInterface::PARAMETER_LIMIT => 10,
+            QueryFactoryInterface::PARAMETER_OFFSET => 5,
         ]);
 
         $this->assertInstanceOf(Paging::class, $response->getAlbums());
@@ -176,9 +176,9 @@ class BrowseTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->browse()->playlists('dinner', [
-            QueryParametersInterface::PARAMETER_COUNTRY => 'FR',
-            QueryParametersInterface::PARAMETER_LIMIT => 10,
-            QueryParametersInterface::PARAMETER_OFFSET => 5,
+            QueryFactoryInterface::PARAMETER_COUNTRY => 'FR',
+            QueryFactoryInterface::PARAMETER_LIMIT => 10,
+            QueryFactoryInterface::PARAMETER_OFFSET => 5,
         ]);
 
         $this->assertInstanceOf(Paging::class, $response->getPlaylists());
@@ -201,16 +201,16 @@ class BrowseTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->browse()->recommendations([
-            QueryParametersInterface::PARAMETER_LIMIT => 10,
-            QueryParametersInterface::PARAMETER_MARKET => 'FR',
-            QueryParametersInterface::PARAMETER_SEED_ARTISTS => [
+            QueryFactoryInterface::PARAMETER_LIMIT => 10,
+            QueryFactoryInterface::PARAMETER_MARKET => 'FR',
+            QueryFactoryInterface::PARAMETER_SEED_ARTISTS => [
                 '4NHQUGzhtTLFvgF5SZesLK',
             ],
-            QueryParametersInterface::PARAMETER_SEED_GENRES => [
+            QueryFactoryInterface::PARAMETER_SEED_GENRES => [
                 'rock',
                 'metal',
             ],
-            QueryParametersInterface::PARAMETER_SEED_TRACKS => [
+            QueryFactoryInterface::PARAMETER_SEED_TRACKS => [
                 '0c6xIDDpzE81m2q797ordA',
             ],
         ]);

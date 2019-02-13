@@ -2,7 +2,7 @@
 
 namespace Kerox\Spotify\Test\TestCase\Api;
 
-use Kerox\Spotify\Interfaces\QueryParametersInterface;
+use Kerox\Spotify\Interfaces\QueryFactoryInterface;
 use Kerox\Spotify\Interfaces\TypeInterface;
 use Kerox\Spotify\Model\Artist;
 use Kerox\Spotify\Model\Cursor;
@@ -88,8 +88,8 @@ class MeTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->me()->playlists([
-            QueryParametersInterface::PARAMETER_LIMIT => 10,
-            QueryParametersInterface::PARAMETER_OFFSET => 5,
+            QueryFactoryInterface::PARAMETER_LIMIT => 10,
+            QueryFactoryInterface::PARAMETER_OFFSET => 5,
         ]);
 
         $paging = $response->getPaging();
@@ -130,9 +130,9 @@ class MeTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->me()->top(TypeInterface::TYPE_ARTISTS, [
-            QueryParametersInterface::PARAMETER_TIME_RANGE => 'medium_term',
-            QueryParametersInterface::PARAMETER_LIMIT => 10,
-            QueryParametersInterface::PARAMETER_OFFSET => 5,
+            QueryFactoryInterface::PARAMETER_TIME_RANGE => 'medium_term',
+            QueryFactoryInterface::PARAMETER_LIMIT => 10,
+            QueryFactoryInterface::PARAMETER_OFFSET => 5,
         ]);
 
         $paging = $response->getPaging();
@@ -200,11 +200,11 @@ class MeTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->me()->following([
-            QueryParametersInterface::PARAMETER_TYPE => [
+            QueryFactoryInterface::PARAMETER_TYPE => [
                 'artist'
             ],
-            QueryParametersInterface::PARAMETER_AFTER => '0I2XqVXqHScXjHhk6AYYRe',
-            QueryParametersInterface::PARAMETER_LIMIT => 1,
+            QueryFactoryInterface::PARAMETER_AFTER => '0I2XqVXqHScXjHhk6AYYRe',
+            QueryFactoryInterface::PARAMETER_LIMIT => 1,
         ]);
 
         $this->assertContainsOnlyInstancesOf(Artist::class, $response->getArtists()->getItems());

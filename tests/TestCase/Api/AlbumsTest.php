@@ -3,7 +3,7 @@
 namespace Kerox\Spotify\Test\TestCase\Api;
 
 use DateTime;
-use Kerox\Spotify\Interfaces\QueryParametersInterface;
+use Kerox\Spotify\Interfaces\QueryFactoryInterface;
 use Kerox\Spotify\Model\Album;
 use Kerox\Spotify\Model\Artist;
 use Kerox\Spotify\Model\Copyright;
@@ -52,7 +52,7 @@ class AlbumsTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->albums()->get('4aawyAB9vmqN3uQ7FjRGTy', [
-            QueryParametersInterface::PARAMETER_MARKET => 'FR'
+            QueryFactoryInterface::PARAMETER_MARKET => 'FR'
         ]);
 
         $album = $response->getAlbum();
@@ -106,9 +106,9 @@ class AlbumsTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->albums()->tracks('4aawyAB9vmqN3uQ7FjRGTy', [
-            QueryParametersInterface::PARAMETER_MARKET => 'FR',
-            QueryParametersInterface::PARAMETER_LIMIT => 10,
-            QueryParametersInterface::PARAMETER_OFFSET => 5,
+            QueryFactoryInterface::PARAMETER_MARKET => 'FR',
+            QueryFactoryInterface::PARAMETER_LIMIT => 10,
+            QueryFactoryInterface::PARAMETER_OFFSET => 5,
         ]);
 
         $paging = $response->getPaging();
@@ -149,11 +149,11 @@ class AlbumsTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->albums()->several([
-            QueryParametersInterface::PARAMETER_IDS => [
+            QueryFactoryInterface::PARAMETER_IDS => [
                 '382ObEPsp2rxGrnsizN5TX',
                 '1A2GTWGtFfWp7KSQTwWOyo',
             ],
-            QueryParametersInterface::PARAMETER_MARKET => 'FR',
+            QueryFactoryInterface::PARAMETER_MARKET => 'FR',
         ]);
 
         $this->assertContainsOnlyInstancesOf(Album::class, $response->getAlbums());
@@ -179,8 +179,8 @@ class AlbumsTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->albums()->saved([
-            QueryParametersInterface::PARAMETER_LIMIT => 2,
-            QueryParametersInterface::PARAMETER_OFFSET => 0,
+            QueryFactoryInterface::PARAMETER_LIMIT => 2,
+            QueryFactoryInterface::PARAMETER_OFFSET => 0,
         ]);
 
         $paging = $response->getPaging();
@@ -210,7 +210,7 @@ class AlbumsTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->albums()->add([
-            QueryParametersInterface::PARAMETER_IDS => [
+            QueryFactoryInterface::PARAMETER_IDS => [
                 '07bYtmE3bPsLB6ZbmmFi8d',
                 '48JYNjh7GMie6NjqYHMmtT',
                 '27cZdqrQiKt3IT00338dws',
@@ -230,7 +230,7 @@ class AlbumsTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->albums()->remove([
-            QueryParametersInterface::PARAMETER_IDS => [
+            QueryFactoryInterface::PARAMETER_IDS => [
                 '07bYtmE3bPsLB6ZbmmFi8d',
                 '48JYNjh7GMie6NjqYHMmtT',
                 '27cZdqrQiKt3IT00338dws',

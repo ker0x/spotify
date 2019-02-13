@@ -3,7 +3,7 @@
 namespace Kerox\Spotify\Test\TestCase\Api;
 
 use DateTime;
-use Kerox\Spotify\Interfaces\QueryParametersInterface;
+use Kerox\Spotify\Interfaces\QueryFactoryInterface;
 use Kerox\Spotify\Model\External;
 use Kerox\Spotify\Model\Followers;
 use Kerox\Spotify\Model\Image;
@@ -56,7 +56,7 @@ class PlaylistTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->playlists()->get('3cEYpjA9oz9GiPac4AsH4n', [
-            QueryParametersInterface::PARAMETER_MARKET => 'FR',
+            QueryFactoryInterface::PARAMETER_MARKET => 'FR',
         ]);
 
         $playlist = $response->getPlaylist();
@@ -114,8 +114,8 @@ class PlaylistTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->playlists()->me([
-            QueryParametersInterface::PARAMETER_LIMIT => 10,
-            QueryParametersInterface::PARAMETER_OFFSET => 5,
+            QueryFactoryInterface::PARAMETER_LIMIT => 10,
+            QueryFactoryInterface::PARAMETER_OFFSET => 5,
         ]);
 
         $paging = $response->getPaging();
@@ -149,8 +149,8 @@ class PlaylistTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->playlists()->user('1199545168', [
-            QueryParametersInterface::PARAMETER_LIMIT => 10,
-            QueryParametersInterface::PARAMETER_OFFSET => 5,
+            QueryFactoryInterface::PARAMETER_LIMIT => 10,
+            QueryFactoryInterface::PARAMETER_OFFSET => 5,
         ]);
 
         $paging = $response->getPaging();
@@ -184,9 +184,9 @@ class PlaylistTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->playlists()->tracks('37i9dQZF1DWVFJtzvDHN4L', [
-            QueryParametersInterface::PARAMETER_MARKET => 'FR',
-            QueryParametersInterface::PARAMETER_LIMIT => 1,
-            QueryParametersInterface::PARAMETER_OFFSET => 0,
+            QueryFactoryInterface::PARAMETER_MARKET => 'FR',
+            QueryFactoryInterface::PARAMETER_LIMIT => 1,
+            QueryFactoryInterface::PARAMETER_OFFSET => 0,
         ]);
 
         $paging = $response->getPaging();

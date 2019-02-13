@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Kerox\Spotify\Model;
 
 use JsonSerializable;
-use Kerox\Spotify\Interfaces\ModelInterface;
+use Kerox\Spotify\Model\ModelInterface;
 use Kerox\Spotify\Interfaces\TypeInterface;
 
 class Playlist implements ModelInterface, TypeInterface, JsonSerializable

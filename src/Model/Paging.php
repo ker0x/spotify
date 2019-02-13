@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Kerox\Spotify\Model;
 
 use Kerox\Spotify\Factory\ItemFactory;
-use Kerox\Spotify\Interfaces\ModelInterface;
+use Kerox\Spotify\Model\ModelInterface;
 
 class Paging implements ModelInterface
 {

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
-use Kerox\Spotify\Interfaces\ModelInterface;
 use Kerox\Spotify\Interfaces\TypeInterface;
 
 class Album implements ModelInterface, TypeInterface

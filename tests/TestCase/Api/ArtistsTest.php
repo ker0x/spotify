@@ -2,7 +2,7 @@
 
 namespace Kerox\Spotify\Test\TestCase\Api;
 
-use Kerox\Spotify\Interfaces\QueryParametersInterface;
+use Kerox\Spotify\Interfaces\QueryFactoryInterface;
 use Kerox\Spotify\Model\Album;
 use Kerox\Spotify\Model\Artist;
 use Kerox\Spotify\Model\External;
@@ -84,13 +84,13 @@ class ArtistsTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->artists()->albums('0TnOYISbd1XYRBk9myaseg', [
-            QueryParametersInterface::PARAMETER_INCLUDE_GROUPS => [
-                QueryParametersInterface::INCLUDE_GROUPS_SINGLE,
-                QueryParametersInterface::INCLUDE_GROUPS_APPEARS_ON,
+            QueryFactoryInterface::PARAMETER_INCLUDE_GROUPS => [
+                QueryFactoryInterface::INCLUDE_GROUPS_SINGLE,
+                QueryFactoryInterface::INCLUDE_GROUPS_APPEARS_ON,
             ],
-            QueryParametersInterface::PARAMETER_MARKET => 'FR',
-            QueryParametersInterface::PARAMETER_LIMIT => 10,
-            QueryParametersInterface::PARAMETER_OFFSET => 5,
+            QueryFactoryInterface::PARAMETER_MARKET => 'FR',
+            QueryFactoryInterface::PARAMETER_LIMIT => 10,
+            QueryFactoryInterface::PARAMETER_OFFSET => 5,
         ]);
 
         $paging = $response->getPaging();
@@ -125,7 +125,7 @@ class ArtistsTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->artists()->topTracks('0TnOYISbd1XYRBk9myaseg', [
-            QueryParametersInterface::PARAMETER_MARKET => 'FR',
+            QueryFactoryInterface::PARAMETER_MARKET => 'FR',
         ]);
 
         $this->assertContainsOnlyInstancesOf(Track::class, $response->getTracks());
@@ -173,7 +173,7 @@ class ArtistsTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->artists()->several([
-            QueryParametersInterface::PARAMETER_IDS => [
+            QueryFactoryInterface::PARAMETER_IDS => [
                 '2CIMQHirSU0MQqyYHq0eOx',
                 '57dN52uHvrHOxijzpIgu3E',
             ],

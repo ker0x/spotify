@@ -2,7 +2,7 @@
 
 namespace Kerox\Spotify\Test\TestCase\Api;
 
-use Kerox\Spotify\Interfaces\QueryParametersInterface;
+use Kerox\Spotify\Interfaces\QueryFactoryInterface;
 use Kerox\Spotify\Model\Paging;
 use Kerox\Spotify\Response\SearchResponse;
 use Kerox\Spotify\Spotify;
@@ -41,16 +41,16 @@ class SearchTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->search([
-            QueryParametersInterface::PARAMETER_QUERY => 'Muse',
-            QueryParametersInterface::PARAMETER_TYPE => [
+            QueryFactoryInterface::PARAMETER_QUERY => 'Muse',
+            QueryFactoryInterface::PARAMETER_TYPE => [
                 'track',
                 'artist',
                 'playlist',
                 'album'
             ],
-            QueryParametersInterface::PARAMETER_MARKET => 'FR',
-            QueryParametersInterface::PARAMETER_LIMIT => 1,
-            QueryParametersInterface::PARAMETER_OFFSET => 1,
+            QueryFactoryInterface::PARAMETER_MARKET => 'FR',
+            QueryFactoryInterface::PARAMETER_LIMIT => 1,
+            QueryFactoryInterface::PARAMETER_OFFSET => 1,
         ]);
 
         $this->assertInstanceOf(Paging::class, $response->getAlbums());

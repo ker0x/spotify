@@ -22,7 +22,7 @@ class Artists extends AbstractApi
      *
      * @return \Kerox\Spotify\Response\ArtistResponse
      */
-    public function get(string $id): ArtistResponse
+    public function getArtist(string $id): ArtistResponse
     {
         $uri = $this->createUri(sprintf('artists/%s', $id));
 
@@ -33,6 +33,23 @@ class Artists extends AbstractApi
     }
 
     /**
+     * @param array $queryParameters
+     *
+     * @throws \Psr\Http\Client\ClientExceptionInterface
+     *
+     * @return \Kerox\Spotify\Response\ArtistsResponse
+     */
+    public function getArtists(array $queryParameters = []): ArtistsResponse
+    {
+        $uri = $this->createUri('artists', $queryParameters);
+
+        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
+        $response = $this->client->sendRequest($request);
+
+        return new ArtistsResponse($response);
+    }
+
+    /**
      * @param string $id
      * @param array  $queryParameters
      *
@@ -40,7 +57,7 @@ class Artists extends AbstractApi
      *
      * @return \Kerox\Spotify\Response\PagingResponse
      */
-    public function albums(string $id, array $queryParameters = []): PagingResponse
+    public function getAlbums(string $id, array $queryParameters = []): PagingResponse
     {
         $uri = $this->createUri(sprintf('artists/%s', $id), $queryParameters);
 
@@ -58,7 +75,7 @@ class Artists extends AbstractApi
      *
      * @return \Kerox\Spotify\Response\TracksResponse
      */
-    public function topTracks(string $id, array $queryParameters = []): TracksResponse
+    public function getTopTracks(string $id, array $queryParameters = []): TracksResponse
     {
         $uri = $this->createUri(sprintf('artists/%s/top-tracks', $id), $queryParameters);
 
@@ -75,7 +92,7 @@ class Artists extends AbstractApi
      *
      * @return \Kerox\Spotify\Response\ArtistsResponse
      */
-    public function related(string $id): ArtistsResponse
+    public function getRelatedArtists(string $id): ArtistsResponse
     {
         $uri = $this->createUri(sprintf('artists/%s/related-artists', $id));
 
@@ -83,56 +100,5 @@ class Artists extends AbstractApi
         $response = $this->client->sendRequest($request);
 
         return new ArtistsResponse($response);
-    }
-
-    /**
-     * @param array $queryParameters
-     *
-     * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\ArtistsResponse
-     */
-    public function several(array $queryParameters = []): ArtistsResponse
-    {
-        $uri = $this->createUri('artists', $queryParameters);
-
-        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
-        $response = $this->client->sendRequest($request);
-
-        return new ArtistsResponse($response);
-    }
-
-    /**
-     * @param array $ids
-     *
-     * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
-     */
-    public function follow(array $ids): ResponseInterface
-    {
-        $followClass = new Follow($this->oauthToken, $this->client, $this->baseUri);
-
-        return $followClass->add([
-            self::PARAMETER_IDS => $ids,
-            self::PARAMETER_TYPE => TypeInterface::TYPE_ARTIST,
-        ]);
-    }
-
-    /**
-     * @param array $ids
-     *
-     * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
-     */
-    public function unfollow(array $ids): ResponseInterface
-    {
-        $followClass = new Follow($this->oauthToken, $this->client, $this->baseUri);
-
-        return $followClass->delete([
-            self::PARAMETER_IDS => $ids,
-            self::PARAMETER_TYPE => TypeInterface::TYPE_ARTIST,
-        ]);
     }
 }

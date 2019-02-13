@@ -19,7 +19,7 @@ class Me extends AbstractApi implements TypeInterface
      *
      * @return \Kerox\Spotify\Response\UserResponse
      */
-    public function get(): UserResponse
+    public function getProfile(): UserResponse
     {
         $uri = $this->createUri('me');
 
@@ -36,7 +36,7 @@ class Me extends AbstractApi implements TypeInterface
      *
      * @return \Kerox\Spotify\Response\PagingResponse
      */
-    public function playlists(array $queryParameters = []): PagingResponse
+    public function getPlaylists(array $queryParameters = []): PagingResponse
     {
         $uri = $this->createUri('me/playlists', $queryParameters);
 
@@ -54,7 +54,7 @@ class Me extends AbstractApi implements TypeInterface
      *
      * @return \Kerox\Spotify\Response\PagingResponse
      */
-    public function top(string $type = self::TYPE_ARTISTS, array $queryParameters = []): PagingResponse
+    public function getTop(string $type = self::TYPE_ARTISTS, array $queryParameters = []): PagingResponse
     {
         $uri = $this->createUri(sprintf('me/top/%s', $type), $queryParameters);
 
@@ -65,13 +65,145 @@ class Me extends AbstractApi implements TypeInterface
     }
 
     /**
+     * @param array $queryParameters
+     *
+     * @throws \Psr\Http\Client\ClientExceptionInterface
+     *
+     * @return \Kerox\Spotify\Response\PagingResponse
+     */
+    public function getSavedAlbums(array $queryParameters = []): PagingResponse
+    {
+        $uri = $this->createUri('me/albums', $queryParameters);
+
+        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
+        $response = $this->client->sendRequest($request);
+
+        return new PagingResponse($response);
+    }
+
+    /**
+     * @param array $queryParameters
+     *
+     * @throws \Psr\Http\Client\ClientExceptionInterface
+     *
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    public function addAlbums(array $queryParameters = []): ResponseInterface
+    {
+        $uri = $this->createUri('me/albums', $queryParameters);
+
+        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_PUT);
+
+        return $this->client->sendRequest($request);
+    }
+
+    /**
+     * @param array $queryParameters
+     *
+     * @throws \Psr\Http\Client\ClientExceptionInterface
+     *
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    public function deleteAlbums(array $queryParameters = []): ResponseInterface
+    {
+        $uri = $this->createUri('me/albums', $queryParameters);
+
+        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_DELETE);
+
+        return $this->client->sendRequest($request);
+    }
+
+    /**
+     * @param array $queryParameters
+     *
+     * @throws \Psr\Http\Client\ClientExceptionInterface
+     *
+     * @return \Kerox\Spotify\Response\PagingResponse
+     */
+    public function getSavedTracks(array $queryParameters = []): PagingResponse
+    {
+        $uri = $this->createUri('me/tracks', $queryParameters);
+
+        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
+        $response = $this->client->sendRequest($request);
+
+        return new PagingResponse($response);
+    }
+
+    /**
+     * @param array $queryParameters
+     *
+     * @throws \Psr\Http\Client\ClientExceptionInterface
+     *
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    public function addTracks(array $queryParameters = []): ResponseInterface
+    {
+        $uri = $this->createUri('me/tracks', $queryParameters);
+
+        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_PUT);
+
+        return $this->client->sendRequest($request);
+    }
+
+    /**
+     * @param array $queryParameters
+     *
+     * @throws \Psr\Http\Client\ClientExceptionInterface
+     *
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    public function deleteTracks(array $queryParameters = []): ResponseInterface
+    {
+        $uri = $this->createUri('me/tracks', $queryParameters);
+
+        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_DELETE);
+
+        return $this->client->sendRequest($request);
+    }
+
+    /**
      * @param array $ids
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function follow(array $ids): ResponseInterface
+    public function followArtists(array $ids): ResponseInterface
+    {
+        $followClass = new Follow($this->oauthToken, $this->client, $this->baseUri);
+
+        return $followClass->add([
+            self::PARAMETER_IDS => $ids,
+            self::PARAMETER_TYPE => TypeInterface::TYPE_ARTIST,
+        ]);
+    }
+
+    /**
+     * @param array $ids
+     *
+     * @throws \Psr\Http\Client\ClientExceptionInterface
+     *
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    public function unfollowArtists(array $ids): ResponseInterface
+    {
+        $followClass = new Follow($this->oauthToken, $this->client, $this->baseUri);
+
+        return $followClass->delete([
+            self::PARAMETER_IDS => $ids,
+            self::PARAMETER_TYPE => TypeInterface::TYPE_ARTIST,
+        ]);
+    }
+
+    /**
+     * @param array $ids
+     *
+     * @throws \Psr\Http\Client\ClientExceptionInterface
+     *
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    public function followUsers(array $ids): ResponseInterface
     {
         $followClass = new Follow($this->oauthToken, $this->client, $this->baseUri);
 
@@ -88,7 +220,7 @@ class Me extends AbstractApi implements TypeInterface
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function unfollow(array $ids): ResponseInterface
+    public function unfollowUsers(array $ids): ResponseInterface
     {
         $followClass = new Follow($this->oauthToken, $this->client, $this->baseUri);
 
@@ -105,7 +237,7 @@ class Me extends AbstractApi implements TypeInterface
      *
      * @return \Kerox\Spotify\Response\UserFollowingResponse
      */
-    public function following(array $queryParameters = []): UserFollowingResponse
+    public function getFollowing(array $queryParameters = []): UserFollowingResponse
     {
         $uri = $this->createUri('me/following', $queryParameters);
 

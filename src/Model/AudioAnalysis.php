@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
-use Kerox\Spotify\Interfaces\ModelInterface;
+use Kerox\Spotify\Model\ModelInterface;
 use Kerox\Spotify\Model\AudioAnalysis\Bar;
 use Kerox\Spotify\Model\AudioAnalysis\Beat;
 use Kerox\Spotify\Model\AudioAnalysis\Meta;

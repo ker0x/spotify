@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Factory;
 
-use Kerox\Spotify\Interfaces\ModelInterface;
 use Kerox\Spotify\Model\Album;
 use Kerox\Spotify\Model\Artist;
 use Kerox\Spotify\Model\Category;
+use Kerox\Spotify\Model\ModelInterface;
 use Kerox\Spotify\Model\Playlist;
 use Kerox\Spotify\Model\SavedAlbum;
 use Kerox\Spotify\Model\SavedTrack;
@@ -25,7 +25,7 @@ class ItemFactory
     /**
      * @param array $item
      *
-     * @return \Kerox\Spotify\Interfaces\ModelInterface
+     * @return \Kerox\Spotify\Model\ModelInterface
      */
     public static function create(array $item): ModelInterface
     {

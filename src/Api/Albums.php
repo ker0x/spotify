@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Kerox\Spotify\Api;
 
 use Fig\Http\Message\RequestMethodInterface;
+use Kerox\Spotify\Factory\QueryFactory;
 use Kerox\Spotify\Request\Request;
 use Kerox\Spotify\Response\AlbumResponse;
 use Kerox\Spotify\Response\AlbumsResponse;
@@ -18,10 +19,9 @@ class Albums extends AbstractApi
      * @param array  $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
      * @return \Kerox\Spotify\Response\AlbumResponse
      */
-    public function get(string $id, array $queryParameters = []): AlbumResponse
+    public function getAlbum(string $id, $queryParameters = null): AlbumResponse
     {
         $uri = $this->createUri(sprintf('albums/%s', $id), $queryParameters);
 
@@ -32,31 +32,13 @@ class Albums extends AbstractApi
     }
 
     /**
-     * @param string $id
-     * @param array  $queryParameters
-     *
-     * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\PagingResponse
-     */
-    public function tracks(string $id, array $queryParameters = []): PagingResponse
-    {
-        $uri = $this->createUri(sprintf('albums/%s/tracks', $id), $queryParameters);
-
-        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
-        $response = $this->client->sendRequest($request);
-
-        return new PagingResponse($response);
-    }
-
-    /**
      * @param array $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * @return \Kerox\Spotify\Response\AlbumsResponse
      */
-    public function several(array $queryParameters = []): AlbumsResponse
+    public function getAlbums(array $queryParameters = []): AlbumsResponse
     {
         $uri = $this->createUri('albums', $queryParameters);
 
@@ -67,51 +49,20 @@ class Albums extends AbstractApi
     }
 
     /**
-     * @param array $queryParameters
+     * @param string $id
+     * @param array  $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
      *
      * @return \Kerox\Spotify\Response\PagingResponse
      */
-    public function saved(array $queryParameters = []): PagingResponse
+    public function getTracks(string $id, array $queryParameters = []): PagingResponse
     {
-        $uri = $this->createUri('me/albums', $queryParameters);
+        $uri = $this->createUri(sprintf('albums/%s/tracks', $id), $queryParameters);
 
         $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
         $response = $this->client->sendRequest($request);
 
         return new PagingResponse($response);
-    }
-
-    /**
-     * @param array $queryParameters
-     *
-     * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
-     */
-    public function add(array $queryParameters = []): ResponseInterface
-    {
-        $uri = $this->createUri('me/albums', $queryParameters);
-
-        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_PUT);
-
-        return $this->client->sendRequest($request);
-    }
-
-    /**
-     * @param array $queryParameters
-     *
-     * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
-     */
-    public function remove(array $queryParameters = []): ResponseInterface
-    {
-        $uri = $this->createUri('me/albums', $queryParameters);
-
-        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_DELETE);
-
-        return $this->client->sendRequest($request);
     }
 }

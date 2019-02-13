@@ -4,16 +4,14 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Api;
 
-use Kerox\Spotify\Helper\UtilityTrait;
-use Kerox\Spotify\Interfaces\QueryParametersInterface;
+use Kerox\Spotify\Factory\QueryFactory;
+use Kerox\Spotify\Factory\QueryFactoryInterface;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\UriInterface;
 use Zend\Diactoros\UriFactory;
 
-class AbstractApi implements QueryParametersInterface
+class AbstractApi
 {
-    use UtilityTrait;
-
     /**
      * @var string
      */
@@ -44,38 +42,27 @@ class AbstractApi implements QueryParametersInterface
     }
 
     /**
-     * @param string $uri
-     * @param array  $queryParameters
+     * @param string   $uri
+     * @param iterable $queryParameters
      *
      * @return \Psr\Http\Message\UriInterface
      */
-    protected function createUri(string $uri, array $queryParameters = []): UriInterface
+    protected function createUri(string $uri, iterable $queryParameters = []): UriInterface
     {
-        $query = $this->filterQuery($queryParameters);
-
-        $factory = new UriFactory();
-
-        return $factory->createUri(sprintf('%s/%s?%s', $this->baseUri, $uri, urlencode($query)));
-    }
-
-    /**
-     * @param array $queryParameters
-     *
-     * @return string
-     */
-    private function filterQuery(array $queryParameters): string
-    {
-        $queryParameters = $this->arrayFilter($queryParameters);
-
-        $query = [];
-        foreach ($queryParameters as $parameter => $value) {
-            if (\is_array($value)) {
-                $value = implode(',', $value);
-            }
-
-            $query[] = sprintf('%s=%s', $parameter, (string) $value);
+        $queryFactory = new QueryFactory();
+        if ($queryParameters instanceof QueryFactoryInterface) {
+            $queryFactory = $queryParameters;
         }
 
-        return implode('&', $query);
+        if (is_array($queryParameters)) {
+            $queryFactory->setFromArray($queryParameters);
+        }
+
+        return (new UriFactory)->createUri(sprintf(
+            '%s/%s?%s',
+            $this->baseUri,
+            $uri,
+            urlencode($queryFactory->createQuery())
+        ));
     }
 }

@@ -7,7 +7,7 @@ namespace Kerox\Spotify\Model;
 use DateTime;
 use DateTimeInterface;
 use DateTimeZone;
-use Kerox\Spotify\Interfaces\ModelInterface;
+use Kerox\Spotify\Model\ModelInterface;
 
 class SavedTrack implements ModelInterface
 {

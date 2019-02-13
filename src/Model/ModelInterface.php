@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Kerox\Spotify\Interfaces;
+namespace Kerox\Spotify\Model;
 
 interface ModelInterface
 {

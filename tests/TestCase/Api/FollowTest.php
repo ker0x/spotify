@@ -2,7 +2,7 @@
 
 namespace Kerox\Spotify\Test\TestCase\Api;
 
-use Kerox\Spotify\Interfaces\QueryParametersInterface;
+use Kerox\Spotify\Interfaces\QueryFactoryInterface;
 use Kerox\Spotify\Interfaces\TypeInterface;
 use Kerox\Spotify\Response\FollowingResponse;
 use Kerox\Spotify\Spotify;
@@ -42,8 +42,8 @@ class FollowTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->follow()->following([
-            QueryParametersInterface::PARAMETER_TYPE => TypeInterface::TYPE_ARTIST,
-            QueryParametersInterface::PARAMETER_IDS => [
+            QueryFactoryInterface::PARAMETER_TYPE => TypeInterface::TYPE_ARTIST,
+            QueryFactoryInterface::PARAMETER_IDS => [
                 '2CIMQHirSU0MQqyYHq0eOx',
                 '57dN52uHvrHOxijzpIgu3E',
                 '1vCWHaC5f2uS3yhpwWbIA6',
@@ -70,8 +70,8 @@ class FollowTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->follow()->add([
-            QueryParametersInterface::PARAMETER_TYPE => TypeInterface::TYPE_ARTIST,
-            QueryParametersInterface::PARAMETER_IDS => [
+            QueryFactoryInterface::PARAMETER_TYPE => TypeInterface::TYPE_ARTIST,
+            QueryFactoryInterface::PARAMETER_IDS => [
                 '2CIMQHirSU0MQqyYHq0eOx',
                 '57dN52uHvrHOxijzpIgu3E',
                 '1vCWHaC5f2uS3yhpwWbIA6',
@@ -91,8 +91,8 @@ class FollowTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->follow()->delete([
-            QueryParametersInterface::PARAMETER_TYPE => TypeInterface::TYPE_ARTIST,
-            QueryParametersInterface::PARAMETER_IDS => [
+            QueryFactoryInterface::PARAMETER_TYPE => TypeInterface::TYPE_ARTIST,
+            QueryFactoryInterface::PARAMETER_IDS => [
                 '2CIMQHirSU0MQqyYHq0eOx',
                 '57dN52uHvrHOxijzpIgu3E',
                 '1vCWHaC5f2uS3yhpwWbIA6',

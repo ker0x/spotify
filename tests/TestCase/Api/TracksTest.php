@@ -2,7 +2,7 @@
 
 namespace Kerox\Spotify\Test\TestCase\Api;
 
-use Kerox\Spotify\Interfaces\QueryParametersInterface;
+use Kerox\Spotify\Interfaces\QueryFactoryInterface;
 use Kerox\Spotify\Model\Album;
 use Kerox\Spotify\Model\Artist;
 use Kerox\Spotify\Model\External;
@@ -49,7 +49,7 @@ class TracksTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->tracks()->get('0tGPJ0bkWOUmH7MEOR77qc', [
-            QueryParametersInterface::PARAMETER_MARKET => 'FR',
+            QueryFactoryInterface::PARAMETER_MARKET => 'FR',
         ]);
 
         $track = $response->getTrack();
@@ -94,12 +94,12 @@ class TracksTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->tracks()->several([
-            QueryParametersInterface::PARAMETER_IDS => [
+            QueryFactoryInterface::PARAMETER_IDS => [
                 '7ouMYWpwJ422jRcDASZB7P',
                 '4VqPOruhp5EdPBeR92t6lQ',
                 '2takcwOaAZWiXQijPHIx7B',
             ],
-            QueryParametersInterface::PARAMETER_MARKET => 'FR',
+            QueryFactoryInterface::PARAMETER_MARKET => 'FR',
         ]);
 
         $this->assertContainsOnlyInstancesOf(Track::class, $response->getTracks());
@@ -125,9 +125,9 @@ class TracksTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->tracks()->saved([
-            QueryParametersInterface::PARAMETER_LIMIT => 20,
-            QueryParametersInterface::PARAMETER_OFFSET => 0,
-            QueryParametersInterface::PARAMETER_MARKET => 'FR',
+            QueryFactoryInterface::PARAMETER_LIMIT => 20,
+            QueryFactoryInterface::PARAMETER_OFFSET => 0,
+            QueryFactoryInterface::PARAMETER_MARKET => 'FR',
         ]);
 
         $paging = $response->getPaging();
@@ -151,7 +151,7 @@ class TracksTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->tracks()->add([
-            QueryParametersInterface::PARAMETER_IDS => [
+            QueryFactoryInterface::PARAMETER_IDS => [
                 '7ouMYWpwJ422jRcDASZB7P',
                 '0eFHYz8NmK75zSplL5qlfM',
             ]
@@ -170,7 +170,7 @@ class TracksTest extends TestCase
 
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->tracks()->remove([
-            QueryParametersInterface::PARAMETER_IDS => [
+            QueryFactoryInterface::PARAMETER_IDS => [
                 '7ouMYWpwJ422jRcDASZB7P',
                 '0eFHYz8NmK75zSplL5qlfM',
             ]

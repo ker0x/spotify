@@ -22,13 +22,13 @@ class TracksResponse extends AbstractResponse
     }
 
     /**
-     * @param int $artistNumber
+     * @param int $index
      *
      * @return \Kerox\Spotify\Model\Track|null
      */
-    public function getTrack(int $artistNumber): ?Track
+    public function getTrack(int $index): ?Track
     {
-        return $this->tracks[$artistNumber] ?? null;
+        return $this->tracks[$index] ?? null;
     }
 
     /**
