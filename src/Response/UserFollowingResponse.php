@@ -13,17 +13,11 @@ class UserFollowingResponse extends AbstractResponse
      */
     protected $artists;
 
-    /**
-     * @return \Kerox\Spotify\Model\Paging
-     */
     public function getArtists(): Paging
     {
         return $this->artists;
     }
 
-    /**
-     * @param array $content
-     */
     protected function parseResponse(array $content): void
     {
         $this->artists = Paging::build($content['artists']);

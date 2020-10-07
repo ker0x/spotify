@@ -13,17 +13,11 @@ class AudioAnalysisResponse extends AbstractResponse
      */
     protected $audioAnalysis;
 
-    /**
-     * @return \Kerox\Spotify\Model\AudioAnalysis
-     */
     public function getAudioAnalysis(): AudioAnalysis
     {
         return $this->audioAnalysis;
     }
 
-    /**
-     * @param array $content
-     */
     protected function parseResponse(array $content): void
     {
         $this->audioAnalysis = AudioAnalysis::build($content);

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Kerox\Spotify\Api;
 
 use Fig\Http\Message\RequestMethodInterface;
+use Kerox\Spotify\Factory\QueryFactory;
 use Kerox\Spotify\Interfaces\TypeInterface;
 use Kerox\Spotify\Request\Request;
 use Kerox\Spotify\Response\PagingResponse;
@@ -14,16 +15,14 @@ use Psr\Http\Message\ResponseInterface;
 
 class Me extends AbstractApi implements TypeInterface
 {
+    public const BASE_URI = 'me';
+
     /**
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\UserResponse
      */
-    public function getProfile(): UserResponse
+    public function profile(): UserResponse
     {
-        $uri = $this->createUri('me');
-
-        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
+        $request = $this->createRequest(RequestMethodInterface::METHOD_GET, 'me');
         $response = $this->client->sendRequest($request);
 
         return new UserResponse($response);
@@ -33,10 +32,8 @@ class Me extends AbstractApi implements TypeInterface
      * @param array $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\PagingResponse
      */
-    public function getPlaylists(array $queryParameters = []): PagingResponse
+    public function playlists(iterable $queryParameters = []): PagingResponse
     {
         $uri = $this->createUri('me/playlists', $queryParameters);
 
@@ -47,14 +44,11 @@ class Me extends AbstractApi implements TypeInterface
     }
 
     /**
-     * @param string $type
-     * @param array  $queryParameters
+     * @param array $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\PagingResponse
      */
-    public function getTop(string $type = self::TYPE_ARTISTS, array $queryParameters = []): PagingResponse
+    public function top(string $type = self::TYPE_ARTISTS, iterable $queryParameters = []): PagingResponse
     {
         $uri = $this->createUri(sprintf('me/top/%s', $type), $queryParameters);
 
@@ -68,10 +62,8 @@ class Me extends AbstractApi implements TypeInterface
      * @param array $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\PagingResponse
      */
-    public function getSavedAlbums(array $queryParameters = []): PagingResponse
+    public function savedAlbums(iterable $queryParameters = []): PagingResponse
     {
         $uri = $this->createUri('me/albums', $queryParameters);
 
@@ -85,10 +77,8 @@ class Me extends AbstractApi implements TypeInterface
      * @param array $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
-    public function addAlbums(array $queryParameters = []): ResponseInterface
+    public function addAlbums(iterable $queryParameters = []): ResponseInterface
     {
         $uri = $this->createUri('me/albums', $queryParameters);
 
@@ -101,10 +91,8 @@ class Me extends AbstractApi implements TypeInterface
      * @param array $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
-    public function deleteAlbums(array $queryParameters = []): ResponseInterface
+    public function deleteAlbums(iterable $queryParameters = []): ResponseInterface
     {
         $uri = $this->createUri('me/albums', $queryParameters);
 
@@ -117,10 +105,8 @@ class Me extends AbstractApi implements TypeInterface
      * @param array $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\PagingResponse
      */
-    public function getSavedTracks(array $queryParameters = []): PagingResponse
+    public function savedTracks(iterable $queryParameters = []): PagingResponse
     {
         $uri = $this->createUri('me/tracks', $queryParameters);
 
@@ -134,10 +120,8 @@ class Me extends AbstractApi implements TypeInterface
      * @param array $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
-    public function addTracks(array $queryParameters = []): ResponseInterface
+    public function addTracks(iterable $queryParameters = []): ResponseInterface
     {
         $uri = $this->createUri('me/tracks', $queryParameters);
 
@@ -150,10 +134,8 @@ class Me extends AbstractApi implements TypeInterface
      * @param array $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
-    public function deleteTracks(array $queryParameters = []): ResponseInterface
+    public function deleteTracks(iterable $queryParameters = []): ResponseInterface
     {
         $uri = $this->createUri('me/tracks', $queryParameters);
 
@@ -163,81 +145,55 @@ class Me extends AbstractApi implements TypeInterface
     }
 
     /**
-     * @param array $ids
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
     public function followArtists(array $ids): ResponseInterface
     {
         $followClass = new Follow($this->oauthToken, $this->client, $this->baseUri);
+        $query = (new QueryFactory())->setIds($ids)->setType(TypeInterface::TYPE_ARTIST);
 
-        return $followClass->add([
-            self::PARAMETER_IDS => $ids,
-            self::PARAMETER_TYPE => TypeInterface::TYPE_ARTIST,
-        ]);
+        return $followClass->add($query);
     }
 
     /**
-     * @param array $ids
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
     public function unfollowArtists(array $ids): ResponseInterface
     {
         $followClass = new Follow($this->oauthToken, $this->client, $this->baseUri);
+        $query = (new QueryFactory())->setIds($ids)->setType(TypeInterface::TYPE_ARTIST);
 
-        return $followClass->delete([
-            self::PARAMETER_IDS => $ids,
-            self::PARAMETER_TYPE => TypeInterface::TYPE_ARTIST,
-        ]);
+        return $followClass->delete($query);
     }
 
     /**
-     * @param array $ids
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
     public function followUsers(array $ids): ResponseInterface
     {
         $followClass = new Follow($this->oauthToken, $this->client, $this->baseUri);
+        $query = (new QueryFactory())->setIds($ids)->setType(TypeInterface::TYPE_USER);
 
-        return $followClass->add([
-            self::PARAMETER_IDS => $ids,
-            self::PARAMETER_TYPE => Follow::TYPE_USER,
-        ]);
+        return $followClass->add($query);
     }
 
     /**
-     * @param array $ids
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
     public function unfollowUsers(array $ids): ResponseInterface
     {
         $followClass = new Follow($this->oauthToken, $this->client, $this->baseUri);
+        $query = (new QueryFactory())->setIds($ids)->setType(TypeInterface::TYPE_USER);
 
-        return $followClass->delete([
-            self::PARAMETER_IDS => $ids,
-            self::PARAMETER_TYPE => Follow::TYPE_USER,
-        ]);
+        return $followClass->delete($query);
     }
 
     /**
      * @param array $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\UserFollowingResponse
      */
-    public function getFollowing(array $queryParameters = []): UserFollowingResponse
+    public function getFollowing(iterable $queryParameters = []): UserFollowingResponse
     {
         $uri = $this->createUri('me/following', $queryParameters);
 

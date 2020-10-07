@@ -13,17 +13,11 @@ class CategoriesResponse extends AbstractResponse
      */
     protected $categories;
 
-    /**
-     * @return \Kerox\Spotify\Model\Paging
-     */
     public function getCategories(): Paging
     {
         return $this->categories;
     }
 
-    /**
-     * @param array $content
-     */
     protected function parseResponse(array $content): void
     {
         $this->categories = Paging::build($content['categories']);

@@ -22,11 +22,6 @@ class ItemFactory
         'playlist' => Playlist::class,
     ];
 
-    /**
-     * @param array $item
-     *
-     * @return \Kerox\Spotify\Model\ModelInterface
-     */
     public static function create(array $item): ModelInterface
     {
         if (isset($item['type']) && \array_key_exists($item['type'], self::TYPES)) {

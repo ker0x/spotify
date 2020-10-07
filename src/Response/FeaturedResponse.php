@@ -18,25 +18,16 @@ class FeaturedResponse extends AbstractResponse
      */
     protected $playlists;
 
-    /**
-     * @return string
-     */
     public function getMessage(): string
     {
         return $this->message;
     }
 
-    /**
-     * @return \Kerox\Spotify\Model\Paging
-     */
     public function getPlaylists(): Paging
     {
         return $this->playlists;
     }
 
-    /**
-     * @param array $content
-     */
     protected function parseResponse(array $content): void
     {
         $this->message = $content['message'];

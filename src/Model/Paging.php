@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Kerox\Spotify\Model;
 
 use Kerox\Spotify\Factory\ItemFactory;
-use Kerox\Spotify\Model\ModelInterface;
 
 class Paging implements ModelInterface
 {
@@ -52,13 +51,8 @@ class Paging implements ModelInterface
     /**
      * Paging constructor.
      *
-     * @param string                           $href
-     * @param array                            $items
-     * @param int                              $limit
      * @param string                           $next
-     * @param int                              $offset
      * @param string                           $previous
-     * @param int                              $total
      * @param \Kerox\Spotify\Model\Cursor|null $cursors
      */
     public function __construct(
@@ -82,8 +76,6 @@ class Paging implements ModelInterface
     }
 
     /**
-     * @param array $paging
-     *
      * @return \Kerox\Spotify\Model\Paging
      */
     public static function build(array $paging): self
@@ -110,17 +102,11 @@ class Paging implements ModelInterface
         return new self($href, $items, $limit, $next, $offset, $previous, $total, $cursors);
     }
 
-    /**
-     * @return string
-     */
     public function getHref(): string
     {
         return $this->href;
     }
 
-    /**
-     * @return array
-     */
     public function getItems(): array
     {
         return $this->items;
@@ -136,9 +122,6 @@ class Paging implements ModelInterface
         return $this->items[$key];
     }
 
-    /**
-     * @return int
-     */
     public function getLimit(): int
     {
         return $this->limit;
@@ -152,9 +135,6 @@ class Paging implements ModelInterface
         return $this->next;
     }
 
-    /**
-     * @return int
-     */
     public function getOffset(): int
     {
         return $this->offset;
@@ -168,9 +148,6 @@ class Paging implements ModelInterface
         return $this->previous;
     }
 
-    /**
-     * @return int
-     */
     public function getTotal(): int
     {
         return $this->total;

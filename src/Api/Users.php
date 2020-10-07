@@ -13,14 +13,12 @@ use Kerox\Spotify\Response\UserResponse;
 
 class Users extends AbstractApi
 {
+    public const BASE_URI = 'users';
+
     /**
-     * @param string $id
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\UserResponse
      */
-    public function getProfile(string $id): UserResponse
+    public function profile(string $id): UserResponse
     {
         $uri = $this->createUri(sprintf('users/%s', $id));
 
@@ -31,12 +29,7 @@ class Users extends AbstractApi
     }
 
     /**
-     * @param string                        $id
-     * @param \Kerox\Spotify\Model\Playlist $playlist
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\PlaylistResponse
      */
     public function createPlaylist(string $id, Playlist $playlist): PlaylistResponse
     {
@@ -49,14 +42,11 @@ class Users extends AbstractApi
     }
 
     /**
-     * @param string $id
-     * @param array  $queryParameters
+     * @param array $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\PagingResponse
      */
-    public function getPlaylists(string $id, array $queryParameters = []): PagingResponse
+    public function getPlaylists(string $id, iterable $queryParameters = []): PagingResponse
     {
         $uri = $this->createUri(sprintf('users/%s/playlists', $id), $queryParameters);
 

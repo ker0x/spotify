@@ -21,27 +21,16 @@ class ArtistsResponse extends AbstractResponse
         return $this->artists;
     }
 
-    /**
-     * @param int $index
-     *
-     * @return \Kerox\Spotify\Model\Artist|null
-     */
     public function getArtist(int $index): ?Artist
     {
         return $this->artists[$index] ?? null;
     }
 
-    /**
-     * @return int
-     */
     public function getTotal(): int
     {
         return \count($this->artists);
     }
 
-    /**
-     * @param array $content
-     */
     protected function parseResponse(array $content): void
     {
         foreach ($content['artists'] as $artist) {

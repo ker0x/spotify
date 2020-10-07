@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
-use Kerox\Spotify\Model\ModelInterface;
-
 class Copyright implements ModelInterface
 {
     /**
@@ -20,9 +18,6 @@ class Copyright implements ModelInterface
 
     /**
      * Copyright constructor.
-     *
-     * @param string $text
-     * @param string $type
      */
     public function __construct(string $text, string $type)
     {
@@ -31,8 +26,6 @@ class Copyright implements ModelInterface
     }
 
     /**
-     * @param array $copyright
-     *
      * @return \Kerox\Spotify\Model\Copyright
      */
     public static function build(array $copyright): self
@@ -40,17 +33,11 @@ class Copyright implements ModelInterface
         return new self($copyright['text'], $copyright['type']);
     }
 
-    /**
-     * @return string
-     */
     public function getText(): string
     {
         return $this->text;
     }
 
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return $this->type;

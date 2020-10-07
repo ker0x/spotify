@@ -52,8 +52,5 @@ interface QueryFactoryInterface
         self::INCLUDE_EXTERNAL_AUDIO,
     ];
 
-    /**
-     * @return string
-     */
     public function createQuery(): string;
 }

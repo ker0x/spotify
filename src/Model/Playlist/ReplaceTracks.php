@@ -15,8 +15,6 @@ class ReplaceTracks implements JsonSerializable
 
     /**
      * Uris constructor.
-     *
-     * @param array $uris
      */
     public function __construct(array $uris)
     {
@@ -24,8 +22,6 @@ class ReplaceTracks implements JsonSerializable
     }
 
     /**
-     * @param array $uris
-     *
      * @return \Kerox\Spotify\Model\Playlist\ReplaceTracks
      */
     public static function create(array $uris): self
@@ -34,8 +30,6 @@ class ReplaceTracks implements JsonSerializable
     }
 
     /**
-     * @param string $uri
-     *
      * @return \Kerox\Spotify\Model\Playlist\ReplaceTracks
      */
     public function add(string $uri): self
@@ -45,9 +39,6 @@ class ReplaceTracks implements JsonSerializable
         return $this;
     }
 
-    /**
-     * @return array
-     */
     public function toArray(): array
     {
         return [
@@ -55,9 +46,6 @@ class ReplaceTracks implements JsonSerializable
         ];
     }
 
-    /**
-     * @return array
-     */
     public function jsonSerialize(): array
     {
         return $this->toArray();

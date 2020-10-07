@@ -16,18 +16,15 @@ use Kerox\Spotify\Response\ReleasesResponse;
 class Browse extends AbstractApi
 {
     /**
-     * @param string $id
-     * @param array  $queryParameters
+     * @param array $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\CategoryResponse
      */
-    public function getCategory(string $id, array $queryParameters = []): CategoryResponse
+    public function category(string $id, iterable $queryParameters = []): CategoryResponse
     {
         $uri = $this->createUri(sprintf('categories/%s', $id), $queryParameters);
 
-        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
+        $request = $this->createRequest(RequestMethodInterface::METHOD_GET, $uri);
         $response = $this->client->sendRequest($request);
 
         return new CategoryResponse($response);
@@ -37,32 +34,27 @@ class Browse extends AbstractApi
      * @param array $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\CategoriesResponse
      */
-    public function getCategories(array $queryParameters = []): CategoriesResponse
+    public function categories(iterable $queryParameters = []): CategoriesResponse
     {
         $uri = $this->createUri('categories', $queryParameters);
 
-        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
+        $request = $this->createRequest(RequestMethodInterface::METHOD_GET, $uri);
         $response = $this->client->sendRequest($request);
 
         return new CategoriesResponse($response);
     }
 
     /**
-     * @param string $id
-     * @param array  $queryParameters
+     * @param array $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\PlaylistsResponse
      */
-    public function getCategoryPlaylists(string $id, array $queryParameters = []): PlaylistsResponse
+    public function categoryPlaylists(string $id, iterable $queryParameters = []): PlaylistsResponse
     {
         $uri = $this->createUri(sprintf('categories/%s/playlists', $id), $queryParameters);
 
-        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
+        $request = $this->createRequest(RequestMethodInterface::METHOD_GET, $uri);
         $response = $this->client->sendRequest($request);
 
         return new PlaylistsResponse($response);
@@ -72,14 +64,12 @@ class Browse extends AbstractApi
      * @param array $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\FeaturedResponse
      */
-    public function getFeaturedPlaylists(array $queryParameters = []): FeaturedResponse
+    public function featuredPlaylists(iterable $queryParameters = []): FeaturedResponse
     {
         $uri = $this->createUri('browse/featured-playlists', $queryParameters);
 
-        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
+        $request = $this->createRequest(RequestMethodInterface::METHOD_GET, $uri);
         $response = $this->client->sendRequest($request);
 
         return new FeaturedResponse($response);
@@ -89,14 +79,12 @@ class Browse extends AbstractApi
      * @param array $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\ReleasesResponse
      */
-    public function getNewReleases(array $queryParameters = []): ReleasesResponse
+    public function newReleases(iterable $queryParameters = []): ReleasesResponse
     {
         $uri = $this->createUri('browse/new-releases', $queryParameters);
 
-        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
+        $request = $this->createRequest(RequestMethodInterface::METHOD_GET, $uri);
         $response = $this->client->sendRequest($request);
 
         return new ReleasesResponse($response);
@@ -106,14 +94,12 @@ class Browse extends AbstractApi
      * @param array $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\RecommendationsResponse
      */
-    public function getRecommendations(array $queryParameters = []): RecommendationsResponse
+    public function recommendations(iterable $queryParameters = []): RecommendationsResponse
     {
         $uri = $this->createUri('recommendations', $queryParameters);
 
-        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
+        $request = $this->createRequest(RequestMethodInterface::METHOD_GET, $uri);
         $response = $this->client->sendRequest($request);
 
         return new RecommendationsResponse($response);

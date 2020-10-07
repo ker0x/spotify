@@ -1,16 +1,16 @@
 <?php
 
-namespace Kerox\Spotify\Test\TestCase\Api;
+declare(strict_types=1);
 
-use DateTime;
-use Kerox\Spotify\Interfaces\QueryFactoryInterface;
+namespace Tests\Kerox\Spotify\TestCase\Api;
+
+use Kerox\Spotify\Factory\QueryFactory;
 use Kerox\Spotify\Model\Album;
 use Kerox\Spotify\Model\Artist;
 use Kerox\Spotify\Model\Copyright;
 use Kerox\Spotify\Model\External;
 use Kerox\Spotify\Model\Image;
 use Kerox\Spotify\Model\Paging;
-use Kerox\Spotify\Model\SavedAlbum;
 use Kerox\Spotify\Model\Track;
 use Kerox\Spotify\Response\AlbumResponse;
 use Kerox\Spotify\Response\AlbumsResponse;
@@ -18,19 +18,18 @@ use Kerox\Spotify\Response\PagingResponse;
 use Kerox\Spotify\Spotify;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\ClientInterface;
-use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamInterface;
 
 class AlbumsTest extends TestCase
 {
     protected $oauthToken;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->oauthToken = 'BQCpTK7nCpmijQURqGm-hBvOgS4T--ql1zfbiBVYwbzFb4z06fP8pFvLoiDSjSNawQEfRahU3pCJOQJIyhvi1JcmQtLJ_Oh-p3vKWhEfesG-UcIF_tPBjGRSn1Xu1w0QIbrvN9RnSm2-EI_NeNEOBxBHTlviYhq128bjG4obEeemHMIyAE2dJPIwumC-XPqfjXwkUGOVyfu5BJqERSVcT65m-g0xu9T52Q1RpJfvm5J0nGZw5Z647IEucZjqavtWycL2YnXLd02tSt9E0YY';
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         unset($this->oauthToken);
     }
@@ -51,9 +50,7 @@ class AlbumsTest extends TestCase
         $client->method('sendRequest')->willReturn($response);
 
         $spotify = new Spotify($this->oauthToken, $client);
-        $response = $spotify->albums()->get('4aawyAB9vmqN3uQ7FjRGTy', [
-            QueryFactoryInterface::PARAMETER_MARKET => 'FR'
-        ]);
+        $response = $spotify->albums()->getAlbum('4aawyAB9vmqN3uQ7FjRGTy', (new QueryFactory())->setMarket('FR'));
 
         $album = $response->getAlbum();
 
@@ -61,19 +58,22 @@ class AlbumsTest extends TestCase
         $this->assertContainsOnlyInstancesOf(Artist::class, $album->getArtists());
         $this->assertEmpty($album->getAvailableMarkets());
         $this->assertContainsOnlyInstancesOf(Copyright::class, $album->getCopyrights());
-        $this->assertSame('(P) 2012 RCA Records, a division of Sony Music Entertainment', $album->getCopyrights()[0]->getText());
+        $this->assertSame('(P) 2012 RCA Records, a division of Sony Music Entertainment',
+            $album->getCopyrights()[0]->getText());
         $this->assertSame('P', $album->getCopyrights()[0]->getType());
         $this->assertContainsOnlyInstancesOf(External::class, $album->getExternalIds());
         $this->assertSame('upc', $album->getExternalIds()[0]->getType());
         $this->assertSame('886443671584', $album->getExternalIds()[0]->getValue());
         $this->assertContainsOnlyInstancesOf(External::class, $album->getExternalUrls());
         $this->assertSame('spotify', $album->getExternalUrls()[0]->getType());
-        $this->assertSame('https://open.spotify.com/album/4aawyAB9vmqN3uQ7FjRGTy', $album->getExternalUrls()[0]->getValue());
+        $this->assertSame('https://open.spotify.com/album/4aawyAB9vmqN3uQ7FjRGTy',
+            $album->getExternalUrls()[0]->getValue());
         $this->assertSame([], $album->getGenres());
         $this->assertSame('https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTy', $album->getHref());
         $this->assertSame('4aawyAB9vmqN3uQ7FjRGTy', $album->getId());
         $this->assertContainsOnlyInstancesOf(Image::class, $album->getImages());
-        $this->assertSame('https://i.scdn.co/image/3edb3f970f4a3af9ef922efd18cdb4dabaf85ced', $album->getImages()[0]->getUrl());
+        $this->assertSame('https://i.scdn.co/image/3edb3f970f4a3af9ef922efd18cdb4dabaf85ced',
+            $album->getImages()[0]->getUrl());
         $this->assertSame(640, $album->getImages()[0]->getHeight());
         $this->assertSame(640, $album->getImages()[0]->getWidth());
         $this->assertSame('Mr.305/Polo Grounds Music/RCA Records', $album->getLabel());
@@ -105,11 +105,11 @@ class AlbumsTest extends TestCase
         $client->method('sendRequest')->willReturn($response);
 
         $spotify = new Spotify($this->oauthToken, $client);
-        $response = $spotify->albums()->tracks('4aawyAB9vmqN3uQ7FjRGTy', [
-            QueryFactoryInterface::PARAMETER_MARKET => 'FR',
-            QueryFactoryInterface::PARAMETER_LIMIT => 10,
-            QueryFactoryInterface::PARAMETER_OFFSET => 5,
-        ]);
+        $response = $spotify->albums()->getTracks('4aawyAB9vmqN3uQ7FjRGTy', (new QueryFactory())
+            ->setMarket('FR')
+            ->setLimit(10)
+            ->setOffset(5)
+        );
 
         $paging = $response->getPaging();
 
@@ -148,95 +148,17 @@ class AlbumsTest extends TestCase
         $client->method('sendRequest')->willReturn($response);
 
         $spotify = new Spotify($this->oauthToken, $client);
-        $response = $spotify->albums()->several([
-            QueryFactoryInterface::PARAMETER_IDS => [
+        $response = $spotify->albums()->getAlbums((new QueryFactory())
+            ->setIds([
                 '382ObEPsp2rxGrnsizN5TX',
                 '1A2GTWGtFfWp7KSQTwWOyo',
-            ],
-            QueryFactoryInterface::PARAMETER_MARKET => 'FR',
-        ]);
+            ])
+            ->setMarket('FR')
+        );
 
         $this->assertContainsOnlyInstancesOf(Album::class, $response->getAlbums());
         $this->assertInstanceOf(Album::class, $response->getAlbum(1));
         $this->assertNull($response->getAlbum(2));
         $this->assertSame(2, $response->getTotal());
-    }
-
-    public function testGetAlbumsForCurrentUser(): void
-    {
-        $body = file_get_contents(__DIR__ . '/../../Mocks/Albums/saved.json');
-
-        $stream = $this->createMock(StreamInterface::class);
-        $stream->method('__toString')->willReturn($body);
-
-        $response = $this->createMock(PagingResponse::class);
-        $response->method('getBody')->willReturn($stream);
-        $response->method('getHeader')->willReturn(['content-type' => 'json']);
-        $response->method('getStatusCode')->willReturn(200);
-
-        $client = $this->createMock(ClientInterface::class);
-        $client->method('sendRequest')->willReturn($response);
-
-        $spotify = new Spotify($this->oauthToken, $client);
-        $response = $spotify->albums()->saved([
-            QueryFactoryInterface::PARAMETER_LIMIT => 2,
-            QueryFactoryInterface::PARAMETER_OFFSET => 0,
-        ]);
-
-        $paging = $response->getPaging();
-
-        $this->assertSame('https://api.spotify.com/v1/me/albums?offset=0&limit=2', $paging->getHref());
-        $this->assertInstanceOf(SavedAlbum::class, $paging->getItem(0));
-        $this->assertSame(2, $paging->getLimit());
-        $this->assertSame('https://api.spotify.com/v1/me/albums?offset=2&limit=2', $paging->getNext());
-        $this->assertSame(0, $paging->getOffset());
-        $this->assertNull($paging->getPrevious());
-        $this->assertSame(3, $paging->getTotal());
-
-        /** @var \Kerox\Spotify\Model\SavedAlbum $savedAlbum */
-        $savedAlbum = $paging->getItem(0);
-
-        $this->assertInstanceOf(DateTime::class, $savedAlbum->getAddedAt());
-        $this->assertInstanceOf(Album::class, $savedAlbum->getAlbum());
-    }
-
-    public function testAddAlbumsForCurrentUser(): void
-    {
-        $response = $this->createMock(ResponseInterface::class);
-        $response->method('getStatusCode')->willReturn(201);
-
-        $client = $this->createMock(ClientInterface::class);
-        $client->method('sendRequest')->willReturn($response);
-
-        $spotify = new Spotify($this->oauthToken, $client);
-        $response = $spotify->albums()->add([
-            QueryFactoryInterface::PARAMETER_IDS => [
-                '07bYtmE3bPsLB6ZbmmFi8d',
-                '48JYNjh7GMie6NjqYHMmtT',
-                '27cZdqrQiKt3IT00338dws',
-            ]
-        ]);
-
-        $this->assertSame(201, $response->getStatusCode());
-    }
-
-    public function testDeleteAlbumsForCurrentUser(): void
-    {
-        $response = $this->createMock(ResponseInterface::class);
-        $response->method('getStatusCode')->willReturn(200);
-
-        $client = $this->createMock(ClientInterface::class);
-        $client->method('sendRequest')->willReturn($response);
-
-        $spotify = new Spotify($this->oauthToken, $client);
-        $response = $spotify->albums()->remove([
-            QueryFactoryInterface::PARAMETER_IDS => [
-                '07bYtmE3bPsLB6ZbmmFi8d',
-                '48JYNjh7GMie6NjqYHMmtT',
-                '27cZdqrQiKt3IT00338dws',
-            ]
-        ]);
-
-        $this->assertSame(200, $response->getStatusCode());
     }
 }

@@ -20,9 +20,6 @@ class AddTracks implements JsonSerializable
 
     /**
      * AddTracks constructor.
-     *
-     * @param array    $uris
-     * @param int|null $position
      */
     public function __construct(array $uris, ?int $position = null)
     {
@@ -31,9 +28,6 @@ class AddTracks implements JsonSerializable
     }
 
     /**
-     * @param array    $uris
-     * @param int|null $position
-     *
      * @return \Kerox\Spotify\Model\Playlist\AddTracks
      */
     public static function create(array $uris, ?int $position = null): self
@@ -41,9 +35,6 @@ class AddTracks implements JsonSerializable
         return new self($uris, $position);
     }
 
-    /**
-     * @return array
-     */
     public function toArray(): array
     {
         $array = [
@@ -54,9 +45,6 @@ class AddTracks implements JsonSerializable
         return array_filter($array);
     }
 
-    /**
-     * @return array
-     */
     public function jsonSerialize(): array
     {
         return $this->toArray();

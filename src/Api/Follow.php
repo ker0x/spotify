@@ -17,10 +17,8 @@ class Follow extends AbstractApi implements TypeInterface
      * @param array $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\FollowingResponse
      */
-    public function following(array $queryParameters = []): FollowingResponse
+    public function following(iterable $queryParameters = []): FollowingResponse
     {
         $uri = $this->createUri('me/following/contains', $queryParameters);
 
@@ -34,10 +32,8 @@ class Follow extends AbstractApi implements TypeInterface
      * @param array $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
-    public function add(array $queryParameters = []): ResponseInterface
+    public function add(iterable $queryParameters = []): ResponseInterface
     {
         $uri = $this->createUri('me/following', $queryParameters);
 
@@ -50,10 +46,8 @@ class Follow extends AbstractApi implements TypeInterface
      * @param array $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
-    public function delete(array $queryParameters = []): ResponseInterface
+    public function delete(iterable $queryParameters = []): ResponseInterface
     {
         $uri = $this->createUri('me/following', $queryParameters);
 

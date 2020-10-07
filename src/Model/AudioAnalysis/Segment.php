@@ -39,12 +39,6 @@ class Segment extends AbstractAudioAnalysis
     /**
      * Segment constructor.
      *
-     * @param float   $start
-     * @param float   $duration
-     * @param float   $confidence
-     * @param float   $loudnessStart
-     * @param float   $loudnessMaxTime
-     * @param float   $loudnessMax
      * @param float   $loudnessEnd
      * @param float[] $pitches
      * @param float[] $timbre
@@ -71,8 +65,6 @@ class Segment extends AbstractAudioAnalysis
     }
 
     /**
-     * @param array $segment
-     *
      * @return \Kerox\Spotify\Model\AudioAnalysis\Segment
      */
     public static function build(array $segment): self
@@ -90,33 +82,21 @@ class Segment extends AbstractAudioAnalysis
         );
     }
 
-    /**
-     * @return float
-     */
     public function getLoudnessStart(): float
     {
         return $this->loudnessStart;
     }
 
-    /**
-     * @return float
-     */
     public function getLoudnessMaxTime(): float
     {
         return $this->loudnessMaxTime;
     }
 
-    /**
-     * @return float
-     */
     public function getLoudnessMax(): float
     {
         return $this->loudnessMax;
     }
 
-    /**
-     * @return float|null
-     */
     public function getLoudnessEnd(): ?float
     {
         return $this->loudnessEnd;

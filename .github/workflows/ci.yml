@@ -1,0 +1,55 @@
+name: ci
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        php-versions: [ '8.0' ]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: php-setup
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+
+      - name: composer-validate
+        run: composer validate
+
+      - name: composer-cache
+        id: composer-cache
+        uses: actions/cache@v2
+        with:
+          path: vendor
+          key: ${{ runner.os }}-${{ matrix.php-versions }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.php-versions }}-composer-
+
+      - name: composer-install
+        if: steps.composer-cache.outputs.cache-hit != 'true'
+        run: composer install --prefer-dist --no-progress --no-suggest ${{ matrix.composer-flags }}
+
+      - name: php-cs-fixer
+        run: vendor/bin/php-cs-fixer fix --dry-run --diff --verbose --config=.php_cs.dist
+
+      - name: phpunit
+        env:
+          TMDB_API_TOKEN: ${{ secrets.TMDB_API_TOKEN }}
+        run: vendor/bin/phpunit --coverage-text --coverage-clover=build/coverage.xml
+
+      - name: coverage
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: ./build

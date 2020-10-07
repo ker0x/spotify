@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
-use Kerox\Spotify\Model\ModelInterface;
+use Kerox\Spotify\Helper\BuilderTrait;
 
 class Category implements ModelInterface
 {
+    use BuilderTrait;
+
     /**
      * @var string
      */
@@ -30,11 +32,6 @@ class Category implements ModelInterface
 
     /**
      * Category constructor.
-     *
-     * @param string $href
-     * @param array  $icons
-     * @param string $id
-     * @param string $name
      */
     public function __construct(string $href, array $icons, string $id, string $name)
     {
@@ -45,52 +42,33 @@ class Category implements ModelInterface
     }
 
     /**
-     * @param array $category
-     *
      * @return \Kerox\Spotify\Model\Category
      */
     public static function build(array $category): self
     {
+        $icons = self::buildImages($category['icons'] ?? []);
         $href = $category['href'];
-
-        $icons = [];
-        foreach ($category['icons'] as $icon) {
-            $icons[] = Image::build($icon);
-        }
-
         $id = $category['id'];
         $name = $category['name'];
 
         return new self($href, $icons, $id, $name);
     }
 
-    /**
-     * @return string
-     */
     public function getHref(): string
     {
         return $this->href;
     }
 
-    /**
-     * @return array
-     */
     public function getIcons(): array
     {
         return $this->icons;
     }
 
-    /**
-     * @return string
-     */
     public function getId(): string
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;

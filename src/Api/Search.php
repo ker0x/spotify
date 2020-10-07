@@ -11,18 +11,11 @@ use Kerox\Spotify\Response\SearchResponse;
 
 class Search extends AbstractApi implements TypeInterface
 {
-    /**
-     * @param array $queryParameters
-     *
-     * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\SearchResponse
-     */
-    public function __invoke(array $queryParameters = []): SearchResponse
+    public function __invoke(iterable $queryParameters = []): SearchResponse
     {
         $uri = $this->createUri('search', $queryParameters);
 
-        $request = new Request($this->oauthToken, $uri, RequestMethodInterface::METHOD_GET);
+        $request = $this->createRequest(RequestMethodInterface::METHOD_GET, $uri);
         $response = $this->client->sendRequest($request);
 
         return new SearchResponse($response);

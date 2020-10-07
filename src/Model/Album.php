@@ -4,10 +4,23 @@ declare(strict_types=1);
 
 namespace Kerox\Spotify\Model;
 
+use Kerox\Spotify\Helper\BuilderTrait;
 use Kerox\Spotify\Interfaces\TypeInterface;
 
 class Album implements ModelInterface, TypeInterface
 {
+    use BuilderTrait;
+
+    /**
+     * @var string|null
+     */
+    protected $albumGroup;
+
+    /**
+     * @var string|null
+     */
+    protected $albumType;
+
     /**
      * @var \Kerox\Spotify\Model\Artist[]
      */
@@ -19,9 +32,24 @@ class Album implements ModelInterface, TypeInterface
     protected $availableMarkets;
 
     /**
+     * @var array
+     */
+    protected $copyrights;
+
+    /**
+     * @var array
+     */
+    protected $externalIds;
+
+    /**
      * @var \Kerox\Spotify\Model\External[]
      */
     protected $externalUrls;
+
+    /**
+     * @var array
+     */
+    protected $genres;
 
     /**
      * @var string
@@ -37,6 +65,11 @@ class Album implements ModelInterface, TypeInterface
      * @var \Kerox\Spotify\Model\Image[]
      */
     protected $images;
+
+    /**
+     * @var string|null
+     */
+    protected $label;
 
     /**
      * @var string
@@ -59,14 +92,19 @@ class Album implements ModelInterface, TypeInterface
     protected $releaseDatePrecision;
 
     /**
+     * @var string|null
+     */
+    protected $restrictions;
+
+    /**
      * @var int|null
      */
     protected $totalTracks;
 
     /**
-     * @var string|null
+     * @var \Kerox\Spotify\Model\Paging|null
      */
-    protected $restrictions;
+    protected $tracks;
 
     /**
      * @var string
@@ -79,63 +117,12 @@ class Album implements ModelInterface, TypeInterface
     protected $uri;
 
     /**
-     * @var string|null
-     */
-    protected $albumGroup;
-
-    /**
-     * @var string|null
-     */
-    protected $albumType;
-
-    /**
-     * @var array
-     */
-    protected $copyrights;
-
-    /**
-     * @var array
-     */
-    protected $externalIds;
-
-    /**
-     * @var array
-     */
-    protected $genres;
-
-    /**
-     * @var string|null
-     */
-    protected $label;
-
-    /**
-     * @var \Kerox\Spotify\Model\Paging|null
-     */
-    protected $tracks;
-
-    /**
      * Album constructor.
      *
-     * @param array                            $artists
-     * @param array                            $availableMarkets
-     * @param array                            $externalUrls
-     * @param string                           $href
-     * @param string                           $id
-     * @param array                            $images
-     * @param string                           $name
      * @param string                           $releaseDate
      * @param string                           $releaseDatePrecision
      * @param int                              $totalTracks
-     * @param string|null                      $restrictions
-     * @param string                           $uri
      * @param \Kerox\Spotify\Model\Paging|null $tracks
-     * @param string|null                      $albumType
-     * @param string|null                      $albumGroup
-     * @param array                            $copyrights
-     * @param array                            $externalIds
-     * @param array                            $genres
-     * @param string|null                      $label
-     * @param int|null                         $popularity
      */
     public function __construct(
         array $artists,
@@ -182,21 +169,14 @@ class Album implements ModelInterface, TypeInterface
     }
 
     /**
-     * @param array $album
-     *
      * @return \Kerox\Spotify\Model\Album
      */
     public static function build(array $album): self
     {
-        $albumGroup = $album['album_group'] ?? null;
-        $albumType = $album['album_type'] ?? null;
-
         $artists = [];
         foreach ($album['artists'] as $artist) {
             $artists[] = Artist::build($artist);
         }
-
-        $availableMarkets = $album['available_markets'] ?? [];
 
         $copyrights = [];
         if (isset($album['copyrights'])) {
@@ -205,27 +185,20 @@ class Album implements ModelInterface, TypeInterface
             }
         }
 
-        $externalIds = [];
-        if (isset($album['external_ids'])) {
-            foreach ($album['external_ids'] as $type => $id) {
-                $externalIds[] = External::build([$type, $id]);
-            }
+        $tracks = null;
+        if (isset($album['tracks'])) {
+            $tracks = Paging::build($album['tracks']);
         }
 
-        $externalUrls = [];
-        foreach ($album['external_urls'] as $type => $url) {
-            $externalUrls[] = External::build([$type, $url]);
-        }
-
+        $images = self::buildImages($album['images'] ?? []);
+        $externalIds = self::buildExternal($album['external_ids'] ?? []);
+        $externalUrls = self::buildExternal($album['external_urls'] ?? []);
+        $availableMarkets = $album['available_markets'] ?? [];
+        $albumGroup = $album['album_group'] ?? null;
+        $albumType = $album['album_type'] ?? null;
         $genres = $album['genres'] ?? [];
         $href = $album['href'];
         $id = $album['id'];
-
-        $images = [];
-        foreach ($album['images'] as $image) {
-            $images[] = Image::build($image);
-        }
-
         $label = $album['label'] ?? null;
         $name = $album['name'];
         $popularity = $album['popularity'] ?? null;
@@ -233,12 +206,6 @@ class Album implements ModelInterface, TypeInterface
         $releaseDatePrecision = $album['release_date_precision'] ?? null;
         $totalTracks = $album['total_tracks'] ?? null;
         $restrictions = $album['restrictions'] ?? null;
-
-        $tracks = null;
-        if (isset($album['tracks'])) {
-            $tracks = Paging::build($album['tracks']);
-        }
-
         $uri = $album['uri'];
 
         return new self(
@@ -273,9 +240,6 @@ class Album implements ModelInterface, TypeInterface
         return $this->artists;
     }
 
-    /**
-     * @return array
-     */
     public function getAvailableMarkets(): array
     {
         return $this->availableMarkets;
@@ -289,17 +253,11 @@ class Album implements ModelInterface, TypeInterface
         return $this->externalUrls;
     }
 
-    /**
-     * @return string
-     */
     public function getHref(): string
     {
         return $this->href;
     }
 
-    /**
-     * @return string
-     */
     public function getId(): string
     {
         return $this->id;
@@ -313,81 +271,51 @@ class Album implements ModelInterface, TypeInterface
         return $this->images;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return int|null
-     */
     public function getPopularity(): ?int
     {
         return $this->popularity;
     }
 
-    /**
-     * @return string|null
-     */
     public function getReleaseDate(): ?string
     {
         return $this->releaseDate;
     }
 
-    /**
-     * @return string|null
-     */
     public function getReleaseDatePrecision(): ?string
     {
         return $this->releaseDatePrecision;
     }
 
-    /**
-     * @return int|null
-     */
     public function getTotalTracks(): ?int
     {
         return $this->totalTracks;
     }
 
-    /**
-     * @return string|null
-     */
     public function getRestrictions(): ?string
     {
         return $this->restrictions;
     }
 
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return $this->type;
     }
 
-    /**
-     * @return string
-     */
     public function getUri(): string
     {
         return $this->uri;
     }
 
-    /**
-     * @return string|null
-     */
     public function getAlbumGroup(): ?string
     {
         return $this->albumGroup;
     }
 
-    /**
-     * @return string|null
-     */
     public function getAlbumType(): ?string
     {
         return $this->albumType;
@@ -409,17 +337,11 @@ class Album implements ModelInterface, TypeInterface
         return $this->externalIds;
     }
 
-    /**
-     * @return array
-     */
     public function getGenres(): array
     {
         return $this->genres;
     }
 
-    /**
-     * @return string|null
-     */
     public function getLabel(): ?string
     {
         return $this->label;

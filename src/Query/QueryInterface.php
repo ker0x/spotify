@@ -1,6 +1,6 @@
 <?php
 
-namespace Kerox\Spotify\Factory;
+namespace Kerox\Spotify\Query;
 
 interface QueryInterface
 {

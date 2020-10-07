@@ -6,22 +6,19 @@ namespace Kerox\Spotify\Api;
 
 use Fig\Http\Message\RequestMethodInterface;
 use Kerox\Spotify\Request\Request;
-use Kerox\Spotify\Response\PagingResponse;
 use Kerox\Spotify\Response\TrackResponse;
 use Kerox\Spotify\Response\TracksResponse;
-use Psr\Http\Message\ResponseInterface;
 
 class Tracks extends AbstractApi
 {
+    public const BASE_URI = 'tracks';
+
     /**
-     * @param string $id
-     * @param array  $queryParameters
+     * @param array $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\TrackResponse
      */
-    public function getTrack(string $id, array $queryParameters = []): TrackResponse
+    public function get(string $id, iterable $queryParameters = []): TrackResponse
     {
         $uri = $this->createUri(sprintf('tracks/%s', $id), $queryParameters);
 
@@ -35,10 +32,8 @@ class Tracks extends AbstractApi
      * @param array $queryParameters
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\TracksResponse
      */
-    public function getTracks(array $queryParameters = []): TracksResponse
+    public function multiple(iterable $queryParameters = []): TracksResponse
     {
         $uri = $this->createUri('tracks', $queryParameters);
 

@@ -7,7 +7,6 @@ namespace Kerox\Spotify\Model;
 use DateTime;
 use DateTimeInterface;
 use DateTimeZone;
-use Kerox\Spotify\Model\ModelInterface;
 
 class SavedAlbum implements ModelInterface
 {
@@ -25,7 +24,6 @@ class SavedAlbum implements ModelInterface
      * SavedTrack constructor.
      *
      * @param \Kerox\Spotify\Model\Album $album
-     * @param \DateTimeInterface|null    $addedAt
      */
     public function __construct(Album $album, ?DateTimeInterface $addedAt = null)
     {
@@ -34,8 +32,6 @@ class SavedAlbum implements ModelInterface
     }
 
     /**
-     * @param array $savedTrack
-     *
      * @return \Kerox\Spotify\Model\SavedAlbum
      */
     public static function build(array $savedTrack): self
@@ -50,9 +46,6 @@ class SavedAlbum implements ModelInterface
         return new self($album, $addedAt);
     }
 
-    /**
-     * @return \DateTimeInterface|null
-     */
     public function getAddedAt(): ?DateTimeInterface
     {
         return $this->addedAt;

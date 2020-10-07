@@ -13,17 +13,11 @@ class TrackResponse extends AbstractResponse
      */
     protected $track;
 
-    /**
-     * @return \Kerox\Spotify\Model\Track
-     */
     public function getTrack(): Track
     {
         return $this->track;
     }
 
-    /**
-     * @param array $content
-     */
     protected function parseResponse(array $content): void
     {
         $this->track = Track::build($content);

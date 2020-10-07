@@ -1,11 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Kerox\Spotify\Factory;
 
-use DateTime;
-use Traversable;
-
-class QueryFactory implements QueryFactoryInterface, Traversable
+class QueryFactory implements QueryFactoryInterface, \IteratorAggregate
 {
     /**
      * @var array
@@ -13,13 +12,21 @@ class QueryFactory implements QueryFactoryInterface, Traversable
     protected $parameters = [];
 
     /**
-     * @param array $parameters
-     *
      * @return \Kerox\Spotify\Factory\QueryFactory
      */
     public function setFromArray(array $parameters): self
     {
         $this->parameters = $parameters;
+
+        return $this;
+    }
+
+    /**
+     * @return \Kerox\Spotify\Factory\QueryFactory
+     */
+    public function setAfter(string $after): self
+    {
+        $this->parameters[self::PARAMETER_AFTER] = $after;
 
         return $this;
     }
@@ -31,7 +38,7 @@ class QueryFactory implements QueryFactoryInterface, Traversable
      */
     public function setIds($ids): self
     {
-        if (is_array($ids)) {
+        if (\is_array($ids)) {
             $ids = implode(',', $ids);
         }
 
@@ -41,8 +48,6 @@ class QueryFactory implements QueryFactoryInterface, Traversable
     }
 
     /**
-     * @param string $market
-     *
      * @return \Kerox\Spotify\Factory\QueryFactory
      */
     public function setMarket(string $market = 'US'): self
@@ -53,8 +58,6 @@ class QueryFactory implements QueryFactoryInterface, Traversable
     }
 
     /**
-     * @param string $locale
-     *
      * @return \Kerox\Spotify\Factory\QueryFactory
      */
     public function setLocale(string $locale = 'en_US'): self
@@ -65,8 +68,6 @@ class QueryFactory implements QueryFactoryInterface, Traversable
     }
 
     /**
-     * @param string $country
-     *
      * @return \Kerox\Spotify\Factory\QueryFactory
      */
     public function setCountry(string $country = 'US'): self
@@ -77,20 +78,16 @@ class QueryFactory implements QueryFactoryInterface, Traversable
     }
 
     /**
-     * @param \DateTime $timestamp
-     *
      * @return \Kerox\Spotify\Factory\QueryFactory
      */
-    public function setTimestamp(DateTime $timestamp): self
+    public function setTimestamp(\DateTime $timestamp): self
     {
-        $this->parameters[self::PARAMETER_TIMESTAMP] = $timestamp->format(DateTime::ATOM);
+        $this->parameters[self::PARAMETER_TIMESTAMP] = $timestamp->format(\DateTime::ATOM);
 
         return $this;
     }
 
     /**
-     * @param string $timeRange
-     *
      * @return \Kerox\Spotify\Factory\QueryFactory
      */
     public function setTimeRange(string $timeRange = self::TIME_RANGE_MEDIUM): self
@@ -101,8 +98,6 @@ class QueryFactory implements QueryFactoryInterface, Traversable
     }
 
     /**
-     * @param int $limit
-     *
      * @return \Kerox\Spotify\Factory\QueryFactory
      */
     public function setLimit(int $limit = 20): self
@@ -113,8 +108,6 @@ class QueryFactory implements QueryFactoryInterface, Traversable
     }
 
     /**
-     * @param int $offset
-     *
      * @return \Kerox\Spotify\Factory\QueryFactory
      */
     public function setOffset(int $offset = 0): self
@@ -148,9 +141,6 @@ class QueryFactory implements QueryFactoryInterface, Traversable
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function createQuery(): string
     {
         $query = [];
@@ -166,8 +156,13 @@ class QueryFactory implements QueryFactoryInterface, Traversable
     }
 
     /**
-     * @return string
+     * Retrieve an external iterator.
      */
+    public function getIterator(): \Traversable
+    {
+        return new \ArrayIterator($this);
+    }
+
     public function __toString(): string
     {
         return $this->createQuery();

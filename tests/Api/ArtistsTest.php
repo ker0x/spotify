@@ -1,8 +1,9 @@
 <?php
 
-namespace Kerox\Spotify\Test\TestCase\Api;
+namespace Tests\Kerox\Spotify\TestCase\Api;
 
-use Kerox\Spotify\Interfaces\QueryFactoryInterface;
+use Kerox\Spotify\Factory\QueryFactory;
+use Kerox\Spotify\Factory\QueryFactoryInterface;
 use Kerox\Spotify\Model\Album;
 use Kerox\Spotify\Model\Artist;
 use Kerox\Spotify\Model\External;
@@ -49,7 +50,7 @@ class ArtistsTest extends TestCase
         $client->method('sendRequest')->willReturn($response);
 
         $spotify = new Spotify($this->oauthToken, $client);
-        $response = $spotify->artists()->get('0TnOYISbd1XYRBk9myaseg');
+        $response = $spotify->artists()->getArtist('0TnOYISbd1XYRBk9myaseg');
 
         $artist = $response->getArtist();
 
@@ -83,15 +84,19 @@ class ArtistsTest extends TestCase
         $client->method('sendRequest')->willReturn($response);
 
         $spotify = new Spotify($this->oauthToken, $client);
-        $response = $spotify->artists()->albums('0TnOYISbd1XYRBk9myaseg', [
-            QueryFactoryInterface::PARAMETER_INCLUDE_GROUPS => [
-                QueryFactoryInterface::INCLUDE_GROUPS_SINGLE,
-                QueryFactoryInterface::INCLUDE_GROUPS_APPEARS_ON,
-            ],
-            QueryFactoryInterface::PARAMETER_MARKET => 'FR',
-            QueryFactoryInterface::PARAMETER_LIMIT => 10,
-            QueryFactoryInterface::PARAMETER_OFFSET => 5,
-        ]);
+
+        (new QueryFactory())
+            ->setIncludeGroups(QueryFactory::INCLUDE_GROUPS_SINGLE, QueryFactory::INCLUDE_GROUPS_APPEARS_ON)
+            ->setMarket('FR')
+            ->setLimit(10)
+            ->setOffset(5)
+
+        $response = $spotify->artists()->getAlbums('0TnOYISbd1XYRBk9myaseg', (new QueryFactory())
+            ->setIncludeGroups(QueryFactory::INCLUDE_GROUPS_SINGLE, QueryFactory::INCLUDE_GROUPS_APPEARS_ON)
+            ->setMarket('FR')
+            ->setLimit(10)
+            ->setOffset(5)
+        );
 
         $paging = $response->getPaging();
 
@@ -124,7 +129,7 @@ class ArtistsTest extends TestCase
         $client->method('sendRequest')->willReturn($response);
 
         $spotify = new Spotify($this->oauthToken, $client);
-        $response = $spotify->artists()->topTracks('0TnOYISbd1XYRBk9myaseg', [
+        $response = $spotify->artists()->getTopTracks('0TnOYISbd1XYRBk9myaseg', [
             QueryFactoryInterface::PARAMETER_MARKET => 'FR',
         ]);
 
@@ -149,14 +154,14 @@ class ArtistsTest extends TestCase
         $client->method('sendRequest')->willReturn($response);
 
         $spotify = new Spotify($this->oauthToken, $client);
-        $response = $spotify->artists()->related('0TnOYISbd1XYRBk9myaseg');
+        $response = $spotify->artists()->getRelatedArtists('0TnOYISbd1XYRBk9myaseg');
 
         $this->assertContainsOnlyInstancesOf(Artist::class, $response->getArtists());
         $this->assertInstanceOf(Artist::class, $response->getArtist(1));
         $this->assertSame(20, $response->getTotal());
     }
 
-    public function testGetSeveral(): void
+    public function testGetArtists(): void
     {
         $body = file_get_contents(__DIR__ . '/../../Mocks/Artists/several.json');
 
@@ -172,12 +177,10 @@ class ArtistsTest extends TestCase
         $client->method('sendRequest')->willReturn($response);
 
         $spotify = new Spotify($this->oauthToken, $client);
-        $response = $spotify->artists()->several([
-            QueryFactoryInterface::PARAMETER_IDS => [
-                '2CIMQHirSU0MQqyYHq0eOx',
-                '57dN52uHvrHOxijzpIgu3E',
-            ],
-        ]);
+        $response = $spotify->artists()->getArtists((new QueryFactory())->setIds([
+            '2CIMQHirSU0MQqyYHq0eOx',
+            '57dN52uHvrHOxijzpIgu3E',
+        ]));
 
         $this->assertContainsOnlyInstancesOf(Artist::class, $response->getArtists());
         $this->assertInstanceOf(Artist::class, $response->getArtist(1));
@@ -193,7 +196,7 @@ class ArtistsTest extends TestCase
         $client->method('sendRequest')->willReturn($response);
 
         $spotify = new Spotify($this->oauthToken, $client);
-        $response = $spotify->artists()->follow([
+        $response = $spotify->artists()->([
             '2CIMQHirSU0MQqyYHq0eOx',
             '57dN52uHvrHOxijzpIgu3E',
             '1vCWHaC5f2uS3yhpwWbIA6',
