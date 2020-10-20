@@ -53,19 +53,6 @@ class Section extends AbstractAudioAnalysis
 
     /**
      * Section constructor.
-     *
-     * @param float $start
-     * @param float $duration
-     * @param float $confidence
-     * @param float $loudness
-     * @param float $tempo
-     * @param float $tempoConfidence
-     * @param float $key
-     * @param float $keyConfidence
-     * @param float $mode
-     * @param float $modeConfidence
-     * @param float $timeSignature
-     * @param float $timeSignatureConfidence
      */
     public function __construct(
         float $start,
@@ -95,8 +82,6 @@ class Section extends AbstractAudioAnalysis
     }
 
     /**
-     * @param array $section
-     *
      * @return \Kerox\Spotify\Model\AudioAnalysis\Section
      */
     public static function build(array $section): self
@@ -117,73 +102,46 @@ class Section extends AbstractAudioAnalysis
         );
     }
 
-    /**
-     * @return float
-     */
     public function getLoudness(): float
     {
         return $this->loudness;
     }
 
-    /**
-     * @return float
-     */
     public function getTempo(): float
     {
         return $this->tempo;
     }
 
-    /**
-     * @return float
-     */
     public function getTempoConfidence(): float
     {
         return $this->tempoConfidence;
     }
 
-    /**
-     * @return float
-     */
     public function getKey(): float
     {
         return $this->key;
     }
 
-    /**
-     * @return float
-     */
     public function getKeyConfidence(): float
     {
         return $this->keyConfidence;
     }
 
-    /**
-     * @return float
-     */
     public function getMode(): float
     {
         return $this->mode;
     }
 
-    /**
-     * @return float
-     */
     public function getModeConfidence(): float
     {
         return $this->modeConfidence;
     }
 
-    /**
-     * @return float
-     */
     public function getTimeSignature(): float
     {
         return $this->timeSignature;
     }
 
-    /**
-     * @return float
-     */
     public function getTimeSignatureConfidence(): float
     {
         return $this->timeSignatureConfidence;

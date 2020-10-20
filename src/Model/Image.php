@@ -25,10 +25,6 @@ class Image implements ModelInterface
 
     /**
      * Image constructor.
-     *
-     * @param string   $url
-     * @param int|null $height
-     * @param int|null $width
      */
     public function __construct(string $url, ?int $height = null, ?int $width = null)
     {
@@ -38,8 +34,6 @@ class Image implements ModelInterface
     }
 
     /**
-     * @param array $image
-     *
      * @return \Kerox\Spotify\Model\Image
      */
     public static function build(array $image): self
@@ -51,25 +45,16 @@ class Image implements ModelInterface
         return new self($url, $height, $width);
     }
 
-    /**
-     * @return string
-     */
     public function getUrl(): string
     {
         return $this->url;
     }
 
-    /**
-     * @return int|null
-     */
     public function getHeight(): ?int
     {
         return $this->height;
     }
 
-    /**
-     * @return int|null
-     */
     public function getWidth(): ?int
     {
         return $this->width;

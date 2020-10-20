@@ -13,17 +13,11 @@ class AlbumResponse extends AbstractResponse
      */
     protected $album;
 
-    /**
-     * @return \Kerox\Spotify\Model\Album
-     */
     public function getAlbum(): Album
     {
         return $this->album;
     }
 
-    /**
-     * @param array $content
-     */
     protected function parseResponse(array $content): void
     {
         $this->album = Album::build($content);

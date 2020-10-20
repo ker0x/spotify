@@ -20,9 +20,6 @@ class Recommendations implements ModelInterface
 
     /**
      * Recommendations constructor.
-     *
-     * @param array $tracks
-     * @param array $seeds
      */
     public function __construct(array $tracks, array $seeds)
     {
@@ -31,8 +28,6 @@ class Recommendations implements ModelInterface
     }
 
     /**
-     * @param array $recommendations
-     *
      * @return \Kerox\Spotify\Model\Recommendations
      */
     public static function build(array $recommendations): self

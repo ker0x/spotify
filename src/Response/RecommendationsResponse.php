@@ -18,9 +18,6 @@ class RecommendationsResponse extends AbstractResponse
         return $this->recommendations;
     }
 
-    /**
-     * @param array $content
-     */
     protected function parseResponse(array $content): void
     {
         $this->recommendations = Recommendations::build($content);

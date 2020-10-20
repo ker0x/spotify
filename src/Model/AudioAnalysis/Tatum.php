@@ -7,8 +7,6 @@ namespace Kerox\Spotify\Model\AudioAnalysis;
 class Tatum extends AbstractAudioAnalysis
 {
     /**
-     * @param array $tatum
-     *
      * @return \Kerox\Spotify\Model\AudioAnalysis\Tatum
      */
     public static function build(array $tatum): self

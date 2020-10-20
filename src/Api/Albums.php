@@ -14,12 +14,7 @@ use Psr\Http\Message\ResponseInterface;
 class Albums extends AbstractApi
 {
     /**
-     * @param string $id
-     * @param array  $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\AlbumResponse
      */
     public function get(string $id, array $queryParameters = []): AlbumResponse
     {
@@ -32,12 +27,7 @@ class Albums extends AbstractApi
     }
 
     /**
-     * @param string $id
-     * @param array  $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\PagingResponse
      */
     public function tracks(string $id, array $queryParameters = []): PagingResponse
     {
@@ -50,11 +40,7 @@ class Albums extends AbstractApi
     }
 
     /**
-     * @param array $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\AlbumsResponse
      */
     public function several(array $queryParameters = []): AlbumsResponse
     {
@@ -67,11 +53,7 @@ class Albums extends AbstractApi
     }
 
     /**
-     * @param array $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\PagingResponse
      */
     public function saved(array $queryParameters = []): PagingResponse
     {
@@ -84,11 +66,7 @@ class Albums extends AbstractApi
     }
 
     /**
-     * @param array $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
     public function add(array $queryParameters = []): ResponseInterface
     {
@@ -100,11 +78,7 @@ class Albums extends AbstractApi
     }
 
     /**
-     * @param array $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
     public function remove(array $queryParameters = []): ResponseInterface
     {

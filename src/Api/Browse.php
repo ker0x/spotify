@@ -16,12 +16,7 @@ use Kerox\Spotify\Response\ReleasesResponse;
 class Browse extends AbstractApi
 {
     /**
-     * @param string $id
-     * @param array  $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\CategoryResponse
      */
     public function category(string $id, array $queryParameters = []): CategoryResponse
     {
@@ -34,12 +29,7 @@ class Browse extends AbstractApi
     }
 
     /**
-     * @param string $id
-     * @param array  $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\PlaylistsResponse
      */
     public function playlists(string $id, array $queryParameters = []): PlaylistsResponse
     {
@@ -52,11 +42,7 @@ class Browse extends AbstractApi
     }
 
     /**
-     * @param array $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\CategoriesResponse
      */
     public function categories(array $queryParameters = []): CategoriesResponse
     {
@@ -69,11 +55,7 @@ class Browse extends AbstractApi
     }
 
     /**
-     * @param array $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\FeaturedResponse
      */
     public function featured(array $queryParameters = []): FeaturedResponse
     {
@@ -86,11 +68,7 @@ class Browse extends AbstractApi
     }
 
     /**
-     * @param array $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\ReleasesResponse
      */
     public function releases(array $queryParameters = []): ReleasesResponse
     {
@@ -103,11 +81,7 @@ class Browse extends AbstractApi
     }
 
     /**
-     * @param array $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\RecommendationsResponse
      */
     public function recommendations(array $queryParameters = []): RecommendationsResponse
     {

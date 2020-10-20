@@ -7,8 +7,6 @@ namespace Kerox\Spotify\Interfaces;
 interface ModelInterface
 {
     /**
-     * @param array $model
-     *
      * @return mixed
      */
     public static function build(array $model);

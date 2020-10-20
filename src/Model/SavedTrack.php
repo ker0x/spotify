@@ -45,11 +45,8 @@ class SavedTrack implements ModelInterface
      * SavedTrack constructor.
      *
      * @param \Kerox\Spotify\Model\Track     $track
-     * @param \DateTimeInterface|null        $addedAt
      * @param \Kerox\Spotify\Model\User|null $addedBy
-     * @param array                          $videoThumbnail
      * @param bool|null                      $isLocal
-     * @param string|null                    $primaryColor
      */
     public function __construct(
         Track $track,
@@ -68,8 +65,6 @@ class SavedTrack implements ModelInterface
     }
 
     /**
-     * @param array $savedTrack
-     *
      * @return \Kerox\Spotify\Model\SavedTrack
      */
     public static function build(array $savedTrack): self
@@ -122,25 +117,16 @@ class SavedTrack implements ModelInterface
         return $this->addedBy;
     }
 
-    /**
-     * @return bool
-     */
     public function isLocal(): bool
     {
         return $this->isLocal;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPrimaryColor(): ?string
     {
         return $this->primaryColor;
     }
 
-    /**
-     * @return array
-     */
     public function getVideoThumbnail(): array
     {
         return $this->videoThumbnail;

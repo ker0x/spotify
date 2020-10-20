@@ -40,13 +40,6 @@ class Seed implements ModelInterface
 
     /**
      * RecommandationsSeed constructor.
-     *
-     * @param int         $afterFilteringSize
-     * @param int         $afterRelinkingSize
-     * @param string|null $href
-     * @param string      $id
-     * @param int         $initialPoolSize
-     * @param string      $type
      */
     public function __construct(
         int $afterFilteringSize,
@@ -65,8 +58,6 @@ class Seed implements ModelInterface
     }
 
     /**
-     * @param array $recommendationsSeed
-     *
      * @return \Kerox\Spotify\Model\Seed
      */
     public static function build(array $recommendationsSeed): self
@@ -88,49 +79,31 @@ class Seed implements ModelInterface
         );
     }
 
-    /**
-     * @return int
-     */
     public function getAfterFilteringSize(): int
     {
         return $this->afterFilteringSize;
     }
 
-    /**
-     * @return int
-     */
     public function getAfterRelinkingSize(): int
     {
         return $this->afterRelinkingSize;
     }
 
-    /**
-     * @return string|null
-     */
     public function getHref(): ?string
     {
         return $this->href;
     }
 
-    /**
-     * @return string
-     */
     public function getId(): string
     {
         return $this->id;
     }
 
-    /**
-     * @return int
-     */
     public function getInitialPoolSize(): int
     {
         return $this->initialPoolSize;
     }
 
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return $this->type;

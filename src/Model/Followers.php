@@ -22,7 +22,6 @@ class Followers implements ModelInterface
      * Followers constructor.
      *
      * @param string $href
-     * @param int    $total
      */
     public function __construct(?string $href, int $total)
     {
@@ -31,8 +30,6 @@ class Followers implements ModelInterface
     }
 
     /**
-     * @param array $followers
-     *
      * @return \Kerox\Spotify\Model\Followers
      */
     public static function build(array $followers): self
@@ -43,17 +40,11 @@ class Followers implements ModelInterface
         return new self($href, $total);
     }
 
-    /**
-     * @return string|null
-     */
     public function getHref(): ?string
     {
         return $this->href;
     }
 
-    /**
-     * @return int
-     */
     public function getTotal(): int
     {
         return $this->total;

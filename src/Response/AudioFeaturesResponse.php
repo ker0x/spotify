@@ -21,9 +21,6 @@ class AudioFeaturesResponse extends AbstractResponse
         return $this->audioFeatures;
     }
 
-    /**
-     * @param array $content
-     */
     protected function parseResponse(array $content): void
     {
         if (isset($content['audio_features'])) {

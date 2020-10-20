@@ -13,11 +13,7 @@ use Kerox\Spotify\Response\AudioFeaturesResponse;
 class Audio extends AbstractApi
 {
     /**
-     * @param string $id
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\AudioAnalysisResponse
      */
     public function analysis(string $id): AudioAnalysisResponse
     {
@@ -33,8 +29,6 @@ class Audio extends AbstractApi
      * @param string|array $ids
      *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\AudioFeaturesResponse
      */
     public function features($ids): AudioFeaturesResponse
     {

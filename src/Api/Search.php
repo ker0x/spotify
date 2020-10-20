@@ -12,11 +12,7 @@ use Kerox\Spotify\Response\SearchResponse;
 class Search extends AbstractApi implements TypeInterface
 {
     /**
-     * @param array $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\SearchResponse
      */
     public function __invoke(array $queryParameters = []): SearchResponse
     {

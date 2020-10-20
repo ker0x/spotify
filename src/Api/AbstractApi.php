@@ -6,9 +6,9 @@ namespace Kerox\Spotify\Api;
 
 use Kerox\Spotify\Helper\UtilityTrait;
 use Kerox\Spotify\Interfaces\QueryParametersInterface;
+use Laminas\Diactoros\UriFactory;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\UriInterface;
-use Zend\Diactoros\UriFactory;
 
 class AbstractApi implements QueryParametersInterface
 {
@@ -31,10 +31,6 @@ class AbstractApi implements QueryParametersInterface
 
     /**
      * AbstractApi constructor.
-     *
-     * @param string                           $oauthToken
-     * @param \Psr\Http\Client\ClientInterface $client
-     * @param string                           $baseUri
      */
     public function __construct(string $oauthToken, ClientInterface $client, string $baseUri)
     {
@@ -43,12 +39,6 @@ class AbstractApi implements QueryParametersInterface
         $this->baseUri = $baseUri;
     }
 
-    /**
-     * @param string $uri
-     * @param array  $queryParameters
-     *
-     * @return \Psr\Http\Message\UriInterface
-     */
     protected function createUri(string $uri, array $queryParameters = []): UriInterface
     {
         $query = $this->filterQuery($queryParameters);
@@ -58,11 +48,6 @@ class AbstractApi implements QueryParametersInterface
         return $factory->createUri(sprintf('%s/%s?%s', $this->baseUri, $uri, urlencode($query)));
     }
 
-    /**
-     * @param array $queryParameters
-     *
-     * @return string
-     */
     private function filterQuery(array $queryParameters): string
     {
         $queryParameters = $this->arrayFilter($queryParameters);

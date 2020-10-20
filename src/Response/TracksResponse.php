@@ -21,27 +21,16 @@ class TracksResponse extends AbstractResponse
         return $this->tracks;
     }
 
-    /**
-     * @param int $artistNumber
-     *
-     * @return \Kerox\Spotify\Model\Track|null
-     */
     public function getTrack(int $artistNumber): ?Track
     {
         return $this->tracks[$artistNumber] ?? null;
     }
 
-    /**
-     * @return int
-     */
     public function getTotal(): int
     {
         return \count($this->tracks);
     }
 
-    /**
-     * @param array $content
-     */
     protected function parseResponse(array $content): void
     {
         foreach ($content['tracks'] as $track) {

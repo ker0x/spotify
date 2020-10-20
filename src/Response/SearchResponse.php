@@ -28,9 +28,6 @@ class SearchResponse extends AbstractResponse
      */
     protected $tracks;
 
-    /**
-     * @param array $content
-     */
     protected function parseResponse(array $content): void
     {
         if (isset($content['albums'])) {
@@ -50,33 +47,21 @@ class SearchResponse extends AbstractResponse
         }
     }
 
-    /**
-     * @return \Kerox\Spotify\Model\Paging|null
-     */
     public function getAlbums(): ?Paging
     {
         return $this->albums;
     }
 
-    /**
-     * @return \Kerox\Spotify\Model\Paging|null
-     */
     public function getArtists(): ?Paging
     {
         return $this->artists;
     }
 
-    /**
-     * @return \Kerox\Spotify\Model\Paging|null
-     */
     public function getPlaylists(): ?Paging
     {
         return $this->playlists;
     }
 
-    /**
-     * @return \Kerox\Spotify\Model\Paging|null
-     */
     public function getTracks(): ?Paging
     {
         return $this->tracks;

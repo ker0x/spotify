@@ -36,11 +36,6 @@ class TrackLink implements ModelInterface, TypeInterface
 
     /**
      * TrackLink constructor.
-     *
-     * @param array  $externalUrls
-     * @param string $href
-     * @param string $id
-     * @param string $uri
      */
     public function __construct(array $externalUrls, string $href, string $id, string $uri)
     {
@@ -51,8 +46,6 @@ class TrackLink implements ModelInterface, TypeInterface
     }
 
     /**
-     * @param array $trackLink
-     *
      * @return \Kerox\Spotify\Model\TrackLink
      */
     public static function build(array $trackLink): self
@@ -69,41 +62,26 @@ class TrackLink implements ModelInterface, TypeInterface
         return new self($externalUrls, $href, $id, $uri);
     }
 
-    /**
-     * @return array
-     */
     public function getExternalUrls(): array
     {
         return $this->externalUrls;
     }
 
-    /**
-     * @return string
-     */
     public function getHref(): string
     {
         return $this->href;
     }
 
-    /**
-     * @return string
-     */
     public function getId(): string
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return $this->type;
     }
 
-    /**
-     * @return string
-     */
     public function getUri(): string
     {
         return $this->uri;

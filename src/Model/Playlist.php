@@ -88,17 +88,11 @@ class Playlist implements ModelInterface, TypeInterface, JsonSerializable
     /**
      * Playlist constructor.
      *
-     * @param string                         $name
-     * @param bool                           $public
-     * @param bool                           $collaborative
      * @param string                         $description
-     * @param array                          $externalUrls
      * @param \Kerox\Spotify\Model\Followers $followers
      * @param string                         $href
      * @param string                         $id
-     * @param array                          $images
      * @param \Kerox\Spotify\Model\User      $owner
-     * @param string|null                    $primaryColor
      * @param string                         $snapshotId
      * @param \Kerox\Spotify\Model\Paging    $tracks
      * @param string                         $uri
@@ -136,11 +130,6 @@ class Playlist implements ModelInterface, TypeInterface, JsonSerializable
     }
 
     /**
-     * @param string      $name
-     * @param bool        $public
-     * @param bool        $collaborative
-     * @param string|null $description
-     *
      * @return \Kerox\Spotify\Model\Playlist
      */
     public static function create(
@@ -153,8 +142,6 @@ class Playlist implements ModelInterface, TypeInterface, JsonSerializable
     }
 
     /**
-     * @param array $playlist
-     *
      * @return \Kerox\Spotify\Model\Playlist
      */
     public static function build(array $playlist): self
@@ -210,25 +197,16 @@ class Playlist implements ModelInterface, TypeInterface, JsonSerializable
         );
     }
 
-    /**
-     * @return bool
-     */
     public function isCollaborative(): bool
     {
         return $this->collaborative;
     }
 
-    /**
-     * @return string|null
-     */
     public function getDescription(): ?string
     {
         return $this->description;
     }
 
-    /**
-     * @return array
-     */
     public function getExternalUrls(): array
     {
         return $this->externalUrls;
@@ -242,33 +220,21 @@ class Playlist implements ModelInterface, TypeInterface, JsonSerializable
         return $this->followers;
     }
 
-    /**
-     * @return string
-     */
     public function getHref(): string
     {
         return $this->href;
     }
 
-    /**
-     * @return string
-     */
     public function getId(): string
     {
         return $this->id;
     }
 
-    /**
-     * @return array
-     */
     public function getImages(): array
     {
         return $this->images;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
@@ -282,25 +248,16 @@ class Playlist implements ModelInterface, TypeInterface, JsonSerializable
         return $this->owner;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPrimaryColor(): ?string
     {
         return $this->primaryColor;
     }
 
-    /**
-     * @return bool
-     */
     public function isPublic(): bool
     {
         return $this->public;
     }
 
-    /**
-     * @return string
-     */
     public function getSnapshotId(): string
     {
         return $this->snapshotId;
@@ -314,25 +271,16 @@ class Playlist implements ModelInterface, TypeInterface, JsonSerializable
         return $this->tracks;
     }
 
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return $this->type;
     }
 
-    /**
-     * @return string
-     */
     public function getUri(): string
     {
         return $this->uri;
     }
 
-    /**
-     * @return array
-     */
     public function toArray(): array
     {
         $array = [
@@ -345,9 +293,6 @@ class Playlist implements ModelInterface, TypeInterface, JsonSerializable
         return $array;
     }
 
-    /**
-     * @return array
-     */
     public function jsonSerialize(): array
     {
         return $this->toArray();

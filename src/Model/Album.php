@@ -117,26 +117,10 @@ class Album implements ModelInterface, TypeInterface
     /**
      * Album constructor.
      *
-     * @param array                            $artists
-     * @param array                            $availableMarkets
-     * @param array                            $externalUrls
-     * @param string                           $href
-     * @param string                           $id
-     * @param array                            $images
-     * @param string                           $name
      * @param string                           $releaseDate
      * @param string                           $releaseDatePrecision
      * @param int                              $totalTracks
-     * @param string|null                      $restrictions
-     * @param string                           $uri
      * @param \Kerox\Spotify\Model\Paging|null $tracks
-     * @param string|null                      $albumType
-     * @param string|null                      $albumGroup
-     * @param array                            $copyrights
-     * @param array                            $externalIds
-     * @param array                            $genres
-     * @param string|null                      $label
-     * @param int|null                         $popularity
      */
     public function __construct(
         array $artists,
@@ -183,8 +167,6 @@ class Album implements ModelInterface, TypeInterface
     }
 
     /**
-     * @param array $album
-     *
      * @return \Kerox\Spotify\Model\Album
      */
     public static function build(array $album): self
@@ -274,9 +256,6 @@ class Album implements ModelInterface, TypeInterface
         return $this->artists;
     }
 
-    /**
-     * @return array
-     */
     public function getAvailableMarkets(): array
     {
         return $this->availableMarkets;
@@ -290,17 +269,11 @@ class Album implements ModelInterface, TypeInterface
         return $this->externalUrls;
     }
 
-    /**
-     * @return string
-     */
     public function getHref(): string
     {
         return $this->href;
     }
 
-    /**
-     * @return string
-     */
     public function getId(): string
     {
         return $this->id;
@@ -314,81 +287,51 @@ class Album implements ModelInterface, TypeInterface
         return $this->images;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return int|null
-     */
     public function getPopularity(): ?int
     {
         return $this->popularity;
     }
 
-    /**
-     * @return string|null
-     */
     public function getReleaseDate(): ?string
     {
         return $this->releaseDate;
     }
 
-    /**
-     * @return string|null
-     */
     public function getReleaseDatePrecision(): ?string
     {
         return $this->releaseDatePrecision;
     }
 
-    /**
-     * @return int|null
-     */
     public function getTotalTracks(): ?int
     {
         return $this->totalTracks;
     }
 
-    /**
-     * @return string|null
-     */
     public function getRestrictions(): ?string
     {
         return $this->restrictions;
     }
 
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return $this->type;
     }
 
-    /**
-     * @return string
-     */
     public function getUri(): string
     {
         return $this->uri;
     }
 
-    /**
-     * @return string|null
-     */
     public function getAlbumGroup(): ?string
     {
         return $this->albumGroup;
     }
 
-    /**
-     * @return string|null
-     */
     public function getAlbumType(): ?string
     {
         return $this->albumType;
@@ -410,17 +353,11 @@ class Album implements ModelInterface, TypeInterface
         return $this->externalIds;
     }
 
-    /**
-     * @return array
-     */
     public function getGenres(): array
     {
         return $this->genres;
     }
 
-    /**
-     * @return string|null
-     */
     public function getLabel(): ?string
     {
         return $this->label;

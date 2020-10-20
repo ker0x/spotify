@@ -7,8 +7,6 @@ namespace Kerox\Spotify\Model\AudioAnalysis;
 class Bar extends AbstractAudioAnalysis
 {
     /**
-     * @param array $bar
-     *
      * @return \Kerox\Spotify\Model\AudioAnalysis\Bar
      */
     public static function build(array $bar): self

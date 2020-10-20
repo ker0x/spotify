@@ -112,26 +112,9 @@ class Track implements ModelInterface, TypeInterface
     /**
      * Track constructor.
      *
-     * @param array                               $artists
-     * @param array                               $availableMarkets
-     * @param int                                 $discNumber
-     * @param int                                 $durationMs
-     * @param bool                                $explicit
-     * @param array                               $externalIds
-     * @param array                               $externalUrls
-     * @param string                              $href
-     * @param string                              $id
-     * @param bool                                $isPlayable
      * @param \Kerox\Spotify\Model\TrackLink|null $linkedFrom
-     * @param array                               $restrictions
-     * @param string                              $name
-     * @param int                                 $trackNumber
-     * @param string                              $type
-     * @param string                              $uri
-     * @param bool                                $isLocal
      * @param string                              $previewUrl
      * @param \Kerox\Spotify\Model\Album|null     $album
-     * @param int|null                            $popularity
      */
     public function __construct(
         array $artists,
@@ -178,8 +161,6 @@ class Track implements ModelInterface, TypeInterface
     }
 
     /**
-     * @param array $track
-     *
      * @return \Kerox\Spotify\Model\Track
      */
     public static function build(array $track): self
@@ -270,33 +251,21 @@ class Track implements ModelInterface, TypeInterface
         return $this->artists;
     }
 
-    /**
-     * @return array
-     */
     public function getAvailableMarkets(): array
     {
         return $this->availableMarkets;
     }
 
-    /**
-     * @return int
-     */
     public function getDiscNumber(): int
     {
         return $this->discNumber;
     }
 
-    /**
-     * @return int
-     */
     public function getDurationMs(): int
     {
         return $this->durationMs;
     }
 
-    /**
-     * @return bool
-     */
     public function isExplicit(): bool
     {
         return $this->explicit;
@@ -318,25 +287,16 @@ class Track implements ModelInterface, TypeInterface
         return $this->externalUrls;
     }
 
-    /**
-     * @return string
-     */
     public function getHref(): string
     {
         return $this->href;
     }
 
-    /**
-     * @return string
-     */
     public function getId(): string
     {
         return $this->id;
     }
 
-    /**
-     * @return bool
-     */
     public function isPlayable(): bool
     {
         return $this->isPlayable;
@@ -350,65 +310,41 @@ class Track implements ModelInterface, TypeInterface
         return $this->linkedFrom;
     }
 
-    /**
-     * @return array
-     */
     public function getRestrictions(): array
     {
         return $this->restrictions;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return int|null
-     */
     public function getPopularity(): ?int
     {
         return $this->popularity;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPreviewUrl(): ?string
     {
         return $this->previewUrl;
     }
 
-    /**
-     * @return int
-     */
     public function getTrackNumber(): int
     {
         return $this->trackNumber;
     }
 
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return $this->type;
     }
 
-    /**
-     * @return string
-     */
     public function getUri(): string
     {
         return $this->uri;
     }
 
-    /**
-     * @return bool
-     */
     public function isLocal(): bool
     {
         return $this->isLocal;

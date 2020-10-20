@@ -12,11 +12,7 @@ use Kerox\Spotify\Response\UserResponse;
 class Users extends AbstractApi
 {
     /**
-     * @param string $id
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\UserResponse
      */
     public function get(string $id): UserResponse
     {
@@ -29,12 +25,7 @@ class Users extends AbstractApi
     }
 
     /**
-     * @param string $id
-     * @param array  $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\PagingResponse
      */
     public function playlists(string $id, array $queryParameters = []): PagingResponse
     {

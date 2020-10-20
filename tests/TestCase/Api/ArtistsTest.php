@@ -1,6 +1,8 @@
 <?php
 
-namespace Kerox\Spotify\Test\TestCase\Api;
+declare(strict_types=1);
+
+namespace Kerox\Spotify\Tests\TestCase\Api;
 
 use Kerox\Spotify\Interfaces\QueryParametersInterface;
 use Kerox\Spotify\Model\Album;
@@ -23,12 +25,12 @@ class ArtistsTest extends TestCase
 {
     protected $oauthToken;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->oauthToken = 'BQCpTK7nCpmijQURqGm-hBvOgS4T--ql1zfbiBVYwbzFb4z06fP8pFvLoiDSjSNawQEfRahU3pCJOQJIyhvi1JcmQtLJ_Oh-p3vKWhEfesG-UcIF_tPBjGRSn1Xu1w0QIbrvN9RnSm2-EI_NeNEOBxBHTlviYhq128bjG4obEeemHMIyAE2dJPIwumC-XPqfjXwkUGOVyfu5BJqERSVcT65m-g0xu9T52Q1RpJfvm5J0nGZw5Z647IEucZjqavtWycL2YnXLd02tSt9E0YY';
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         unset($this->oauthToken);
     }
@@ -53,18 +55,18 @@ class ArtistsTest extends TestCase
 
         $artist = $response->getArtist();
 
-        $this->assertContainsOnlyInstancesOf(External::class, $artist->getExternalUrls());
-        $this->assertInstanceOf(Followers::class, $artist->getFollowers());
-        $this->assertNull($artist->getFollowers()->getHref());
-        $this->assertSame(6406754, $artist->getFollowers()->getTotal());
-        $this->assertSame(['dance pop', 'latin', 'pop', 'pop rap'], $artist->getGenres());
-        $this->assertSame('https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg', $artist->getHref());
-        $this->assertSame('0TnOYISbd1XYRBk9myaseg', $artist->getId());
-        $this->assertContainsOnlyInstancesOf(Image::class, $artist->getImages());
-        $this->assertSame('Pitbull', $artist->getName());
-        $this->assertSame(82, $artist->getPopularity());
-        $this->assertSame('artist', $artist->getType());
-        $this->assertSame('spotify:artist:0TnOYISbd1XYRBk9myaseg', $artist->getUri());
+        self::assertContainsOnlyInstancesOf(External::class, $artist->getExternalUrls());
+        self::assertInstanceOf(Followers::class, $artist->getFollowers());
+        self::assertNull($artist->getFollowers()->getHref());
+        self::assertSame(6406754, $artist->getFollowers()->getTotal());
+        self::assertSame(['dance pop', 'latin', 'pop', 'pop rap'], $artist->getGenres());
+        self::assertSame('https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg', $artist->getHref());
+        self::assertSame('0TnOYISbd1XYRBk9myaseg', $artist->getId());
+        self::assertContainsOnlyInstancesOf(Image::class, $artist->getImages());
+        self::assertSame('Pitbull', $artist->getName());
+        self::assertSame(82, $artist->getPopularity());
+        self::assertSame('artist', $artist->getType());
+        self::assertSame('spotify:artist:0TnOYISbd1XYRBk9myaseg', $artist->getUri());
     }
 
     public function testGetAlbums(): void
@@ -95,17 +97,17 @@ class ArtistsTest extends TestCase
 
         $paging = $response->getPaging();
 
-        $this->assertSame('https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/albums?offset=5&limit=10&include_groups=single,appears_on&market=FR',
+        self::assertSame('https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/albums?offset=5&limit=10&include_groups=single,appears_on&market=FR',
             $paging->getHref());
-        $this->assertContainsOnlyInstancesOf(Album::class, $paging->getItems());
-        $this->assertInstanceOf(Album::class, $paging->getItem(1));
-        $this->assertSame(10, $paging->getLimit());
-        $this->assertSame('https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/albums?offset=15&limit=10&include_groups=single,appears_on&market=FR',
+        self::assertContainsOnlyInstancesOf(Album::class, $paging->getItems());
+        self::assertInstanceOf(Album::class, $paging->getItem(1));
+        self::assertSame(10, $paging->getLimit());
+        self::assertSame('https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/albums?offset=15&limit=10&include_groups=single,appears_on&market=FR',
             $paging->getNext());
-        $this->assertSame(5, $paging->getOffset());
-        $this->assertSame('https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/albums?offset=0&limit=10&include_groups=single,appears_on&market=FR',
+        self::assertSame(5, $paging->getOffset());
+        self::assertSame('https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg/albums?offset=0&limit=10&include_groups=single,appears_on&market=FR',
             $paging->getPrevious());
-        $this->assertSame(487, $paging->getTotal());
+        self::assertSame(487, $paging->getTotal());
     }
 
     public function testGetTopTracks(): void
@@ -128,9 +130,9 @@ class ArtistsTest extends TestCase
             QueryParametersInterface::PARAMETER_MARKET => 'FR',
         ]);
 
-        $this->assertContainsOnlyInstancesOf(Track::class, $response->getTracks());
-        $this->assertInstanceOf(Track::class, $response->getTrack(1));
-        $this->assertSame(10, $response->getTotal());
+        self::assertContainsOnlyInstancesOf(Track::class, $response->getTracks());
+        self::assertInstanceOf(Track::class, $response->getTrack(1));
+        self::assertSame(10, $response->getTotal());
     }
 
     public function testGetRelatedArtists(): void
@@ -151,9 +153,9 @@ class ArtistsTest extends TestCase
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->artists()->related('0TnOYISbd1XYRBk9myaseg');
 
-        $this->assertContainsOnlyInstancesOf(Artist::class, $response->getArtists());
-        $this->assertInstanceOf(Artist::class, $response->getArtist(1));
-        $this->assertSame(20, $response->getTotal());
+        self::assertContainsOnlyInstancesOf(Artist::class, $response->getArtists());
+        self::assertInstanceOf(Artist::class, $response->getArtist(1));
+        self::assertSame(20, $response->getTotal());
     }
 
     public function testGetSeveral(): void
@@ -179,9 +181,9 @@ class ArtistsTest extends TestCase
             ],
         ]);
 
-        $this->assertContainsOnlyInstancesOf(Artist::class, $response->getArtists());
-        $this->assertInstanceOf(Artist::class, $response->getArtist(1));
-        $this->assertSame(2, $response->getTotal());
+        self::assertContainsOnlyInstancesOf(Artist::class, $response->getArtists());
+        self::assertInstanceOf(Artist::class, $response->getArtist(1));
+        self::assertSame(2, $response->getTotal());
     }
 
     public function testFollowArtist(): void
@@ -199,7 +201,7 @@ class ArtistsTest extends TestCase
             '1vCWHaC5f2uS3yhpwWbIA6',
         ]);
 
-        $this->assertSame(204, $response->getStatusCode());
+        self::assertSame(204, $response->getStatusCode());
     }
 
     public function testUnfollowArtist(): void
@@ -217,6 +219,6 @@ class ArtistsTest extends TestCase
             '1vCWHaC5f2uS3yhpwWbIA6',
         ]);
 
-        $this->assertSame(204, $response->getStatusCode());
+        self::assertSame(204, $response->getStatusCode());
     }
 }

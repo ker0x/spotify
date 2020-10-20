@@ -14,12 +14,7 @@ use Psr\Http\Message\ResponseInterface;
 class Tracks extends AbstractApi
 {
     /**
-     * @param string $id
-     * @param array  $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\TrackResponse
      */
     public function get(string $id, array $queryParameters = []): TrackResponse
     {
@@ -32,11 +27,7 @@ class Tracks extends AbstractApi
     }
 
     /**
-     * @param array $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\TracksResponse
      */
     public function several(array $queryParameters = []): TracksResponse
     {
@@ -49,11 +40,7 @@ class Tracks extends AbstractApi
     }
 
     /**
-     * @param array $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\PagingResponse
      */
     public function saved(array $queryParameters = []): PagingResponse
     {
@@ -66,11 +53,7 @@ class Tracks extends AbstractApi
     }
 
     /**
-     * @param array $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
     public function add(array $queryParameters = []): ResponseInterface
     {
@@ -82,11 +65,7 @@ class Tracks extends AbstractApi
     }
 
     /**
-     * @param array $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
     public function remove(array $queryParameters = []): ResponseInterface
     {

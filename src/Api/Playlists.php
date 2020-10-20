@@ -19,12 +19,7 @@ use Psr\Http\Message\ResponseInterface;
 class Playlists extends AbstractApi
 {
     /**
-     * @param string                        $id
-     * @param \Kerox\Spotify\Model\Playlist $playlist
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\PlaylistResponse
      */
     public function create(string $id, Playlist $playlist): PlaylistResponse
     {
@@ -37,12 +32,7 @@ class Playlists extends AbstractApi
     }
 
     /**
-     * @param string                        $id
-     * @param \Kerox\Spotify\Model\Playlist $playlist
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
     public function update(string $id, Playlist $playlist): ResponseInterface
     {
@@ -54,11 +44,7 @@ class Playlists extends AbstractApi
     }
 
     /**
-     * @param string $id
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\PlaylistResponse
      */
     public function get(string $id): PlaylistResponse
     {
@@ -71,12 +57,7 @@ class Playlists extends AbstractApi
     }
 
     /**
-     * @param string $id
-     * @param bool   $public
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
     public function follow(string $id, bool $public = true): ResponseInterface
     {
@@ -90,11 +71,7 @@ class Playlists extends AbstractApi
     }
 
     /**
-     * @param string $id
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
     public function unfollow(string $id): ResponseInterface
     {
@@ -106,11 +83,7 @@ class Playlists extends AbstractApi
     }
 
     /**
-     * @param array $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\PagingResponse
      */
     public function me(array $queryParameters = []): PagingResponse
     {
@@ -123,12 +96,7 @@ class Playlists extends AbstractApi
     }
 
     /**
-     * @param string $id
-     * @param array  $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\PagingResponse
      */
     public function user(string $id, array $queryParameters = []): PagingResponse
     {
@@ -141,12 +109,7 @@ class Playlists extends AbstractApi
     }
 
     /**
-     * @param string $id
-     * @param array  $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\PagingResponse
      */
     public function tracks(string $id, array $queryParameters = []): PagingResponse
     {
@@ -159,12 +122,7 @@ class Playlists extends AbstractApi
     }
 
     /**
-     * @param string                                  $id
-     * @param \Kerox\Spotify\Model\Playlist\AddTracks $tracks
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
     public function add(string $id, AddTracks $tracks): ResponseInterface
     {
@@ -176,12 +134,7 @@ class Playlists extends AbstractApi
     }
 
     /**
-     * @param string                                     $id
-     * @param \Kerox\Spotify\Model\Playlist\RemoveTracks $tracks
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
     public function remove(string $id, RemoveTracks $tracks): ResponseInterface
     {
@@ -193,12 +146,7 @@ class Playlists extends AbstractApi
     }
 
     /**
-     * @param string                                      $id
-     * @param \Kerox\Spotify\Model\Playlist\ReorderTracks $tracks
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
     public function reorder(string $id, ReorderTracks $tracks): ResponseInterface
     {
@@ -210,12 +158,7 @@ class Playlists extends AbstractApi
     }
 
     /**
-     * @param string                                      $id
-     * @param \Kerox\Spotify\Model\Playlist\ReplaceTracks $tracks
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
     public function replace(string $id, ReplaceTracks $tracks): ResponseInterface
     {
@@ -227,11 +170,7 @@ class Playlists extends AbstractApi
     }
 
     /**
-     * @param string $id
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\ImagesResponse
      */
     public function cover(string $id): ImagesResponse
     {
@@ -244,12 +183,7 @@ class Playlists extends AbstractApi
     }
 
     /**
-     * @param string $id
-     * @param string $image
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
     public function upload(string $id, string $image): ResponseInterface
     {

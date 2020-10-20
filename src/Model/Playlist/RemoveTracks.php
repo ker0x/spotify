@@ -20,9 +20,6 @@ class RemoveTracks implements JsonSerializable
 
     /**
      * RemoveTracks constructor.
-     *
-     * @param array       $tracks
-     * @param string|null $snapshotId
      */
     public function __construct(array $tracks, ?string $snapshotId = null)
     {
@@ -31,9 +28,6 @@ class RemoveTracks implements JsonSerializable
     }
 
     /**
-     * @param array       $tracks
-     * @param string|null $snapshotId
-     *
      * @return \Kerox\Spotify\Model\Playlist\RemoveTracks
      */
     public static function create(array $tracks, ?string $snapshotId = null): self
@@ -41,9 +35,6 @@ class RemoveTracks implements JsonSerializable
         return new self($tracks, $snapshotId);
     }
 
-    /**
-     * @return array
-     */
     public function toArray(): array
     {
         $array = [
@@ -54,9 +45,6 @@ class RemoveTracks implements JsonSerializable
         return array_filter($array);
     }
 
-    /**
-     * @return array
-     */
     public function jsonSerialize(): array
     {
         return $this->toArray();

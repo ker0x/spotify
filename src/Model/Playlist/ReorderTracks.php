@@ -30,9 +30,6 @@ class ReorderTracks implements JsonSerializable
 
     /**
      * Reorder constructor.
-     *
-     * @param int $rangeStart
-     * @param int $insertBefore
      */
     public function __construct(int $rangeStart, int $insertBefore)
     {
@@ -41,9 +38,6 @@ class ReorderTracks implements JsonSerializable
     }
 
     /**
-     * @param int $rangeStart
-     * @param int $insertBefore
-     *
      * @return \Kerox\Spotify\Model\Playlist\ReorderTracks
      */
     public static function create(int $rangeStart, int $insertBefore): self
@@ -52,8 +46,6 @@ class ReorderTracks implements JsonSerializable
     }
 
     /**
-     * @param int $rangeLength
-     *
      * @return \Kerox\Spotify\Model\Playlist\ReorderTracks
      */
     public function setRangeLength(int $rangeLength): self
@@ -64,8 +56,6 @@ class ReorderTracks implements JsonSerializable
     }
 
     /**
-     * @param string $snapshotId
-     *
      * @return \Kerox\Spotify\Model\Playlist\ReorderTracks
      */
     public function setSnapshotId(string $snapshotId): self
@@ -75,9 +65,6 @@ class ReorderTracks implements JsonSerializable
         return $this;
     }
 
-    /**
-     * @return array
-     */
     public function toArray(): array
     {
         $array = [
@@ -90,9 +77,6 @@ class ReorderTracks implements JsonSerializable
         return array_filter($array);
     }
 
-    /**
-     * @return array
-     */
     public function jsonSerialize(): array
     {
         return $this->toArray();
