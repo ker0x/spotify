@@ -13,17 +13,11 @@ class PlaylistResponse extends AbstractResponse
      */
     protected $playlist;
 
-    /**
-     * @return \Kerox\Spotify\Model\Playlist
-     */
     public function getPlaylist(): Playlist
     {
         return $this->playlist;
     }
 
-    /**
-     * @param array $content
-     */
     protected function parseResponse(array $content): void
     {
         $this->playlist = Playlist::build($content);

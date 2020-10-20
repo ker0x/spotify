@@ -1,6 +1,8 @@
 <?php
 
-namespace Kerox\Spotify\Test\TestCase\Api;
+declare(strict_types=1);
+
+namespace Kerox\Spotify\Tests\TestCase\Api;
 
 use Kerox\Spotify\Interfaces\QueryParametersInterface;
 use Kerox\Spotify\Interfaces\TypeInterface;
@@ -15,12 +17,12 @@ class FollowTest extends TestCase
 {
     protected $oauthToken;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->oauthToken = 'BQCpTK7nCpmijQURqGm-hBvOgS4T--ql1zfbiBVYwbzFb4z06fP8pFvLoiDSjSNawQEfRahU3pCJOQJIyhvi1JcmQtLJ_Oh-p3vKWhEfesG-UcIF_tPBjGRSn1Xu1w0QIbrvN9RnSm2-EI_NeNEOBxBHTlviYhq128bjG4obEeemHMIyAE2dJPIwumC-XPqfjXwkUGOVyfu5BJqERSVcT65m-g0xu9T52Q1RpJfvm5J0nGZw5Z647IEucZjqavtWycL2YnXLd02tSt9E0YY';
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         unset($this->oauthToken);
     }
@@ -47,17 +49,17 @@ class FollowTest extends TestCase
                 '2CIMQHirSU0MQqyYHq0eOx',
                 '57dN52uHvrHOxijzpIgu3E',
                 '1vCWHaC5f2uS3yhpwWbIA6',
-            ]
+            ],
         ]);
 
-        $this->assertSame([
+        self::assertSame([
             '2CIMQHirSU0MQqyYHq0eOx' => false,
             '57dN52uHvrHOxijzpIgu3E' => true,
             '1vCWHaC5f2uS3yhpwWbIA6' => false,
         ], $response->getResult());
-        $this->assertFalse($response->isFollowing('2CIMQHirSU0MQqyYHq0eOx'));
-        $this->assertTrue($response->isFollowing('57dN52uHvrHOxijzpIgu3E'));
-        $this->assertFalse($response->isFollowing('1vCWHaC5f2uS3yhpwWbIA6'));
+        self::assertFalse($response->isFollowing('2CIMQHirSU0MQqyYHq0eOx'));
+        self::assertTrue($response->isFollowing('57dN52uHvrHOxijzpIgu3E'));
+        self::assertFalse($response->isFollowing('1vCWHaC5f2uS3yhpwWbIA6'));
     }
 
     public function testFollow(): void
@@ -75,10 +77,10 @@ class FollowTest extends TestCase
                 '2CIMQHirSU0MQqyYHq0eOx',
                 '57dN52uHvrHOxijzpIgu3E',
                 '1vCWHaC5f2uS3yhpwWbIA6',
-            ]
+            ],
         ]);
 
-        $this->assertSame(200, $response->getStatusCode());
+        self::assertSame(200, $response->getStatusCode());
     }
 
     public function testUnfollow(): void
@@ -96,9 +98,9 @@ class FollowTest extends TestCase
                 '2CIMQHirSU0MQqyYHq0eOx',
                 '57dN52uHvrHOxijzpIgu3E',
                 '1vCWHaC5f2uS3yhpwWbIA6',
-            ]
+            ],
         ]);
 
-        $this->assertSame(200, $response->getStatusCode());
+        self::assertSame(200, $response->getStatusCode());
     }
 }

@@ -30,11 +30,6 @@ class Category implements ModelInterface
 
     /**
      * Category constructor.
-     *
-     * @param string $href
-     * @param array  $icons
-     * @param string $id
-     * @param string $name
      */
     public function __construct(string $href, array $icons, string $id, string $name)
     {
@@ -45,8 +40,6 @@ class Category implements ModelInterface
     }
 
     /**
-     * @param array $category
-     *
      * @return \Kerox\Spotify\Model\Category
      */
     public static function build(array $category): self
@@ -64,33 +57,21 @@ class Category implements ModelInterface
         return new self($href, $icons, $id, $name);
     }
 
-    /**
-     * @return string
-     */
     public function getHref(): string
     {
         return $this->href;
     }
 
-    /**
-     * @return array
-     */
     public function getIcons(): array
     {
         return $this->icons;
     }
 
-    /**
-     * @return string
-     */
     public function getId(): string
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;

@@ -13,17 +13,11 @@ class ReleasesResponse extends AbstractResponse
      */
     protected $albums;
 
-    /**
-     * @return \Kerox\Spotify\Model\Paging
-     */
     public function getAlbums(): Paging
     {
         return $this->albums;
     }
 
-    /**
-     * @param array $content
-     */
     protected function parseResponse(array $content): void
     {
         $this->albums = Paging::build($content['albums']);

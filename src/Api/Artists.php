@@ -16,11 +16,7 @@ use Psr\Http\Message\ResponseInterface;
 class Artists extends AbstractApi
 {
     /**
-     * @param string $id
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\ArtistResponse
      */
     public function get(string $id): ArtistResponse
     {
@@ -33,12 +29,7 @@ class Artists extends AbstractApi
     }
 
     /**
-     * @param string $id
-     * @param array  $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\PagingResponse
      */
     public function albums(string $id, array $queryParameters = []): PagingResponse
     {
@@ -51,12 +42,7 @@ class Artists extends AbstractApi
     }
 
     /**
-     * @param string $id
-     * @param array  $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\TracksResponse
      */
     public function topTracks(string $id, array $queryParameters = []): TracksResponse
     {
@@ -69,11 +55,7 @@ class Artists extends AbstractApi
     }
 
     /**
-     * @param string $id
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\ArtistsResponse
      */
     public function related(string $id): ArtistsResponse
     {
@@ -86,11 +68,7 @@ class Artists extends AbstractApi
     }
 
     /**
-     * @param array $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\ArtistsResponse
      */
     public function several(array $queryParameters = []): ArtistsResponse
     {
@@ -103,11 +81,7 @@ class Artists extends AbstractApi
     }
 
     /**
-     * @param array $ids
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
     public function follow(array $ids): ResponseInterface
     {
@@ -120,11 +94,7 @@ class Artists extends AbstractApi
     }
 
     /**
-     * @param array $ids
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
     public function unfollow(array $ids): ResponseInterface
     {

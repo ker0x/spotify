@@ -1,6 +1,8 @@
 <?php
 
-namespace Kerox\Spotify\Test\TestCase\Api;
+declare(strict_types=1);
+
+namespace Kerox\Spotify\Tests\TestCase\Api;
 
 use DateTime;
 use Kerox\Spotify\Interfaces\QueryParametersInterface;
@@ -29,12 +31,12 @@ class PlaylistTest extends TestCase
 {
     protected $oauthToken;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->oauthToken = 'BQCpTK7nCpmijQURqGm-hBvOgS4T--ql1zfbiBVYwbzFb4z06fP8pFvLoiDSjSNawQEfRahU3pCJOQJIyhvi1JcmQtLJ_Oh-p3vKWhEfesG-UcIF_tPBjGRSn1Xu1w0QIbrvN9RnSm2-EI_NeNEOBxBHTlviYhq128bjG4obEeemHMIyAE2dJPIwumC-XPqfjXwkUGOVyfu5BJqERSVcT65m-g0xu9T52Q1RpJfvm5J0nGZw5Z647IEucZjqavtWycL2YnXLd02tSt9E0YY';
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         unset($this->oauthToken);
     }
@@ -55,46 +57,44 @@ class PlaylistTest extends TestCase
         $client->method('sendRequest')->willReturn($response);
 
         $spotify = new Spotify($this->oauthToken, $client);
-        $response = $spotify->playlists()->get('3cEYpjA9oz9GiPac4AsH4n', [
-            QueryParametersInterface::PARAMETER_MARKET => 'FR',
-        ]);
+        $response = $spotify->playlists()->get('3cEYpjA9oz9GiPac4AsH4n');
 
         $playlist = $response->getPlaylist();
 
-        $this->assertFalse($playlist->isCollaborative());
-        $this->assertSame('A playlist for testing pourposes', $playlist->getDescription());
-        $this->assertContainsOnlyInstancesOf(External::class, $playlist->getExternalUrls());
-        $this->assertInstanceOf(Followers::class, $playlist->getFollowers());
-        $this->assertSame('https://api.spotify.com/v1/playlists/3cEYpjA9oz9GiPac4AsH4n', $playlist->getHref());
-        $this->assertSame('3cEYpjA9oz9GiPac4AsH4n', $playlist->getId());
-        $this->assertContainsOnlyInstancesOf(Image::class, $playlist->getImages());
-        $this->assertSame('Spotify Web API Testing playlist', $playlist->getName());
-        $this->assertInstanceOf(User::class, $playlist->getOwner());
-        $this->assertNull($playlist->getPrimaryColor());
-        $this->assertTrue($playlist->isPublic());
-        $this->assertSame('MTcsZDhlNTBiODE0ZTExZDExYjM4NGFlZmFlOTQ1NGE1NTk3ZjNmM2RmOQ==', $playlist->getSnapshotId());
-        $this->assertInstanceOf(Paging::class, $playlist->getTracks());
-        $this->assertInstanceOf(SavedTrack::class, $playlist->getTracks()->getItem(0));
-        $this->assertSame('playlist', $playlist->getType());
-        $this->assertSame('spotify:user:jmperezperez:playlist:3cEYpjA9oz9GiPac4AsH4n', $playlist->getUri());
+        self::assertFalse($playlist->isCollaborative());
+        self::assertSame('A playlist for testing pourposes', $playlist->getDescription());
+        self::assertContainsOnlyInstancesOf(External::class, $playlist->getExternalUrls());
+        self::assertInstanceOf(Followers::class, $playlist->getFollowers());
+        self::assertSame('https://api.spotify.com/v1/playlists/3cEYpjA9oz9GiPac4AsH4n', $playlist->getHref());
+        self::assertSame('3cEYpjA9oz9GiPac4AsH4n', $playlist->getId());
+        self::assertContainsOnlyInstancesOf(Image::class, $playlist->getImages());
+        self::assertSame('Spotify Web API Testing playlist', $playlist->getName());
+        self::assertInstanceOf(User::class, $playlist->getOwner());
+        self::assertNull($playlist->getPrimaryColor());
+        self::assertTrue($playlist->isPublic());
+        self::assertSame('MTcsZDhlNTBiODE0ZTExZDExYjM4NGFlZmFlOTQ1NGE1NTk3ZjNmM2RmOQ==', $playlist->getSnapshotId());
+        self::assertInstanceOf(Paging::class, $playlist->getTracks());
+        self::assertInstanceOf(SavedTrack::class, $playlist->getTracks()->getItem(0));
+        self::assertSame('playlist', $playlist->getType());
+        self::assertSame('spotify:user:jmperezperez:playlist:3cEYpjA9oz9GiPac4AsH4n', $playlist->getUri());
 
         /* @var \Kerox\Spotify\Model\SavedTrack $savedTrack */
         $savedTrack = $playlist->getTracks()->getItem(0);
 
-        $this->assertInstanceOf(DateTime::class, $savedTrack->getAddedAt());
-        $this->assertInstanceOf(User::class, $savedTrack->getAddedBy());
-        $this->assertFalse($savedTrack->isLocal());
-        $this->assertNull($savedTrack->getPrimaryColor());
-        $this->assertInstanceOf(TrackLink::class, $savedTrack->getTrack()->getLinkedFrom());
-        $this->assertContainsOnlyInstancesOf(External::class, $savedTrack->getVideoThumbnail());
+        self::assertInstanceOf(DateTime::class, $savedTrack->getAddedAt());
+        self::assertInstanceOf(User::class, $savedTrack->getAddedBy());
+        self::assertFalse($savedTrack->isLocal());
+        self::assertNull($savedTrack->getPrimaryColor());
+        self::assertInstanceOf(TrackLink::class, $savedTrack->getTrack()->getLinkedFrom());
+        self::assertContainsOnlyInstancesOf(External::class, $savedTrack->getVideoThumbnail());
 
         /* @var \Kerox\Spotify\Model\TrackLink $trackLink */
         $trackLink = $savedTrack->getTrack()->getLinkedFrom();
-        $this->assertContainsOnlyInstancesOf(External::class, $trackLink->getExternalUrls());
-        $this->assertSame('https://api.spotify.com/v1/tracks/5o3jMYOSbaVz3tkgwhELSV', $trackLink->getHref());
-        $this->assertSame('5o3jMYOSbaVz3tkgwhELSV', $trackLink->getId());
-        $this->assertSame('track', $trackLink->getType());
-        $this->assertSame('spotify:track:5o3jMYOSbaVz3tkgwhELSV', $trackLink->getUri());
+        self::assertContainsOnlyInstancesOf(External::class, $trackLink->getExternalUrls());
+        self::assertSame('https://api.spotify.com/v1/tracks/5o3jMYOSbaVz3tkgwhELSV', $trackLink->getHref());
+        self::assertSame('5o3jMYOSbaVz3tkgwhELSV', $trackLink->getId());
+        self::assertSame('track', $trackLink->getType());
+        self::assertSame('spotify:track:5o3jMYOSbaVz3tkgwhELSV', $trackLink->getUri());
     }
 
     public function testGetCurrentUserPlaylist(): void
@@ -120,16 +120,16 @@ class PlaylistTest extends TestCase
 
         $paging = $response->getPaging();
 
-        $this->assertSame('https://api.spotify.com/v1/users/1199545168/playlists?offset=5&limit=10',
+        self::assertSame('https://api.spotify.com/v1/users/1199545168/playlists?offset=5&limit=10',
             $paging->getHref());
-        $this->assertContainsOnlyInstancesOf(Playlist::class, $paging->getItems());
-        $this->assertSame(10, $paging->getLimit());
-        $this->assertSame('https://api.spotify.com/v1/users/1199545168/playlists?offset=15&limit=10',
+        self::assertContainsOnlyInstancesOf(Playlist::class, $paging->getItems());
+        self::assertSame(10, $paging->getLimit());
+        self::assertSame('https://api.spotify.com/v1/users/1199545168/playlists?offset=15&limit=10',
             $paging->getNext());
-        $this->assertSame(5, $paging->getOffset());
-        $this->assertSame('https://api.spotify.com/v1/users/1199545168/playlists?offset=0&limit=10',
+        self::assertSame(5, $paging->getOffset());
+        self::assertSame('https://api.spotify.com/v1/users/1199545168/playlists?offset=0&limit=10',
             $paging->getPrevious());
-        $this->assertSame(43, $paging->getTotal());
+        self::assertSame(43, $paging->getTotal());
     }
 
     public function testGetUserPlaylist(): void
@@ -155,16 +155,16 @@ class PlaylistTest extends TestCase
 
         $paging = $response->getPaging();
 
-        $this->assertSame('https://api.spotify.com/v1/users/1199545168/playlists?offset=5&limit=10',
+        self::assertSame('https://api.spotify.com/v1/users/1199545168/playlists?offset=5&limit=10',
             $paging->getHref());
-        $this->assertContainsOnlyInstancesOf(Playlist::class, $paging->getItems());
-        $this->assertSame(10, $paging->getLimit());
-        $this->assertSame('https://api.spotify.com/v1/users/1199545168/playlists?offset=15&limit=10',
+        self::assertContainsOnlyInstancesOf(Playlist::class, $paging->getItems());
+        self::assertSame(10, $paging->getLimit());
+        self::assertSame('https://api.spotify.com/v1/users/1199545168/playlists?offset=15&limit=10',
             $paging->getNext());
-        $this->assertSame(5, $paging->getOffset());
-        $this->assertSame('https://api.spotify.com/v1/users/1199545168/playlists?offset=0&limit=10',
+        self::assertSame(5, $paging->getOffset());
+        self::assertSame('https://api.spotify.com/v1/users/1199545168/playlists?offset=0&limit=10',
             $paging->getPrevious());
-        $this->assertSame(43, $paging->getTotal());
+        self::assertSame(43, $paging->getTotal());
     }
 
     public function testGetPlaylistTracks(): void
@@ -191,15 +191,15 @@ class PlaylistTest extends TestCase
 
         $paging = $response->getPaging();
 
-        $this->assertSame('https://api.spotify.com/v1/playlists/37i9dQZF1DWVFJtzvDHN4L/tracks?offset=0&limit=1&market=FR',
+        self::assertSame('https://api.spotify.com/v1/playlists/37i9dQZF1DWVFJtzvDHN4L/tracks?offset=0&limit=1&market=FR',
             $paging->getHref());
-        $this->assertContainsOnlyInstancesOf(SavedTrack::class, $paging->getItems());
-        $this->assertSame(1, $paging->getLimit());
-        $this->assertSame('https://api.spotify.com/v1/playlists/37i9dQZF1DWVFJtzvDHN4L/tracks?offset=1&limit=1&market=FR',
+        self::assertContainsOnlyInstancesOf(SavedTrack::class, $paging->getItems());
+        self::assertSame(1, $paging->getLimit());
+        self::assertSame('https://api.spotify.com/v1/playlists/37i9dQZF1DWVFJtzvDHN4L/tracks?offset=1&limit=1&market=FR',
             $paging->getNext());
-        $this->assertSame(0, $paging->getOffset());
-        $this->assertNull($paging->getPrevious());
-        $this->assertSame(50, $paging->getTotal());
+        self::assertSame(0, $paging->getOffset());
+        self::assertNull($paging->getPrevious());
+        self::assertSame(50, $paging->getTotal());
     }
 
     public function testFollowPlaylist(): void
@@ -213,7 +213,7 @@ class PlaylistTest extends TestCase
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->playlists()->follow('37i9dQZF1DWVFJtzvDHN4L');
 
-        $this->assertSame(200, $response->getStatusCode());
+        self::assertSame(200, $response->getStatusCode());
     }
 
     public function testUnfollowPlaylist(): void
@@ -227,7 +227,7 @@ class PlaylistTest extends TestCase
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->playlists()->unfollow('37i9dQZF1DWVFJtzvDHN4L');
 
-        $this->assertSame(200, $response->getStatusCode());
+        self::assertSame(200, $response->getStatusCode());
     }
 
     public function testCreateAPlaylist(): void
@@ -248,8 +248,8 @@ class PlaylistTest extends TestCase
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->playlists()->create('1199545168', Playlist::create('A New Playlist', false, false, 'A new awesome playlist'));
 
-        $this->assertSame(201, $response->getStatusCode());
-        $this->assertInstanceOf(Playlist::class, $response->getPlaylist());
+        self::assertSame(201, $response->getStatusCode());
+        self::assertInstanceOf(Playlist::class, $response->getPlaylist());
     }
 
     public function testUpdateAPlaylist(): void
@@ -263,7 +263,7 @@ class PlaylistTest extends TestCase
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->playlists()->update('7d2D2S200NyUE5KYs80PwO', Playlist::create('A New Update Playlist', false, false, 'A new awesome update playlist'));
 
-        $this->assertSame(200, $response->getStatusCode());
+        self::assertSame(200, $response->getStatusCode());
     }
 
     public function testAddATrackToAPlaylist(): void
@@ -287,10 +287,10 @@ class PlaylistTest extends TestCase
             'spotify:album:0eFHYz8NmK75zSplL5qlfM',
         ], 2));
 
-        $decodedBody = json_decode($response->getBody(), true);
+        $decodedBody = json_decode((string) $response->getBody(), true);
 
-        $this->assertSame(201, $response->getStatusCode());
-        $this->assertSame('JbtmHBDBAYu3/bt8BOXKjzKx3i0b6LCa/wVjyl6qQ2Yf6nFXkbmzuEa+ZI/U1yF+', $decodedBody['snapshot_id']);
+        self::assertSame(201, $response->getStatusCode());
+        self::assertSame('JbtmHBDBAYu3/bt8BOXKjzKx3i0b6LCa/wVjyl6qQ2Yf6nFXkbmzuEa+ZI/U1yF+', $decodedBody['snapshot_id']);
     }
 
     public function testRemoveTrackFromAPlaylist(): void
@@ -314,10 +314,10 @@ class PlaylistTest extends TestCase
             'spotify:album:0eFHYz8NmK75zSplL5qlfM',
         ], 'jzKx3i0b6LCaJbtmHBDBAYu3bt8BOXKwVjyl6qQ2Yf6nFXkbmzuEa+ZIU1yF+'));
 
-        $decodedBody = json_decode($response->getBody(), true);
+        $decodedBody = json_decode((string) $response->getBody(), true);
 
-        $this->assertSame(200, $response->getStatusCode());
-        $this->assertSame('jzKx3i0b6LCaJbtmHBDBAYu3/bt8BOXK/wVjyl6qQ2Yf6nFXkbmzuEa+ZI/U1yF+', $decodedBody['snapshot_id']);
+        self::assertSame(200, $response->getStatusCode());
+        self::assertSame('jzKx3i0b6LCaJbtmHBDBAYu3/bt8BOXK/wVjyl6qQ2Yf6nFXkbmzuEa+ZI/U1yF+', $decodedBody['snapshot_id']);
     }
 
     public function testReorderTrackFromAPlaylist(): void
@@ -342,10 +342,10 @@ class PlaylistTest extends TestCase
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->playlists()->reorder('7d2D2S200NyUE5KYs80PwO', $reorderTrack);
 
-        $decodedBody = json_decode($response->getBody(), true);
+        $decodedBody = json_decode((string) $response->getBody(), true);
 
-        $this->assertSame(200, $response->getStatusCode());
-        $this->assertSame('JbtmHBDBAYu3/bt8BOXKjzKx3i0b6LCa/wVjyl6qQ2Yf6nFXkbmzuEa+ZI/U1yF+', $decodedBody['snapshot_id']);
+        self::assertSame(200, $response->getStatusCode());
+        self::assertSame('JbtmHBDBAYu3/bt8BOXKjzKx3i0b6LCa/wVjyl6qQ2Yf6nFXkbmzuEa+ZI/U1yF+', $decodedBody['snapshot_id']);
     }
 
     public function testReplaceTrackFromAPlaylist(): void
@@ -364,7 +364,7 @@ class PlaylistTest extends TestCase
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->playlists()->replace('7d2D2S200NyUE5KYs80PwO', $replaceTrack);
 
-        $this->assertSame(201, $response->getStatusCode());
+        self::assertSame(201, $response->getStatusCode());
     }
 
     public function testGetCoverFromPlaylist(): void
@@ -385,16 +385,16 @@ class PlaylistTest extends TestCase
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->playlists()->cover('7d2D2S200NyUE5KYs80PwO');
 
-        $this->assertSame(200, $response->getStatusCode());
-        $this->assertSame(1, $response->getTotal());
-        $this->assertContainsOnlyInstancesOf(Image::class, $response->getImages());
+        self::assertSame(200, $response->getStatusCode());
+        self::assertSame(1, $response->getTotal());
+        self::assertContainsOnlyInstancesOf(Image::class, $response->getImages());
 
         /** @var \Kerox\Spotify\Model\Image $image */
         $image = $response->getImage(0);
 
-        $this->assertSame(640, $image->getHeight());
-        $this->assertSame(640, $image->getWidth());
-        $this->assertSame('https://u.scdn.co/images/pl/default/438f9b65ac4eb48681351593142daeb070986293', $image->getUrl());
+        self::assertSame(640, $image->getHeight());
+        self::assertSame(640, $image->getWidth());
+        self::assertSame('https://u.scdn.co/images/pl/default/438f9b65ac4eb48681351593142daeb070986293', $image->getUrl());
     }
 
     public function testReplaceCoverForPlaylist(): void
@@ -408,6 +408,6 @@ class PlaylistTest extends TestCase
         $spotify = new Spotify($this->oauthToken, $client);
         $response = $spotify->playlists()->upload('7d2D2S200NyUE5KYs80PwO', 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD//gA+Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBkZWZhdWx0IHF1YWxpdHkK/9sAQwAIBgYHBgUIBwcHCQkICgwUDQwLCwwZEhMPFB0aHx4dGhwcICQuJyAiLCMcHCg3KSwwMTQ0NB8nOT04MjwuMzQy/9sAQwEJCQkMCwwYDQ0YMiEcITIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIy/8AAEQgAlgCWAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A+f6KKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/9k=');
 
-        $this->assertSame(200, $response->getStatusCode());
+        self::assertSame(200, $response->getStatusCode());
     }
 }

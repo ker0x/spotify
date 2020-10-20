@@ -55,11 +55,9 @@ class AudioAnalysis implements ModelInterface
      *
      * @param \Kerox\Spotify\Model\AudioAnalysis\Bar[]     $bars
      * @param \Kerox\Spotify\Model\AudioAnalysis\Beat[]    $beats
-     * @param \Kerox\Spotify\Model\AudioAnalysis\Meta      $meta
      * @param \Kerox\Spotify\Model\AudioAnalysis\Section[] $sections
      * @param \Kerox\Spotify\Model\AudioAnalysis\Segment[] $segments
      * @param \Kerox\Spotify\Model\AudioAnalysis\Tatum[]   $tatums
-     * @param \Kerox\Spotify\Model\AudioAnalysis\Track     $track
      */
     public function __construct(
         array $bars,
@@ -80,8 +78,6 @@ class AudioAnalysis implements ModelInterface
     }
 
     /**
-     * @param array $audioAnalysis
-     *
      * @return \Kerox\Spotify\Model\AudioAnalysis
      */
     public static function build(array $audioAnalysis): self
@@ -126,11 +122,6 @@ class AudioAnalysis implements ModelInterface
         return $this->bars;
     }
 
-    /**
-     * @param int $index
-     *
-     * @return \Kerox\Spotify\Model\AudioAnalysis\Bar|null
-     */
     public function getBar(int $index): ?Bar
     {
         return $this->bars[$index] ?? null;
@@ -144,19 +135,11 @@ class AudioAnalysis implements ModelInterface
         return $this->beats;
     }
 
-    /**
-     * @param int $index
-     *
-     * @return \Kerox\Spotify\Model\AudioAnalysis\Beat|null
-     */
     public function getBeat(int $index): ?Beat
     {
         return $this->beats[$index] ?? null;
     }
 
-    /**
-     * @return \Kerox\Spotify\Model\AudioAnalysis\Meta
-     */
     public function getMeta(): Meta
     {
         return $this->meta;
@@ -170,11 +153,6 @@ class AudioAnalysis implements ModelInterface
         return $this->sections;
     }
 
-    /**
-     * @param int $index
-     *
-     * @return \Kerox\Spotify\Model\AudioAnalysis\Section|null
-     */
     public function getSection(int $index): ?Section
     {
         return $this->sections[$index] ?? null;
@@ -188,11 +166,6 @@ class AudioAnalysis implements ModelInterface
         return $this->segments;
     }
 
-    /**
-     * @param int $index
-     *
-     * @return \Kerox\Spotify\Model\AudioAnalysis\Segment|null
-     */
     public function getSegment(int $index): ?Segment
     {
         return $this->segments[$index] ?? null;
@@ -206,19 +179,11 @@ class AudioAnalysis implements ModelInterface
         return $this->tatums;
     }
 
-    /**
-     * @param int $index
-     *
-     * @return \Kerox\Spotify\Model\AudioAnalysis\Tatum|null
-     */
     public function getTatum(int $index): ?Tatum
     {
         return $this->tatums[$index] ?? null;
     }
 
-    /**
-     * @return \Kerox\Spotify\Model\AudioAnalysis\Track
-     */
     public function getTrack(): TrackAnalysis
     {
         return $this->track;

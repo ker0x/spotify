@@ -62,15 +62,7 @@ class Artist implements ModelInterface, TypeInterface
     /**
      * Artist constructor.
      *
-     * @param array                               $externalUrls
-     * @param string                              $href
-     * @param string                              $id
-     * @param string                              $name
-     * @param string                              $uri
      * @param \Kerox\Spotify\Model\Followers|null $followers
-     * @param array                               $genres
-     * @param array                               $images
-     * @param int|null                            $popularity
      */
     public function __construct(
         array $externalUrls,
@@ -95,8 +87,6 @@ class Artist implements ModelInterface, TypeInterface
     }
 
     /**
-     * @param array $artist
-     *
      * @return \Kerox\Spotify\Model\Artist
      */
     public static function build(array $artist): self
@@ -129,49 +119,31 @@ class Artist implements ModelInterface, TypeInterface
         return new self($externalUrls, $href, $id, $name, $uri, $followers, $genres, $images, $popularity);
     }
 
-    /**
-     * @return array
-     */
     public function getExternalUrls(): array
     {
         return $this->externalUrls;
     }
 
-    /**
-     * @return string
-     */
     public function getHref(): string
     {
         return $this->href;
     }
 
-    /**
-     * @return string
-     */
     public function getId(): string
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return $this->type;
     }
 
-    /**
-     * @return string
-     */
     public function getUri(): string
     {
         return $this->uri;
@@ -185,25 +157,16 @@ class Artist implements ModelInterface, TypeInterface
         return $this->followers;
     }
 
-    /**
-     * @return array
-     */
     public function getGenres(): array
     {
         return $this->genres;
     }
 
-    /**
-     * @return array
-     */
     public function getImages(): array
     {
         return $this->images;
     }
 
-    /**
-     * @return int|null
-     */
     public function getPopularity(): ?int
     {
         return $this->popularity;

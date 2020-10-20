@@ -45,14 +45,6 @@ class Meta implements ModelInterface
 
     /**
      * Meta constructor.
-     *
-     * @param string $analyzerVersion
-     * @param string $platform
-     * @param string $detailedStatus
-     * @param int    $statusCode
-     * @param int    $timestamp
-     * @param float  $analysisTime
-     * @param string $inputProcess
      */
     public function __construct(
         string $analyzerVersion,
@@ -73,8 +65,6 @@ class Meta implements ModelInterface
     }
 
     /**
-     * @param array $meta
-     *
      * @return \Kerox\Spotify\Model\AudioAnalysis\Meta
      */
     public static function build(array $meta): self
@@ -90,57 +80,36 @@ class Meta implements ModelInterface
         );
     }
 
-    /**
-     * @return string
-     */
     public function getAnalyzerVersion(): string
     {
         return $this->analyzerVersion;
     }
 
-    /**
-     * @return string
-     */
     public function getPlatform(): string
     {
         return $this->platform;
     }
 
-    /**
-     * @return string
-     */
     public function getDetailedStatus(): string
     {
         return $this->detailedStatus;
     }
 
-    /**
-     * @return int
-     */
     public function getStatusCode(): int
     {
         return $this->statusCode;
     }
 
-    /**
-     * @return int
-     */
     public function getTimestamp(): int
     {
         return $this->timestamp;
     }
 
-    /**
-     * @return float
-     */
     public function getAnalysisTime(): float
     {
         return $this->analysisTime;
     }
 
-    /**
-     * @return string
-     */
     public function getInputProcess(): string
     {
         return $this->inputProcess;

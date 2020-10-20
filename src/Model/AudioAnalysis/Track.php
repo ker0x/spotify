@@ -139,33 +139,6 @@ class Track implements ModelInterface
 
     /**
      * Track constructor.
-     *
-     * @param int    $numSamples
-     * @param float  $duration
-     * @param string $sampleMd5
-     * @param int    $offsetSeconds
-     * @param int    $windowSeconds
-     * @param int    $analysisSampleRate
-     * @param int    $analysisChannels
-     * @param float  $endOfFadeIn
-     * @param float  $startOfFadeOut
-     * @param float  $loudness
-     * @param float  $tempo
-     * @param float  $tempoConfidence
-     * @param float  $timeSignature
-     * @param float  $timeSignatureConfidence
-     * @param float  $key
-     * @param float  $keyConfidence
-     * @param float  $mode
-     * @param float  $modeConfidence
-     * @param string $codeString
-     * @param float  $codeVersion
-     * @param string $echoPrintString
-     * @param float  $echoPrintVersion
-     * @param string $synchString
-     * @param float  $synchVersion
-     * @param string $rhythmString
-     * @param float  $rhythmVersion
      */
     public function __construct(
         int $numSamples,
@@ -224,8 +197,6 @@ class Track implements ModelInterface
     }
 
     /**
-     * @param array $track
-     *
      * @return \Kerox\Spotify\Model\AudioAnalysis\Track
      */
     public static function build(array $track): self
@@ -260,209 +231,131 @@ class Track implements ModelInterface
         );
     }
 
-    /**
-     * @return int
-     */
     public function getNumSamples(): int
     {
         return $this->numSamples;
     }
 
-    /**
-     * @return float
-     */
     public function getDuration(): float
     {
         return $this->duration;
     }
 
-    /**
-     * @return string
-     */
     public function getSampleMd5(): string
     {
         return $this->sampleMd5;
     }
 
-    /**
-     * @return int
-     */
     public function getOffsetSeconds(): int
     {
         return $this->offsetSeconds;
     }
 
-    /**
-     * @return int
-     */
     public function getWindowSeconds(): int
     {
         return $this->windowSeconds;
     }
 
-    /**
-     * @return int
-     */
     public function getAnalysisSampleRate(): int
     {
         return $this->analysisSampleRate;
     }
 
-    /**
-     * @return int
-     */
     public function getAnalysisChannels(): int
     {
         return $this->analysisChannels;
     }
 
-    /**
-     * @return float
-     */
     public function getEndOfFadeIn(): float
     {
         return $this->endOfFadeIn;
     }
 
-    /**
-     * @return float
-     */
     public function getStartOfFadeOut(): float
     {
         return $this->startOfFadeOut;
     }
 
-    /**
-     * @return float
-     */
     public function getLoudness(): float
     {
         return $this->loudness;
     }
 
-    /**
-     * @return float
-     */
     public function getTempo(): float
     {
         return $this->tempo;
     }
 
-    /**
-     * @return float
-     */
     public function getTempoConfidence(): float
     {
         return $this->tempoConfidence;
     }
 
-    /**
-     * @return float
-     */
     public function getTimeSignature(): float
     {
         return $this->timeSignature;
     }
 
-    /**
-     * @return float
-     */
     public function getTimeSignatureConfidence(): float
     {
         return $this->timeSignatureConfidence;
     }
 
-    /**
-     * @return float
-     */
     public function getKey(): float
     {
         return $this->key;
     }
 
-    /**
-     * @return float
-     */
     public function getKeyConfidence(): float
     {
         return $this->keyConfidence;
     }
 
-    /**
-     * @return float
-     */
     public function getMode(): float
     {
         return $this->mode;
     }
 
-    /**
-     * @return float
-     */
     public function getModeConfidence(): float
     {
         return $this->modeConfidence;
     }
 
-    /**
-     * @return string
-     */
     public function getCodeString(): string
     {
         return $this->codeString;
     }
 
-    /**
-     * @return float
-     */
     public function getCodeVersion(): float
     {
         return $this->codeVersion;
     }
 
-    /**
-     * @return string
-     */
     public function getEchoPrintString(): string
     {
         return $this->echoPrintString;
     }
 
-    /**
-     * @return float
-     */
     public function getEchoPrintVersion(): float
     {
         return $this->echoPrintVersion;
     }
 
-    /**
-     * @return string
-     */
     public function getSynchString(): string
     {
         return $this->synchString;
     }
 
-    /**
-     * @return float
-     */
     public function getSynchVersion(): float
     {
         return $this->synchVersion;
     }
 
-    /**
-     * @return string
-     */
     public function getRhythmString(): string
     {
         return $this->rhythmString;
     }
 
-    /**
-     * @return float
-     */
     public function getRhythmVersion(): float
     {
         return $this->rhythmVersion;

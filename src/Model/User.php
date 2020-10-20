@@ -72,17 +72,7 @@ class User implements ModelInterface
      * User constructor.
      *
      * @param string                         $displayName
-     * @param array                          $externalUrls
      * @param \Kerox\Spotify\Model\Followers $followers
-     * @param string                         $href
-     * @param string                         $id
-     * @param array                          $images
-     * @param string                         $type
-     * @param string                         $uri
-     * @param string|null                    $birthDate
-     * @param string|null                    $country
-     * @param string|null                    $email
-     * @param string|null                    $product
      */
     public function __construct(
         array $externalUrls,
@@ -113,8 +103,6 @@ class User implements ModelInterface
     }
 
     /**
-     * @param array $user
-     *
      * @return \Kerox\Spotify\Model\User
      */
     public static function build(array $user): self
@@ -164,41 +152,26 @@ class User implements ModelInterface
         );
     }
 
-    /**
-     * @return string|null
-     */
     public function getBirthDate(): ?string
     {
         return $this->birthDate;
     }
 
-    /**
-     * @return string|null
-     */
     public function getCountry(): ?string
     {
         return $this->country;
     }
 
-    /**
-     * @return string
-     */
     public function getDisplayName(): string
     {
         return $this->displayName;
     }
 
-    /**
-     * @return string|null
-     */
     public function getEmail(): ?string
     {
         return $this->email;
     }
 
-    /**
-     * @return array
-     */
     public function getExternalUrls(): array
     {
         return $this->externalUrls;
@@ -212,9 +185,6 @@ class User implements ModelInterface
         return $this->followers;
     }
 
-    /**
-     * @return string
-     */
     public function getHref(): string
     {
         return $this->href;
@@ -236,25 +206,16 @@ class User implements ModelInterface
         return $this->images;
     }
 
-    /**
-     * @return string|null
-     */
     public function getProduct(): ?string
     {
         return $this->product;
     }
 
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return $this->type;
     }
 
-    /**
-     * @return string
-     */
     public function getUri(): string
     {
         return $this->uri;

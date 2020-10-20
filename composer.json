@@ -18,11 +18,11 @@
     }
   ],
   "require": {
-    "php": ">=7.1.0",
+    "php": ">=7.3.0",
     "ext-json": "*",
     "fig/http-message-util": "^1.1",
-    "psr/http-client": "^1.0",
-    "zendframework/zend-diactoros": "^2.0"
+    "laminas/laminas-diactoros": "^2.4",
+    "psr/http-client": "^1.0"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.5",
@@ -39,12 +39,12 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Kerox\\Spotify\\Test\\": "tests"
+      "Kerox\\Spotify\\Tests\\": "tests"
     }
   },
   "scripts": {
-    "test": "phpunit",
-    "csfix": "php-cs-fixer fix --diff --verbose --config=.php_cs"
+    "php-cs-fixer": "vendor/bin/php-cs-fixer fix --diff --verbose --config=.php_cs",
+    "phpunit": "vendor/bin/phpunit --coverage-text --coverage-clover=build/coverage.xml"
   },
   "config": {
     "optimize-autoloader": true,

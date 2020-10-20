@@ -25,10 +25,6 @@ abstract class AbstractAudioAnalysis implements ModelInterface
 
     /**
      * AbstractAudioAnalysis constructor.
-     *
-     * @param float $start
-     * @param float $duration
-     * @param float $confidence
      */
     public function __construct(float $start, float $duration, float $confidence)
     {
@@ -37,25 +33,16 @@ abstract class AbstractAudioAnalysis implements ModelInterface
         $this->confidence = $confidence;
     }
 
-    /**
-     * @return float
-     */
     public function getStart(): float
     {
         return $this->start;
     }
 
-    /**
-     * @return float
-     */
     public function getDuration(): float
     {
         return $this->duration;
     }
 
-    /**
-     * @return float
-     */
     public function getConfidence(): float
     {
         return $this->confidence;

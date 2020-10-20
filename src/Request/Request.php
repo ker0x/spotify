@@ -7,16 +7,12 @@ namespace Kerox\Spotify\Request;
 use JsonSerializable;
 use Psr\Http\Message\UriInterface;
 
-class Request extends \Zend\Diactoros\Request
+class Request extends \Laminas\Diactoros\Request
 {
     /**
      * Request constructor.
      *
-     * @param string                         $oauthToken
-     * @param \Psr\Http\Message\UriInterface $uri
-     * @param string                         $method
-     * @param mixed                          $body
-     * @param array                          $headers
+     * @param mixed $body
      */
     public function __construct(
         string $oauthToken,

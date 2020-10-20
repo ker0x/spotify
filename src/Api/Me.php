@@ -16,8 +16,6 @@ class Me extends AbstractApi implements TypeInterface
 {
     /**
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\UserResponse
      */
     public function get(): UserResponse
     {
@@ -30,11 +28,7 @@ class Me extends AbstractApi implements TypeInterface
     }
 
     /**
-     * @param array $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\PagingResponse
      */
     public function playlists(array $queryParameters = []): PagingResponse
     {
@@ -47,12 +41,7 @@ class Me extends AbstractApi implements TypeInterface
     }
 
     /**
-     * @param string $type
-     * @param array  $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\PagingResponse
      */
     public function top(string $type = self::TYPE_ARTISTS, array $queryParameters = []): PagingResponse
     {
@@ -65,11 +54,7 @@ class Me extends AbstractApi implements TypeInterface
     }
 
     /**
-     * @param array $ids
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
     public function follow(array $ids): ResponseInterface
     {
@@ -82,11 +67,7 @@ class Me extends AbstractApi implements TypeInterface
     }
 
     /**
-     * @param array $ids
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
     public function unfollow(array $ids): ResponseInterface
     {
@@ -99,11 +80,7 @@ class Me extends AbstractApi implements TypeInterface
     }
 
     /**
-     * @param array $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\UserFollowingResponse
      */
     public function following(array $queryParameters = []): UserFollowingResponse
     {

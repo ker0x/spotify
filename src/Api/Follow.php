@@ -14,11 +14,7 @@ use Psr\Http\Message\ResponseInterface;
 class Follow extends AbstractApi implements TypeInterface
 {
     /**
-     * @param array $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Kerox\Spotify\Response\FollowingResponse
      */
     public function following(array $queryParameters = []): FollowingResponse
     {
@@ -31,11 +27,7 @@ class Follow extends AbstractApi implements TypeInterface
     }
 
     /**
-     * @param array $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
     public function add(array $queryParameters = []): ResponseInterface
     {
@@ -47,11 +39,7 @@ class Follow extends AbstractApi implements TypeInterface
     }
 
     /**
-     * @param array $queryParameters
-     *
      * @throws \Psr\Http\Client\ClientExceptionInterface
-     *
-     * @return \Psr\Http\Message\ResponseInterface
      */
     public function delete(array $queryParameters = []): ResponseInterface
     {

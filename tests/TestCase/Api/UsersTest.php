@@ -1,6 +1,8 @@
 <?php
 
-namespace Kerox\Spotify\Test\TestCase\Api;
+declare(strict_types=1);
+
+namespace Kerox\Spotify\Tests\TestCase\Api;
 
 use Kerox\Spotify\Interfaces\QueryParametersInterface;
 use Kerox\Spotify\Model\External;
@@ -16,12 +18,12 @@ class UsersTest extends TestCase
 {
     protected $oauthToken;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->oauthToken = 'BQCpTK7nCpmijQURqGm-hBvOgS4T--ql1zfbiBVYwbzFb4z06fP8pFvLoiDSjSNawQEfRahU3pCJOQJIyhvi1JcmQtLJ_Oh-p3vKWhEfesG-UcIF_tPBjGRSn1Xu1w0QIbrvN9RnSm2-EI_NeNEOBxBHTlviYhq128bjG4obEeemHMIyAE2dJPIwumC-XPqfjXwkUGOVyfu5BJqERSVcT65m-g0xu9T52Q1RpJfvm5J0nGZw5Z647IEucZjqavtWycL2YnXLd02tSt9E0YY';
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         unset($this->oauthToken);
     }
@@ -46,15 +48,15 @@ class UsersTest extends TestCase
 
         $user = $response->getUser();
 
-        $this->assertSame('0123456789', $user->getDisplayName());
-        $this->assertContainsOnlyInstancesOf(External::class, $user->getExternalUrls());
-        $this->assertNull($user->getFollowers()->getHref());
-        $this->assertSame(27, $user->getFollowers()->getTotal());
-        $this->assertSame('https://api.spotify.com/v1/users/0123456789', $user->getHref());
-        $this->assertSame('0123456789', $user->getId());
-        $this->assertEmpty($user->getImages());
-        $this->assertSame('user', $user->getType());
-        $this->assertSame('spotify:user:0123456789', $user->getUri());
+        self::assertSame('0123456789', $user->getDisplayName());
+        self::assertContainsOnlyInstancesOf(External::class, $user->getExternalUrls());
+        self::assertNull($user->getFollowers()->getHref());
+        self::assertSame(27, $user->getFollowers()->getTotal());
+        self::assertSame('https://api.spotify.com/v1/users/0123456789', $user->getHref());
+        self::assertSame('0123456789', $user->getId());
+        self::assertEmpty($user->getImages());
+        self::assertSame('user', $user->getType());
+        self::assertSame('spotify:user:0123456789', $user->getUri());
     }
 
     public function testGetUserPlaylists(): void
@@ -80,17 +82,17 @@ class UsersTest extends TestCase
 
         $paging = $response->getPaging();
 
-        $this->assertContainsOnlyInstancesOf(Playlist::class, $paging->getItems());
-        $this->assertInstanceOf(Playlist::class, $paging->getItem(0));
-        $this->assertSame(10, $paging->getLimit());
-        $this->assertSame(5, $paging->getOffset());
-        $this->assertSame(6, $paging->getTotal());
-        $this->assertSame(
+        self::assertContainsOnlyInstancesOf(Playlist::class, $paging->getItems());
+        self::assertInstanceOf(Playlist::class, $paging->getItem(0));
+        self::assertSame(10, $paging->getLimit());
+        self::assertSame(5, $paging->getOffset());
+        self::assertSame(6, $paging->getTotal());
+        self::assertSame(
             'https://api.spotify.com/v1/users/0123456789/playlists?offset=5&limit=10',
             $paging->getHref()
         );
-        $this->assertNull($paging->getNext());
-        $this->assertSame(
+        self::assertNull($paging->getNext());
+        self::assertSame(
             'https://api.spotify.com/v1/users/0123456789/playlists?offset=0&limit=10',
             $paging->getPrevious()
         );

@@ -15,8 +15,6 @@ class Cursor implements ModelInterface
 
     /**
      * Cursor constructor.
-     *
-     * @param string $after
      */
     public function __construct(string $after)
     {
@@ -24,8 +22,6 @@ class Cursor implements ModelInterface
     }
 
     /**
-     * @param array $cursor
-     *
      * @return \Kerox\Spotify\Model\Cursor
      */
     public static function build(array $cursor): self
@@ -33,9 +29,6 @@ class Cursor implements ModelInterface
         return new self($cursor['after']);
     }
 
-    /**
-     * @return string
-     */
     public function getAfter(): string
     {
         return $this->after;

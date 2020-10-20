@@ -20,9 +20,6 @@ class FollowingResponse extends AbstractResponse
 
     /**
      * FollowingResponse constructor.
-     *
-     * @param \Psr\Http\Message\ResponseInterface $response
-     * @param array                               $ids
      */
     public function __construct(ResponseInterface $response, array $ids)
     {
@@ -31,27 +28,16 @@ class FollowingResponse extends AbstractResponse
         parent::__construct($response);
     }
 
-    /**
-     * @return array
-     */
     public function getResult(): array
     {
         return $this->result;
     }
 
-    /**
-     * @param string $id
-     *
-     * @return bool
-     */
     public function isFollowing(string $id): bool
     {
         return $this->result[$id];
     }
 
-    /**
-     * @param array $content
-     */
     protected function parseResponse(array $content): void
     {
         $this->result = array_combine($this->ids, $content);

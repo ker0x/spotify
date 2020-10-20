@@ -13,17 +13,11 @@ class PagingResponse extends AbstractResponse
      */
     protected $paging;
 
-    /**
-     * @return \Kerox\Spotify\Model\Paging
-     */
     public function getPaging(): Paging
     {
         return $this->paging;
     }
 
-    /**
-     * @param array $content
-     */
     protected function parseResponse(array $content): void
     {
         $this->paging = Paging::build($content);

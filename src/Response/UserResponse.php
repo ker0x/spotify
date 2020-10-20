@@ -13,17 +13,11 @@ class UserResponse extends AbstractResponse
      */
     protected $user;
 
-    /**
-     * @return \Kerox\Spotify\Model\User
-     */
     public function getUser(): User
     {
         return $this->user;
     }
 
-    /**
-     * @param array $content
-     */
     protected function parseResponse(array $content): void
     {
         $this->user = User::build($content);

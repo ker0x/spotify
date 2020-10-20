@@ -100,25 +100,6 @@ class AudioFeatures implements ModelInterface
 
     /**
      * AudioFeatures constructor.
-     *
-     * @param float  $acousticness
-     * @param string $analysisUrl
-     * @param float  $danceability
-     * @param int    $durationMs
-     * @param float  $energy
-     * @param string $id
-     * @param float  $instrumentalness
-     * @param int    $key
-     * @param float  $liveness
-     * @param float  $loudness
-     * @param int    $mode
-     * @param float  $speechiness
-     * @param float  $tempo
-     * @param int    $timeSignature
-     * @param string $trackHref
-     * @param string $type
-     * @param string $uri
-     * @param float  $valence
      */
     public function __construct(
         float $acousticness,
@@ -161,8 +142,6 @@ class AudioFeatures implements ModelInterface
     }
 
     /**
-     * @param array $audioFeatures
-     *
      * @return \Kerox\Spotify\Model\AudioFeatures
      */
     public static function build(array $audioFeatures): self
@@ -208,145 +187,91 @@ class AudioFeatures implements ModelInterface
         );
     }
 
-    /**
-     * @return float
-     */
     public function getAcousticness(): float
     {
         return $this->acousticness;
     }
 
-    /**
-     * @return string
-     */
     public function getAnalysisUrl(): string
     {
         return $this->analysisUrl;
     }
 
-    /**
-     * @return float
-     */
     public function getDanceability(): float
     {
         return $this->danceability;
     }
 
-    /**
-     * @return int
-     */
     public function getDurationMs(): int
     {
         return $this->durationMs;
     }
 
-    /**
-     * @return float
-     */
     public function getEnergy(): float
     {
         return $this->energy;
     }
 
-    /**
-     * @return string
-     */
     public function getId(): string
     {
         return $this->id;
     }
 
-    /**
-     * @return float
-     */
     public function getInstrumentalness(): float
     {
         return $this->instrumentalness;
     }
 
-    /**
-     * @return int
-     */
     public function getKey(): int
     {
         return $this->key;
     }
 
-    /**
-     * @return float
-     */
     public function getLiveness(): float
     {
         return $this->liveness;
     }
 
-    /**
-     * @return float
-     */
     public function getLoudness(): float
     {
         return $this->loudness;
     }
 
-    /**
-     * @return int
-     */
     public function getMode(): int
     {
         return $this->mode;
     }
 
-    /**
-     * @return float
-     */
     public function getSpeechiness(): float
     {
         return $this->speechiness;
     }
 
-    /**
-     * @return float
-     */
     public function getTempo(): float
     {
         return $this->tempo;
     }
 
-    /**
-     * @return int
-     */
     public function getTimeSignature(): int
     {
         return $this->timeSignature;
     }
 
-    /**
-     * @return string
-     */
     public function getTrackHref(): string
     {
         return $this->trackHref;
     }
 
-    /**
-     * @return string
-     */
     public function getType(): string
     {
         return $this->type;
     }
 
-    /**
-     * @return string
-     */
     public function getUri(): string
     {
         return $this->uri;
     }
 
-    /**
-     * @return float
-     */
     public function getValence(): float
     {
         return $this->valence;
