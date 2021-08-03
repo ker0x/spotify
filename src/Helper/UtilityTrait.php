@@ -29,6 +29,6 @@ trait UtilityTrait
      */
     protected static function filter($var): bool
     {
-        return $var === 0 || $var === 0.0 || $var === '0' || !empty($var);
+        return 0 === $var || 0.0 === $var || '0' === $var || !empty($var);
     }
 }
